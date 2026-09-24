@@ -1,0 +1,10 @@
+name = "godel-ontological"
+version = "0.1.0"
+defaultTargets = ["GodelOntological", "godel-ontological"]
+
+[[lean_lib]]
+name = "GodelOntological"
+
+[[lean_exe]]
+name = "godel-ontological"
+root = "Main"
