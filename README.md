@@ -82,8 +82,10 @@ GodelOntological/Countermodel.lean — countermodels A/B + TB strictness C (path
 GodelOntological/Collapse.lean     — modal collapse + ContingentR (rigid Positive; rediscovery)
 GodelOntological/CountermodelA_WRP.lean — world-relative Positive; Countermodel A dies
 GodelOntological/CollapseWRP.lean  — WRP collapse along R (rediscovery; see COLLAPSE_WRP.md)
+GodelOntological/WRPFrameResidue.lean — what fails if Symmetric is dropped (WRP)
 COUNTERMODEL_A.md                  — rigid vs WRP desk note
 COLLAPSE_WRP.md                    — WRP collapse / ContingentR
+WRP_FRAMES.md                      — frame residue table under WRP
 NOTES.md                           — design notebook + references
 ```
 

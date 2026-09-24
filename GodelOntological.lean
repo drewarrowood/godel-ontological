@@ -7,3 +7,4 @@ import GodelOntological.Countermodel
 import GodelOntological.Collapse
 import GodelOntological.CountermodelA_WRP
 import GodelOntological.CollapseWRP
+import GodelOntological.WRPFrameResidue

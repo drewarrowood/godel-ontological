@@ -280,3 +280,27 @@ rigid Positive). Write-up: `COLLAPSE_WRP.md`. Not a priority claim.
 0 `sorry`. Rigid Countermodel D (ContingentR off a non-God cluster) does not
 transfer: under WRP, valid A3 puts God in every cluster. That comparison is
 desk packaging; the collapse itself is the literature result above.
+
+## WRP frame residue without Symmetric (2026-09-24, America/New_York)
+
+**Literature cut.** KB (symmetry) is enough for Scott’s argument; S5 is not
+required (Kanckos & Woltzenlogel Paleo, *Studia Logica* 105, 2017,
+DOI 10.1007/s11225-016-9700-1). Benzmüller & Scott use `Rsymm` for Th3
+(*Monatshefte* 2025, DOI 10.1007/s00605-025-02078-x). Their open S4 question
+is about Gödel’s **adapted-essence** variant (Fig. 7), not the tables below.
+
+**Module:** `GodelOntological/WRPFrameResidue.lean`. Write-up: `WRP_FRAMES.md`.
+Signature: **WRP**, not rigid Positive.
+
+| Frame | Global T3W | Local T3W | Collapse everywhere | ContingentR |
+| --- | --- | --- | --- | --- |
+| Symmetric + valid A1W–A5W | holds (`symmetric_WRP_package`) | holds | holds | impossible everywhere |
+| `R_swap` (sym., not refl.) | A1–A4 **unsatisfiable** (`R_swap_no_valid_A1234`) | — | — | — |
+| Empty `R` | A1–A3 **unsatisfiable** (`no_A123_on_empty`) | — | — | — |
+| S4 chain `R_chain` | **fails** | **fails** at source | fails at source | survives at source |
+| `R_fork` (refl. only, in the named sense) | **fails** | **fails** at `a` | fails at `a` | survives at `a` |
+| `R_to_true` (eucl.+serial+trans., not sym.) | **fails** | **holds** | fails off the sink | survives off the sink |
+
+**Status:** positive Symmetric row is **rediscovery** of the KB fact. Negative
+rows are **desk packaging** in this encoding. Not a priority claim. Fig. 7
+stays open. `#print axioms`: see `WRP_FRAMES.md`. 0 `sorry`.
