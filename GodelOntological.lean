@@ -5,3 +5,4 @@ import GodelOntological.Frames
 import GodelOntological.WeakScott
 import GodelOntological.Countermodel
 import GodelOntological.Collapse
+import GodelOntological.CountermodelA_WRP

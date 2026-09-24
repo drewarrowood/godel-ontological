@@ -115,11 +115,11 @@ conditions live in `Frames.lean`; R-relative Scott in `WeakScott.lean`.
 | Local T3 (`◇_R ∃G w → □_R ∃G w`) | **`Symmetric R`** / Brouwerian / TB | **proved** (`local_T3_of_Symmetric`) |
 | Local T3 under S5Frame | `S5Frame R` | corollary of Symmetric |
 | Global T3 (`∀w ∃x GodLike`) | **`Universal R`** | proved (recovers `Scott.T3`) |
-| Global T3 from S5Frame alone | — | **false** — Countermodel A |
+| Global T3 from S5Frame alone (**rigid** Positive) | — | **false** — Countermodel A; see `COUNTERMODEL_A.md` §F (dies under WRP) |
 | Local T3 from refl+trans (S4) alone | — | **false** — Countermodel B |
 | Symmetric/TB strictly weaker than S5Frame | — | **yes** — Strictness C (`R_path`) |
 
-**Countermodel A:** `W = Bool`, `R =` identity (S5 but not universal), Positive = “true at `false`”; A1–A5 hold; God only in one cluster.
+**Countermodel A (rigid Positive):** `W = Bool`, `R =` identity (S5 but not universal), Positive = “true at `false`”; A1–A5 hold; God only in one cluster. Under world-relative Positive the shape dies — `COUNTERMODEL_A.md`.
 **Countermodel B:** S4 chain; A1–A5 hold; at the source `◇∃G` but not `□∃G`.
 **Strictness C:** 3-world undirected path is TB/Brouwerian but not euclidean/S5Frame.
 

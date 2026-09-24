@@ -144,7 +144,7 @@ We do **not** claim “T3 in S5” without those hypotheses.
 ### What remains open (pre–residual cut)
 
 - ~~Exact weakest frame for local T3~~ — **settled** by residual cut below.
-- World-relative (non-rigid) Positive / explicit A4: still deferred.
+- World-relative (non-rigid) Positive / explicit A4: see `COUNTERMODEL_A.md` / `CountermodelA_WRP.lean` (Countermodel A dies under WRP).
 - No metaphysical claim: these are facts about the Lean encoding.
 
 ### Build
@@ -192,11 +192,15 @@ No reflexivity, transitivity, or euclidean needed.
 | Local T3 from Symmetric / Brouwerian / TB | **proved** (weaker than S5Frame) |
 | Local T3 from S4 (refl+trans) alone | **false** — Countermodel B |
 | Local T3 from S5Frame | proved (corollary) |
-| Global T3 from S5Frame alone | **false** — Countermodel A |
+| Global T3 from S5Frame alone (**rigid** Positive) | **false** — Countermodel A; WRP kills the shape (`COUNTERMODEL_A.md`) |
 | Global T3 from Universal | proved |
 
 Nothing material remains open on the residual cut itself. Deferred: non-rigid
-Positive / explicit A4.
+Positive / explicit A4 — **done 2026-09-24**: see `COUNTERMODEL_A.md` and
+`GodelOntological/CountermodelA_WRP.lean`. Verdict: under world-relative Positive
+with global validity of A1–A5 (incl. A4), `Symmetric R` already forces global T3
+(no Universal); Countermodel A dies. Status: rigid packaging fact only (P015 PASS desk; not priority);
+not claimed vs Monatshefte 2025 / AFP Notes.
 
 ### Build (residual)
 
