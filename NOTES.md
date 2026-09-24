@@ -322,3 +322,21 @@ not WRP). Write-up: `ANDERSON.md`.
 
 **Status: rediscovery** of Anderson’s repair. The Bool witness is **desk
 packaging**. Not a priority claim. `#print axioms`: see `ANDERSON.md`. 0 `sorry`.
+
+## AFP / Monatshefte S4 open (2026-09-24, America/New_York)
+
+**Literature cut.** Benzmüller & Scott, *Monatshefte für Mathematik*,
+DOI 10.1007/s00605-025-02078-x, §4.4 Fig. 7 (and again §4.5 Fig. 8): is
+Theorem Th3 — possible God-like existence implies necessary God-like existence,
+with **actualist** quantifiers — provable in **S4** (reflexivity + transitivity
+instead of symmetry) for the essence-adapted Gödel axioms? `P(G)` there is
+lemma L from **Ax1Gen**, not Scott’s axiom A3. They report no S4 proof and no
+S4 countermodel. AFP: `Notes_On_Goedels_Ontological_Argument`.
+
+**Does not transfer.** This package has constant domains, no existence
+predicate, no Ax1Gen, and postulates `A3`/`A3W`. Write-up: `S4_OPEN.md`.
+`S4Open.scott_style_S4_local_T3_fails` only aliases the Scott-style WRP chain
+(`chain_S4_local_T3_fails`): ◇∃G without □∃G at the source. That is not Fig. 7.
+
+**Status: still open.** Desk record of the mismatch. Not a priority claim.
+`#print axioms`: `propext`. 0 `sorry`.
