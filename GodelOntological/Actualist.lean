@@ -10,9 +10,10 @@ in the argument are actualist (`existsAt`). Property quantifiers are
 possibilist. `P(G)` is lemma L from Ax1Gen, not an axiom.
 
 The S4 file `GoedelVariantHOML2inS4` leaves Theorem Th3 as `oops`
-("Open problem"). This module proves Th3 from the Fig. 7 axioms with no
-reflexivity, transitivity, or symmetry hypothesis: those axioms imply
-`Symmetric R`, and the AFP proof of Th3 from Th2 plus symmetry then applies.
+("Open problem"). Literal Ax1Gen, Ax2a, Ax2b, and Ax4 force symmetry, and
+with Ax3 they force `R` to be the identity (`GodelOntological.Audit`). Th3
+then holds only on discrete frames. The AFP lemma `MC` already gives collapse
+from `Rsymm`; the identity proof does not assume symmetry.
 See `ACTUALIST_FIG7.md` for the quoted axiom list, departures, and status.
 Hunt 6 (`Actualist_Repaired.lean`) keeps this axiom and checks two repairs
 that block the source/successor split in `fig7_implies_symmetric`.
@@ -225,9 +226,11 @@ theorem fig7_implies_symmetric {W Ind : Type} {R : Access W} {ex : Ind → W →
   have hPneg : P (negPred φ) v := h4 φ (negPred φ) v hPφv hIncl
   exact (h2a φ v).2 ⟨hPφv, hPneg⟩
 
-/-- **Th3 (Fig. 7), no frame hypothesis.**
-Ax1Gen, Ax2a, Ax2b, Ax3, Ax4. Symmetry is derived, then the AFP proof runs.
-Reflexivity and transitivity are not hypotheses, so the result holds in S4. -/
+/-- **Th3 (Fig. 7).** Ax1Gen, Ax2a, Ax2b, Ax3, Ax4 imply Th3.
+`Audit.R_is_identity` is the stronger fact: the same hypotheses force `R` to
+be the identity, with no symmetry assumption, so the only S4 models are
+discrete and Th3 holds there trivially. Reflexivity is not a hypothesis;
+`Audit.refl_of_gen` derives it from Ax1Gen and Ax2a. -/
 theorem th3_fig7 {W Ind : Type} {R : Access W} {ex : Ind → W → Prop} {P : MPred W Ind}
     (hGen : Ax1Gen R ex P) (h2a : Ax2a P) (h2b : Ax2b R P)
     (h3 : Ax3 R ex P) (h4 : Ax4 R ex P) :
@@ -445,8 +448,9 @@ theorem fig8_implies_symmetric {W Ind : Type} {R : Access W} {ex : Ind → W →
   have hPneg : P (negPred φ) v := h4 φ (negPred φ) v hPφv hIncl
   exact (h2a φ v).2 ⟨hPφv, hPneg⟩
 
-/-- **Th3 (Fig. 8), no frame hypothesis.** If `◇∃^E G` holds at `w`, the witness
-individual feeds `fig8_implies_symmetric`, and the AFP back-edge is available. -/
+/-- **Th3 (Fig. 8).** If `◇∃^E G` holds at `w`, the witness individual feeds
+`fig8_implies_symmetric`, and the AFP back-edge is available. This is not a
+proof that the Fig. 8 package forces `R` to be the identity. -/
 theorem th3_fig8 {W Ind : Type} {R : Access W} {ex : Ind → W → Prop} {P : MPred W Ind}
     (hGen : Ax1Gen R ex P) (h2a : Ax2a P) (h2b : Ax2b R P)
     (h3 : Ax3_8 R ex P) (h4 : Ax4_8 R ex P) :

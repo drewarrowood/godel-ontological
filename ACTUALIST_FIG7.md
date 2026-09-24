@@ -108,10 +108,13 @@ what was proved.
 
 ## What was proved
 
-No `Reflexive` or `Transitive` hypothesis anywhere in the Th3 theorems.
-S4 is the special case in which those two hold and symmetry is not assumed.
-Symmetry is derived from the non-logical axioms, so the AFP step that cites
-`Rsymm` is available inside S4, and in K.
+Literal Ax1Gen with Ax2a, Ax2b, and Ax4 forces reflexivity (`Audit.refl_of_gen`)
+and the B schema (`Audit.B_schema`). Adding Ax3 forces `R w v ↔ v = w`
+(`Audit.R_is_identity`) and modal collapse (`Audit.MC`), with no symmetry
+hypothesis. The AFP lemma `MC` in `GoedelVariantHOML2` is the same schema,
+proved there from Ax2a, Ax2b, Th5, the definition of `G`, and `Rsymm`. What is
+new is the collapse without `Rsymm`. The only S4 models of the literal axioms
+are discrete, and Th3 holds there trivially.
 
 | Theorem | Content | Class |
 | --- | --- | --- |
@@ -120,8 +123,13 @@ Symmetry is derived from the non-logical axioms, so the AFP step that cites
 | `th1_fig7` | `⌊G x ⊃ G Ess. x⌋` | rediscovery |
 | `th2_fig7` | `⌊G x ⊃ □∃^E G⌋` | rediscovery |
 | `th3_of_symmetric` | Th3 from Th2 + `Symmetric` (AFP’s three `have`s) | rediscovery |
-| `fig7_implies_symmetric` | Ax1Gen + Ax2a + Ax2b + Ax4 ⇒ `Symmetric R` | answers the open |
-| **`th3_fig7`** | **Th3 from Ax1Gen, Ax2a, Ax2b, Ax3, Ax4. No frame hypothesis** | **answers the open** |
+| `fig7_implies_symmetric` | Ax1Gen + Ax2a + Ax2b + Ax4 ⇒ `Symmetric R` | the B schema for “the world is `w`” |
+| **`th3_fig7`** | **Th3 from Ax1Gen, Ax2a, Ax2b, Ax3, Ax4** | **holds because `R` is the identity** |
+| `Audit.pos_of_home` | Ax1Gen alone: a property true of all existents at `w` is positive at `w` | audit |
+| `Audit.refl_of_gen` | Ax1Gen + Ax2a ⇒ `Reflexive R` | audit |
+| `Audit.B_schema` | `q → □◇q` for every world-proposition | audit |
+| **`Audit.R_is_identity`** | **literal Fig. 7 ⇒ `R` is the identity. No symmetry hypothesis** | **headline** |
+| **`Audit.MC`** | **collapse `q → □q`. No symmetry hypothesis** | **headline** |
 | `th4_fig7` | `⌊◇∃^E G⌋` | rediscovery |
 | `th5_fig7` | `⌊□∃^E G⌋` | rediscovery |
 | `fig7_unsat_on_S4_chain` | those axioms are unsatisfiable on the two-world S4 chain | not a countermodel |
@@ -133,13 +141,15 @@ Fig. 8 (relevant because §4.5 repeats the open, and `⊃_N` adds `φ ≠ ⊥`):
 | --- | --- |
 | `th1_fig8`, `th2_fig8`, `th3_fig8_of_symmetric` | same chain, Fig. 8 essence and inclusion |
 | `fig8_implies_symmetric` | same symmetry argument; the witness `x0 : Ind` shows `neBot` |
-| **`th3_fig8`** | **Th3 from the Fig. 8 package, no frame hypothesis** |
+| **`th3_fig8`** | **Th3 from the Fig. 8 package. Not a claim that Fig. 8 forces the identity** |
 | `fig8_unsat_on_S4_chain` | unsatisfiable on the S4 chain once an individual is given |
 
-Fig. 8 **Th4 / Th5 are not claimed.** The Fig. 7 proof of Th4 uses
-`⊥ ⊃_N ¬⊥`, which is vacuous for Fig. 7 inclusion. Fig. 8’s inclusion requires
-`φ ≠ ⊥`, so that step does not transfer. In `GoedelVariantHOML3.thy` the Th4
-script is `oops` and Th4 is then re-introduced by `axiomatization`.
+Fig. 8 **Th4 is `Audit.th4_fig8`:** possible existence from literal Ax1Gen and
+Ax2a, via `pos_of_home` and reflexivity. It does not use Fig. 8’s side
+condition on inclusion. In `GoedelVariantHOML3.thy` the Th4 script is `oops`,
+with a comment that sledgehammer found a proof from Ax2a, L, and Ax1Gen, and
+Th4 is then re-introduced by `axiomatization`. A Fig. 8 Th5 is not claimed.
+Fig. 8 was not varied in the comparison of the three readings of Ax1Gen.
 
 ### Where the old countermodel attempt breaks
 
@@ -182,14 +192,12 @@ classical, so that matches the host logic. No `sorry`. No `native_decide`.
 
 ## Status
 
-**Answers the stated open question** for the encoded Fig. 7 axioms, and the
-same way for Fig. 8’s Th3: Th3 is provable in S4. The proof does not use
-reflexivity or transitivity. It derives symmetry from Ax1Gen, Ax2a, Ax2b, and
-Ax4, then repeats the AFP proof of Th3 from Th2.
-
-There is no S4 countermodel in this encoding. Any model of those axioms has
-symmetric accessibility, and Th3 holds on symmetric frames. The one-world
-principal interpretation shows the axioms are satisfiable.
+**Literal Fig. 7 forces a discrete frame.** `Audit.R_is_identity` and
+`Audit.MC` do not assume symmetry. Th3 holds in S4 only because every model
+is a cluster of isolated reflexive worlds, so the diamond and the box are the
+same quantifier. There is no non-discrete S4 model. The one-world principal
+interpretation shows the axioms are satisfiable, and it is the shape Nitpick
+reported at cardinality one.
 
 `th3_of_symmetric` and the symmetry-free AFP lemmas are rediscoveries.
 `fig7_implies_symmetric` is the step the S4 file left open; it was not found
@@ -212,14 +220,21 @@ work, Fitting’s extensional positivity, and the simplified-argument AFP entry
 S4 countermodel for a boxed or rigid Ax1Gen was found. Hunt 5’s positive
 answer is for the literal axiom only.
 
-### Why R1 is the closer repair
+### Two reconstructions
+
+Neither replacement is dictated by the footnote. Both are reconstructions.
+What both remove is `Φ` being read at two different worlds. The Lean name
+`Rigid` means world-invariant `Φ`, not Ax2b. An earlier note called R1 the
+closer repair. That ranking is dropped.
 
 Gödel’s 1970 footnote extends axiom 1 to any number of summands: the
 conjunction of a collection of **positive** properties is positive. In the AFP
 abbreviation the identity “`φ` is that conjunction” sits under a box
 (`ConjOfPropsFrom`), while “the conjuncts are positive” (`PosProps`) is read
-only at the source. The closer repair judges both at the same accessible
-worlds:
+only at the source. `Audit.pos_of_home` is the consequence: positivity at `w`
+tracks the existents at `w`, against Gödel’s gloss that positive is
+independent of the accidental structure of the world. R1 judges both halves
+at the same accessible worlds:
 
 `⌊□(PosProps Φ ∧ ∀^E z. φ z ↔ (∀ψ. Φ ψ ⊃ ψ z)) ⊃ P φ⌋`
 
@@ -229,9 +244,9 @@ a box, so this is equivalent to
 `⌊(□ PosProps Φ ∧ ConjOfPropsFrom φ Φ) ⊃ P φ⌋`
 
 (`Ax1GenBox`). `ax1GenBox_iff_inBox` is axiom-free. The two forms do not
-differ. One countermodel covers both. R2 is a different restriction, not a
-rival spelling of R1: `Φ` must be world-invariant (`Rigid`), and `PosProps`
-and `ConjOfPropsFrom` stay literal.
+differ. One countermodel covers both. R2 freezes `Φ`: it must be
+world-invariant, and `PosProps` and `ConjOfPropsFrom` stay literal. R2 moves
+no box.
 
 ### Per reading
 
@@ -251,8 +266,17 @@ One individual, `chainEx` true at both worlds.
 God-like at `true` only (`chain_god_sink`, `chain_not_god_source`).
 At `false`, `◇∃^E G` holds and `□∃^E G` fails (`chain_th3_fails_at_source`).
 Ax1, Ax2b, Ax3, Ax4, `Ax1GenBox`, `Ax1GenInBox`, and `Ax1GenRigid` hold.
-`chain_not_literal_Ax1Gen`: this `P` is not a model of literal Ax1Gen, by
-Hunt 5’s unsatisfiability theorem. The repairs are strictly weaker on this frame.
+`chain_not_literal_Ax1Gen`: this `P` is not a model of literal Ax1Gen.
+`Audit.literal_to_R1`: literal implies R1 on reflexive frames.
+`Audit.literal_to_R2`: literal implies R2 on every frame.
+`Audit.readings_coincide_on_unit`: on a one-world identity frame the three
+readings coincide. The converses are not proved in general. The chain
+separates them: both reconstructions have a model, and the literal axiom has
+none (`Audit.literal_unsat_on_R_chain`). The domain has one element and
+`chainEx` is always true, so the actualist machinery is not exercised.
+Non-symmetry is this chain (`R_chain_not_symmetric` inside
+`r1_s4_countermodel` and `r2_s4_countermodel`), not the failure of one
+derivation to instantiate.
 
 ### `#print axioms`
 
@@ -264,15 +288,21 @@ Hunt 5’s unsatisfiability theorem. The repairs are strictly weaker on this fra
 | `chain_ax2a` | `propext`, `Classical.choice`, `Quot.sound` (`Classical.em`) |
 | `chain_not_literal_Ax1Gen` | `propext`, `Classical.choice`, `Quot.sound` (from `fig7_implies_symmetric`) |
 | `r1_s4_countermodel`, `r2_s4_countermodel` | `propext`, `Classical.choice`, `Quot.sound` (Ax2a, and `propext` on the chain’s transitivity / non-symmetry) |
+| `Audit.pos_of_home`, `refl_of_gen`, `B_schema`, `R_is_identity`, `MC`, `th4_fig8` | `propext`, `Classical.choice`, `Quot.sound` |
+| `Audit.literal_to_R1`, `literal_to_R2`, `R1_to_literal_of_identity`, `literal_iff_R1_of_identity`, `R2_to_literal_of_one_world`, `readings_coincide_on_unit` | none |
+| `Audit.literal_unsat_on_R_chain` | `propext`, `Classical.choice`, `Quot.sound` |
+| `Audit.chain_not_necessary_existence` | none |
 
 No `sorry`. No `native_decide`. No custom axioms.
 
 ### Classification
 
-For the **literal** AFP axiom, Hunt 5 stands: Th3 is proved, and this chain is
-unsatisfiable.
+For the **literal** AFP axiom, `R` is the identity and the chain is
+unsatisfiable. Th3 holds only on discrete frames.
 
 For **readings R1 and R2**, Th3 is not a theorem of S4. The finite chain is a
-countermodel. That answers the open question **negatively for those named
-readings**. It is not a rediscovery of an AFP or Monatshefte countermodel, and
-it is not a countermodel of literal Fig. 7. Not a priority claim.
+countermodel. That is a negative answer for those two reconstructions. It is
+not a rediscovery of an AFP or Monatshefte countermodel, and it is not a
+countermodel of literal Fig. 7. Not a priority claim. The Isabelle
+instantiation of the empty-at-home collection inside `GoedelVariantHOML2inS4`
+has not been run; Isabelle was not available.
