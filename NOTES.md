@@ -370,4 +370,33 @@ Fig. 8: `th3_fig8` likewise. Fig. 8 Th4 is not claimed.
 the AFP development. `th3_fig7` / `fig7_implies_symmetric` **answer the stated
 open question** in this encoding: Th3 is provable in S4. Departures and the
 Ax1Gen world-shift are listed in `ACTUALIST_FIG7.md`. Not a priority claim.
-`#print axioms`: see that note. 0 `sorry`. No `native_decide`.
+`#print axioms`: see that note. 0 `sorry`.
+
+## Hunt 6 — repaired Ax1Gen (2026-09-24, America/New_York)
+
+**Question.** Does Th3 in S4 survive if the source/successor split in literal
+Ax1Gen is removed? Everything else in Fig. 7 stays. Module:
+`GodelOntological/Actualist_Repaired.lean`.
+
+**R1.** `Ax1GenInBox` puts `PosProps` in the same box as the conjunction
+identity. Equivalent (`ax1GenBox_iff_inBox`, no axioms) to `□ PosProps ∧
+ConjOfPropsFrom`. Closer to Gödel’s “conjunction of positive properties”
+footnote than the literal scoping. **R2.** `Ax1GenRigid`: `Φ` world-invariant;
+`PosProps` and `ConjOfPropsFrom` literal.
+
+**Literature.** AFP S4 files still use literal Ax1Gen and leave Th3 open.
+Fuenmayor, Kirchner, Fitting, and `SimplifiedOntologicalArgument` do not treat
+these repairs. No published countermodel for them was found.
+
+| Reading | L | Symmetry | Th3 in S4 |
+| --- | --- | --- | --- |
+| R1 | derives (`lemma_L_box`) | not forced | fails (`r1_s4_countermodel`) |
+| R2 | derives, using Ax2a+Ax2b (`lemma_L_rigid`) | not forced | fails (`r2_s4_countermodel`) |
+
+Witness for both: `R_chain`, one always-existing individual, `chainP φ := φ`
+at the sink. God at the sink only. `chain_not_literal_Ax1Gen` shows this `P`
+is not a literal Ax1Gen model.
+
+**Status:** answers the question **negatively for readings R1 and R2**. Does
+not retract literal `th3_fig7`. Not a rediscovery. Not a priority claim.
+`#print axioms`: `ACTUALIST_FIG7.md`. 0 `sorry`. No `native_decide`.

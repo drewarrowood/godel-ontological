@@ -14,6 +14,8 @@ The S4 file `GoedelVariantHOML2inS4` leaves Theorem Th3 as `oops`
 reflexivity, transitivity, or symmetry hypothesis: those axioms imply
 `Symmetric R`, and the AFP proof of Th3 from Th2 plus symmetry then applies.
 See `ACTUALIST_FIG7.md` for the quoted axiom list, departures, and status.
+Hunt 6 (`Actualist_Repaired.lean`) keeps this axiom and checks two repairs
+that block the source/successor split in `fig7_implies_symmetric`.
 -/
 
 namespace GodelOntological.Actualist

@@ -194,3 +194,85 @@ principal interpretation shows the axioms are satisfiable.
 `th3_of_symmetric` and the symmetry-free AFP lemmas are rediscoveries.
 `fig7_implies_symmetric` is the step the S4 file left open; it was not found
 in the sources listed above. Not a priority claim.
+
+---
+
+## Hunt 6 — Ax1Gen without the source/successor split
+
+Date: 2026-09-24 (America/New_York). Module: `GodelOntological/Actualist_Repaired.lean`.
+The literal Fig. 7 development above is unchanged.
+
+### Literature, again
+
+The AFP S4 files (`GoedelVariantHOML2inS4`, and the possibilist and Fig. 8
+twins) still state literal Ax1Gen — `PosProps` outside the box — and leave
+Th3 as `oops`. Benzmüller & Fuenmayor (BSL 2020), Kirchner’s modal-collapse
+work, Fitting’s extensional positivity, and the simplified-argument AFP entry
+`SimplifiedOntologicalArgument` do not study these two repairs. No published
+S4 countermodel for a boxed or rigid Ax1Gen was found. Hunt 5’s positive
+answer is for the literal axiom only.
+
+### Why R1 is the closer repair
+
+Gödel’s 1970 footnote extends axiom 1 to any number of summands: the
+conjunction of a collection of **positive** properties is positive. In the AFP
+abbreviation the identity “`φ` is that conjunction” sits under a box
+(`ConjOfPropsFrom`), while “the conjuncts are positive” (`PosProps`) is read
+only at the source. The closer repair judges both at the same accessible
+worlds:
+
+`⌊□(PosProps Φ ∧ ∀^E z. φ z ↔ (∀ψ. Φ ψ ⊃ ψ z)) ⊃ P φ⌋`
+
+(`Ax1GenInBox`). In K, `□A ∧ □B` is `□(A ∧ B)` and `ConjOfPropsFrom` is already
+a box, so this is equivalent to
+
+`⌊(□ PosProps Φ ∧ ConjOfPropsFrom φ Φ) ⊃ P φ⌋`
+
+(`Ax1GenBox`). `ax1GenBox_iff_inBox` is axiom-free. The two forms do not
+differ. One countermodel covers both. R2 is a different restriction, not a
+rival spelling of R1: `Φ` must be world-invariant (`Rigid`), and `PosProps`
+and `ConjOfPropsFrom` stay literal.
+
+### Per reading
+
+| | R1 (boxed / in-box) | R2 (rigid `Φ`) |
+| --- | --- | --- |
+| Lemma L | `lemma_L_box`, `lemma_L_inBox`. From the repaired Ax1Gen alone. `Φ := P` is positive at every world, so the box adds nothing | `lemma_L_rigid`. Needs Ax2a and Ax2b as well: the rigid snapshot `Φ ψ _ := P ψ w` matches `G` at successors only because positivity agrees along `R` |
+| Symmetry | Not forced. The Hunt 5 `Φ` is empty at the source, so source `PosProps` holds, but at the sink it contains `⊥`, so `□ PosProps` asks for `P(⊥)` | Not forced. That same `Φ` is not rigid, so `Ax1GenRigid` does not apply to it |
+| Th3 in S4 | Fails. `r1_s4_countermodel` | Fails. `r2_s4_countermodel` |
+
+### Witness (both readings)
+
+`R_chain` on `Bool`: `false` sees both worlds, `true` sees only `true`
+(`R_chain_reflexive`, `R_chain_transitive`, `R_chain_not_symmetric`).
+One individual, `chainEx` true at both worlds.
+`chainP φ _ := φ () true`.
+
+God-like at `true` only (`chain_god_sink`, `chain_not_god_source`).
+At `false`, `◇∃^E G` holds and `□∃^E G` fails (`chain_th3_fails_at_source`).
+Ax1, Ax2b, Ax3, Ax4, `Ax1GenBox`, `Ax1GenInBox`, and `Ax1GenRigid` hold.
+`chain_not_literal_Ax1Gen`: this `P` is not a model of literal Ax1Gen, by
+Hunt 5’s unsatisfiability theorem. The repairs are strictly weaker on this frame.
+
+### `#print axioms`
+
+| Theorem | Axioms |
+| --- | --- |
+| `ax1GenBox_iff_inBox`, `lemma_L_box`, `lemma_L_inBox`, `lemma_L_rigid`, `pos_agree` | none |
+| `chain_ax1`, `chain_ax2b`, `chain_ax3`, `chain_ax4`, `chain_ax1GenBox`, `chain_ax1GenInBox`, `chain_ax1GenRigid` | none |
+| `chain_th3_fails_at_source`, `chain_not_Th3`, `chain_god_sink`, `chain_not_god_source` | none |
+| `chain_ax2a` | `propext`, `Classical.choice`, `Quot.sound` (`Classical.em`) |
+| `chain_not_literal_Ax1Gen` | `propext`, `Classical.choice`, `Quot.sound` (from `fig7_implies_symmetric`) |
+| `r1_s4_countermodel`, `r2_s4_countermodel` | `propext`, `Classical.choice`, `Quot.sound` (Ax2a, and `propext` on the chain’s transitivity / non-symmetry) |
+
+No `sorry`. No `native_decide`. No custom axioms.
+
+### Classification
+
+For the **literal** AFP axiom, Hunt 5 stands: Th3 is proved, and this chain is
+unsatisfiable.
+
+For **readings R1 and R2**, Th3 is not a theorem of S4. The finite chain is a
+countermodel. That answers the open question **negatively for those named
+readings**. It is not a rediscovery of an AFP or Monatshefte countermodel, and
+it is not a countermodel of literal Fig. 7. Not a priority claim.
