@@ -257,3 +257,26 @@ rediscovery only.
 
 - `lake build` → success, **0 `sorry`**.
 - Date: 2026-09-24 (America/New_York).
+
+## WRP collapse / ContingentR (2026-09-24, America/New_York)
+
+**Literature cut.** Sobel: Scott-style premises yield `φ → □φ` (1987; *Logic and
+Theism* 2004). Benzmüller & Fuenmayor: Scott’s HOML variant (intensional /
+world-relative positivity) entails modal collapse; Anderson and Fitting avoid it
+(arXiv:1910.08955; BSL 49(2) 2020, DOI 10.18778/0138-0680.2020.08).
+
+**Status: rediscovery** in `GodelOntological/CollapseWRP.lean` (thin `PosW`, not
+rigid Positive). Write-up: `COLLAPSE_WRP.md`. Not a priority claim.
+
+| Claim | Hypotheses in the type | Result |
+| --- | --- | --- |
+| Collapse at a God-world | A1W+A4W+A5W at `w` and `∃ GodLikeW` (no Symmetric) | `ModalCollapseAt_of_GodW` |
+| Collapse at every world along `R` | **Symmetric** + `validW` A1W–A5W | `ModalCollapseR_of_Symmetric` |
+| ContingentR impossible everywhere | same | `ContingentR_impossible_of_Symmetric` |
+| Sobel `φ → □φ` | **Universal** + valid A1W–A5W | `ModalCollapse_of_Universal_WRP` |
+| Sobel form from Symmetric alone | — | **false** on `idRel` (`wrp_idRel_R_collapse_not_sobel`) |
+
+`#print axioms` on those theorems: `propext`, `Classical.choice`, `Quot.sound`.
+0 `sorry`. Rigid Countermodel D (ContingentR off a non-God cluster) does not
+transfer: under WRP, valid A3 puts God in every cluster. That comparison is
+desk packaging; the collapse itself is the literature result above.

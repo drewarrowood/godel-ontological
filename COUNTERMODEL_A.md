@@ -244,6 +244,17 @@ Delete “possibly novel.” Candidate/packaging PASS needs: clean `lake build`,
 
 ---
 
+## J. Pointer — WRP collapse (not this countermodel)
+
+Separate desk check: `COLLAPSE_WRP.md`, module `GodelOntological/CollapseWRP.lean`.
+Under WRP, Symmetric + valid A1W–A5W ⇒ `ModalCollapseR` and ContingentR
+impossible at every world (`ModalCollapseR_of_Symmetric`,
+`ContingentR_impossible_of_Symmetric`). **Rediscovery** of Sobel /
+Benzmüller–Fuenmayor Scott collapse. Sobel `φ → □φ` still needs Universal
+(`wrp_idRel_R_collapse_not_sobel`). Not a priority claim.
+
+---
+
 ## H. Build
 
 ```bash

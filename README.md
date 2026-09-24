@@ -79,7 +79,11 @@ GodelOntological/ScottCuts.lean    — Russell / P042 dependency cuts (drop A5 o
 GodelOntological/Frames.lean       — Access, necessaryR/possibleR, named frame props
 GodelOntological/WeakScott.lean    — R-relative Scott; local T3 under Symmetric/TB/S5; global under Universal
 GodelOntological/Countermodel.lean — countermodels A/B + TB strictness C (path / swap)
-GodelOntological/Collapse.lean     — modal collapse + ContingentR (free will as contingency)
+GodelOntological/Collapse.lean     — modal collapse + ContingentR (rigid Positive; rediscovery)
+GodelOntological/CountermodelA_WRP.lean — world-relative Positive; Countermodel A dies
+GodelOntological/CollapseWRP.lean  — WRP collapse along R (rediscovery; see COLLAPSE_WRP.md)
+COUNTERMODEL_A.md                  — rigid vs WRP desk note
+COLLAPSE_WRP.md                    — WRP collapse / ContingentR
 NOTES.md                           — design notebook + references
 ```
 
@@ -138,12 +142,18 @@ Residual cut closed: Symmetric alone suffices for local T3; S4 does not. Details
 | `ModalCollapseR` everywhere | **`Universal R`** + A1–A5 | **proved** |
 | Collapse at a God-world | A1+A5 (any R) | **proved** (`ModalCollapseAt_of_God`) |
 | `ContingentR` / `ContingentAct` impossible under Universal + A1–A5 | same | **proved** |
-| ContingentR survives under S5Frame alone | — | **yes** — Countermodel D (non-God cluster) |
+| ContingentR survives under S5Frame alone (**rigid** Positive) | — | **yes** — Countermodel D (non-God cluster) |
+| Collapse at every world along `R` (**WRP**) | **Symmetric** + valid A1W–A5W | **proved** (`CollapseWRP.ModalCollapseR_of_Symmetric`); rediscovery |
+| ContingentR impossible everywhere (**WRP**) | same | **proved** (`ContingentR_impossible_of_Symmetric`) |
+| Sobel `ModalCollapse` from Symmetric alone (**WRP**) | — | **false** — `wrp_idRel_R_collapse_not_sobel` |
 
 **Free-will reading:** contingency = true here, false at some accessible world.
-Under Universal Scott, collapse kills all ContingentR/ContingentAct. Without
-universality, ContingentR can survive off the God-cluster while A1–A5 still hold
-(`countermodel_D_ContingentR_survives`). ScottCuts / Countermodels A,B left intact.
+Under Universal Scott, collapse kills all ContingentR/ContingentAct. Under
+**rigid** Positive, ContingentR can survive off the God-cluster
+(`countermodel_D_ContingentR_survives`). Under **WRP**, Symmetric + valid
+A1W–A5W already kills ContingentR at every world; Sobel collapse across
+inaccessible worlds still needs `Universal R`. Details in `COLLAPSE_WRP.md`.
+ScottCuts / Countermodels A,B left intact.
 
 ## Historical pointers
 
