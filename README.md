@@ -83,9 +83,11 @@ GodelOntological/Collapse.lean     — modal collapse + ContingentR (rigid Posit
 GodelOntological/CountermodelA_WRP.lean — world-relative Positive; Countermodel A dies
 GodelOntological/CollapseWRP.lean  — WRP collapse along R (rediscovery; see COLLAPSE_WRP.md)
 GodelOntological/WRPFrameResidue.lean — what fails if Symmetric is dropped (WRP)
+GodelOntological/Anderson.lean     — Anderson 1990 fragment; ContingentR survives
 COUNTERMODEL_A.md                  — rigid vs WRP desk note
 COLLAPSE_WRP.md                    — WRP collapse / ContingentR
 WRP_FRAMES.md                      — frame residue table under WRP
+ANDERSON.md                        — Anderson repair (not Fitting)
 NOTES.md                           — design notebook + references
 ```
 

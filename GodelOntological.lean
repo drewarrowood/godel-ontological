@@ -8,3 +8,4 @@ import GodelOntological.Collapse
 import GodelOntological.CountermodelA_WRP
 import GodelOntological.CollapseWRP
 import GodelOntological.WRPFrameResidue
+import GodelOntological.Anderson

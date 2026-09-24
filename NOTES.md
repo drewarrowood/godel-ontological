@@ -304,3 +304,21 @@ Signature: **WRP**, not rigid Positive.
 **Status:** positive Symmetric row is **rediscovery** of the KB fact. Negative
 rows are **desk packaging** in this encoding. Not a priority claim. Fig. 7
 stays open. `#print axioms`: see `WRP_FRAMES.md`. 0 `sorry`.
+
+## Anderson emendation (2026-09-24, America/New_York)
+
+**Literature cut.** Anderson 1990: half of A1 (`P(¬φ) → ¬P(φ)`), and
+God-like means `∀φ (P(φ) ↔ □φ(x))`. Kanckos & Woltzenlogel Paleo, *Studia
+Logica* 105 (2017), §7: T3 does not need A4/A5/essence; the extra box blocks
+Sobel collapse. Benzmüller & Fuenmayor (BSL 2020): Anderson and Fitting both
+avoid collapse. **Fitting (extensional positivity) is not formalized here.**
+
+**Module:** `GodelOntological/Anderson.lean` (rigid Positive, universal `□`;
+not WRP). Write-up: `ANDERSON.md`.
+
+- Fragment: `T3A_necessarily_God` from half-A1 + A2 + A3.
+- Non-collapse: `anderson_fragment_ContingentR_survives` — same `P` on `Bool`
+  with `universalRel`, God at both worlds, `(· = false)` contingent, Scott `A1` false.
+
+**Status: rediscovery** of Anderson’s repair. The Bool witness is **desk
+packaging**. Not a priority claim. `#print axioms`: see `ANDERSON.md`. 0 `sorry`.
