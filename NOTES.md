@@ -144,7 +144,7 @@ We do **not** claim “T3 in S5” without those hypotheses.
 ### What remains open (pre–residual cut)
 
 - ~~Exact weakest frame for local T3~~ — **settled** by residual cut below.
-- World-relative (non-rigid) Positive / explicit A4: still deferred.
+- World-relative (non-rigid) Positive / explicit A4: see `COUNTERMODEL_A.md` / `CountermodelA_WRP.lean` (Countermodel A dies under WRP).
 - No metaphysical claim: these are facts about the Lean encoding.
 
 ### Build
@@ -192,11 +192,15 @@ No reflexivity, transitivity, or euclidean needed.
 | Local T3 from Symmetric / Brouwerian / TB | **proved** (weaker than S5Frame) |
 | Local T3 from S4 (refl+trans) alone | **false** — Countermodel B |
 | Local T3 from S5Frame | proved (corollary) |
-| Global T3 from S5Frame alone | **false** — Countermodel A |
+| Global T3 from S5Frame alone (**rigid** Positive) | **false** — Countermodel A; WRP kills the shape (`COUNTERMODEL_A.md`) |
 | Global T3 from Universal | proved |
 
 Nothing material remains open on the residual cut itself. Deferred: non-rigid
-Positive / explicit A4.
+Positive / explicit A4 — **done 2026-09-24**: see `COUNTERMODEL_A.md` and
+`GodelOntological/CountermodelA_WRP.lean`. Verdict: under world-relative Positive
+with global validity of A1–A5 (incl. A4), `Symmetric R` already forces global T3
+(no Universal); Countermodel A dies. Status: rigid packaging fact only (P015 PASS desk; not priority);
+not claimed vs Monatshefte 2025 / AFP Notes.
 
 ### Build (residual)
 
@@ -253,3 +257,146 @@ rediscovery only.
 
 - `lake build` → success, **0 `sorry`**.
 - Date: 2026-09-24 (America/New_York).
+
+## WRP collapse / ContingentR (2026-09-24, America/New_York)
+
+**Literature cut.** Sobel: Scott-style premises yield `φ → □φ` (1987; *Logic and
+Theism* 2004). Benzmüller & Fuenmayor: Scott’s HOML variant (intensional /
+world-relative positivity) entails modal collapse; Anderson and Fitting avoid it
+(arXiv:1910.08955; BSL 49(2) 2020, DOI 10.18778/0138-0680.2020.08).
+
+**Status: rediscovery** in `GodelOntological/CollapseWRP.lean` (thin `PosW`, not
+rigid Positive). Write-up: `COLLAPSE_WRP.md`. Not a priority claim.
+
+| Claim | Hypotheses in the type | Result |
+| --- | --- | --- |
+| Collapse at a God-world | A1W+A4W+A5W at `w` and `∃ GodLikeW` (no Symmetric) | `ModalCollapseAt_of_GodW` |
+| Collapse at every world along `R` | **Symmetric** + `validW` A1W–A5W | `ModalCollapseR_of_Symmetric` |
+| ContingentR impossible everywhere | same | `ContingentR_impossible_of_Symmetric` |
+| Sobel `φ → □φ` | **Universal** + valid A1W–A5W | `ModalCollapse_of_Universal_WRP` |
+| Sobel form from Symmetric alone | — | **false** on `idRel` (`wrp_idRel_R_collapse_not_sobel`) |
+
+`#print axioms` on those theorems: `propext`, `Classical.choice`, `Quot.sound`.
+0 `sorry`. Rigid Countermodel D (ContingentR off a non-God cluster) does not
+transfer: under WRP, valid A3 puts God in every cluster. That comparison is
+desk packaging; the collapse itself is the literature result above.
+
+## WRP frame residue without Symmetric (2026-09-24, America/New_York)
+
+**Literature cut.** KB (symmetry) is enough for Scott’s argument; S5 is not
+required (Kanckos & Woltzenlogel Paleo, *Studia Logica* 105, 2017,
+DOI 10.1007/s11225-016-9700-1). Benzmüller & Scott use `Rsymm` for Th3
+(*Monatshefte* 2025, DOI 10.1007/s00605-025-02078-x). Their open S4 question
+is about Gödel’s **adapted-essence** variant (Fig. 7), not the tables below.
+
+**Module:** `GodelOntological/WRPFrameResidue.lean`. Write-up: `WRP_FRAMES.md`.
+Signature: **WRP**, not rigid Positive.
+
+| Frame | Global T3W | Local T3W | Collapse everywhere | ContingentR |
+| --- | --- | --- | --- | --- |
+| Symmetric + valid A1W–A5W | holds (`symmetric_WRP_package`) | holds | holds | impossible everywhere |
+| `R_swap` (sym., not refl.) | A1–A4 **unsatisfiable** (`R_swap_no_valid_A1234`) | — | — | — |
+| Empty `R` | A1–A3 **unsatisfiable** (`no_A123_on_empty`) | — | — | — |
+| S4 chain `R_chain` | **fails** | **fails** at source | fails at source | survives at source |
+| `R_fork` (refl. only, in the named sense) | **fails** | **fails** at `a` | fails at `a` | survives at `a` |
+| `R_to_true` (eucl.+serial+trans., not sym.) | **fails** | **holds** | fails off the sink | survives off the sink |
+
+**Status:** positive Symmetric row is **rediscovery** of the KB fact. Negative
+rows are **desk packaging** in this encoding. Not a priority claim. Fig. 7
+stays open. `#print axioms`: see `WRP_FRAMES.md`. 0 `sorry`.
+
+## Anderson emendation (2026-09-24, America/New_York)
+
+**Literature cut.** Anderson 1990: half of A1 (`P(¬φ) → ¬P(φ)`), and
+God-like means `∀φ (P(φ) ↔ □φ(x))`. Kanckos & Woltzenlogel Paleo, *Studia
+Logica* 105 (2017), §7: T3 does not need A4/A5/essence; the extra box blocks
+Sobel collapse. Benzmüller & Fuenmayor (BSL 2020): Anderson and Fitting both
+avoid collapse. **Fitting (extensional positivity) is not formalized here.**
+
+**Module:** `GodelOntological/Anderson.lean` (rigid Positive, universal `□`;
+not WRP). Write-up: `ANDERSON.md`.
+
+- Fragment: `T3A_necessarily_God` from half-A1 + A2 + A3.
+- Non-collapse: `anderson_fragment_ContingentR_survives` — same `P` on `Bool`
+  with `universalRel`, God at both worlds, `(· = false)` contingent, Scott `A1` false.
+
+**Status: rediscovery** of Anderson’s repair. The Bool witness is **desk
+packaging**. Not a priority claim. `#print axioms`: see `ANDERSON.md`. 0 `sorry`.
+
+## AFP / Monatshefte S4 open (2026-09-24, America/New_York)
+
+**Literature cut.** Benzmüller & Scott, *Monatshefte für Mathematik*,
+DOI 10.1007/s00605-025-02078-x, §4.4 Fig. 7 (and again §4.5 Fig. 8): is
+Theorem Th3 — possible God-like existence implies necessary God-like existence,
+with **actualist** quantifiers — provable in **S4** (reflexivity + transitivity
+instead of symmetry) for the essence-adapted Gödel axioms? `P(G)` there is
+lemma L from **Ax1Gen**, not Scott’s axiom A3. They report no S4 proof and no
+S4 countermodel. AFP: `Notes_On_Goedels_Ontological_Argument`.
+
+**Does not transfer.** This package has constant domains, no existence
+predicate, no Ax1Gen, and postulates `A3`/`A3W`. Write-up: `S4_OPEN.md`.
+`S4Open.scott_style_S4_local_T3_fails` only aliases the Scott-style WRP chain
+(`chain_S4_local_T3_fails`): ◇∃G without □∃G at the source. That is not Fig. 7.
+
+**Status of that note:** desk record of the mismatch. `S4Open.lean` does not
+answer Fig. 7. `#print axioms`: `propext`. 0 `sorry`.
+
+## Hunt 5 — actualist Fig. 7 / Th3 (2026-09-24, America/New_York)
+
+**Literature cut.** The open is Benzmüller & Scott, *Monatshefte für Mathematik*,
+DOI 10.1007/s00605-025-02078-x, §4.4 Fig. 7, AFP `GoedelVariantHOML2` /
+`GoedelVariantHOML2inS4`: actualist quantifiers, essence with the conjunct
+`φ x`, `P(G)` as lemma L from **Ax1Gen**, Th3 in S4 (refl+trans, no `Rsymm`).
+The S4 theory leaves Th3 as `oops` (“Open problem”). §4.5 Fig. 8
+(`GoedelVariantHOML3`) changes `⊃_N` and drops `φ x` from essence; its S4 file
+also leaves Th3 open. Benzmüller, arXiv:2608.07578 (2026), derives necessary
+existence in **K** for a simplified ultrafilter package (U1, A2, A3). That is
+not Fig. 7. Sobel, Benzmüller–Fuenmayor, Kirchner, Kanckos–Woltzenlogel Paleo,
+Fitting, and Anderson address collapse or other emendations, not this S4
+question. No published proof or countermodel of Fig. 7 Th3 in S4 was found.
+
+**Module.** `GodelOntological/Actualist.lean`. Write-up: `ACTUALIST_FIG7.md`.
+Encoding: world-relative `P`, existence predicate, actualist `∃^E`/`∀^E`.
+Not rigid Positive. Not the constant-domain Scott/WRP package.
+
+**Result.** `th3_fig7` is `⌊◇∃^E G ⊃ □∃^E G⌋` from Ax1Gen, Ax2a, Ax2b, Ax3, Ax4.
+No `Reflexive` or `Transitive` hypothesis. `fig7_implies_symmetric` derives
+`Symmetric R`; `th3_of_symmetric` is the AFP back-edge. The two-world S4 chain
+satisfies no such `P` (`fig7_unsat_on_S4_chain`), so it is not a countermodel.
+A one-world principal model (`unit_fig7_th3`) satisfies the axioms, including Ax1.
+Fig. 8: `th3_fig8` likewise. Fig. 8 Th4 is not claimed.
+
+**Status:** `th3_of_symmetric`, L, Th1, Th2, Th4, Th5 are **rediscoveries** of
+the AFP development. `th3_fig7` / `fig7_implies_symmetric` **answer the stated
+open question** in this encoding: Th3 is provable in S4. Departures and the
+Ax1Gen world-shift are listed in `ACTUALIST_FIG7.md`. Not a priority claim.
+`#print axioms`: see that note. 0 `sorry`.
+
+## Hunt 6 — repaired Ax1Gen (2026-09-24, America/New_York)
+
+**Question.** Does Th3 in S4 survive if the source/successor split in literal
+Ax1Gen is removed? Everything else in Fig. 7 stays. Module:
+`GodelOntological/Actualist_Repaired.lean`.
+
+**R1.** `Ax1GenInBox` puts `PosProps` in the same box as the conjunction
+identity. Equivalent (`ax1GenBox_iff_inBox`, no axioms) to `□ PosProps ∧
+ConjOfPropsFrom`. Closer to Gödel’s “conjunction of positive properties”
+footnote than the literal scoping. **R2.** `Ax1GenRigid`: `Φ` world-invariant;
+`PosProps` and `ConjOfPropsFrom` literal.
+
+**Literature.** AFP S4 files still use literal Ax1Gen and leave Th3 open.
+Fuenmayor, Kirchner, Fitting, and `SimplifiedOntologicalArgument` do not treat
+these repairs. No published countermodel for them was found.
+
+| Reading | L | Symmetry | Th3 in S4 |
+| --- | --- | --- | --- |
+| R1 | derives (`lemma_L_box`) | not forced | fails (`r1_s4_countermodel`) |
+| R2 | derives, using Ax2a+Ax2b (`lemma_L_rigid`) | not forced | fails (`r2_s4_countermodel`) |
+
+Witness for both: `R_chain`, one always-existing individual, `chainP φ := φ`
+at the sink. God at the sink only. `chain_not_literal_Ax1Gen` shows this `P`
+is not a literal Ax1Gen model.
+
+**Status:** answers the question **negatively for readings R1 and R2**. Does
+not retract literal `th3_fig7`. Not a rediscovery. Not a priority claim.
+`#print axioms`: `ACTUALIST_FIG7.md`. 0 `sorry`. No `native_decide`.

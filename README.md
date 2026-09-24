@@ -79,7 +79,20 @@ GodelOntological/ScottCuts.lean    — Russell / P042 dependency cuts (drop A5 o
 GodelOntological/Frames.lean       — Access, necessaryR/possibleR, named frame props
 GodelOntological/WeakScott.lean    — R-relative Scott; local T3 under Symmetric/TB/S5; global under Universal
 GodelOntological/Countermodel.lean — countermodels A/B + TB strictness C (path / swap)
-GodelOntological/Collapse.lean     — modal collapse + ContingentR (free will as contingency)
+GodelOntological/Collapse.lean     — modal collapse + ContingentR (rigid Positive; rediscovery)
+GodelOntological/CountermodelA_WRP.lean — world-relative Positive; Countermodel A dies
+GodelOntological/CollapseWRP.lean  — WRP collapse along R (rediscovery; see COLLAPSE_WRP.md)
+GodelOntological/WRPFrameResidue.lean — what fails if Symmetric is dropped (WRP)
+GodelOntological/Anderson.lean     — Anderson 1990 fragment; ContingentR survives
+GodelOntological/S4Open.lean       — Scott-style S4 failure; not Fig. 7
+GodelOntological/Actualist.lean    — actualist Fig. 7 / Fig. 8; Th3 with no frame hyp
+GodelOntological/Actualist_Repaired.lean — Ax1Gen repairs; S4 countermodels
+COUNTERMODEL_A.md                  — rigid vs WRP desk note
+COLLAPSE_WRP.md                    — WRP collapse / ContingentR
+WRP_FRAMES.md                      — frame residue table under WRP
+ANDERSON.md                        — Anderson repair (not Fitting)
+S4_OPEN.md                         — why the Scott-style chain is not Fig. 7
+ACTUALIST_FIG7.md                  — Fig. 7 encoding, Th3, departures, axioms
 NOTES.md                           — design notebook + references
 ```
 
@@ -115,11 +128,11 @@ conditions live in `Frames.lean`; R-relative Scott in `WeakScott.lean`.
 | Local T3 (`◇_R ∃G w → □_R ∃G w`) | **`Symmetric R`** / Brouwerian / TB | **proved** (`local_T3_of_Symmetric`) |
 | Local T3 under S5Frame | `S5Frame R` | corollary of Symmetric |
 | Global T3 (`∀w ∃x GodLike`) | **`Universal R`** | proved (recovers `Scott.T3`) |
-| Global T3 from S5Frame alone | — | **false** — Countermodel A |
+| Global T3 from S5Frame alone (**rigid** Positive) | — | **false** — Countermodel A; see `COUNTERMODEL_A.md` §F (dies under WRP) |
 | Local T3 from refl+trans (S4) alone | — | **false** — Countermodel B |
 | Symmetric/TB strictly weaker than S5Frame | — | **yes** — Strictness C (`R_path`) |
 
-**Countermodel A:** `W = Bool`, `R =` identity (S5 but not universal), Positive = “true at `false`”; A1–A5 hold; God only in one cluster.
+**Countermodel A (rigid Positive):** `W = Bool`, `R =` identity (S5 but not universal), Positive = “true at `false`”; A1–A5 hold; God only in one cluster. Under world-relative Positive the shape dies — `COUNTERMODEL_A.md`.
 **Countermodel B:** S4 chain; A1–A5 hold; at the source `◇∃G` but not `□∃G`.
 **Strictness C:** 3-world undirected path is TB/Brouwerian but not euclidean/S5Frame.
 
@@ -138,12 +151,27 @@ Residual cut closed: Symmetric alone suffices for local T3; S4 does not. Details
 | `ModalCollapseR` everywhere | **`Universal R`** + A1–A5 | **proved** |
 | Collapse at a God-world | A1+A5 (any R) | **proved** (`ModalCollapseAt_of_God`) |
 | `ContingentR` / `ContingentAct` impossible under Universal + A1–A5 | same | **proved** |
-| ContingentR survives under S5Frame alone | — | **yes** — Countermodel D (non-God cluster) |
+| ContingentR survives under S5Frame alone (**rigid** Positive) | — | **yes** — Countermodel D (non-God cluster) |
+| Collapse at every world along `R` (**WRP**) | **Symmetric** + valid A1W–A5W | **proved** (`CollapseWRP.ModalCollapseR_of_Symmetric`); rediscovery |
+| ContingentR impossible everywhere (**WRP**) | same | **proved** (`ContingentR_impossible_of_Symmetric`) |
+| Sobel `ModalCollapse` from Symmetric alone (**WRP**) | — | **false** — `wrp_idRel_R_collapse_not_sobel` |
 
 **Free-will reading:** contingency = true here, false at some accessible world.
-Under Universal Scott, collapse kills all ContingentR/ContingentAct. Without
-universality, ContingentR can survive off the God-cluster while A1–A5 still hold
-(`countermodel_D_ContingentR_survives`). ScottCuts / Countermodels A,B left intact.
+Under Universal Scott, collapse kills all ContingentR/ContingentAct. Under
+**rigid** Positive, ContingentR can survive off the God-cluster
+(`countermodel_D_ContingentR_survives`). Under **WRP**, Symmetric + valid
+A1W–A5W already kills ContingentR at every world; Sobel collapse across
+inaccessible worlds still needs `Universal R`. Details in `COLLAPSE_WRP.md`.
+ScottCuts / Countermodels A,B left intact.
+
+## Anderson (not Fitting)
+
+**Status (2026-09-24 ET):** repair formalization of Anderson 1990 (half of A1;
+God-like iff necessarily has exactly the positive properties). `T3A_necessarily_God`
+is `□∃ GodLikeA` from that fragment. On a two-world universal frame the same
+fragment holds and `ContingentR` survives (`anderson_fragment_ContingentR_survives`).
+Rediscovery of a known repair; desk witness in this encoding. Fitting’s
+extensional block is not formalized. Details in `ANDERSON.md`.
 
 ## Historical pointers
 
