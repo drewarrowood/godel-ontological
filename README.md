@@ -159,6 +159,15 @@ A1W–A5W already kills ContingentR at every world; Sobel collapse across
 inaccessible worlds still needs `Universal R`. Details in `COLLAPSE_WRP.md`.
 ScottCuts / Countermodels A,B left intact.
 
+## Anderson (not Fitting)
+
+**Status (2026-09-24 ET):** repair formalization of Anderson 1990 (half of A1;
+God-like iff necessarily has exactly the positive properties). `T3A_necessarily_God`
+is `□∃ GodLikeA` from that fragment. On a two-world universal frame the same
+fragment holds and `ContingentR` survives (`anderson_fragment_ContingentR_survives`).
+Rediscovery of a known repair; desk witness in this encoding. Fitting’s
+extensional block is not formalized. Details in `ANDERSON.md`.
+
 ## Historical pointers
 
 - Gödel’s ontological-proof manuscripts (c. 1941 / early 1970s notes).
