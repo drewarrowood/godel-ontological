@@ -85,8 +85,9 @@ GodelOntological/CollapseWRP.lean  — WRP collapse along R (rediscovery; see CO
 GodelOntological/WRPFrameResidue.lean — what fails if Symmetric is dropped (WRP)
 GodelOntological/Anderson.lean     — Anderson 1990 fragment; ContingentR survives
 GodelOntological/S4Open.lean       — Scott-style S4 failure; not Fig. 7
-GodelOntological/Actualist.lean    — actualist Fig. 7 / Fig. 8; Th3 with no frame hyp
-GodelOntological/Actualist_Repaired.lean — Ax1Gen repairs; S4 countermodels
+GodelOntological/Actualist.lean    — actualist Fig. 7 / Fig. 8
+GodelOntological/Actualist_Repaired.lean — two reconstructions of Ax1Gen; S4 countermodels
+GodelOntological/Audit.lean        — literal Fig. 7 forces the identity, without symmetry
 COUNTERMODEL_A.md                  — rigid vs WRP desk note
 COLLAPSE_WRP.md                    — WRP collapse / ContingentR
 WRP_FRAMES.md                      — frame residue table under WRP

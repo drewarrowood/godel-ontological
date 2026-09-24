@@ -359,18 +359,22 @@ question. No published proof or countermodel of Fig. 7 Th3 in S4 was found.
 Encoding: world-relative `P`, existence predicate, actualist `∃^E`/`∀^E`.
 Not rigid Positive. Not the constant-domain Scott/WRP package.
 
-**Result.** `th3_fig7` is `⌊◇∃^E G ⊃ □∃^E G⌋` from Ax1Gen, Ax2a, Ax2b, Ax3, Ax4.
-No `Reflexive` or `Transitive` hypothesis. `fig7_implies_symmetric` derives
-`Symmetric R`; `th3_of_symmetric` is the AFP back-edge. The two-world S4 chain
-satisfies no such `P` (`fig7_unsat_on_S4_chain`), so it is not a countermodel.
-A one-world principal model (`unit_fig7_th3`) satisfies the axioms, including Ax1.
-Fig. 8: `th3_fig8` likewise. Fig. 8 Th4 is not claimed.
+**Result.** Literal Ax1Gen, Ax2a, Ax2b, Ax3, and Ax4 force `R` to be the
+identity (`Audit.R_is_identity`) and modal collapse (`Audit.MC`), with no
+symmetry hypothesis. The AFP lemma `MC` in `GoedelVariantHOML2` is the same
+schema from `Rsymm`. The only S4 models are discrete, and `th3_fig7` holds
+there trivially. `fig7_implies_symmetric` is the B schema for “the world is
+`w`”. Reflexivity is `Audit.refl_of_gen`, from Ax1Gen and Ax2a. The two-world
+S4 chain satisfies no such `P` (`fig7_unsat_on_S4_chain`), so it is not a
+countermodel. A one-world principal model (`unit_fig7_th3`) satisfies the
+axioms. Fig. 8 Th3 is `th3_fig8`. Fig. 8 Th4 is `Audit.th4_fig8` (Ax1Gen and
+Ax2a). Domains and Fig. 8 were not the variable in the comparison of readings.
 
-**Status:** `th3_of_symmetric`, L, Th1, Th2, Th4, Th5 are **rediscoveries** of
-the AFP development. `th3_fig7` / `fig7_implies_symmetric` **answer the stated
-open question** in this encoding: Th3 is provable in S4. Departures and the
-Ax1Gen world-shift are listed in `ACTUALIST_FIG7.md`. Not a priority claim.
-`#print axioms`: see that note. 0 `sorry`.
+**Status:** `th3_of_symmetric`, L, Th1, Th2, Th4, Th5, and the AFP `MC` under
+symmetry are **rediscoveries**. The identity and the collapse without a
+symmetry hypothesis are the new literal facts. Departures and the Ax1Gen
+world-shift are listed in `ACTUALIST_FIG7.md`. Not a priority claim.
+`#print axioms`: see that note and `paper/main.tex`. 0 `sorry`.
 
 ## Hunt 6 — repaired Ax1Gen (2026-09-24, America/New_York)
 
@@ -380,9 +384,10 @@ Ax1Gen is removed? Everything else in Fig. 7 stays. Module:
 
 **R1.** `Ax1GenInBox` puts `PosProps` in the same box as the conjunction
 identity. Equivalent (`ax1GenBox_iff_inBox`, no axioms) to `□ PosProps ∧
-ConjOfPropsFrom`. Closer to Gödel’s “conjunction of positive properties”
-footnote than the literal scoping. **R2.** `Ax1GenRigid`: `Φ` world-invariant;
-`PosProps` and `ConjOfPropsFrom` literal.
+ConjOfPropsFrom`. **R2.** `Ax1GenRigid`: world-invariant `Φ` (not the rigidity
+of positivity in Ax2b); `PosProps` and `ConjOfPropsFrom` stay literal. Neither
+is dictated by the footnote. Both are reconstructions. What both remove is
+`Φ` being read at two different worlds.
 
 **Literature.** AFP S4 files still use literal Ax1Gen and leave Th3 open.
 Fuenmayor, Kirchner, Fitting, and `SimplifiedOntologicalArgument` do not treat
@@ -391,12 +396,17 @@ these repairs. No published countermodel for them was found.
 | Reading | L | Symmetry | Th3 in S4 |
 | --- | --- | --- | --- |
 | R1 | derives (`lemma_L_box`) | not forced | fails (`r1_s4_countermodel`) |
-| R2 | derives, using Ax2a+Ax2b (`lemma_L_rigid`) | not forced | fails (`r2_s4_countermodel`) |
+| R2, world-invariant `Φ` | derives, using Ax2a+Ax2b (`lemma_L_rigid`) | not forced; the chain is the proof | fails (`r2_s4_countermodel`) |
 
 Witness for both: `R_chain`, one always-existing individual, `chainP φ := φ`
 at the sink. God at the sink only. `chain_not_literal_Ax1Gen` shows this `P`
 is not a literal Ax1Gen model.
 
-**Status:** answers the question **negatively for readings R1 and R2**. Does
-not retract literal `th3_fig7`. Not a rediscovery. Not a priority claim.
-`#print axioms`: `ACTUALIST_FIG7.md`. 0 `sorry`. No `native_decide`.
+**Status:** for readings R1 and R2, Th3 fails in S4. The chain is the proof
+that symmetry is not forced. Literal Ax1Gen implies R1 on reflexive frames
+(`Audit.literal_to_R1`) and R2 on every frame (`Audit.literal_to_R2`). On a
+one-world identity frame the three readings coincide
+(`Audit.readings_coincide_on_unit`). The chain’s domain has one element and
+existence is always true, so the actualist machinery is not exercised. Not a
+priority claim. `#print axioms`: `ACTUALIST_FIG7.md` and `paper/main.tex`.
+0 `sorry`. No `native_decide`.

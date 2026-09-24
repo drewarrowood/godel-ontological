@@ -1,7 +1,12 @@
  
 /* start css.sty */
 .ec-lmr-10x-x-109{}
+.rm-lmr-10x-x-109{}
+.lmmi-10x-x-109{}
 .ec-lmr-17{font-size:154%;}
+.rm-lmr-10{font-size:90%;}
+.lmmi-10{font-size:90%;}
+.lmsy-10{font-size:90%;}
 .ec-lmr-12{font-size:109%;}
 .ec-lmr-10{font-size:90%;}
 .ec-lmbx-10{font-size:90%; font-weight: bold;}
@@ -43,9 +48,6 @@
 .ec-lmri-10x-x-109{ font-style:italic;}
 .ec-lmri-10x-x-109{ font-style:italic;}
 .ec-lmri-10x-x-109{ font-style:italic;}
-.rm-lmr-10{font-size:90%;}
-.lmmi-10{font-size:90%;}
-.lmsy-10{font-size:90%;}
 .ec-lmtt-10{font-size:90%; font-family: monospace,monospace;}
 .ec-lmtt-10{ font-family: monospace,monospace;}
 .ec-lmtt-10{ font-family: monospace,monospace;}
@@ -85,7 +87,6 @@
 .ec-lmss-10x-x-109{ font-family: sans-serif;}
 .ec-lmss-10x-x-109{ font-family: sans-serif;}
 .ec-lmss-10x-x-109{ font-family: sans-serif;}
-.lmmi-10x-x-109{}
 .ec-lmbx-10x-x-109{ font-weight: bold;}
 .ec-lmbx-10x-x-109{ font-weight: bold;}
 .ec-lmbx-10x-x-109{ font-weight: bold;}
@@ -293,6 +294,6 @@ tr#TBL-3-1- {border-bottom:0.07622em solid #000}
 tr#TBL-3-4- {border-bottom:0.12193em solid #000}
 tr#TBL-4-1- {border-top:0.12193em solid #000;} 
 tr#TBL-4-1- {border-bottom:0.07622em solid #000}
-tr#TBL-4-11- {border-bottom:0.12193em solid #000}
+tr#TBL-4-15- {border-bottom:0.12193em solid #000}
 /* end css.sty */
 

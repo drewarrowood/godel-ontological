@@ -12,8 +12,10 @@ only that axiom, in two ways:
 * **R1.** Positivity of the conjuncts is required at the same worlds as the
   conjunction identity. `□(PosProps ∧ biconditional)` and
   `(□ PosProps ∧ ConjOfPropsFrom)` are equivalent in K; both are stated.
-* **R2.** `Φ` is restricted to world-invariant collections. `PosProps` and
+* **R2.** `Φ` is restricted to world-invariant collections (the Lean name is
+  `Rigid`; this is not the rigidity of positivity in Ax2b). `PosProps` and
   `ConjOfPropsFrom` stay literal.
+  Neither replacement is dictated by Gödel's footnote.
 
 See `ACTUALIST_FIG7.md`, Hunt 6.
 -/
@@ -36,8 +38,9 @@ def Ax1GenBox {W Ind : Type} (R : Access W) (ex : Ind → W → Prop)
     valid (fun w => box R (posProps P Φ) w → conjOfPropsFrom R ex φ Φ w → P φ w)
 
 /-- **R1, joint form.** `⌊□(PosProps Φ ∧ ∀^E z. φ z ↔ (∀ψ. Φ ψ ⊃ ψ z)) ⊃ P φ⌋`.
-This is the reading closer to Gödel’s footnote: at each accessible world the
-properties `Φ` marks are positive there, and `φ` is their conjunction there. -/
+At each accessible world the properties `Φ` marks are positive there, and
+`φ` is their conjunction there. This is a reconstruction, not a claim that
+the footnote already says it. -/
 def Ax1GenInBox {W Ind : Type} (R : Access W) (ex : Ind → W → Prop)
     (P : MPred W Ind) : Prop :=
   ∀ (Φ : MPred W Ind) (φ : MProp W Ind),

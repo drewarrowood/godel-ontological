@@ -33,8 +33,8 @@
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
 
-\title{Where the Box Sits:\\
-Ax1Gen and G\"odel's Theorem Th3 in S4}
+\title{One World or Two:\\
+Where Ax1Gen Reads $\Phi$, and G\"odel's Th3 in S4}
 \author{Drew Arrowood}
 \date{September 2026}
 
@@ -46,25 +46,31 @@ Benzm\"uller and Scott leave open whether Theorem Th3 of their actualist
 Figure~7---possible existence of a God-like being implies necessary
 existence, with \(P(G)\) derived from the generalized conjunction axiom
 Ax1Gen---is provable in S4.
-Two Lean~4 theorems decide that question, and they decide it in opposite
-directions, according to a single scope.
-Read literally, as in the Archive of Formal Proofs, Ax1Gen tests positivity
-of a collection \(\Phi\) at the current world and reads \(\Phi\) again under
-a box.
-That split forces the accessibility relation to be symmetric, so Th3 holds
-in S4 with no reflexivity or transitivity hypothesis.
-Two repairs that put the scopes back together---positivity inside the box,
-or a world-invariant \(\Phi\)---still yield the lemma \(P(G)\), do not force
-symmetry, and fail on a two-world S4 chain.
-The open question is settled entirely by where Ax1Gen looks.
+For a Lean~4 transcription of the Archive of Formal Proofs text, with full
+comprehension, the literal axiom does more than force symmetry.
+With Ax2a, Ax2b, and Ax4 it forces reflexivity and the B schema
+\(q \supset \Nec\Pos q\).
+Adding Ax3 forces the accessibility relation to be the identity, and modal
+collapse follows, with no symmetry hypothesis.
+Their S5 theory already proves a collapse lemma from symmetry.
+What is new is the collapse without that hypothesis.
+The only S4 models of the literal axioms are discrete frames, and Th3 holds
+there trivially.
+Two reconstructions, not dictated by the footnote, make both halves of
+Ax1Gen read \(\Phi\) at the same world: positivity inside the box, or a
+world-invariant \(\Phi\).
+Both still yield \(P(G)\), neither forces symmetry, and both fail on a
+two-world S4 chain.
+Among the three readings examined, the answer turns on whether both halves
+read \(\Phi\) at the same world.
+Domains and Figure~8 were not varied.
 \end{abstract}
 
-\section{A footnote, a notebook, and an \texttt{oops}}
-\label{sec:hook}
+\section{The open problem}
+\label{sec:open}
 
 Around 1970 Kurt G\"odel wrote down, in a page and a half of symbols, a modal
-version of the ontological argument
-\cite{goedel1995}.
+version of the ontological argument \cite{goedel1995}.
 The first axiom says that the conjunction of two positive properties is
 positive.
 A footnote extends the axiom from two summands to any number of them: the
@@ -87,9 +93,18 @@ spirit of Anderson and of Fitting
 Separately, the passage from ``possibly God-like'' to ``necessarily
 God-like'' on the Scott side needs symmetry of accessibility, the modal axiom
 B, and does not need the rest of S5 \cite{kanckos2017}.
-None of that is the question of this note.
-Those facts are recorded again in Section~\ref{sec:related} only so that they
-are not mistaken for the two theorems below.
+Those facts are recorded again in Section~\ref{sec:related} so that they are
+not mistaken for the theorems below.
+For Figure~7, collapse is the question.
+The S5 theory \lean{GoedelVariantHOML2} already proves
+\[
+  \mathrm{MC}:\qquad \valid{\varphi \supset \Nec\varphi},
+\]
+from Ax2a, Ax2b, Th5, the definition of God-likeness, and symmetry of \(R\)
+\cite{afpNotes2025}.
+Applied to the world-proposition ``the world is \(w\)'', that lemma already
+confines \(R\) to the identity.
+The same theory checks consistency only by \lean{nitpick[satisfy, card=1]}.
 
 The question comes from a return to the footnote.
 Christoph Benzm\"uller and Dana Scott, in the \emph{Monatshefte f\"ur
@@ -116,13 +131,17 @@ of essence, has the same open \lean{oops} in
 \lean{GoedelVariantHOML3inS4}.
 The authors' formalization reports neither an S4 proof nor an S4 countermodel.
 
-This note records two theorems already checked in Lean~4, in the repository
-described in the acknowledgement.
-They answer the open problem for the literal AFP axiom, and they answer it
-again after two repairs of a scope that the footnote does not ask for.
-The literal reading proves Th3.
-The repairs refute it in S4.
-Which answer one gets is exactly the source/successor split in Ax1Gen.
+For a Lean~4 transcription of that AFP text, the literal reading proves Th3,
+and the mechanism is collapse: the axioms force \(R\) to be the identity, so
+the only S4 models are discrete and Th3 holds there trivially.
+Two reconstructions of Ax1Gen refute Th3 on a two-world S4 chain.
+Among the three readings examined, with full comprehension, the answer turns
+on whether both halves of Ax1Gen read \(\Phi\) at the same world.
+The domains were not varied, and Figure~8 was not the variable in that
+comparison.
+An Isabelle check that would instantiate the collection of
+Section~\ref{sec:literal} inside \lean{GoedelVariantHOML2inS4} has not been
+run: Isabelle was not available.
 
 \section{Figure 7, as formalized}
 \label{sec:fig7}
@@ -178,7 +197,7 @@ disjunction of \(P\,\varphi\) and \(P(\sim\varphi)\)), Ax2b
 (\(P\,\varphi \supset \Nec P\,\varphi\)), Ax3 (\(P\,E\)), and Ax4 (a positive
 property passes positivity along \(\necImp\)).
 Ax1 is part of the package and holds in the one-world model of
-Section~\ref{sec:th1}.
+Section~\ref{sec:literal}.
 Th3 does not use it.
 The AFP proof of Th3 does not use it either.
 
@@ -212,6 +231,9 @@ that diamond-box back into a box.
 The Lean theorem \lean{th3\_of\_symmetric} is that argument, with the witness
 individual written out.
 Reflexivity is not used.
+Lemma \lean{MC} in the same theory is the collapse schema quoted in
+Section~\ref{sec:open}.
+Its script cites Ax2a, Ax2b, Th5, the definition of \(G\), and \(R_{\mathrm{symm}}\).
 
 \section{What the encoding is}
 \label{sec:encoding}
@@ -256,7 +278,7 @@ inequality of HOL functions &
   not the one used. \\
 Deep surface syntax, Leibniz equality inside the object logic, Nitpick &
   Absent.
-  The one-world model of Section~\ref{sec:th1} is the cardinality-one shape
+  The one-world model of Section~\ref{sec:literal} is the cardinality-one shape
   Nitpick reported, rebuilt by hand. \\
 \bottomrule
 \end{tabular}
@@ -274,16 +296,26 @@ One consequence of Lean's \textsf{Prop} is worth saying before the proofs.
 A proof of a negation may be a classical contradiction rather than a
 construction of a counter-witness.
 The symmetry argument is of that kind.
-The countermodel of Section~\ref{sec:th2} is not: failure of Th3 at the source
+The countermodel of Section~\ref{sec:recon} is not: failure of Th3 at the source
 is an explicit world, an explicit individual, and a computation.
 
-\section{Theorem 1: the literal axiom forces a back-edge}
-\label{sec:th1}
+The check that could still fail is not another Lean proof.
+It is the Isabelle instantiation
+\[
+  \mathrm{Ax1Gen}[\mathsf{of}\;
+    \text{``}\lambda\psi\,u.\; u \neq w \land (\forall x.\; \neg\psi\,x\,u)\text{''}\;
+    \text{``}\lambda x\,u.\; u = w\text{''}]
+\]
+inside \lean{GoedelVariantHOML2inS4}.
+Isabelle was not available, so that check has not been run.
 
-\subsection{The trick, before the symbols}
+\section{The literal axiom forces the identity}
+\label{sec:literal}
 
-Ax1Gen is an invitation to define a property by saying which collection it
-conjoins.
+\subsection{The collection}
+\label{sec:collection}
+
+Ax1Gen invites a definition of a property by the collection it conjoins.
 The abbreviation does not require the collection to be the same collection at
 every world.
 \(\mathrm{PosProps}\,\Phi\) is evaluated at the world where the axiom is
@@ -291,27 +323,24 @@ applied.
 \(\mathrm{ConjOfPropsFrom}\) puts \(\Phi\) under a box, so on the right-hand
 side \(\Phi\) is read at successor worlds.
 
-That is enough room for a prank.
-At the current world, let \(\Phi\) mark nothing.
-Positivity of ``every marked property'' is then vacuous, and the axiom will
-still conclude that the defined property is positive here.
-Next door, let \(\Phi\) mark the empty property, and define the property to be
-``this world is the one I started from''.
-The biconditional under the box is happy in both places: at home, an empty
-collection conjoins to a tautology on the world-coordinate; next door, a
-collection that contains a contradiction conjoins to a contradiction, and
-``this is home'' is false next door.
-Positivity, once granted at home, is pushed along the edge by Ax2b.
-At the far end, ``this world is home'' necessary-implies its own negation,
-because the far world cannot see home---that is the edge we are trying to
-forbid---so the inclusion is vacuous.
+Fix a world \(w\) and define
+\begin{align*}
+  \varphi &\;:\equiv\; \lambda\,\_\,u.\; (u = w),\\
+  \Phi &\;:\equiv\; \lambda\,\psi\,u.\;
+    \bigl(u \neq w \land \forall x.\; \neg\, \psi\,x\,u\bigr).
+\end{align*}
+At \(w\), the clause \(u \neq w\) fails, so \(\Phi\) marks no property.
+Positivity of ``every marked property'' is vacuous, and Ax1Gen still concludes
+that \(\varphi\) is positive at \(w\).
+At a successor \(u \neq w\), \(\Phi\) marks every property empty at \(u\).
+The right-hand side of the biconditional asks such a property of an individual
+and cannot hold, and the left-hand side, ``the world is \(w\)'', is false.
+Both sides fail together.
+Positivity, once granted at \(w\), is pushed along an edge by Ax2b.
+At a far world \(v\) that cannot see \(w\), necessary inclusion of \(\varphi\)
+in \(\sim\varphi\) is vacuous, because the antecedent never fires.
 Ax4 passes positivity to the negation.
 Ax2a refuses to let a property and its negation both be positive.
-
-The frame never had to be reflexive or transitive.
-Any edge without a back-edge is unsatisfiable for Ax1Gen, Ax2a, Ax2b, and
-Ax4.
-S4 is the special case in which one hoped to do without the back-edge.
 
 \begin{figure}[t]
 \centering
@@ -330,68 +359,147 @@ S4 is the special case in which one hoped to do without the back-edge.
      $\varphi$ holds\\[0.15em]
      $\mathrm{PosProps}$ is vacuous};
   \node[tag, below=8mm of v]
-    {$\Phi$ marks $\bot$\\[0.15em]
+    {$\Phi$ marks every property\\ empty at $v$\\[0.15em]
      $\varphi$ fails\\[0.15em]
      both $P\varphi$ and $P(\sim\varphi)$};
 \end{tikzpicture}
 \caption{The collection used by \lean{fig7\_implies\_symmetric}.
-At the source, \(\Phi\) is empty, so Ax1Gen owes nobody a positivity
-premise.
-At a successor that cannot see the source, the same \(\Phi\) marks the empty
-property, \(\varphi\) is ``the world is the source'', and Ax4 with Ax2a
-disagree.}
+At the source, \(\Phi\) is empty, so Ax1Gen owes nobody a positivity premise.
+At a successor that cannot see the source, the same \(\Phi\) marks every
+property empty at \(u\), \(\varphi\) is ``the world is the source'', and Ax4
+with Ax2a disagree.}
 \label{fig:phi}
 \end{figure}
 
-\subsection{The argument}
+\begin{lemma}[\lean{pos\_of\_home}]
+\label{lem:home}
+From Ax1Gen alone: if \(\varphi\) holds of every individual that exists at
+\(w\) whenever \(R\,w\,w\), then \(P\,\varphi\) holds at \(w\).
+\end{lemma}
+
+\begin{proof}[Sketch]
+Instantiate Ax1Gen at the collection \(\Phi\,\psi\,u :\equiv (u \neq w \land \psi = \varphi)\).
+At \(w\) that collection marks nothing, so PosProps is vacuous.
+At a successor equal to \(w\), the hypothesis supplies \(\varphi\) of every
+existent, which is what the biconditional asks.
+At a successor other than \(w\), the only marked property is \(\varphi\) itself,
+so the biconditional is the identity.
+Ax1Gen returns \(P\,\varphi\) at \(w\).
+\end{proof}
+
+The collection of Figure~\ref{fig:phi} is the case in which \(\varphi\) says
+``the world is \(w\)''.
+Lemma~\ref{lem:home} is the same trick for an arbitrary property.
+It is what ties positivity to who happens to exist at \(w\).
+
+\subsection{Reflexivity, the B schema, and the identity}
+
+\begin{theorem}[\lean{refl\_of\_gen}]
+\label{thm:refl}
+From Ax1Gen and Ax2a, \(R\) is reflexive.
+\end{theorem}
+
+\begin{proof}[Sketch]
+If \(\neg R\,w\,w\), the hypothesis of Lemma~\ref{lem:home} is vacuous for every
+property.
+Both \(\bot\) and \(\sim\bot\) are therefore positive at \(w\).
+Ax2a forbids that pair.
+\end{proof}
+
+\begin{theorem}[\lean{B\_schema}]
+\label{thm:B}
+From Ax1Gen, Ax2a, Ax2b, and Ax4, every world-proposition \(q\) satisfies
+\(q \supset \Nec\Pos q\).
+\end{theorem}
+
+\begin{proof}[Sketch]
+Suppose \(q\) holds at \(w\), and \(R\,w\,v\).
+Let \(\varphi\) ignore the individual and hold at a world iff \(q\) does.
+Lemma~\ref{lem:home} makes \(\varphi\) positive at \(w\): under reflexivity,
+every existent at \(w\) has \(\varphi\), because \(q\) is true there.
+Ax2b pushes positivity to \(v\).
+If \(v\) saw no world at which \(q\) holds, then \(\varphi\) would necessarily
+include \(\bot\) at \(v\).
+Ax4 would make \(\bot\) positive, and a second use of Ax4 would make
+\(\sim\bot\) positive.
+Ax2a forbids that pair.
+So \(v\) sees some world at which \(q\) holds.
+\end{proof}
+
+Comprehension is used: the property \(\varphi\) is the map
+\(\lambda\,\_\,u.\; q\,u\), and ``the world is \(w\)'' is a world-proposition
+of the same kind.
+Theorem~\ref{thm:sym} is the case \(q \equiv (u = w)\).
 
 \begin{theorem}[\lean{fig7\_implies\_symmetric}]
 \label{thm:sym}
 From Ax1Gen, Ax2a, Ax2b, and Ax4 it follows that \(R\) is symmetric.
-Reflexivity and transitivity are not hypotheses.
+Reflexivity and transitivity are not hypotheses of this implication.
+Reflexivity is already a consequence of Ax1Gen and Ax2a
+(Theorem~\ref{thm:refl}).
 \end{theorem}
 
 \begin{proof}[Sketch]
 Fix \(R\,w\,v\), and suppose \(\neg R\,v\,w\).
-Define a property and a collection by
-\begin{align*}
-  \varphi &\;:\equiv\; \lambda\,\_\,u.\; (u = w),\\
-  \Phi &\;:\equiv\; \lambda\,\psi\,u.\;
-    \bigl(u \neq w \land \forall x.\; \neg\, \psi\,x\,u\bigr).
-\end{align*}
-At \(w\), the clause \(u \neq w\) fails, so \(\Phi\) marks no property and
-\(\mathrm{PosProps}\,\Phi\) holds outright.
-
-The boxed biconditional holds at every successor \(u\) of \(w\).
-If \(u = w\), the right-hand side is vacuous and the left-hand side says that
-the world is \(w\).
-If \(u \neq w\), then \(\Phi\) marks \(\bot\).
-The right-hand side asks \(\bot\) of an individual and is impossible, while
-the left-hand side, ``the world is \(w\)'', is false.
-Both sides fail together.
-(The impossibility is a classical contradiction: if the world were not \(w\),
-\(\bot\) would be marked and could not hold.)
-
-Ax1Gen therefore yields \(P\,\varphi\) at \(w\).
-Ax2b pushes it to \(v\).
-At \(v\), necessary inclusion of \(\varphi\) in \(\sim\varphi\) is vacuous.
-A successor of \(v\) cannot be \(w\), because \(v\) does not see \(w\), so the
-antecedent \(\varphi\) never fires.
-Ax4 yields \(P(\sim\varphi)\) at \(v\).
-Ax2a says that \(P\,\varphi\) and \(P(\sim\varphi)\) are exclusive.
-Contradiction.
+Use the collection of Section~\ref{sec:collection}.
+Ax1Gen yields \(P\,\varphi\) at \(w\), and Ax2b pushes it to \(v\).
+At \(v\), necessary inclusion of \(\varphi\) in \(\sim\varphi\) is vacuous,
+because a successor of \(v\) cannot be \(w\).
+Ax4 yields \(P(\sim\varphi)\) at \(v\), contradicting Ax2a.
 Hence \(R\,v\,w\).
 \end{proof}
 
-Ax3 is not used.
-The same four hypotheses are therefore unsatisfiable on every non-symmetric
-frame.
-In particular they are unsatisfiable on the two-world chain of
-Figure~\ref{fig:chain}, which is the content of
-\lean{fig7\_unsat\_on\_S4\_chain}.
-That chain is an S4 frame.
+Ax3 is not used for symmetry.
+The same four hypotheses are unsatisfiable on the two-world chain of
+Figure~\ref{fig:chain}.
+That fact is \lean{fig7\_unsat\_on\_S4\_chain}.
+The audit module restates it as \lean{literal\_unsat\_on\_R\_chain}.
+That chain is reflexive, transitive, and not symmetric.
 It is not a countermodel to literal Figure~7, because no positivity and no
 existence predicate satisfy the axioms there.
+
+\begin{theorem}[\lean{R\_is\_identity}]
+\label{thm:id}
+From Ax1Gen, Ax2a, Ax2b, Ax3, and Ax4,
+\(R\,w\,v\) if and only if \(v = w\).
+Symmetry is not a hypothesis.
+\end{theorem}
+
+\begin{proof}[Sketch]
+Theorem~\ref{thm:refl} gives the right-to-left direction.
+For the other direction, let \(\varphi\) be ``the world is \(w\)''.
+Lemma~\ref{lem:home} makes it positive at \(w\), and Ax2b carries that
+positivity to any \(v\) with \(R\,w\,v\).
+Theorem Th5, which is necessary existence of a God-like being and which the
+AFP derives from Th3 and Th4, supplies at \(v\) an existing individual who is
+God-like.
+God-likeness means every positive property holds of that individual, so the
+world \(v\) is \(w\).
+The Lean proof of Th5 goes through \lean{th3\_fig7}, which uses symmetry.
+The symmetry it uses is Theorem~\ref{thm:sym}, derived from the same axioms,
+not an extra frame assumption.
+\end{proof}
+
+\begin{theorem}[\lean{MC}]
+\label{thm:MC}
+From the same five axioms, every world-proposition \(q\) satisfies
+\(\valid{q \supset \Nec q}\).
+\end{theorem}
+
+\begin{proof}[Sketch]
+If \(q\) holds at \(w\) and \(R\,w\,v\), Theorem~\ref{thm:id} forces \(v = w\),
+so \(q\) holds at \(v\).
+\end{proof}
+
+This is the schema of the AFP lemma \lean{MC}.
+The AFP proof assumes \(R_{\mathrm{symm}}\).
+Theorem~\ref{thm:MC} does not.
+The discrete-frame consequence is the same one their lemma already had, once
+symmetry was known: applied to ``the world is \(w\)'', collapse leaves only
+the reflexive loop.
+What the literal S4 problem was missing is that symmetry does not have to be
+assumed.
+The axioms produce it, and they produce the identity relation.
 
 \begin{theorem}[\lean{th3\_fig7}]
 \label{thm:th3}
@@ -399,35 +507,23 @@ From Ax1Gen, Ax2a, Ax2b, Ax3, and Ax4,
 \[
   \valid{\Pos(\exE x.\, G x) \supset \Nec(\exE y.\, G y)}.
 \]
-There is no frame hypothesis.
 \end{theorem}
 
-\begin{proof}[Sketch]
-Theorem~\ref{thm:sym} supplies symmetry.
-The AFP argument then runs, as \lean{th3\_of\_symmetric}.
-A diamond at \(w\) is a successor \(v\) at which some existing individual is
-God-like.
-Theorem Th2, which is \(G\,x \supset \Nec(\exE G)\) and which needs Ax2a, Ax2b,
-and Ax3, places a God-like being at every successor of \(v\).
-Symmetry puts \(w\) among them.
-Th2 at \(w\) is the box required by Th3.
-\end{proof}
+The literal axioms force \(R\) to be the identity.
+Their S4 models are discrete, and Th3 holds there trivially: a diamond and a
+box along the identity relation are the same quantifier.
+The earlier route to the same theorem derived symmetry and then repeated the
+AFP three-step argument (\lean{th3\_of\_symmetric}).
+That argument is still in the file.
+It is not an S4 theorem with room in it.
+There is no non-discrete S4 model in which the antecedent can hold while the
+consequent fails, because there is no non-discrete model of the axioms at all.
 
-The intermediate AFP lemmas that do not mention symmetry are in the same
-file, and they are rediscoveries of the AFP proofs: \lean{lemma\_L}, the
-forward spread of negative positivity \lean{ax2b'}, \lean{th1\_fig7}
-(God-likeness is an essence), and \lean{th2\_fig7}.
-Th4, possible existence, and Th5, necessary existence at every world, are
-likewise rediscoveries for Figure~7.
-Th4 is the usual indirect argument: if \(G\) were nowhere exemplified along
-\(R\), then \(G\) would necessarily include \(\bot\), Ax4 would make \(\bot\)
-positive, and Ax2a would refuse.
-The one-world control below shows that the axioms are not jointly absurd once
-a back-edge is allowed.
-On a one-point frame the back-edge is the reflexive loop, so S4 and S5 agree
-there.
-The interesting content of Theorem~\ref{thm:th3} is the case where one tries
-to withhold it.
+The intermediate AFP lemmas that do not mention symmetry remain
+rediscoveries: \lean{lemma\_L}, \lean{ax2b'}, \lean{th1\_fig7},
+\lean{th2\_fig7}, \lean{th4\_fig7}, and \lean{th5\_fig7}.
+The one-world control shows that the axioms are not jointly absurd on a
+discrete frame.
 
 \begin{proposition}[\lean{unit\_fig7\_th3}]
 \label{prop:unit}
@@ -439,8 +535,13 @@ Ax2a, Ax2b, Ax3, Ax4, and Ax1Gen hold, and Th3 holds.
 This is the shape Nitpick reported at cardinality one, checked directly.
 It is a consistency witness for the literal package.
 It is not a claim that the axioms are true of anything outside the model.
+On that same one-world identity frame the literal axiom, the boxed reading,
+and the world-invariant reading coincide
+(\lean{readings\_coincide\_on\_unit}; no kernel axioms).
+The two spellings of the boxed reading coincide on every frame
+(\lean{ax1GenBox\_iff\_inBox}).
 
-\subsection{Figure 8, and what is not claimed}
+\subsection{Figure 8}
 
 Figure~8 (\lean{GoedelVariantHOML3}) changes two clauses.
 Necessary inclusion gains a side condition, and essence loses the conjunct
@@ -456,77 +557,96 @@ individual has.
 In the Lean file the inequality is \lean{neBot}, the extensional disagreement
 of Section~\ref{sec:encoding}.
 The S4 theory again leaves Th3 as \lean{oops}, comment ``Open problem''.
+Figure~8 was not varied as part of the comparison in Section~\ref{sec:recon}.
+The two theorems here are further facts about the literal axiom.
 
 \begin{theorem}[\lean{th3\_fig8}]
 \label{thm:fig8}
-From literal Ax1Gen, Ax2a, Ax2b, Figure~8's Ax3, and Figure~8's Ax4, Th3 holds,
-with no frame hypothesis.
+From literal Ax1Gen, Ax2a, Ax2b, Figure~8's Ax3, and Figure~8's Ax4, Th3 holds.
 \end{theorem}
 
-The symmetry argument is the one in Theorem~\ref{thm:sym}.
+The symmetry argument is Theorem~\ref{thm:sym}.
 Figure~8's inclusion asks, in addition, that \(\varphi\) not be identically
 false.
 The witness property ``the world is \(w\)'' disagrees with \(\bot\) at \(w\),
 once any individual is on hand to point at.
 Theorem \lean{th3\_fig8} takes that individual from the diamond in the
 antecedent of Th3, proves symmetry from it, and only then runs the back-edge.
-If the type of individuals were empty the diamond could not hold, so the
-implication would be idle.
-The companion \lean{fig8\_implies\_symmetric} states the extra inhabitant as a
-hypothesis, because symmetry alone, with no diamond, has to be told that
-someone exists.
 On the S4 chain, once an individual is given, the Figure~8 axioms used for
 symmetry are unsatisfiable (\lean{fig8\_unsat\_on\_S4\_chain}).
+The same emptiness remark applies: Theorem~\ref{thm:id} did not have to be
+re-proved for Figure~8's inclusion, and this note does not claim that the
+Figure~8 package forces the identity relation.
 
-Figure~8's Th4 is not claimed, and neither is a Figure~8 Th5.
-The Figure~7 proof that \(G\) is possibly exemplified sends \(G\) down to
-\(\bot\) and then sends \(\bot\) up to \(\sim\bot\).
-For Figure~7 the second inclusion is vacuous: a false antecedent implies
-anything.
-Figure~8's inclusion requires the antecedent property to be distinct from
-\(\bot\), and \(\bot\) is not.
-In \lean{GoedelVariantHOML3.thy} the Th4 script is \lean{oops}, and Th4 is
-then reintroduced by \lean{axiomatization}.
-Copying that postulate into Lean would not be a proof.
-It is not one here.
+\begin{theorem}[\lean{th4\_fig8}]
+\label{thm:th4fig8}
+From literal Ax1Gen and Ax2a,
+\(\valid{\Pos(\exE x.\, G x)}\).
+\end{theorem}
 
-\subsection{Why Theorem 1 may be an accident of the abbreviation}
-\label{sec:accident}
+\begin{proof}[Sketch]
+Lemma~L makes \(G\) positive at \(w\).
+Theorem~\ref{thm:refl} makes \(w\) see itself.
+If \(w\) saw no existent God-like being, then \(\sim G\) would hold of every
+existent at \(w\).
+Lemma~\ref{lem:home} would make \(\sim G\) positive, contradicting Ax2a.
+\end{proof}
+
+The proof does not use Ax4 and does not use Figure~8's side condition on
+inclusion.
+In \lean{GoedelVariantHOML3.thy} the Th4 script is \lean{oops}, with a comment
+that \lean{sledgehammer} found a proof from Ax2a, lemma~L, and Ax1Gen, and
+Th4 is then reintroduced by \lean{axiomatization}.
+Theorem~\ref{thm:th4fig8} is that missing proof.
+A Figure~8 Th5 is not claimed.
+
+\subsection{The literal axiom is not the footnote}
+\label{sec:gloss}
 
 Theorem~\ref{thm:th3} is a theorem of the literal AFP axiom.
-It may also be a theorem one did not mean to state.
+By G\"odel's own gloss, that axiom is not his.
 
-G\"odel's footnote, as the generalized conjunction is used in this literature,
-says that a conjunction of \emph{positive} properties is positive
+The footnote says that a conjunction of positive properties is positive
 \cite{goedel1995,benzmueller2026}.
-In the abbreviation, ``the conjuncts are positive'' is judged at the source,
-and ``\(\varphi\) is their conjunction'' is judged at successor worlds, where
-\(\Phi\) is evaluated afresh.
-The collection in Figure~\ref{fig:phi} is empty at home and full of
-contradictions next door.
-Nothing in the footnote asks a collection to change its mind on the way out
-of the world.
-The split is what a shallow embedding does if \(\mathrm{PosProps}\) is left
-outside a box while the predicate \(\Phi\) still depends on the world.
+The gloss printed with the proof says that positive means positive in the
+moral aesthetic sense, independently of the accidental structure of the world
+\cite{goedel1995}.
+The AFP abbreviation does something else.
+Its type lets \(\Phi\) vary by world.
+Lemma~\ref{lem:home} then says that Ax1Gen alone makes every property true of
+all existents at \(w\) positive at \(w\), whenever \(w\) sees itself, and makes
+every property positive at \(w\) if \(w\) does not see itself.
+Positivity at \(w\) tracks who exists at \(w\).
+That is the accidental structure the gloss excludes.
 
-That is a feature of the definition as written in
-\lean{GoedelVariantHOML2}.
-It is a fair question whether it is a feature anyone wanted.
-Theorem~\ref{thm:th3} would be a strange place to stop.
-The next section is the reason for not stopping: two repairs that a reader
-of the footnote might have thought were already the axiom.
-Under either repair, lemma~L survives, symmetry is not forced, and Th3 fails
-in S4.
+The split is what a shallow embedding does if PosProps is left outside a box
+while \(\Phi\) still depends on the world.
+It is the text of \lean{GoedelVariantHOML2}, faithfully transcribed.
+It is not a misprint, and it is not a reading of the footnote.
+The footnote does not mention worlds.
+Theorem~\ref{thm:th3} is a genuine theorem about an axiom that, by that gloss,
+is not G\"odel's.
 
-\section{Theorem 2: repair the scope, and S4 wins}
-\label{sec:th2}
+\section{Two reconstructions}
+\label{sec:recon}
 
 Everything in Figure~7 stays put except Ax1Gen.
 There are two replacements.
-They are not rivals for a single idea.
+Neither is dictated by the footnote.
+Both are reconstructions.
+What both remove is \(\Phi\) being read at two different worlds by the two
+halves of the axiom.
+An earlier draft called the first the closer repair.
+That ranking is dropped.
+One may prefer the second because ``any number of summands'' is a single
+collection, and a single collection does not change with the world.
+The footnote still does not say so.
+Rigidity, in the sense of Ax2b, is kept in all three readings.
+The Lean name \lean{Ax1GenRigid} means that \(\Phi\) is world-invariant.
+It does not mean that positivity is rigid.
 
 \paragraph{R1, positivity in the box.}
-The closer repair judges both halves at the same accessible worlds:
+Both halves are judged at the same accessible worlds:
 \[
   \valid{\Nec\bigl(\mathrm{PosProps}\,\Phi \land
     \allE z.\; \varphi\,z \leftrightarrow
@@ -543,17 +663,17 @@ ConjOfPropsFrom is already a box, so the displayed form is equivalent to
 which is \lean{Ax1GenBox}.
 The equivalence \lean{ax1GenBox\_iff\_inBox} depends on no kernel axioms.
 One countermodel covers both spellings.
-This is the reading on which ``positive'' and ``conjunction'' are said of the
-same world.
 
-\paragraph{R2, a rigid collection.}
+\paragraph{R2, a world-invariant collection.}
 Restrict Ax1Gen to collections that do not depend on the world:
 \(\Phi\,\psi\,w \leftrightarrow \Phi\,\psi\,v\) for every property and every pair of
 worlds.
 PosProps and ConjOfPropsFrom stay literal.
 Call this \lean{Ax1GenRigid}.
-The prank collection of Figure~\ref{fig:phi} is not rigid, so R2 never sees it.
-R2 is a different restriction, not a second spelling of R1.
+R2 moves no box.
+It freezes \(\Phi\).
+The collection of Figure~\ref{fig:phi} is not world-invariant, so R2 does not
+apply to it.
 
 \subsection{Lemma L still derives}
 
@@ -566,27 +686,33 @@ The conjunction of whatever is positive at a world is \(G\) at that world, by
 the definition of \(G\).
 
 Under R2 the same \(\Phi\) may be refused, because \(P\) itself need not be
-rigid.
-The repair is to take a snapshot at the world \(w\) where the lemma is being
-proved: \(\Phi\,\psi\,\_ :\equiv P\,\psi\,w\).
-That collection ignores its world argument, so it is rigid.
+world-invariant.
+Take a snapshot at the world \(w\) where the lemma is being proved:
+\(\Phi\,\psi\,\_ :\equiv P\,\psi\,w\).
+That collection ignores its world argument.
 At a successor \(v\), the conjunction it defines is \(G\) only if positivity at
 \(w\) and positivity at \(v\) agree.
-Ax2a and Ax2b give exactly that agreement along an edge
+Ax2a and Ax2b give that agreement along an edge
 (\lean{pos\_agree}): a positive property stays positive by Ax2b, and a
 property positive at \(v\) cannot have a positive negation at \(w\), or Ax2b
 would carry the negation forward and break Ax2a at \(v\).
 So \lean{lemma\_L\_rigid} needs Ax2a and Ax2b.
 Literal \lean{lemma\_L} needed neither.
-The box in R1 hides the same fact, because \(\Phi := P\) is re-read at the
-successor rather than frozen at the source.
+The box in R1 re-reads \(\Phi := P\) at the successor rather than freezing it
+at the source.
 
-Symmetry is not a consequence of either repair.
-The collection in Theorem~\ref{thm:sym} is empty at the source, so source
-PosProps holds, but at a successor it marks \(\bot\).
+Symmetry is not a consequence of either reconstruction.
+The proof is the chain in Figure~\ref{fig:chain} and
+Theorem~\ref{thm:r12}: the frame is not symmetric, and each reconstruction
+holds on it.
+The collection in Theorem~\ref{thm:sym} does not witness a contradiction under
+either reconstruction.
+It is empty at the source, so source PosProps holds, but at a successor it
+marks every property empty at that world, and in particular it marks \(\bot\).
 R1's boxed PosProps demands \(P(\bot)\) there.
-R2 does not apply, because the collection varies.
-The four-hypothesis derivation of a back-edge has nothing left to instantiate.
+R2 does not apply, because the collection is not world-invariant.
+That is why the derivation of a back-edge has nothing left to instantiate.
+It is not itself the proof that symmetry can fail.
 
 \subsection{The chain}
 
@@ -615,10 +741,11 @@ The four-hypothesis derivation of a back-edge has nothing left to instantiate.
 \caption{The S4 chain of \lean{R\_chain}, drawn as source \(s = \mathsf{false}\)
 and sink \(t = \mathsf{true}\).
 Reflexive, transitive, and not symmetric.
+The domain has one element, and existence is true at both worlds.
 Under \lean{chainP}, a God-like being exists at the sink only, so at the
 source a God-like being is possible and not necessary.
 Literal Ax1Gen has no model on this frame.
-Both repairs do.}
+Both reconstructions do.}
 \label{fig:chain}
 \end{figure}
 
@@ -627,8 +754,12 @@ The source \(\mathsf{false}\) sees both worlds.
 The sink \(\mathsf{true}\) sees only itself
 (Figure~\ref{fig:chain}).
 The relation is reflexive and transitive.
-It is not symmetric: the sink does not see the source.
-One individual exists at both worlds.
+It is not symmetric: the sink does not see the source
+(\lean{R\_chain\_not\_symmetric}).
+The domain has one element, and that individual exists at both worlds.
+Existence is the constant true predicate.
+The actualist restriction never excludes anyone, so this countermodel does
+not exercise the actualist machinery.
 Positivity ignores the world at which it is asked and reads the sink:
 \[
   P\,\varphi \;\equiv\; \varphi\,()\,\mathsf{true}.
@@ -659,7 +790,9 @@ The failure of the box is the second.
 
 No kernel axiom is used.
 The packaged denial \lean{chain\_not\_Th3} is the same fact pulled back along
-the definition of Th3, and it is equally axiom-free.
+the definition of Th3.
+\lean{chain\_not\_necessary\_existence} is the failure of the box as a
+validity, equally axiom-free.
 
 \begin{theorem}[\lean{r1\_s4\_countermodel}, \lean{r2\_s4\_countermodel}]
 \label{thm:r12}
@@ -683,50 +816,68 @@ holds of the individual there.
 For R1, the boxed biconditional at whichever world one starts from can be read
 at the sink, which both worlds see, and the right-hand side at the sink is
 exactly the extension \(P\) consults.
-For R2 the same computation works, and rigidity lets a mark at the sink be
-copied back to the world where PosProps was assumed.
+For R2 the same computation works, and world-invariance lets a mark at the
+sink be copied back to the world where PosProps was assumed.
 
-\begin{proposition}[\lean{chain\_not\_literal\_Ax1Gen}]
-This positivity does not satisfy literal Ax1Gen on the chain.
+\begin{proposition}[\lean{literal\_to\_R1}, \lean{literal\_to\_R2},
+  \lean{readings\_coincide\_on\_unit}]
+\label{prop:weaker}
+Literal Ax1Gen implies R1 on every reflexive frame, and implies R2 on every
+frame.
+On a one-world identity frame the three readings coincide.
+On the chain, this positivity satisfies both reconstructions and does not
+satisfy literal Ax1Gen.
 \end{proposition}
 
-If it did, Theorem~\ref{thm:sym} would make the chain symmetric, and
-\lean{fig7\_unsat\_on\_S4\_chain} already records that contradiction.
-The repairs are strictly weaker than the literal axiom on this frame.
-Theorem~\ref{thm:th3} is not retracted.
-It is fenced.
-A model of R1 or of R2 need not be a model of the abbreviation that proved it.
+One direction is \lean{literal\_to\_R1}.
+The other is \lean{literal\_to\_R2}.
+The one-world coincidence is \lean{readings\_coincide\_on\_unit}.
+Every collection on a one-world frame is world-invariant, and along the
+identity relation a box does not leave the world.
+If this positivity satisfied literal Ax1Gen, Theorem~\ref{thm:sym} would make
+the chain symmetric.
+\lean{chain\_not\_literal\_Ax1Gen} records that it does not.
+The converse implications, reconstruction implies literal, are not proved in
+general.
+They are proved on the one-world frame, and the chain separates the readings
+in the other direction: the reconstructions have a model there and the literal
+axiom has none.
 
 \begin{table}[t]
 \centering
 \small
 \begin{tabular}{@{}lccc@{}}
 \toprule
-Reading of Ax1Gen & Lemma \(P(G)\) & Symmetry forced & Th3 in S4 \\
+Reading of Ax1Gen & Lemma \(P(G)\) & What \(R\) must be & Th3 in S4 \\
 \midrule
 Literal AFP &
   from Ax1Gen alone &
-  yes (Thm.~\ref{thm:sym}) &
-  proved (Thm.~\ref{thm:th3}) \\
+  the identity (Thm.~\ref{thm:id}) &
+  holds, on discrete frames \\
 R1, boxed &
   from R1 alone &
-  no &
+  not symmetric (Thm.~\ref{thm:r12}) &
   fails (Thm.~\ref{thm:r12}) \\
-R2, rigid \(\Phi\) &
+R2, world-invariant \(\Phi\) &
   needs Ax2a and Ax2b &
-  no &
+  not symmetric (Thm.~\ref{thm:r12}) &
   fails (Thm.~\ref{thm:r12}) \\
 \bottomrule
 \end{tabular}
-\caption{The S4 question, by scope.
-The witness for both negative cells is Figure~\ref{fig:chain}.}
+\caption{Three readings of where Ax1Gen reads \(\Phi\).
+The literal row uses Ax3 for the identity.
+The witness for both negative cells is Figure~\ref{fig:chain}.
+On a one-world frame the three readings coincide
+(Proposition~\ref{prop:weaker}).}
 \label{tab:readings}
 \end{table}
 
-Table~\ref{tab:readings} is the whole comparison.
-The possibilist twin \lean{GoedelVariantHOML2possInS4} also leaves Th3 as
-\lean{oops}.
+Table~\ref{tab:readings} is the comparison among these three readings.
+The possibilist twin also leaves Th3 as \lean{oops}.
 It is not encoded.
+Its AFP name is \lean{GoedelVariantHOML2possInS4}.
+Domains were not varied: the outer type of individuals stays fixed, and the
+chain uses a one-element domain with existence always true.
 A constant domain with no existence predicate would be a different theorem,
 and the Scott-style chain already studied in this repository is that
 different theorem (Section~\ref{sec:related}).
@@ -736,7 +887,7 @@ different theorem (Section~\ref{sec:related}).
 
 Several nearby statements are in the same repository, and they were already
 theorems of other people.
-They are named here so that the two results above are not asked to carry them.
+They are named here so that the results above are not asked to carry them.
 
 Sobel showed that Scott-style premises yield \(\varphi \supset \Nec\varphi\)
 \cite{sobel1987,sobel2004}.
@@ -747,8 +898,10 @@ while Anderson's emendation and Fitting's extensional positivity do not
 The repository's collapse modules rediscover the Scott-side collapse, including
 the world-relative variant in which collapse along \(R\) is separated from
 Sobel's global biconditional when \(R\) is not universal.
-That is a rediscovery.
-It is not Theorem~\ref{thm:th3} or Theorem~\ref{thm:r12}.
+That rediscovery is not Theorem~\ref{thm:MC}.
+Theorem~\ref{thm:MC} is collapse for the literal Figure~7 package, and the
+prior art for that schema is the AFP lemma \lean{MC}, which assumes symmetry
+\cite{afpNotes2025}.
 
 Kanckos and Woltzenlogel Paleo showed that Scott's argument goes through in KB:
 symmetry suffices, and S5 is more than the proof uses \cite{kanckos2017}.
@@ -774,7 +927,7 @@ A thin fragment of it is formalized elsewhere in the repository, and a
 two-world witness there keeps a contingent fact alive.
 That fragment is a rediscovery of Anderson's repair.
 Fitting's extensional block is not formalized \cite{fitting2002}.
-Neither is part of Theorems~\ref{thm:th3} and~\ref{thm:r12}.
+Neither is part of Theorems~\ref{thm:id} and~\ref{thm:r12}.
 
 The early mechanizations of the Scott-style argument
 \cite{benzmuellerPaleo2014} are the same Scott package.
@@ -790,9 +943,9 @@ arguments that avoid essence and necessary existence and that are valid in K
 or KT.
 Those are different axioms again.
 
-What was checked, for the claim that these two theorems were not found
-already, is the following AFP theories, together with the S4 and S5 embeddings
-they import:
+What was checked, for the claim that the identity proof and the two
+reconstructions were not found already, is the following AFP theories,
+together with the S4 and S5 embeddings they import:
 \begin{itemize}[leftmargin=1.5em]
 \item \lean{GoedelVariantHOML2} and \lean{GoedelVariantHOML2inS4} (Figure~7, S5 and S4);
 \item \lean{GoedelVariantHOML3} and \lean{GoedelVariantHOML3inS4} (Figure~8, S5 and S4);
@@ -807,11 +960,14 @@ Woltzenlogel Paleo \cite{kanckos2017}, Benzm\"uller and Woltzenlogel Paleo
 \cite{benzmuellerPaleo2014}, Benzm\"uller and Fuenmayor
 \cite{benzmuellerFuenmayor2020}, Benzm\"uller \cite{benzmueller2026}, and the
 simplified-argument AFP entry \cite{afpSimplified2021}.
+In \lean{GoedelVariantHOML2}, lemma \lean{MC} is prior art for collapse under
+symmetry, and Th3 is proved from symmetry.
 In the AFP S4 files, Th3 is the open \lean{oops}.
 In \cite{benzmueller2026} the K-theorem is the ultrafilter package just
 described.
-No proof or countermodel of literal Figure~7 Th3 in S4, and no countermodel
-of the two repaired readings, turned up in those sources.
+No proof of the identity, or of collapse, for literal Figure~7 without a
+symmetry hypothesis, and no countermodel of the two reconstructions, turned
+up in those sources.
 That is a statement about where the search went.
 It is not a priority claim.
 
@@ -819,21 +975,22 @@ It is not a priority claim.
 \label{sec:kernel}
 
 The development builds with \texttt{lake build} on Lean~4.34.0,
-toolchain \texttt{leanprover/lean4:v4.34.0}, in 35 jobs, with no Mathlib.
+toolchain \texttt{leanprover/lean4:v4.34.0}, in 37 jobs, with no Mathlib.
 A search of the Lean sources finds no \lean{sorry}, no \lean{native\_decide},
 and no \lean{axiom} command.
 The strings that look like those words sit in comments.
 Hypotheses of the ontological argument are parameters of type \textsf{Prop}.
 
-Table~\ref{tab:axioms} is the output of \lean{\#print axioms} on the headline
-theorems, run in that toolchain after the build.
+Table~\ref{tab:axioms} is the output of \lean{\#print axioms} on the new
+lemmas and on the headline theorems, run in that toolchain after the build.
 ``None'' means Lean reported that the constant does not depend on any axioms.
 The triple \lean{propext}, \lean{Classical.choice}, \lean{Quot.sound} is the
 standard classical package of the Lean kernel: propositional extensionality,
 choice, and the soundness of quotients that the classical development uses.
-\lean{Classical.choice} enters through \lean{Classical.byContradiction} in the
-symmetry argument and in Figure~7's Th4, and through \lean{Classical.em} in
-the one-world check of Ax2a and in \lean{chain\_ax2a}.
+\lean{Classical.choice} enters through \lean{Classical.byContradiction} in
+the symmetry argument, in reflexivity, in the B schema, in the identity, in
+collapse, and in both proofs of possible existence, and through
+\lean{Classical.em} in the one-world check of Ax2a and in \lean{chain\_ax2a}.
 \lean{propext} on its own is the chain's transitivity and the proof that the
 chain is not symmetric, both of which simplify propositional equalities.
 No custom axiom appears.
@@ -845,56 +1002,82 @@ No custom axiom appears.
 \toprule
 Theorem & \lean{\#print axioms} \\
 \midrule
+\lean{pos\_of\_home}, \lean{refl\_of\_gen}, \lean{B\_schema},
+  \lean{R\_is\_identity}, \lean{MC}, \lean{th4\_fig8} &
+  \lean{propext}, \lean{Classical.choice}, \lean{Quot.sound} \\
+\lean{literal\_to\_R1}, \lean{literal\_to\_R2},
+  \lean{R1\_to\_literal\_of\_identity},
+  \lean{literal\_iff\_R1\_of\_identity},
+  \lean{R2\_to\_literal\_of\_one\_world},
+  \lean{readings\_coincide\_on\_unit} &
+  none \\
+\lean{literal\_unsat\_on\_R\_chain} &
+  \lean{propext}, \lean{Classical.choice}, \lean{Quot.sound} \\
+\lean{chain\_not\_necessary\_existence} &
+  none \\
 \lean{lemma\_L}, \lean{ax2b'}, \lean{th1\_fig7}, \lean{th2\_fig7},
   \lean{th3\_of\_symmetric} &
   none \\
 \lean{th1\_fig8}, \lean{th2\_fig8}, \lean{th3\_fig8\_of\_symmetric} &
   none \\
 \lean{fig7\_implies\_symmetric}, \lean{th3\_fig7},
-  \lean{fig7\_unsat\_on\_S4\_chain} &
+  \lean{fig7\_unsat\_on\_S4\_chain}, \lean{th4\_fig7}, \lean{th5\_fig7} &
   \lean{propext}, \lean{Classical.choice}, \lean{Quot.sound} \\
 \lean{th3\_fig8}, \lean{fig8\_implies\_symmetric},
   \lean{fig8\_unsat\_on\_S4\_chain} &
   \lean{propext}, \lean{Classical.choice}, \lean{Quot.sound} \\
 \lean{unit\_fig7\_th3} &
   \lean{propext}, \lean{Classical.choice}, \lean{Quot.sound} \\
-\lean{ax1GenBox\_iff\_inBox} &
+\lean{ax1GenBox\_iff\_inBox}, \lean{lemma\_L\_box}, \lean{lemma\_L\_inBox},
+  \lean{lemma\_L\_rigid}, \lean{pos\_agree} &
   none \\
-\lean{lemma\_L\_box}, \lean{lemma\_L\_inBox}, \lean{lemma\_L\_rigid} &
+\lean{chain\_th3\_fails\_at\_source}, \lean{chain\_not\_Th3},
+  \lean{chain\_god\_sink}, \lean{chain\_not\_god\_source},
+  \lean{chain\_ax1GenRigid} &
   none \\
-\lean{chain\_th3\_fails\_at\_source} &
-  none \\
+\lean{R\_chain\_transitive}, \lean{R\_chain\_not\_symmetric} &
+  \lean{propext} \\
 \lean{chain\_not\_literal\_Ax1Gen} &
   \lean{propext}, \lean{Classical.choice}, \lean{Quot.sound} \\
 \lean{r1\_s4\_countermodel}, \lean{r2\_s4\_countermodel} &
   \lean{propext}, \lean{Classical.choice}, \lean{Quot.sound} \\
 \bottomrule
 \end{tabular}
-\caption{Kernel axioms of the headline theorems, Lean~4.34.0.
+\caption{Kernel axioms of the audit lemmas and the headline theorems,
+Lean~4.34.0.
 The repaired countermodels inherit \lean{propext} from the chain's frame
 facts and \lean{Classical.choice} from Ax2a.
 The failure of Th3 at the source, taken by itself, depends on none of them.}
 \label{tab:axioms}
 \end{table}
 
-\section{The moral}
+\section{Conclusion}
 
-Theorem~\ref{thm:th3} says that the literal Figure~7 axioms prove Th3, and
-prove it in K, hence in S4.
-The mechanism is the empty-at-home collection of Figure~\ref{fig:phi}, which
-the AFP abbreviation permits because positivity is read at the source and the
-collection is read again under the box.
-Theorem~\ref{thm:r12} says that if positivity moves inside the box, or if the
-collection is required to be the same collection at every world, then lemma~L
-still derives and the two-world chain is a countermodel to Th3 in S4.
-The chain does not satisfy the literal axiom.
-The S4 question, for this axiom list, is decided by that scope and by nothing
-else in the modal logic.
+Theorem~\ref{thm:id} says that the literal Figure~7 axioms force \(R\) to be
+the identity, and Theorem~\ref{thm:MC} says that modal collapse follows, with
+no symmetry hypothesis.
+The AFP lemma \lean{MC} is the same schema under \(R_{\mathrm{symm}}\).
+The mechanism is Lemma~\ref{lem:home}: Ax1Gen, read so that the two halves
+consult \(\Phi\) at different worlds, makes positivity follow the existents
+at the source.
+The literal axioms force \(R\) to be the identity; their S4 models are
+discrete, and Th3 holds there trivially.
+Theorem~\ref{thm:r12} says that two reconstructions, on which both halves read
+\(\Phi\) at the same world, still yield lemma~L and fail on a two-world S4
+chain.
+Among the three readings examined, with full comprehension, the answer turns
+on whether both halves of Ax1Gen read \(\Phi\) at the same world.
+Domains and Figure~8 were not varied.
+The chain that separates the reconstructions has a one-element domain and
+existence always true.
 
 \section*{Acknowledgements}
 
 The Lean~4 formalization and the drafting of this note were done with AI
 coding assistants.
+I thank the Russell and Wittgenstein likenesses (AI agents) for the criticism
+of the earlier draft and for the audit lemmas.
+They are not the historical persons.
 All results reported here are kernel-checked in the repository
 \url{https://github.com/drewarrowood/godel-ontological}.
 
