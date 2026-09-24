@@ -338,5 +338,36 @@ predicate, no Ax1Gen, and postulates `A3`/`A3W`. Write-up: `S4_OPEN.md`.
 `S4Open.scott_style_S4_local_T3_fails` only aliases the Scott-style WRP chain
 (`chain_S4_local_T3_fails`): ◇∃G without □∃G at the source. That is not Fig. 7.
 
-**Status: still open.** Desk record of the mismatch. Not a priority claim.
-`#print axioms`: `propext`. 0 `sorry`.
+**Status of that note:** desk record of the mismatch. `S4Open.lean` does not
+answer Fig. 7. `#print axioms`: `propext`. 0 `sorry`.
+
+## Hunt 5 — actualist Fig. 7 / Th3 (2026-09-24, America/New_York)
+
+**Literature cut.** The open is Benzmüller & Scott, *Monatshefte für Mathematik*,
+DOI 10.1007/s00605-025-02078-x, §4.4 Fig. 7, AFP `GoedelVariantHOML2` /
+`GoedelVariantHOML2inS4`: actualist quantifiers, essence with the conjunct
+`φ x`, `P(G)` as lemma L from **Ax1Gen**, Th3 in S4 (refl+trans, no `Rsymm`).
+The S4 theory leaves Th3 as `oops` (“Open problem”). §4.5 Fig. 8
+(`GoedelVariantHOML3`) changes `⊃_N` and drops `φ x` from essence; its S4 file
+also leaves Th3 open. Benzmüller, arXiv:2608.07578 (2026), derives necessary
+existence in **K** for a simplified ultrafilter package (U1, A2, A3). That is
+not Fig. 7. Sobel, Benzmüller–Fuenmayor, Kirchner, Kanckos–Woltzenlogel Paleo,
+Fitting, and Anderson address collapse or other emendations, not this S4
+question. No published proof or countermodel of Fig. 7 Th3 in S4 was found.
+
+**Module.** `GodelOntological/Actualist.lean`. Write-up: `ACTUALIST_FIG7.md`.
+Encoding: world-relative `P`, existence predicate, actualist `∃^E`/`∀^E`.
+Not rigid Positive. Not the constant-domain Scott/WRP package.
+
+**Result.** `th3_fig7` is `⌊◇∃^E G ⊃ □∃^E G⌋` from Ax1Gen, Ax2a, Ax2b, Ax3, Ax4.
+No `Reflexive` or `Transitive` hypothesis. `fig7_implies_symmetric` derives
+`Symmetric R`; `th3_of_symmetric` is the AFP back-edge. The two-world S4 chain
+satisfies no such `P` (`fig7_unsat_on_S4_chain`), so it is not a countermodel.
+A one-world principal model (`unit_fig7_th3`) satisfies the axioms, including Ax1.
+Fig. 8: `th3_fig8` likewise. Fig. 8 Th4 is not claimed.
+
+**Status:** `th3_of_symmetric`, L, Th1, Th2, Th4, Th5 are **rediscoveries** of
+the AFP development. `th3_fig7` / `fig7_implies_symmetric` **answer the stated
+open question** in this encoding: Th3 is provable in S4. Departures and the
+Ax1Gen world-shift are listed in `ACTUALIST_FIG7.md`. Not a priority claim.
+`#print axioms`: see that note. 0 `sorry`. No `native_decide`.

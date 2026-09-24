@@ -84,12 +84,14 @@ GodelOntological/CountermodelA_WRP.lean — world-relative Positive; Countermode
 GodelOntological/CollapseWRP.lean  — WRP collapse along R (rediscovery; see COLLAPSE_WRP.md)
 GodelOntological/WRPFrameResidue.lean — what fails if Symmetric is dropped (WRP)
 GodelOntological/Anderson.lean     — Anderson 1990 fragment; ContingentR survives
-GodelOntological/S4Open.lean       — Scott-style S4 failure; Fig. 7 left open
+GodelOntological/S4Open.lean       — Scott-style S4 failure; not Fig. 7
+GodelOntological/Actualist.lean    — actualist Fig. 7 / Fig. 8; Th3 with no frame hyp
 COUNTERMODEL_A.md                  — rigid vs WRP desk note
 COLLAPSE_WRP.md                    — WRP collapse / ContingentR
 WRP_FRAMES.md                      — frame residue table under WRP
 ANDERSON.md                        — Anderson repair (not Fitting)
-S4_OPEN.md                         — Monatshefte Fig. 7 / Th3 in S4 stays open
+S4_OPEN.md                         — why the Scott-style chain is not Fig. 7
+ACTUALIST_FIG7.md                  — Fig. 7 encoding, Th3, departures, axioms
 NOTES.md                           — design notebook + references
 ```
 

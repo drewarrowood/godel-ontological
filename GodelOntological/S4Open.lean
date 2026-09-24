@@ -26,7 +26,8 @@ Ax1Gen).
 This package has constant domains, no existence predicate, no Ax1Gen, and a
 thin `Prop` encoding. `A3` / `A3W` (**P(GodLike)**) is postulated. The theorem
 below is that Scott-style WRP fact on an S4 chain. It is **not** a countermodel
-to Fig. 7. The Fig. 7 question stays **open**. See `S4_OPEN.md`.
+to Fig. 7. The actualist Ax1Gen package is `GodelOntological/Actualist.lean`
+(`ACTUALIST_FIG7.md`), where Th3 is proved. This file does not contain that proof.
 -/
 
 namespace GodelOntological

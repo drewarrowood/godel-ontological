@@ -1,6 +1,7 @@
-# S4 / Theorem Th3 — Monatshefte Fig. 7 stays open
+# S4 / Theorem Th3 — this file does not encode Fig. 7
 
-Desk note. Not a priority claim. This file does not settle the open.
+Desk note. Not a priority claim. The Scott-style chain below is not Fig. 7.
+The actualist encoding and the Th3 proof are in `ACTUALIST_FIG7.md`.
 
 Date: 2026-09-24 (America/New_York). Toolchain: Lean 4.34.0.
 
@@ -82,8 +83,12 @@ reproduction of their Nitpick model and not a countermodel to Fig. 7.
 
 ---
 
-## Status
+## Status of this file
 
-**Still open.** Fig. 7 (and Fig. 8) Th3 in S4, with Ax1Gen and actualist
-quantifiers, is not proved or refuted here. Encoding mismatch, recorded above.
-Not a priority claim.
+The mismatch above stands: `S4Open.lean` does not answer Fig. 7.
+
+The separate actualist package does. `GodelOntological/Actualist.lean` and
+`ACTUALIST_FIG7.md` encode Fig. 7 (and the Fig. 8 inclusion) and prove Th3
+from those axioms with no reflexivity or transitivity hypothesis. The S4 chain
+is unsatisfiable for those axioms, so it is not a countermodel. See that note
+for the axiom list, departures, and `#print axioms`.
