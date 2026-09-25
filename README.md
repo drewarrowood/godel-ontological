@@ -8,6 +8,8 @@ that **from those axioms** one obtains
 > necessarily, there exists a God-like being  
 > (`□ ∃ x, GodLike x`).
 
+Plain-words summary of the Fig. 7 note: [docs/eli5.html](docs/eli5.html).
+
 ## What this is — and is not
 
 | This project **does** | This project **does not** |
