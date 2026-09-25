@@ -21,17 +21,17 @@ This paper does not settle whether God exists. It settles where a packaged rule 
 
 Around 1970 Kurt Gödel wrote a short modal version of the ontological argument [11]. The first axiom says that the conjunction of two positive properties is positive. A footnote extends that claim from two summands to any number: the conjunction of a *collection* of positive properties is itself positive.
 
-Dana Scott, working from a copy Gödel allowed him to make, rearranged the package [14, 15, 16]. In Scott’s notes the generalized conjunction is replaced by a direct postulate that being God-like is positive. Scott also inserts a conjunct into the definition of essence (the essential property must actually hold of the individual) and takes necessary existence to be positive. That last change keeps the notes off the inconsistent reading of the unrepaired manuscript.
+Three objects have to be kept apart, as Benzmüller and Scott set them out [8]. The first is Gödel’s own 1970 hand manuscript (their Figure 1; Kurt Gödel Papers, Box 12, Folder 41, item accession 060565, printed there under the copyright of the Institute for Advanced Study). The second is the brief notes Gödel showed Scott. The third is the slightly modified seminar version printed as Appendix B of Sobel [14, 16]. In spring 1970 Gödel asked Scott confidentially to preserve some notes in case of illness or death; Scott later mentioned a slightly modified version in a seminar without permission, and he records his embarrassment [8]. The hand definition of essence omits the conjunct φ x. Benzmüller and Scott show that the empty-essence inconsistency is already derivable in modal logic K, and that Scott’s addition of φ x restores consistency. The AFP entry of 7 January 2025 and the Lean desk use that repaired essence, not the hand page. Scott’s seminar notes also replace the footnote’s generalized conjunction by a direct postulate that being God-like is positive.
 
 Sobel later showed that Scott’s premises collapse modality: whatever is true is necessarily true [15, 16]. That collapse has been machine-checked, and so have Anderson- and Fitting-style repairs [1, 10, 5]. Separately, the step from “possibly God-like” to “necessarily God-like” on the Scott side needs **symmetry** of accessibility (the Brouwerian axiom B), and does not need the rest of S5 [12]. Those facts are recorded again in Section 6 so they are not mistaken for the theorems below.
 
-The question of this note comes from a return to the footnote. Benzmüller and Scott [7, 8] study Gödel’s generalized conjunction as an axiom they call **Ax1Gen**. Positivity of being God-like is not assumed; it is **Lemma L**, derived from Ax1Gen. Essence keeps Scott’s extra conjunct. Individual quantifiers are **actualist**: an existence predicate says who is present at a world. In their Figure 7, Theorem **Th3** is
+The question of this note comes from a return to the footnote. Benzmüller and Scott [7, 8] study Gödel’s generalized conjunction as an axiom they call **Ax1Gen**. Positivity of being God-like is not assumed; it is **Lemma L**, derived from Ax1Gen. The essence there is Scott’s repaired clause. Individual quantifiers are **actualist**: an existence predicate says who is present at a world. In their Figure 7, Theorem **Th3** is
 
 \[
 \lfloor \Diamond(\exists^E x.\, Gx) \supset \Box(\exists^E y.\, Gy) \rfloor.
 \]
 
-In the S5 embedding, the proof of Th3 uses symmetry of accessibility and nothing else from S5. The theory `GoedelVariantHOML2inS4` repeats the same non-logical axioms over an S4 frame (reflexive and transitive; symmetry *not* assumed) and leaves Th3 as `oops`, marked “Open problem.” Figure 8, which changes necessary inclusion instead of essence, has the same open `oops` in `GoedelVariantHOML3inS4`. Neither an S4 proof nor an S4 countermodel is reported there.
+In the S5 embedding, the proof of Th3 uses symmetry of accessibility, the schema B, and nothing else from S5, so KB already suffices [8]. Their S4 question for this repaired-essence package is left open. Binary Ax1 does not yield their possibility theorem Th4; Ax1Gen does, via Lemma L, Ax2a, and Ax4. A 2026 comment supplies an infinite non-principal ultrafilter countermodel for binary Ax1, and locates collapse primarily in the rigidity of positivity (Scott’s A4, Gödel’s Ax2b) rather than in the ultrafilter alone [4]. Neither fact is the identity theorem below. The theory `GoedelVariantHOML2inS4` repeats the same non-logical axioms over an S4 frame (reflexive and transitive; symmetry *not* assumed) and leaves Th3 as `oops`, marked “Open problem.” Figure 8, which changes necessary inclusion instead of essence, has the same open `oops` in `GoedelVariantHOML3inS4`. Neither an S4 proof nor an S4 countermodel is reported there.
 
 **What this note shows.** For a Lean 4 transcription of that AFP text, with full comprehension:
 
@@ -331,9 +331,9 @@ The Lean 4 formalization and drafting of the underlying note were done with AI c
 
 [6] Christoph Benzmüller and Bruno Woltzenlogel Paleo. Automating Gödel’s ontological proof of God’s existence with higher-order automated theorem provers. In *ECAI 2014*, 93–98. IOS Press, 2014.
 
-[7] Christoph Benzmüller and Dana Scott. Notes on Gödel’s and Scott’s variants of the ontological argument. *Archive of Formal Proofs*, January 2025.
+[7] Christoph Benzmüller and Dana Scott. Notes on Gödel’s and Scott’s variants of the ontological argument. *Archive of Formal Proofs*, 7 January 2025.
 
-[8] Christoph Benzmüller and Dana Scott. Notes on Gödel’s and Scott’s variants of the ontological argument. *Monatshefte für Mathematik*, 208(4):569–611, 2025.
+[8] Christoph Benzmüller and Dana Scott. Notes on Gödel’s and Scott’s variants of the ontological argument. *Monatshefte für Mathematik*, 208(4):569–611, 2025. Published online 21 April 2025. https://doi.org/10.1007/s00605-025-02078-x.
 
 [9] Leonardo de Moura and Sebastian Ullrich. The Lean 4 theorem prover and programming language. In *CADE 28*, LNCS 12699, 625–635. Springer, 2021.
 
