@@ -69,21 +69,52 @@ Domains and Figure~8 were not varied.
 \section{The open problem}
 \label{sec:open}
 
-Around 1970 Kurt G\"odel wrote down, in a page and a half of symbols, a modal
-version of the ontological argument \cite{goedel1995}.
-The first axiom says that the conjunction of two positive properties is
-positive.
-A footnote extends the axiom from two summands to any number of them: the
-conjunction of a collection of positive properties is itself positive.
-Dana Scott, working from a copy G\"odel allowed him to make, rearranged the
-package \cite{scott2004notes,sobel1987,sobel2004}.
-In Scott's notes the generalized conjunction is replaced by a direct
-postulate that being God-like is positive.
-Scott also inserts a conjunct into the definition of essence, requiring that
-the essential property actually hold of the individual, and he takes necessary
-existence to be positive.
-That last change is the one that keeps the notes off the inconsistent reading
-of the unrepaired manuscript.
+Three objects have to be kept apart, as Benzm\"uller and Scott set them out
+\cite{benzmuellerScott2025}.
+The first is G\"odel's own hand manuscript of 1970, reproduced as their
+Figure~1.
+The shelfmark they give is Kurt G\"odel Papers, Box~12, Folder~41, item
+accession 060565.
+The figure is printed with the copyright of the Institute for Advanced Study.
+The second is the brief notes G\"odel showed Scott.
+Those notes were very brief compared with the 1970 manuscript.
+The third is the slightly modified version Scott discussed in a Princeton
+seminar, printed as Appendix~B of Sobel
+\cite{scott2004notes,sobel2004}.
+The Archive of Formal Proofs entry of 7~January 2025, and the Lean
+transcription in this repository, use the Scott-repaired essence of their
+Figure~7 \cite{afpNotes2025}.
+Neither file is a transcription of the hand page.
+
+In spring 1970, at the Princeton Philosophy Department, G\"odel asked Scott
+confidentially to preserve some papers and notes in case of illness or death.
+One of the notes was a brief sketch of an ontological argument.
+Soon after, Scott mentioned the proof in a modal-logic seminar without
+permission.
+The version he mentioned was one he had slightly modified.
+He records that he still feels embarrassed, and that he left Princeton soon
+after for the chair in mathematical logic at Oxford and did not discuss the
+matter with G\"odel \cite{benzmuellerScott2025}.
+
+The hand manuscript's binary axiom says that the conjunction of two positive
+properties is positive.
+A footnote adds ``and for any number of summands'': the conjunction of a
+collection of positive properties is itself positive.
+Scott's seminar notes replace that generalization by a direct postulate that
+being God-like is positive, his axiom A3
+\cite{scott2004notes,benzmuellerScott2025}.
+
+The hand definition of essence omits the exemplification conjunct
+\(\varphi\,x\).
+Benzm\"uller and Scott reconstruct the inconsistency from the empty-essence
+lemma \((\lambda x.\,\bot)\,\mathrm{Ess.}\,x\).
+The derivation of falsity they give is already valid in the modal logic K.
+Scott's addition of the conjunct \(\varphi\,x\) forces an essential property
+of an individual to hold of that individual, blocks the empty-essence lemma,
+and restores consistency of the package in their Figure~7
+\cite{benzmuellerScott2025}.
+The essence clause in Section~\ref{sec:fig7} is that repaired definition.
+It is Scott's repair, not the hand manuscript's.
 
 Jordan Howard Sobel later showed that Scott's premises collapse modality:
 whatever is true is necessarily true \cite{sobel1987,sobel2004}.
@@ -109,11 +140,11 @@ The same theory checks consistency only by \lean{nitpick[satisfy, card=1]}.
 The question comes from a return to the footnote.
 Christoph Benzm\"uller and Dana Scott, in the \emph{Monatshefte f\"ur
 Mathematik} \cite{benzmuellerScott2025}, and in the matching Archive of Formal
-Proofs entry \cite{afpNotes2025}, study G\"odel's own generalized conjunction
+Proofs entry \cite{afpNotes2025}, study the footnote's generalized conjunction
 as an axiom they call Ax1Gen.
 Positivity of being God-like is not assumed.
 It is lemma~L, derived from Ax1Gen.
-Essence keeps Scott's extra conjunct.
+The essence in that Figure~7 is Scott's, with the conjunct \(\varphi\,x\).
 Individual quantifiers in the argument are actualist: an existence predicate
 says who is around at a world.
 In their Figure~7, Theorem Th3 is
@@ -130,6 +161,32 @@ Figure~8, which repairs the argument by changing necessary inclusion instead
 of essence, has the same open \lean{oops} in
 \lean{GoedelVariantHOML3inS4}.
 The authors' formalization reports neither an S4 proof nor an S4 countermodel.
+That open question is theirs, and it is about the Figure~7 package whose
+essence already contains Scott's conjunct, and likewise about Figure~8.
+Their proof of Th3, in the S5 embedding, uses symmetry of accessibility and
+nothing else from S5: the schema B, so that KB already suffices
+\cite{benzmuellerScott2025,afpNotes2025}.
+The Lean theorems below do not close the S4 question they left open.
+They concern a transcription of the AFP abbreviation Ax1Gen, whose two halves
+can read \(\Phi\) at different worlds.
+
+In the same paper, binary Ax1 does not yield their Theorem Th4, the
+possibility of a God-like being.
+The provers fail on Th4 until the footnote generalization is added.
+Ax1Gen yields lemma~L, and Th4 then follows from L, Ax2a, and Ax4.
+Scott's A3 posts \(P(G)\) in place of that derivation
+\cite{benzmuellerScott2025,afpNotes2025}.
+A later comment gives an explicit countermodel for binary Ax1: one world,
+countably many individuals, positivity a non-principal ultrafilter, empty
+intersection, and no God-like individual \cite{benzmueller2026}.
+That countermodel is stated there.
+It is not a Lean theorem of this repository, and the \emph{Monatshefte} text
+checked for this note does not itself exhibit it.
+The same comment locates modal collapse, in the packages it checks, primarily
+in the rigidity of positivity---Scott's A4, which is G\"odel's Ax2b---together
+with essence and necessary existence, rather than in the ultrafilter alone
+\cite{benzmueller2026}.
+That diagnosis is not the collapse theorem of Section~\ref{sec:literal}.
 
 For a Lean~4 transcription of that AFP text, the literal reading proves Th3,
 and the mechanism is collapse: the axioms force \(R\) to be the identity, so
@@ -285,9 +342,13 @@ Deep surface syntax, Leibniz equality inside the object logic, Nitpick &
 \end{center}
 
 World-relative \(P\), actualist individual quantifiers, possibilist
-quantifiers over properties, Figure~7 essence with the conjunct
-\(\varphi\,x\), and the derivation of \(P(G)\) are the AFP reading.
-They are not extra deviations.
+quantifiers over properties, and the derivation of \(P(G)\) are the AFP
+reading of their Figure~7.
+The essence clause includes the conjunct \(\varphi\,x\).
+Benzm\"uller and Scott attribute that conjunct to Scott's repair of the 1970
+hand definition, which omits it \cite{benzmuellerScott2025}.
+The Lean file uses the repaired clause.
+These choices are not extra deviations from the AFP text.
 Older modules in the same repository use a different argument order for
 properties and a constant domain.
 Those modules are not the encoding of this paper.
@@ -905,9 +966,16 @@ prior art for that schema is the AFP lemma \lean{MC}, which assumes symmetry
 
 Kanckos and Woltzenlogel Paleo showed that Scott's argument goes through in KB:
 symmetry suffices, and S5 is more than the proof uses \cite{kanckos2017}.
-Benzm\"uller and Scott make the same point for their Th3, which cites
-\(R_{\mathrm{symm}}\) and not reflexivity or transitivity
-\cite{benzmuellerScott2025,afpNotes2025}.
+Benzm\"uller and Scott make the same point for their Th3.
+In the proof they construct for the repaired-essence Figure~7, only symmetry
+of accessibility is used, the schema B, so KB already suffices and S5 is not
+required \cite{benzmuellerScott2025,afpNotes2025}.
+They report no S4 proof and no S4 counterexample for that package, and they
+leave the same question open for Figure~8.
+Theorem~\ref{thm:th3} does not answer that question.
+It is a theorem of the literal AFP abbreviation, on which the two halves of
+Ax1Gen may read \(\Phi\) at different worlds, and on which the axioms force
+the identity.
 The repository's Scott-style development rediscovers the positive half
 (local Th3 from symmetry alone, on that encoding) and pairs it with
 countermodels once symmetry is dropped.
@@ -938,6 +1006,23 @@ The note is explicit that this is a simplified package, and that Scott's own
 A3 postulated \(P(G)\) in place of the footnote's conjunction.
 It is not Figure~7's axiom list, and it does not use the AFP scoping of
 Ax1Gen.
+Two further statements in that comment are citations, not theorems of this
+repository.
+Binary Ax1 admits an infinite single-world countermodel in which positivity
+is a non-principal ultrafilter, the positive properties have empty
+intersection, and no individual is God-like, so the possibility theorem fails
+\cite{benzmueller2026}.
+The \emph{Monatshefte} paper already records the matching positive fact: Th4
+is not obtained from binary Ax1, Ax1Gen yields lemma~L, and Th4 follows from
+L, Ax2a, and Ax4, while Scott's A3 posts \(P(G)\) instead
+\cite{benzmuellerScott2025}.
+The infinite countermodel itself is the 2026 comment's.
+The comment also argues that modal collapse, in the variants it checks, is
+driven primarily by rigidity of positivity (Scott's A4, G\"odel's Ax2b),
+together with essence and necessary existence, and not by the ultrafilter
+structure alone.
+Theorem~\ref{thm:MC} is a different statement: collapse for the literal AFP
+reading of Ax1Gen, with no symmetry hypothesis.
 The Archive entry on simplified variants \cite{afpSimplified2021} studies
 arguments that avoid essence and necessary existence and that are valid in K
 or KT.
@@ -970,6 +1055,12 @@ symmetry hypothesis, and no countermodel of the two reconstructions, turned
 up in those sources.
 That is a statement about where the search went.
 It is not a priority claim.
+The manuscript distinction, the empty-essence inconsistency in K, the fact
+that their Th4 needs Ax1Gen, and the fact that their Th3 needs only symmetry,
+are results of Benzm\"uller and Scott \cite{benzmuellerScott2025,afpNotes2025}.
+The non-principal countermodel for binary Ax1, and the rigidity diagnosis of
+collapse, are results of the 2026 comment \cite{benzmueller2026}.
+None of those is the identity theorem.
 
 \section{What the kernel accepts}
 \label{sec:kernel}
@@ -1053,6 +1144,10 @@ The failure of Th3 at the source, taken by itself, depends on none of them.}
 
 \section{Conclusion}
 
+The essence used for these theorems is Scott's repaired clause, with the
+conjunct \(\varphi\,x\), as in the AFP Figure~7.
+It is not the essence definition of the 1970 hand manuscript
+\cite{benzmuellerScott2025}.
 Theorem~\ref{thm:id} says that the literal Figure~7 axioms force \(R\) to be
 the identity, and Theorem~\ref{thm:MC} says that modal collapse follows, with
 no symmetry hypothesis.

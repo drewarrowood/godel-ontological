@@ -1,6 +1,7 @@
 <!DOCTYPE html> 
 <html lang='en-US' xml:lang='en-US'> 
-<head> <title>One World or Two: Where Ax1Gen Reads Φ, and Gödel’s Th3 in S4</title> 
+<head> <title>One World or Two:
+Where Ax1Gen Reads Φ, and Gödel’s Th3 in S4</title> 
 <meta charset='utf-8' /> 
 <meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
 <meta content='width=device-width,initial-scale=1' name='viewport' /> 
@@ -32,7 +33,6 @@ window.MathJax = {
 <span class="pdf-banner-sep">·</span>
 <span>HTML reading copy</span>
 </nav>
-
    <div class='maketitle'>
                                                                                       
                                                                                       
@@ -64,19 +64,34 @@ Where Ax1Gen Reads \(\Phi \), and Gödel’s Th3 in S4</h2>
 </p>
 </section>
    <h3 class='sectionHead'><span class='titlemark'>1   </span> <a id='x1-10001'></a>The open problem</h3>
-<!-- l. 72 --><p class='noindent'>Around 1970 Kurt Gödel wrote down, in a page and a half of symbols, a modal version of the
-ontological argument <span class='cite'>[<a href='#Xgoedel1995'>11</a>]</span>. The first axiom says that the conjunction of two positive properties is
-positive. A footnote extends the axiom from two summands to any number of them: the
-conjunction of a collection of positive properties is itself positive. Dana Scott, working from a
-copy Gödel allowed him to make, rearranged the package <span class='cite'>[<a href='#Xscott2004notes'>14</a>, <a href='#Xsobel1987'>15</a>, <a href='#Xsobel2004'>16</a>]</span>. In Scott’s notes the
-generalized conjunction is replaced by a direct postulate that being God-like is positive.
-Scott also inserts a conjunct into the definition of essence, requiring that the essential
-property actually hold of the individual, and he takes necessary existence to be positive. That
-last change is the one that keeps the notes off the inconsistent reading of the unrepaired
-manuscript.
+<!-- l. 72 --><p class='noindent'>Three objects have to be kept apart, as Benzmüller and Scott set them out <span class='cite'>[<a href='#XbenzmuellerScott2025'>7</a>]</span>. The first is Gödel’s
+own hand manuscript of 1970, reproduced as their Figure 1. The shelfmark they give is Kurt Gödel
+Papers, Box 12, Folder 41, item accession 060565. The figure is printed with the copyright of the
+Institute for Advanced Study. The second is the brief notes Gödel showed Scott. Those notes were
+very brief compared with the 1970 manuscript. The third is the slightly modified version Scott
+discussed in a Princeton seminar, printed as Appendix B of Sobel <span class='cite'>[<a href='#Xscott2004notes'>14</a>, <a href='#Xsobel2004'>16</a>]</span>. The Archive of
+Formal Proofs entry of 7 January 2025, and the Lean transcription in this repository, use
+the Scott-repaired essence of their Figure 7 <span class='cite'>[<a href='#XafpNotes2025'>8</a>]</span>. Neither file is a transcription of the hand
+page.
+</p><!-- l. 89 --><p class='indent'>   In spring 1970, at the Princeton Philosophy Department, Gödel asked Scott confidentially to
+preserve some papers and notes in case of illness or death. One of the notes was a brief sketch of an
                                                                                       
                                                                                       
-</p><!-- l. 88 --><p class='indent'>   Jordan Howard Sobel later showed that Scott’s premises collapse modality: whatever is true is
+ontological argument. Soon after, Scott mentioned the proof in a modal-logic seminar without
+permission. The version he mentioned was one he had slightly modified. He records that he still feels
+embarrassed, and that he left Princeton soon after for the chair in mathematical logic at Oxford and
+did not discuss the matter with Gödel <span class='cite'>[<a href='#XbenzmuellerScott2025'>7</a>]</span>.
+</p><!-- l. 99 --><p class='indent'>   The hand manuscript’s binary axiom says that the conjunction of two positive properties is
+positive. A footnote adds “and for any number of summands”: the conjunction of a collection of
+positive properties is itself positive. Scott’s seminar notes replace that generalization by a direct
+postulate that being God-like is positive, his axiom A3 <span class='cite'>[<a href='#Xscott2004notes'>14</a>, <a href='#XbenzmuellerScott2025'>7</a>]</span>.
+</p><!-- l. 107 --><p class='indent'>   The hand definition of essence omits the exemplification conjunct \(\varphi \,x\). Benzmüller and Scott
+reconstruct the inconsistency from the empty-essence lemma \((\lambda x.\,\bot )\,\mathrm {Ess.}\,x\). The derivation of falsity they give is
+already valid in the modal logic K. Scott’s addition of the conjunct \(\varphi \,x\) forces an essential property of an
+individual to hold of that individual, blocks the empty-essence lemma, and restores consistency of the
+package in their Figure 7 <span class='cite'>[<a href='#XbenzmuellerScott2025'>7</a>]</span>. The essence clause in Section <a href='#x1-20002'>2<!-- tex4ht:ref: sec:fig7  --></a> is that repaired definition. It is Scott’s
+repair, not the hand manuscript’s.
+</p><!-- l. 119 --><p class='indent'>   Jordan Howard Sobel later showed that Scott’s premises collapse modality: whatever is true is
 necessarily true <span class='cite'>[<a href='#Xsobel1987'>15</a>, <a href='#Xsobel2004'>16</a>]</span>. The collapse has since been machine-checked, and so have repairs in the
 spirit of Anderson and of Fitting <span class='cite'>[<a href='#Xanderson1990'>1</a>, <a href='#Xfitting2002'>10</a>, <a href='#XbenzmuellerFuenmayor2020'>5</a>]</span>. Separately, the passage from “possibly God-like” to
 “necessarily God-like” on the Scott side needs symmetry of accessibility, the modal axiom B, and does
@@ -86,20 +101,39 @@ mistaken for the theorems below. For Figure 7, collapse is the question. The S5
 symmetry of \(R\) <span class='cite'>[<a href='#XafpNotes2025'>8</a>]</span>. Applied to the world-proposition “the world is \(w\)”, that lemma already
 confines \(R\) to the identity. The same theory checks consistency only by <span class='ec-lmtt-10x-x-109'>nitpick[satisfy,
 card=1]</span>.
-</p><!-- l. 109 --><p class='indent'>   The question comes from a return to the footnote. Christoph Benzmüller and Dana Scott, in the
-<span class='ec-lmri-10x-x-109'>Monatshefte für Mathematik </span><span class='cite'>[<a href='#XbenzmuellerScott2025'>7</a>]</span>, and in the matching Archive of Formal Proofs entry <span class='cite'>[<a href='#XafpNotes2025'>8</a>]</span>, study
-Gödel’s own generalized conjunction as an axiom they call Ax1Gen. Positivity of being
-God-like is not assumed. It is lemma L, derived from Ax1Gen. Essence keeps Scott’s extra
-conjunct. Individual quantifiers in the argument are actualist: an existence predicate says
-who is around at a world. In their Figure 7, Theorem Th3 is \[ \valid {\Pos (\exE x.\, G x) \supset \Nec (\exE y.\, G y)}. \] In the S5 embedding the
-proof uses symmetry of the accessibility relation and nothing else from S5. The theory
-<span class='ec-lmtt-10x-x-109'>GoedelVariantHOML2inS4 </span>repeats the same non-logical axioms over an S4 frame (reflexive and
-transitive, symmetry not assumed) and leaves Th3 as <span class='ec-lmtt-10x-x-109'>oops</span>, with the comment “Open problem”. The
-header of that theory says that the proof of Th3 fails in S4. Figure 8, which repairs the
-argument by changing necessary inclusion instead of essence, has the same open <span class='ec-lmtt-10x-x-109'>oops </span>in
-<span class='ec-lmtt-10x-x-109'>GoedelVariantHOML3inS4</span>. The authors’ formalization reports neither an S4 proof nor an S4
-countermodel.
-</p><!-- l. 134 --><p class='indent'>   For a Lean 4 transcription of that AFP text, the literal reading proves Th3, and the mechanism is
+</p><!-- l. 140 --><p class='indent'>   The question comes from a return to the footnote. Christoph Benzmüller and Dana Scott, in the
+<span class='ec-lmri-10x-x-109'>Monatshefte für Mathematik </span><span class='cite'>[<a href='#XbenzmuellerScott2025'>7</a>]</span>, and in the matching Archive of Formal Proofs entry <span class='cite'>[<a href='#XafpNotes2025'>8</a>]</span>,
+study the footnote’s generalized conjunction as an axiom they call Ax1Gen. Positivity
+of being God-like is not assumed. It is lemma L, derived from Ax1Gen. The essence in
+that Figure 7 is Scott’s, with the conjunct \(\varphi \,x\). Individual quantifiers in the argument are
+actualist: an existence predicate says who is around at a world. In their Figure 7, Theorem
+Th3 is \[ \valid {\Pos (\exE x.\, G x) \supset \Nec (\exE y.\, G y)}. \] In the S5 embedding the proof uses symmetry of the accessibility relation and
+nothing else from S5. The theory <span class='ec-lmtt-10x-x-109'>GoedelVariantHOML2inS4 </span>repeats the same non-logical
+axioms over an S4 frame (reflexive and transitive, symmetry not assumed) and leaves Th3 as
+<span class='ec-lmtt-10x-x-109'>oops</span>, with the comment “Open problem”. The header of that theory says that the proof of
+Th3 fails in S4. Figure 8, which repairs the argument by changing necessary inclusion
+instead of essence, has the same open <span class='ec-lmtt-10x-x-109'>oops </span>in <span class='ec-lmtt-10x-x-109'>GoedelVariantHOML3inS4</span>. The authors’
+formalization reports neither an S4 proof nor an S4 countermodel. That open question is theirs,
+and it is about the Figure 7 package whose essence already contains Scott’s conjunct,
+and likewise about Figure 8. Their proof of Th3, in the S5 embedding, uses symmetry of
+accessibility and nothing else from S5: the schema B, so that KB already suffices <span class='cite'>[<a href='#XbenzmuellerScott2025'>7</a>, <a href='#XafpNotes2025'>8</a>]</span>.
+The Lean theorems below do not close the S4 question they left open. They concern a
+transcription of the AFP abbreviation Ax1Gen, whose two halves can read \(\Phi \) at different
+worlds.
+</p><!-- l. 173 --><p class='indent'>   In the same paper, binary Ax1 does not yield their Theorem Th4, the possibility of a God-like
+being. The provers fail on Th4 until the footnote generalization is added. Ax1Gen yields
+lemma L, and Th4 then follows from L, Ax2a, and Ax4. Scott’s A3 posts \(P(G)\) in place of that
+derivation <span class='cite'>[<a href='#XbenzmuellerScott2025'>7</a>, <a href='#XafpNotes2025'>8</a>]</span>. A later comment gives an explicit countermodel for binary Ax1: one world,
+countably many individuals, positivity a non-principal ultrafilter, empty intersection, and no
+God-like individual <span class='cite'>[<a href='#Xbenzmueller2026'>4</a>]</span>. That countermodel is stated there. It is not a Lean theorem of this
+repository, and the <span class='ec-lmri-10x-x-109'>Monatshefte </span>text checked for this note does not itself exhibit it. The
+same comment locates modal collapse, in the packages it checks, primarily in the rigidity
+                                                                                      
+                                                                                      
+of positivity—Scott’s A4, which is Gödel’s Ax2b—together with essence and necessary
+existence, rather than in the ultrafilter alone <span class='cite'>[<a href='#Xbenzmueller2026'>4</a>]</span>. That diagnosis is not the collapse theorem of
+Section <a href='#x1-40004'>4<!-- tex4ht:ref: sec:literal  --></a>.
+</p><!-- l. 191 --><p class='indent'>   For a Lean 4 transcription of that AFP text, the literal reading proves Th3, and the mechanism is
 collapse: the axioms force \(R\) to be the identity, so the only S4 models are discrete and Th3 holds
 there trivially. Two reconstructions of Ax1Gen refute Th3 on a two-world S4 chain. Among
 the three readings examined, with full comprehension, the answer turns on whether both
@@ -107,96 +141,98 @@ halves of Ax1Gen read \(\Phi \) at the same world. The domains were not varied, 
 was not the variable in that comparison. An Isabelle check that would instantiate the
 collection of Section <a href='#x1-40004'>4<!-- tex4ht:ref: sec:literal  --></a> inside <span class='ec-lmtt-10x-x-109'>GoedelVariantHOML2inS4 </span>has not been run: Isabelle was not
 available.
-</p><!-- l. 146 --><p class='noindent'>
+</p><!-- l. 203 --><p class='noindent'>
 </p>
    <h3 class='sectionHead'><span class='titlemark'>2   </span> <a id='x1-20002'></a>Figure 7, as formalized</h3>
-<!-- l. 149 --><p class='noindent'>Worlds form a type \(W\), individuals a type \(\mathit {Ind}\), and accessibility is a relation \(R\) on \(W\). A world-proposition is a
+<!-- l. 206 --><p class='noindent'>Worlds form a type \(W\), individuals a type \(\mathit {Ind}\), and accessibility is a relation \(R\) on \(W\). A world-proposition is a
 map \(W \to \mathsf {Prop}\). A property is a map \(\mathit {Ind} \to W \to \mathsf {Prop}\), individual first and world second, matching the AFP type \(e \Rightarrow i \Rightarrow \mathsf {bool}\). Positivity \(P\) is
 a world-relative predicate on properties. Necessity and possibility are the usual quantifications along \(R\): \[ (\Nec \varphi )\,w \;\equiv \; \forall v.\; R\,w\,v \to \varphi \,v, \qquad (\Pos \varphi )\,w \;\equiv \; \exists v.\; R\,w\,v \land \varphi \,v. \]
 Validity \(\valid {\varphi }\) means \(\varphi \) holds at every world.
-</p><!-- l. 164 --><p class='indent'>   An existence predicate \(\mathit {ex} : \mathit {Ind} \to W \to \mathsf {Prop}\) plays the role of the AFP constant \(\mathit {existsAt}\). The outer type of individuals is fixed.
+</p><!-- l. 221 --><p class='indent'>   An existence predicate \(\mathit {ex} : \mathit {Ind} \to W \to \mathsf {Prop}\) plays the role of the AFP constant \(\mathit {existsAt}\). The outer type of individuals is fixed.
 Who exists may vary. Actualist quantifiers are the restrictions \[ (\allE y.\, \varphi \,y)\,w \;\equiv \; \forall y.\; \mathit {ex}\,y\,w \to \varphi \,y\,w, \qquad (\exE y.\, \varphi \,y)\,w \;\equiv \; \exists y.\; \mathit {ex}\,y\,w \land \varphi \,y\,w. \] Quantifiers over properties stay
 possibilist: they range over every map \(\mathit {Ind} \to W \to \mathsf {Prop}\).
-</p><!-- l. 179 --><p class='indent'>   God-likeness, necessary inclusion, essence, and necessary existence are the Figure 7
+</p><!-- l. 236 --><p class='indent'>   God-likeness, necessary inclusion, essence, and necessary existence are the Figure 7
 clauses. Writing \(\varphi \mathbin {\cdot } \psi \) for the pointwise conjunction of properties and \(\sim \varphi \) for pointwise negation:
 \begin {align*}  G\,x &amp;\;\equiv \; \forall \varphi .\; P\,\varphi \supset \varphi \,x,\\ \varphi \necImp \psi &amp;\;\equiv \; \Nec (\allE y.\, \varphi \,y \supset \psi \,y),\\ \varphi \mathbin {\mathrm {Ess.}} x &amp;\;\equiv \; \varphi \,x \land (\forall \psi .\; \psi \,x \supset (\varphi \necImp \psi )),\\ E\,x &amp;\;\equiv \; \forall \varphi .\; (\varphi \mathbin {\mathrm {Ess.}} x) \supset \Nec (\exE z.\, \varphi \,z).  \end {align*}
-</p><!-- l. 193 --><p class='indent'>   The AFP binder in the last clause shadows \(x\); the Lean definition uses a fresh variable, which is the
+</p><!-- l. 250 --><p class='indent'>   The AFP binder in the last clause shadows \(x\); the Lean definition uses a fresh variable, which is the
 same formula. The axioms, all under validity, are Ax1 (binary conjunction), Ax2a (exclusive
 disjunction of \(P\,\varphi \) and \(P(\sim \varphi )\)), Ax2b (\(P\,\varphi \supset \Nec P\,\varphi \)), Ax3 (\(P\,E\)), and Ax4 (a positive property passes positivity along \(\necImp \)). Ax1 is
 part of the package and holds in the one-world model of Section <a href='#x1-40004'>4<!-- tex4ht:ref: sec:literal  --></a>. Th3 does not use it. The AFP
 proof of Th3 does not use it either.
-                                                                                      
-                                                                                      
-</p><!-- l. 204 --><p class='indent'>   The footnote becomes two abbreviations and one axiom. \begin {align*}  \mathrm {PosProps}\,\Phi &amp;\;\equiv \; \forall \varphi .\; \Phi \,\varphi \supset P\,\varphi ,\\ \mathrm {ConjOfPropsFrom}\,\varphi \,\Phi &amp;\;\equiv \; \Nec \bigl (\allE z.\; \varphi \,z \leftrightarrow (\forall \psi .\; \Phi \,\psi \supset \psi \,z)\bigr ),\\ \mathrm {Ax1Gen} &amp;\;\equiv \; \valid {(\mathrm {PosProps}\,\Phi \land \mathrm {ConjOfPropsFrom}\,\varphi \,\Phi ) \supset P\,\varphi }.  \end {align*}
-</p><!-- l. 216 --><p class='indent'>   Both \(\Phi \) and \(\varphi \) are universally quantified. This is the text of <span class='ec-lmtt-10x-x-109'>GoedelVariantHOML2 </span>and of
+</p><!-- l. 261 --><p class='indent'>   The footnote becomes two abbreviations and one axiom. \begin {align*}  \mathrm {PosProps}\,\Phi &amp;\;\equiv \; \forall \varphi .\; \Phi \,\varphi \supset P\,\varphi ,\\ \mathrm {ConjOfPropsFrom}\,\varphi \,\Phi &amp;\;\equiv \; \Nec \bigl (\allE z.\; \varphi \,z \leftrightarrow (\forall \psi .\; \Phi \,\psi \supset \psi \,z)\bigr ),\\ \mathrm {Ax1Gen} &amp;\;\equiv \; \valid {(\mathrm {PosProps}\,\Phi \land \mathrm {ConjOfPropsFrom}\,\varphi \,\Phi ) \supset P\,\varphi }.  \end {align*}
+</p><!-- l. 273 --><p class='indent'>   Both \(\Phi \) and \(\varphi \) are universally quantified. This is the text of <span class='ec-lmtt-10x-x-109'>GoedelVariantHOML2 </span>and of
 <span class='ec-lmtt-10x-x-109'>GoedelVariantHOML2inS4</span>. Lemma L is \(\valid {P\,G}\), obtained by feeding Ax1Gen the collection of properties
 that are positive at the world of evaluation. It is a lemma, not an axiom. Scott’s later A3 postulates
 that same sentence outright <span class='cite'>[<a href='#Xscott2004notes'>14</a>]</span>. The two packages are different, and Section <a href='#x1-140006'>6<!-- tex4ht:ref: sec:related  --></a> is there to keep them
 apart.
-</p><!-- l. 227 --><p class='indent'>   In the S5 theory, Th3 is proved from Th2 by the three steps the AFP script writes down: existence
+</p><!-- l. 284 --><p class='indent'>   In the S5 theory, Th3 is proved from Th2 by the three steps the AFP script writes down: existence
 of a God-like being implies necessary existence; the diamond of the antecedent is therefore a diamond
 of a box; symmetry turns that diamond-box back into a box. The Lean theorem <span class='ec-lmtt-10x-x-109'>th3_of_symmetric </span>is
 that argument, with the witness individual written out. Reflexivity is not used. Lemma <span class='ec-lmtt-10x-x-109'>MC </span>in the same
 theory is the collapse schema quoted in Section <a href='#x1-10001'>1<!-- tex4ht:ref: sec:open  --></a>. Its script cites Ax2a, Ax2b, Th5, the definition of \(G\),
 and \(R_{\mathrm {symm}}\).
-</p><!-- l. 238 --><p class='noindent'>
+</p><!-- l. 295 --><p class='noindent'>
 </p>
    <h3 class='sectionHead'><span class='titlemark'>3   </span> <a id='x1-30003'></a>What the encoding is</h3>
-<!-- l. 241 --><p class='noindent'>The development is a shallow embedding in Lean 4 <span class='cite'>[<a href='#XdemouraUllrich2021'>9</a>]</span>, with no Mathlib library. Hypotheses are
+<!-- l. 298 --><p class='noindent'>The development is a shallow embedding in Lean 4 <span class='cite'>[<a href='#XdemouraUllrich2021'>9</a>]</span>, with no Mathlib library. Hypotheses are
 propositions, passed as arguments. There is no Lean <span class='ec-lmtt-10x-x-109'>axiom </span>declaration anywhere in the repository.
+                                                                                      
+                                                                                      
 The host logic is the ordinary Lean kernel. Where a proof uses classical reasoning, <span class='ec-lmtt-10x-x-109'>#print axioms</span>
 says so (Section <a href='#x1-150007'>7<!-- tex4ht:ref: sec:kernel  --></a>). Isabelle/HOL is classical <span class='cite'>[<a href='#Xnipkow2002'>13</a>]</span>, so that use of classical logic matches the host logic
 of the AFP entry. It is still a different host.
-</p><!-- l. 252 --><p class='indent'>   The departures from the AFP text are these.
+</p><!-- l. 309 --><p class='indent'>   The departures from the AFP text are these.
 </p>
 <div class='center'>
-<!-- l. 254 --><p class='noindent'>
+<!-- l. 311 --><p class='noindent'>
 </p>
 <div class='tabular'>
- <table class='tabular' id='TBL-2'><colgroup id='TBL-2-1g'><col id='TBL-2-1' /><col id='TBL-2-2' /></colgroup><tr id='TBL-2-1-' style='vertical-align:baseline;'><td class='td01' id='TBL-2-1-1' style='white-space:normal; text-align:left;'><!-- l. 258 --><p class='noindent'><span class='ec-lmr-10'>AFP</span>                                                          </p></td><td class='td10' id='TBL-2-1-2' style='white-space:normal; text-align:left;'> <!-- l. 258 --><p class='noindent'><span class='ec-lmr-10'>This Lean development</span>                                   </p></td>
-</tr><tr id='TBL-2-2-' style='vertical-align:baseline;'><td class='td01' id='TBL-2-2-1' style='white-space:normal; text-align:left;'><!-- l. 260 --><p class='noindent'><span class='ec-lmr-10'>Isabelle/HOL </span><span class='ec-lmss-10'>bool</span>                                         </p></td><td class='td10' id='TBL-2-2-2' style='white-space:normal; text-align:left;'> <!-- l. 261 --><p class='noindent'><span class='ec-lmr-10'>Lean  </span><span class='ec-lmss-10'>Prop</span><span class='ec-lmr-10'>.  Classical  steps  are  exactly  the  ones
+ <table class='tabular' id='TBL-2'><colgroup id='TBL-2-1g'><col id='TBL-2-1' /><col id='TBL-2-2' /></colgroup><tr id='TBL-2-1-' style='vertical-align:baseline;'><td class='td01' id='TBL-2-1-1' style='white-space:normal; text-align:left;'><!-- l. 315 --><p class='noindent'><span class='ec-lmr-10'>AFP</span>                                                          </p></td><td class='td10' id='TBL-2-1-2' style='white-space:normal; text-align:left;'> <!-- l. 315 --><p class='noindent'><span class='ec-lmr-10'>This Lean development</span>                                   </p></td>
+</tr><tr id='TBL-2-2-' style='vertical-align:baseline;'><td class='td01' id='TBL-2-2-1' style='white-space:normal; text-align:left;'><!-- l. 317 --><p class='noindent'><span class='ec-lmr-10'>Isabelle/HOL </span><span class='ec-lmss-10'>bool</span>                                         </p></td><td class='td10' id='TBL-2-2-2' style='white-space:normal; text-align:left;'> <!-- l. 318 --><p class='noindent'><span class='ec-lmr-10'>Lean  </span><span class='ec-lmss-10'>Prop</span><span class='ec-lmr-10'>.  Classical  steps  are  exactly  the  ones
   whose axiom list contains </span><span class='ec-lmtt-10'>Classical.choice</span><span class='ec-lmr-10'>.</span>     </p></td>
-</tr><tr id='TBL-2-3-' style='vertical-align:baseline;'><td class='td01' id='TBL-2-3-1' style='white-space:normal; text-align:left;'><!-- l. 264 --><p class='noindent'>\(\valid {\psi } \equiv \forall w.\, \psi \,w\)                                         </p></td><td class='td10' id='TBL-2-3-2' style='white-space:normal; text-align:left;'> <!-- l. 265 --><p class='noindent'><span class='ec-lmr-10'>The definition </span><span class='ec-lmtt-10'>valid</span><span class='ec-lmr-10'>.</span>                                     </p></td></tr><tr id='TBL-2-4-' style='vertical-align:baseline;'><td class='td01' id='TBL-2-4-1' style='white-space:normal; text-align:left;'><!-- l. 266 --><p class='noindent'>\(\mathit {existsAt} : e \Rightarrow \sigma \) </p> </td><td class='td10' id='TBL-2-4-2' style='white-space:normal; text-align:left;'> <!-- l. 267 --><p class='noindent'>\(\mathit {ex} : \mathit {Ind} \to W \to \mathsf {Prop}\)<span class='ec-lmr-10'>. A fixed outer type, with existence varying by
+</tr><tr id='TBL-2-3-' style='vertical-align:baseline;'><td class='td01' id='TBL-2-3-1' style='white-space:normal; text-align:left;'><!-- l. 321 --><p class='noindent'>\(\valid {\psi } \equiv \forall w.\, \psi \,w\)                                         </p></td><td class='td10' id='TBL-2-3-2' style='white-space:normal; text-align:left;'> <!-- l. 322 --><p class='noindent'><span class='ec-lmr-10'>The definition </span><span class='ec-lmtt-10'>valid</span><span class='ec-lmr-10'>.</span>                                     </p></td></tr><tr id='TBL-2-4-' style='vertical-align:baseline;'><td class='td01' id='TBL-2-4-1' style='white-space:normal; text-align:left;'><!-- l. 323 --><p class='noindent'>\(\mathit {existsAt} : e \Rightarrow \sigma \) </p> </td><td class='td10' id='TBL-2-4-2' style='white-space:normal; text-align:left;'> <!-- l. 324 --><p class='noindent'>\(\mathit {ex} : \mathit {Ind} \to W \to \mathsf {Prop}\)<span class='ec-lmr-10'>. A fixed outer type, with existence varying by
   world,  is  how  the  AFP  file  represents  varying
   domains.</span>                                                      </p></td>
-</tr><tr id='TBL-2-5-' style='vertical-align:baseline;'><td class='td01' id='TBL-2-5-1' style='white-space:normal; text-align:left;'><!-- l. 270 --><p class='noindent'><span class='ec-lmr-10'>Property quantifiers are HOL </span>\(\forall \) <span class='ec-lmr-10'>over functions </span>\(e \Rightarrow \sigma \)     </p></td><td class='td10' id='TBL-2-5-2' style='white-space:normal; text-align:left;'> <!-- l. 271 --><p class='noindent'><span class='ec-lmr-10'>Lean </span>\(\forall \) <span class='ec-lmr-10'>over functions </span>\(\mathit {Ind} \to W \to \mathsf {Prop}\)<span class='ec-lmr-10'>. Comprehension is full, as in
+</tr><tr id='TBL-2-5-' style='vertical-align:baseline;'><td class='td01' id='TBL-2-5-1' style='white-space:normal; text-align:left;'><!-- l. 327 --><p class='noindent'><span class='ec-lmr-10'>Property quantifiers are HOL </span>\(\forall \) <span class='ec-lmr-10'>over functions </span>\(e \Rightarrow \sigma \)     </p></td><td class='td10' id='TBL-2-5-2' style='white-space:normal; text-align:left;'> <!-- l. 328 --><p class='noindent'><span class='ec-lmr-10'>Lean </span>\(\forall \) <span class='ec-lmr-10'>over functions </span>\(\mathit {Ind} \to W \to \mathsf {Prop}\)<span class='ec-lmr-10'>. Comprehension is full, as in
   their impredicative Ax1Gen.</span>                            </p></td>
-</tr><tr id='TBL-2-6-' style='vertical-align:baseline;'><td class='td01' id='TBL-2-6-1' style='white-space:normal; text-align:left;'><!-- l. 273 --><p class='noindent'><span class='ec-lmr-10'>Figure 8 writes </span>\(\varphi \neq (\lambda x.\, \bot )\)<span class='ec-lmr-10'>, which is extensional inequality
-of HOL functions</span>                                           </p></td><td class='td10' id='TBL-2-6-2' style='white-space:normal; text-align:left;'> <!-- l. 275 --><p class='noindent'><span class='ec-lmtt-10'>neBot</span><span class='ec-lmr-10'>: </span>\(\neg \forall x\,w.\, \varphi \,x\,w \leftrightarrow \mathsf {False}\)<span class='ec-lmr-10'>. The symmetry proof supplies a pointwise
+</tr><tr id='TBL-2-6-' style='vertical-align:baseline;'><td class='td01' id='TBL-2-6-1' style='white-space:normal; text-align:left;'><!-- l. 330 --><p class='noindent'><span class='ec-lmr-10'>Figure 8 writes </span>\(\varphi \neq (\lambda x.\, \bot )\)<span class='ec-lmr-10'>, which is extensional inequality
+of HOL functions</span>                                           </p></td><td class='td10' id='TBL-2-6-2' style='white-space:normal; text-align:left;'> <!-- l. 332 --><p class='noindent'><span class='ec-lmtt-10'>neBot</span><span class='ec-lmr-10'>: </span>\(\neg \forall x\,w.\, \varphi \,x\,w \leftrightarrow \mathsf {False}\)<span class='ec-lmr-10'>. The symmetry proof supplies a pointwise
   witness.   Lean’s   intensional   </span>\(\varphi \neq \bot \)   <span class='ec-lmr-10'>is   a   different
   statement, and it is not the one used.</span>                </p></td>
-</tr><tr id='TBL-2-7-' style='vertical-align:baseline;'><td class='td01' id='TBL-2-7-1' style='white-space:normal; text-align:left;'><!-- l. 279 --><p class='noindent'><span class='ec-lmr-10'>Deep surface syntax, Leibniz equality inside the
-object logic, Nitpick</span>                                       </p></td><td class='td10' id='TBL-2-7-2' style='white-space:normal; text-align:left;'> <!-- l. 280 --><p class='noindent'><span class='ec-lmr-10'>Absent. The one-world model of Section </span><a href='#x1-40004'><span class='ec-lmr-10'>4</span><!-- tex4ht:ref: sec:literal  --></a> <span class='ec-lmr-10'>is the
+</tr><tr id='TBL-2-7-' style='vertical-align:baseline;'><td class='td01' id='TBL-2-7-1' style='white-space:normal; text-align:left;'><!-- l. 336 --><p class='noindent'><span class='ec-lmr-10'>Deep surface syntax, Leibniz equality inside the
+object logic, Nitpick</span>                                       </p></td><td class='td10' id='TBL-2-7-2' style='white-space:normal; text-align:left;'> <!-- l. 337 --><p class='noindent'><span class='ec-lmr-10'>Absent. The one-world model of Section </span><a href='#x1-40004'><span class='ec-lmr-10'>4</span><!-- tex4ht:ref: sec:literal  --></a> <span class='ec-lmr-10'>is the
   cardinality-one shape Nitpick reported, rebuilt by
   hand.</span>                                                          </p></td>
 
 </tr></table>                                             </div></div>
-<!-- l. 287 --><p class='indent'>   World-relative \(P\), actualist individual quantifiers, possibilist quantifiers over properties,
-Figure 7 essence with the conjunct \(\varphi \,x\), and the derivation of \(P(G)\) are the AFP reading. They
-are not extra deviations. Older modules in the same repository use a different argument
+<!-- l. 344 --><p class='indent'>   World-relative \(P\), actualist individual quantifiers, possibilist quantifiers over properties, and
+the derivation of \(P(G)\) are the AFP reading of their Figure 7. The essence clause includes the
+conjunct \(\varphi \,x\). Benzmüller and Scott attribute that conjunct to Scott’s repair of the 1970 hand
+definition, which omits it <span class='cite'>[<a href='#XbenzmuellerScott2025'>7</a>]</span>. The Lean file uses the repaired clause. These choices are not extra
+deviations from the AFP text. Older modules in the same repository use a different argument
 order for properties and a constant domain. Those modules are not the encoding of this
 paper.
-</p><!-- l. 295 --><p class='indent'>   One consequence of Lean’s <span class='ec-lmss-10x-x-109'>Prop </span>is worth saying before the proofs. A proof of a negation may be a
+</p><!-- l. 356 --><p class='indent'>   One consequence of Lean’s <span class='ec-lmss-10x-x-109'>Prop </span>is worth saying before the proofs. A proof of a negation may be a
 classical contradiction rather than a construction of a counter-witness. The symmetry argument is of
 that kind. The countermodel of Section <a href='#x1-90005'>5<!-- tex4ht:ref: sec:recon  --></a> is not: failure of Th3 at the source is an explicit world, an
 explicit individual, and a computation.
-                                                                                      
-                                                                                      
-</p><!-- l. 302 --><p class='indent'>   The check that could still fail is not another Lean proof. It is the Isabelle instantiation \[ \mathrm {Ax1Gen}[\mathsf {of}\; \text {``}\lambda \psi \,u.\; u \neq w \land (\forall x.\; \neg \psi \,x\,u)\text {''}\; \text {``}\lambda x\,u.\; u = w\text {''}] \]
+</p><!-- l. 363 --><p class='indent'>   The check that could still fail is not another Lean proof. It is the Isabelle instantiation \[ \mathrm {Ax1Gen}[\mathsf {of}\; \text {``}\lambda \psi \,u.\; u \neq w \land (\forall x.\; \neg \psi \,x\,u)\text {''}\; \text {``}\lambda x\,u.\; u = w\text {''}] \]
 inside <span class='ec-lmtt-10x-x-109'>GoedelVariantHOML2inS4</span>. Isabelle was not available, so that check has not been
 run.
-</p><!-- l. 312 --><p class='noindent'>
+</p><!-- l. 373 --><p class='noindent'>
 </p>
    <h3 class='sectionHead'><span class='titlemark'>4   </span> <a id='x1-40004'></a>The literal axiom forces the identity</h3>
-<!-- l. 315 --><p class='noindent'>
+<!-- l. 376 --><p class='noindent'>
 </p>
    <h4 class='subsectionHead'><span class='titlemark'>4.1   </span> <a id='x1-50004.1'></a>The collection</h4>
-<!-- l. 318 --><p class='noindent'>Ax1Gen invites a definition of a property by the collection it conjoins. The abbreviation does not
+<!-- l. 379 --><p class='noindent'>Ax1Gen invites a definition of a property by the collection it conjoins. The abbreviation does not
 require the collection to be the same collection at every world. \(\mathrm {PosProps}\,\Phi \) is evaluated at the world where
 the axiom is applied. \(\mathrm {ConjOfPropsFrom}\) puts \(\Phi \) under a box, so on the right-hand side \(\Phi \) is read at successor
 worlds.
-</p><!-- l. 326 --><p class='indent'>   Fix a world \(w\) and define \begin {align*}  \varphi &amp;\;:\equiv \; \lambda \,\_\,u.\; (u = w),\\ \Phi &amp;\;:\equiv \; \lambda \,\psi \,u.\; \bigl (u \neq w \land \forall x.\; \neg \, \psi \,x\,u\bigr ).  \end {align*}
-</p><!-- l. 332 --><p class='indent'>   At \(w\), the clause \(u \neq w\) fails, so \(\Phi \) marks no property. Positivity of “every marked property” is
+                                                                                      
+                                                                                      
+</p><!-- l. 387 --><p class='indent'>   Fix a world \(w\) and define \begin {align*}  \varphi &amp;\;:\equiv \; \lambda \,\_\,u.\; (u = w),\\ \Phi &amp;\;:\equiv \; \lambda \,\psi \,u.\; \bigl (u \neq w \land \forall x.\; \neg \, \psi \,x\,u\bigr ).  \end {align*}
+</p><!-- l. 393 --><p class='indent'>   At \(w\), the clause \(u \neq w\) fails, so \(\Phi \) marks no property. Positivity of “every marked property” is
 vacuous, and Ax1Gen still concludes that \(\varphi \) is positive at \(w\). At a successor \(u \neq w\), \(\Phi \) marks every
 property empty at \(u\). The right-hand side of the biconditional asks such a property of an
 individual and cannot hold, and the left-hand side, “the world is \(w\)”, is false. Both sides fail
@@ -212,7 +248,10 @@ positive.
 <a id='x1-50011'></a>
                                                                                       
                                                                                       
-<!-- l. 347 --><p class='noindent'><img alt="At the source, Phi marks nothing. At a successor that cannot see the source, Phi marks every property empty there." src="main0x.svg" />
+<!-- l. 408 --><p class='noindent'><img alt='ΦΦmmaarrkeksmspevtneyortyahtinp vgroperty
+     φ hφolfdasils
+wvRmPiobssosPtinrhgo Ppsφ isa vnadcuPo(u∼sφ)
+' src='main0x.svg' />
 </p>
 <figcaption class='caption'><span class='id'>Figure 1: </span><span class='content'>The collection used by <span class='ec-lmtt-10x-x-109'>fig7_implies_symmetric</span>. At the source, \(\Phi \) is empty, so Ax1Gen
 owes nobody a positivity premise. At a successor that cannot see the source, the same \(\Phi \) marks
@@ -221,43 +260,43 @@ every property empty at \(u\), \(\varphi \) is “the world is the source”, an
                                                                                       
    </figure>
    <div class='newtheorem'>
-<!-- l. 374 --><p class='noindent'><span class='head'>
+<!-- l. 435 --><p class='noindent'><span class='head'>
 <a id='x1-5002r1'></a>
 <span class='ec-lmbx-10x-x-109'>Lemma 1 </span>(<span class='ec-lmtt-10x-x-109'>pos_of_home</span>)<span class='ec-lmbx-10x-x-109'>.</span>  </span> <span class='ec-lmri-10x-x-109'>From Ax1Gen alone: if </span>\(\varphi \) <span class='ec-lmri-10x-x-109'>holds of every individual that exists at </span>\(w\)
 <span class='ec-lmri-10x-x-109'>whenever </span>\(R\,w\,w\)<span class='ec-lmri-10x-x-109'>, then </span>\(P\,\varphi \) <span class='ec-lmri-10x-x-109'>holds at </span>\(w\)<span class='ec-lmri-10x-x-109'>.</span>
 </p>
    </div>
-<!-- l. 378 --><p class='indent'>
+<!-- l. 439 --><p class='indent'>
 </p>
    <div class='proof'>
-<!-- l. 380 --><p class='indent'>   <span class='head'>
+<!-- l. 441 --><p class='indent'>   <span class='head'>
 <span class='ec-lmri-10x-x-109'>Sketch.</span> </span> Instantiate Ax1Gen at the collection \(\Phi \,\psi \,u :\equiv (u \neq w \land \psi = \varphi )\). At \(w\) that collection marks nothing, so PosProps
 is vacuous. At a successor equal to \(w\), the hypothesis supplies \(\varphi \) of every existent, which is what
 the biconditional asks. At a successor other than \(w\), the only marked property is \(\varphi \) itself, so the
 biconditional is the identity. Ax1Gen returns \(P\,\varphi \) at \(w\).                                                         □
 </p>
    </div>
-<!-- l. 390 --><p class='indent'>   The collection of Figure <a href='#x1-50011'>1<!-- tex4ht:ref: fig:phi  --></a> is the case in which \(\varphi \) says “the world is \(w\)”. Lemma <a href='#x1-5002r1'>1<!-- tex4ht:ref: lem:home  --></a> is the
+<!-- l. 451 --><p class='indent'>   The collection of Figure <a href='#x1-50011'>1<!-- tex4ht:ref: fig:phi  --></a> is the case in which \(\varphi \) says “the world is \(w\)”. Lemma <a href='#x1-5002r1'>1<!-- tex4ht:ref: lem:home  --></a> is the
 same trick for an arbitrary property. It is what ties positivity to who happens to exist at
 \(w\).
 </p>
    <h4 class='subsectionHead'><span class='titlemark'>4.2   </span> <a id='x1-60004.2'></a>Reflexivity, the B schema, and the identity</h4>
    <div class='newtheorem'>
-<!-- l. 397 --><p class='noindent'><span class='head'>
+<!-- l. 458 --><p class='noindent'><span class='head'>
 <a id='x1-6001r2'></a>
 <span class='ec-lmbx-10x-x-109'>Theorem 2 </span>(<span class='ec-lmtt-10x-x-109'>refl_of_gen</span>)<span class='ec-lmbx-10x-x-109'>.</span>  </span> <span class='ec-lmri-10x-x-109'>From Ax1Gen and Ax2a, </span>\(R\) <span class='ec-lmri-10x-x-109'>is reflexive.</span>
 </p>
    </div>
-<!-- l. 400 --><p class='indent'>
+<!-- l. 461 --><p class='indent'>
 </p>
    <div class='proof'>
-<!-- l. 402 --><p class='indent'>   <span class='head'>
+<!-- l. 463 --><p class='indent'>   <span class='head'>
 <span class='ec-lmri-10x-x-109'>Sketch.</span> </span> If \(\neg R\,w\,w\), the hypothesis of Lemma <a href='#x1-5002r1'>1<!-- tex4ht:ref: lem:home  --></a> is vacuous for every property. Both \(\bot \) and \(\sim \bot \) are therefore
 positive at \(w\). Ax2a forbids that pair.                                                                            □
 </p>
    </div>
    <div class='newtheorem'>
-<!-- l. 409 --><p class='noindent'><span class='head'>
+<!-- l. 470 --><p class='noindent'><span class='head'>
 <a id='x1-6002r3'></a>
                                                                                       
                                                                                       
@@ -265,10 +304,10 @@ positive at \(w\). Ax2a forbids that pair.                                      
 <span class='ec-lmri-10x-x-109'>satisfies </span>\(q \supset \Nec \Pos q\)<span class='ec-lmri-10x-x-109'>.</span>
 </p>
    </div>
-<!-- l. 413 --><p class='indent'>
+<!-- l. 474 --><p class='indent'>
 </p>
    <div class='proof'>
-<!-- l. 415 --><p class='indent'>   <span class='head'>
+<!-- l. 476 --><p class='indent'>   <span class='head'>
 <span class='ec-lmri-10x-x-109'>Sketch.</span> </span> Suppose \(q\) holds at \(w\), and \(R\,w\,v\). Let \(\varphi \) ignore the individual and hold at a world iff \(q\) does.
 Lemma <a href='#x1-5002r1'>1<!-- tex4ht:ref: lem:home  --></a> makes \(\varphi \) positive at \(w\): under reflexivity, every existent at \(w\) has \(\varphi \), because \(q\) is true there.
 Ax2b pushes positivity to \(v\). If \(v\) saw no world at which \(q\) holds, then \(\varphi \) would necessarily include
@@ -276,27 +315,27 @@ Ax2b pushes positivity to \(v\). If \(v\) saw no world at which \(q\) holds, the
 that pair. So \(v\) sees some world at which \(q\) holds.                                                             □
 </p>
    </div>
-<!-- l. 429 --><p class='noindent'>Comprehension is used: the property \(\varphi \) is the map \(\lambda \,\_\,u.\; q\,u\), and “the world is \(w\)” is a world-proposition of the
+<!-- l. 490 --><p class='noindent'>Comprehension is used: the property \(\varphi \) is the map \(\lambda \,\_\,u.\; q\,u\), and “the world is \(w\)” is a world-proposition of the
 same kind. Theorem <a href='#x1-6003r4'>4<!-- tex4ht:ref: thm:sym  --></a> is the case \(q \equiv (u = w)\).
 </p>
    <div class='newtheorem'>
-<!-- l. 434 --><p class='noindent'><span class='head'>
+<!-- l. 495 --><p class='noindent'><span class='head'>
 <a id='x1-6003r4'></a>
 <span class='ec-lmbx-10x-x-109'>Theorem 4 </span>(<span class='ec-lmtt-10x-x-109'>fig7_implies_symmetric</span>)<span class='ec-lmbx-10x-x-109'>.</span>  </span> <span class='ec-lmri-10x-x-109'>From Ax1Gen, Ax2a, Ax2b, and Ax4 it follows that</span>
 \(R\) <span class='ec-lmri-10x-x-109'>is symmetric. Reflexivity and transitivity are not hypotheses of this implication. Reflexivity is
 already a consequence of Ax1Gen and Ax2a (Theorem </span><a href='#x1-6001r2'><span class='ec-lmri-10x-x-109'>2</span><!-- tex4ht:ref: thm:refl  --></a><span class='ec-lmri-10x-x-109'>).</span>
 </p>
    </div>
-<!-- l. 440 --><p class='indent'>
+<!-- l. 501 --><p class='indent'>
 </p>
    <div class='proof'>
-<!-- l. 442 --><p class='indent'>   <span class='head'>
+<!-- l. 503 --><p class='indent'>   <span class='head'>
 <span class='ec-lmri-10x-x-109'>Sketch.</span> </span> Fix \(R\,w\,v\), and suppose \(\neg R\,v\,w\). Use the collection of Section <a href='#x1-50004.1'>4.1<!-- tex4ht:ref: sec:collection  --></a>. Ax1Gen yields \(P\,\varphi \) at \(w\), and Ax2b
 pushes it to \(v\). At \(v\), necessary inclusion of \(\varphi \) in \(\sim \varphi \) is vacuous, because a successor of \(v\) cannot be \(w\). Ax4
 yields \(P(\sim \varphi )\) at \(v\), contradicting Ax2a. Hence \(R\,v\,w\).                                                                       □
 </p>
    </div>
-<!-- l. 452 --><p class='indent'>   Ax3 is not used for symmetry. The same four hypotheses are unsatisfiable on the two-world
+<!-- l. 513 --><p class='indent'>   Ax3 is not used for symmetry. The same four hypotheses are unsatisfiable on the two-world
 chain of Figure <a href='#x1-130012'>2<!-- tex4ht:ref: fig:chain  --></a>. That fact is <span class='ec-lmtt-10x-x-109'>fig7_unsat_on_S4_chain</span>. The audit module restates it as
 <span class='ec-lmtt-10x-x-109'>literal_unsat_on_R_chain</span>. That chain is reflexive, transitive, and not symmetric. It is not a
 countermodel to literal Figure 7, because no positivity and no existence predicate satisfy the axioms
@@ -305,16 +344,16 @@ there.
                                                                                       
                                                                                       
    <div class='newtheorem'>
-<!-- l. 461 --><p class='noindent'><span class='head'>
+<!-- l. 522 --><p class='noindent'><span class='head'>
 <a id='x1-6004r5'></a>
 <span class='ec-lmbx-10x-x-109'>Theorem 5 </span>(<span class='ec-lmtt-10x-x-109'>R_is_identity</span>)<span class='ec-lmbx-10x-x-109'>.</span>  </span> <span class='ec-lmri-10x-x-109'>From Ax1Gen, Ax2a, Ax2b, Ax3, and Ax4, </span>\(R\,w\,v\) <span class='ec-lmri-10x-x-109'>if and only if </span>\(v = w\)<span class='ec-lmri-10x-x-109'>.
 Symmetry is not a hypothesis.</span>
 </p>
    </div>
-<!-- l. 466 --><p class='indent'>
+<!-- l. 527 --><p class='indent'>
 </p>
    <div class='proof'>
-<!-- l. 468 --><p class='indent'>   <span class='head'>
+<!-- l. 529 --><p class='indent'>   <span class='head'>
 <span class='ec-lmri-10x-x-109'>Sketch.</span> </span> Theorem <a href='#x1-6001r2'>2<!-- tex4ht:ref: thm:refl  --></a> gives the right-to-left direction. For the other direction, let \(\varphi \) be “the world is
 \(w\)”. Lemma <a href='#x1-5002r1'>1<!-- tex4ht:ref: lem:home  --></a> makes it positive at \(w\), and Ax2b carries that positivity to any \(v\) with \(R\,w\,v\). Theorem Th5,
 which is necessary existence of a God-like being and which the AFP derives from Th3 and Th4,
@@ -325,19 +364,19 @@ extra frame assumption.                                                         
 </p>
    </div>
    <div class='newtheorem'>
-<!-- l. 483 --><p class='noindent'><span class='head'>
+<!-- l. 544 --><p class='noindent'><span class='head'>
 <a id='x1-6005r6'></a>
 <span class='ec-lmbx-10x-x-109'>Theorem 6 </span>(<span class='ec-lmtt-10x-x-109'>MC</span>)<span class='ec-lmbx-10x-x-109'>.</span>  </span> <span class='ec-lmri-10x-x-109'>From the same five axioms, every world-proposition </span>\(q\) <span class='ec-lmri-10x-x-109'>satisfies </span>\(\valid {q \supset \Nec q}\)<span class='ec-lmri-10x-x-109'>.</span>
 </p>
    </div>
-<!-- l. 487 --><p class='indent'>
+<!-- l. 548 --><p class='indent'>
 </p>
    <div class='proof'>
-<!-- l. 489 --><p class='indent'>   <span class='head'>
+<!-- l. 550 --><p class='indent'>   <span class='head'>
 <span class='ec-lmri-10x-x-109'>Sketch.</span> </span> If \(q\) holds at \(w\) and \(R\,w\,v\), Theorem <a href='#x1-6004r5'>5<!-- tex4ht:ref: thm:id  --></a> forces \(v = w\), so \(q\) holds at \(v\).                                           □
 </p>
    </div>
-<!-- l. 494 --><p class='indent'>   This is the schema of the AFP lemma <span class='ec-lmtt-10x-x-109'>MC</span>. The AFP proof assumes \(R_{\mathrm {symm}}\). Theorem <a href='#x1-6005r6'>6<!-- tex4ht:ref: thm:MC  --></a> does not. The
+<!-- l. 555 --><p class='indent'>   This is the schema of the AFP lemma <span class='ec-lmtt-10x-x-109'>MC</span>. The AFP proof assumes \(R_{\mathrm {symm}}\). Theorem <a href='#x1-6005r6'>6<!-- tex4ht:ref: thm:MC  --></a> does not. The
 discrete-frame consequence is the same one their lemma already had, once symmetry was known:
 applied to “the world is \(w\)”, collapse leaves only the reflexive loop. What the literal S4 problem was
 missing is that symmetry does not have to be assumed. The axioms produce it, and they produce the
@@ -346,40 +385,40 @@ identity relation.
    <div class='newtheorem'>
                                                                                       
                                                                                       
-<!-- l. 504 --><p class='noindent'><span class='head'>
+<!-- l. 565 --><p class='noindent'><span class='head'>
 <a id='x1-6006r7'></a>
 <span class='ec-lmbx-10x-x-109'>Theorem 7 </span>(<span class='ec-lmtt-10x-x-109'>th3_fig7</span>)<span class='ec-lmbx-10x-x-109'>.</span>  </span> <span class='ec-lmri-10x-x-109'>From Ax1Gen, Ax2a, Ax2b, Ax3, and Ax4, </span>\[ \valid {\Pos (\exE x.\, G x) \supset \Nec (\exE y.\, G y)}. \]
 </p>
    </div>
-<!-- l. 510 --><p class='indent'>
-</p><!-- l. 512 --><p class='indent'>   The literal axioms force \(R\) to be the identity. Their S4 models are discrete, and Th3 holds there
+<!-- l. 571 --><p class='indent'>
+</p><!-- l. 573 --><p class='indent'>   The literal axioms force \(R\) to be the identity. Their S4 models are discrete, and Th3 holds there
 trivially: a diamond and a box along the identity relation are the same quantifier. The earlier route to
 the same theorem derived symmetry and then repeated the AFP three-step argument
 (<span class='ec-lmtt-10x-x-109'>th3_of_symmetric</span>). That argument is still in the file. It is not an S4 theorem with room in it. There
 is no non-discrete S4 model in which the antecedent can hold while the consequent fails, because there
 is no non-discrete model of the axioms at all.
-</p><!-- l. 522 --><p class='indent'>   The intermediate AFP lemmas that do not mention symmetry remain rediscoveries: <span class='ec-lmtt-10x-x-109'>lemma_L</span>,
+</p><!-- l. 583 --><p class='indent'>   The intermediate AFP lemmas that do not mention symmetry remain rediscoveries: <span class='ec-lmtt-10x-x-109'>lemma_L</span>,
 <span class='ec-lmtt-10x-x-109'>ax2b’</span>, <span class='ec-lmtt-10x-x-109'>th1_fig7</span>, <span class='ec-lmtt-10x-x-109'>th2_fig7</span>, <span class='ec-lmtt-10x-x-109'>th4_fig7</span>, and <span class='ec-lmtt-10x-x-109'>th5_fig7</span>. The one-world control shows that the axioms
 are not jointly absurd on a discrete frame.
 </p>
    <div class='newtheorem'>
-<!-- l. 528 --><p class='noindent'><span class='head'>
+<!-- l. 589 --><p class='noindent'><span class='head'>
 <a id='x1-6007r8'></a>
 <span class='ec-lmbx-10x-x-109'>Proposition 8 </span>(<span class='ec-lmtt-10x-x-109'>unit_fig7_th3</span>)<span class='ec-lmbx-10x-x-109'>.</span>  </span> <span class='ec-lmri-10x-x-109'>On a single world, with the identity relation, one individual
 existing there, and principal positivity </span>\(P\,\varphi :\equiv \varphi \,()\,()\)<span class='ec-lmri-10x-x-109'>, axioms Ax1, Ax2a, Ax2b, Ax3, Ax4, and Ax1Gen hold,
 and Th3 holds.</span>
 </p>
    </div>
-<!-- l. 533 --><p class='indent'>
-</p><!-- l. 535 --><p class='indent'>   This is the shape Nitpick reported at cardinality one, checked directly. It is a consistency witness
+<!-- l. 594 --><p class='indent'>
+</p><!-- l. 596 --><p class='indent'>   This is the shape Nitpick reported at cardinality one, checked directly. It is a consistency witness
 for the literal package. It is not a claim that the axioms are true of anything outside the model. On
 that same one-world identity frame the literal axiom, the boxed reading, and the world-invariant
 reading coincide (<span class='ec-lmtt-10x-x-109'>readings_coincide_on_unit</span>; no kernel axioms). The two spellings of the boxed
 reading coincide on every frame (<span class='ec-lmtt-10x-x-109'>ax1GenBox_iff_inBox</span>).
-</p><!-- l. 544 --><p class='noindent'>
+</p><!-- l. 605 --><p class='noindent'>
 </p>
    <h4 class='subsectionHead'><span class='titlemark'>4.3   </span> <a id='x1-70004.3'></a>Figure 8</h4>
-<!-- l. 546 --><p class='noindent'>Figure 8 (<span class='ec-lmtt-10x-x-109'>GoedelVariantHOML3</span>) changes two clauses. Necessary inclusion gains a side condition, and
+<!-- l. 607 --><p class='noindent'>Figure 8 (<span class='ec-lmtt-10x-x-109'>GoedelVariantHOML3</span>) changes two clauses. Necessary inclusion gains a side condition, and
 essence loses the conjunct \(\varphi \,x\): \[ \varphi \necImp \psi \;\equiv \; \Nec \bigl (\varphi \neq (\lambda x.\,\bot ) \land \allE y.\, \varphi \,y \supset \psi \,y\bigr ), \] with essence the universal closure of that inclusion under properties the
 individual has. In the Lean file the inequality is <span class='ec-lmtt-10x-x-109'>neBot</span>, the extensional disagreement of Section <a href='#x1-30003'>3<!-- tex4ht:ref: sec:encoding  --></a>. The
 S4 theory again leaves Th3 as <span class='ec-lmtt-10x-x-109'>oops</span>, comment “Open problem”. Figure 8 was not varied as part of
@@ -387,7 +426,7 @@ the comparison in Section <a href='#x1-90005'>5<!-- tex4ht:ref: sec:recon  --><
 axiom.
 </p>
    <div class='newtheorem'>
-<!-- l. 563 --><p class='noindent'><span class='head'>
+<!-- l. 624 --><p class='noindent'><span class='head'>
 <a id='x1-7001r9'></a>
                                                                                       
                                                                                       
@@ -395,8 +434,8 @@ axiom.
 Ax4, Th3 holds.</span>
 </p>
    </div>
-<!-- l. 566 --><p class='indent'>
-</p><!-- l. 568 --><p class='indent'>   The symmetry argument is Theorem <a href='#x1-6003r4'>4<!-- tex4ht:ref: thm:sym  --></a>. Figure 8’s inclusion asks, in addition, that \(\varphi \) not be
+<!-- l. 627 --><p class='indent'>
+</p><!-- l. 629 --><p class='indent'>   The symmetry argument is Theorem <a href='#x1-6003r4'>4<!-- tex4ht:ref: thm:sym  --></a>. Figure 8’s inclusion asks, in addition, that \(\varphi \) not be
 identically false. The witness property “the world is \(w\)” disagrees with \(\bot \) at \(w\), once any individual is
 on hand to point at. Theorem <span class='ec-lmtt-10x-x-109'>th3_fig8 </span>takes that individual from the diamond in the
 antecedent of Th3, proves symmetry from it, and only then runs the back-edge. On the S4
@@ -406,30 +445,30 @@ re-proved for Figure 8’s inclusion, and this note does not claim that the Fig
 identity relation.
 </p>
    <div class='newtheorem'>
-<!-- l. 581 --><p class='noindent'><span class='head'>
+<!-- l. 642 --><p class='noindent'><span class='head'>
 <a id='x1-7002r10'></a>
 <span class='ec-lmbx-10x-x-109'>Theorem 10 </span>(<span class='ec-lmtt-10x-x-109'>th4_fig8</span>)<span class='ec-lmbx-10x-x-109'>.</span>  </span> <span class='ec-lmri-10x-x-109'>From literal Ax1Gen and Ax2a, </span>\(\valid {\Pos (\exE x.\, G x)}\)<span class='ec-lmri-10x-x-109'>.</span>
 </p>
    </div>
-<!-- l. 585 --><p class='indent'>
+<!-- l. 646 --><p class='indent'>
 </p>
    <div class='proof'>
-<!-- l. 587 --><p class='indent'>   <span class='head'>
+<!-- l. 648 --><p class='indent'>   <span class='head'>
 <span class='ec-lmri-10x-x-109'>Sketch.</span> </span> Lemma L makes \(G\) positive at \(w\). Theorem <a href='#x1-6001r2'>2<!-- tex4ht:ref: thm:refl  --></a> makes \(w\) see itself. If \(w\) saw no existent God-like
 being, then \(\sim G\) would hold of every existent at \(w\). Lemma <a href='#x1-5002r1'>1<!-- tex4ht:ref: lem:home  --></a> would make \(\sim G\) positive, contradicting
 Ax2a.                                                                                                                   □
 </p>
    </div>
-<!-- l. 595 --><p class='indent'>   The proof does not use Ax4 and does not use Figure 8’s side condition on inclusion. In
+<!-- l. 656 --><p class='indent'>   The proof does not use Ax4 and does not use Figure 8’s side condition on inclusion. In
 <span class='ec-lmtt-10x-x-109'>GoedelVariantHOML3.thy </span>the Th4 script is <span class='ec-lmtt-10x-x-109'>oops</span>, with a comment that <span class='ec-lmtt-10x-x-109'>sledgehammer </span>found a proof
 from Ax2a, lemma L, and Ax1Gen, and Th4 is then reintroduced by <span class='ec-lmtt-10x-x-109'>axiomatization</span>. Theorem <a href='#x1-7002r10'>10<!-- tex4ht:ref: thm:th4fig8  --></a> is
 that missing proof. A Figure 8 Th5 is not claimed.
-</p><!-- l. 603 --><p class='noindent'>
+</p><!-- l. 664 --><p class='noindent'>
 </p>
    <h4 class='subsectionHead'><span class='titlemark'>4.4   </span> <a id='x1-80004.4'></a>The literal axiom is not the footnote</h4>
-<!-- l. 606 --><p class='noindent'>Theorem <a href='#x1-6006r7'>7<!-- tex4ht:ref: thm:th3  --></a> is a theorem of the literal AFP axiom. By Gödel’s own gloss, that axiom is not
+<!-- l. 667 --><p class='noindent'>Theorem <a href='#x1-6006r7'>7<!-- tex4ht:ref: thm:th3  --></a> is a theorem of the literal AFP axiom. By Gödel’s own gloss, that axiom is not
 his.
-</p><!-- l. 609 --><p class='indent'>   The footnote says that a conjunction of positive properties is positive <span class='cite'>[<a href='#Xgoedel1995'>11</a>, <a href='#Xbenzmueller2026'>4</a>]</span>. The gloss printed
+</p><!-- l. 670 --><p class='indent'>   The footnote says that a conjunction of positive properties is positive <span class='cite'>[<a href='#Xgoedel1995'>11</a>, <a href='#Xbenzmueller2026'>4</a>]</span>. The gloss printed
 with the proof says that positive means positive in the moral aesthetic sense, independently of the
 accidental structure of the world <span class='cite'>[<a href='#Xgoedel1995'>11</a>]</span>. The AFP abbreviation does something else. Its type lets \(\Phi \) vary
 by world. Lemma <a href='#x1-5002r1'>1<!-- tex4ht:ref: lem:home  --></a> then says that Ax1Gen alone makes every property true of all existents
@@ -438,14 +477,14 @@ by world. Lemma <a href='#x1-5002r1'>1<!-- tex4ht:ref: lem:home  --></a> then s
 at \(w\) positive at \(w\), whenever \(w\) sees itself, and makes every property positive at \(w\) if \(w\) does not
 see itself. Positivity at \(w\) tracks who exists at \(w\). That is the accidental structure the gloss
 excludes.
-</p><!-- l. 622 --><p class='indent'>   The split is what a shallow embedding does if PosProps is left outside a box while \(\Phi \) still depends on
+</p><!-- l. 683 --><p class='indent'>   The split is what a shallow embedding does if PosProps is left outside a box while \(\Phi \) still depends on
 the world. It is the text of <span class='ec-lmtt-10x-x-109'>GoedelVariantHOML2</span>, faithfully transcribed. It is not a misprint, and it is
 not a reading of the footnote. The footnote does not mention worlds. Theorem <a href='#x1-6006r7'>7<!-- tex4ht:ref: thm:th3  --></a> is a genuine theorem
 about an axiom that, by that gloss, is not Gödel’s.
-</p><!-- l. 630 --><p class='noindent'>
+</p><!-- l. 691 --><p class='noindent'>
 </p>
    <h3 class='sectionHead'><span class='titlemark'>5   </span> <a id='x1-90005'></a>Two reconstructions</h3>
-<!-- l. 633 --><p class='noindent'>Everything in Figure 7 stays put except Ax1Gen. There are two replacements. Neither is dictated by
+<!-- l. 694 --><p class='noindent'>Everything in Figure 7 stays put except Ax1Gen. There are two replacements. Neither is dictated by
 the footnote. Both are reconstructions. What both remove is \(\Phi \) being read at two different worlds
 by the two halves of the axiom. An earlier draft called the first the closer repair. That
 ranking is dropped. One may prefer the second because “any number of summands” is a
@@ -454,25 +493,25 @@ does not say so. Rigidity, in the sense of Ax2b, is kept in all three readings. 
 name <span class='ec-lmtt-10x-x-109'>Ax1GenRigid </span>means that \(\Phi \) is world-invariant. It does not mean that positivity is
 rigid.
 </p>
-<!-- l. 648 --><p class='noindent'><span class='paragraphHead'><a id='x1-10000'></a><span class='ec-lmbx-10x-x-109'>R1, positivity in the box.</span></span>
+<!-- l. 709 --><p class='noindent'><span class='paragraphHead'><a id='x1-10000'></a><span class='ec-lmbx-10x-x-109'>R1, positivity in the box.</span></span>
    Both halves are judged at the same accessible worlds: \[ \valid {\Nec \bigl (\mathrm {PosProps}\,\Phi \land \allE z.\; \varphi \,z \leftrightarrow (\forall \psi .\; \Phi \,\psi \supset \psi \,z)\bigr ) \supset P\,\varphi }. \] Call this <span class='ec-lmtt-10x-x-109'>Ax1GenInBox</span>. In K, a box of a
 conjunction is a conjunction of boxes, and ConjOfPropsFrom is already a box, so the displayed form is
 equivalent to \[ \valid {(\Nec (\mathrm {PosProps}\,\Phi ) \land \mathrm {ConjOfPropsFrom}\,\varphi \,\Phi ) \supset P\,\varphi }, \] which is <span class='ec-lmtt-10x-x-109'>Ax1GenBox</span>. The equivalence <span class='ec-lmtt-10x-x-109'>ax1GenBox_iff_inBox </span>depends on no kernel
 axioms. One countermodel covers both spellings.
 </p>
-<!-- l. 667 --><p class='noindent'><span class='paragraphHead'><a id='x1-11000'></a><span class='ec-lmbx-10x-x-109'>R2, a world-invariant collection.</span></span>
+<!-- l. 728 --><p class='noindent'><span class='paragraphHead'><a id='x1-11000'></a><span class='ec-lmbx-10x-x-109'>R2, a world-invariant collection.</span></span>
    Restrict Ax1Gen to collections that do not depend on the world: \(\Phi \,\psi \,w \leftrightarrow \Phi \,\psi \,v\) for every property and every pair
 of worlds. PosProps and ConjOfPropsFrom stay literal. Call this <span class='ec-lmtt-10x-x-109'>Ax1GenRigid</span>. R2 moves no
 box. It freezes \(\Phi \). The collection of Figure <a href='#x1-50011'>1<!-- tex4ht:ref: fig:phi  --></a> is not world-invariant, so R2 does not apply to
 it.
-</p><!-- l. 678 --><p class='noindent'>
+</p><!-- l. 739 --><p class='noindent'>
 </p>
    <h4 class='subsectionHead'><span class='titlemark'>5.1   </span> <a id='x1-120005.1'></a>Lemma L still derives</h4>
-<!-- l. 680 --><p class='noindent'>Under R1, lemma L is immediate from the repaired axiom alone (<span class='ec-lmtt-10x-x-109'>lemma_L_box</span>, <span class='ec-lmtt-10x-x-109'>lemma_L_inBox</span>).
+<!-- l. 741 --><p class='noindent'>Under R1, lemma L is immediate from the repaired axiom alone (<span class='ec-lmtt-10x-x-109'>lemma_L_box</span>, <span class='ec-lmtt-10x-x-109'>lemma_L_inBox</span>).
 Take \(\Phi \) to be \(P\) itself. At every world, every property that \(\Phi \) marks is positive there, by identity, so the
 extra box is free. The conjunction of whatever is positive at a world is \(G\) at that world, by the definition
 of \(G\).
-</p><!-- l. 688 --><p class='indent'>   Under R2 the same \(\Phi \) may be refused, because \(P\) itself need not be world-invariant. Take a snapshot
+</p><!-- l. 749 --><p class='indent'>   Under R2 the same \(\Phi \) may be refused, because \(P\) itself need not be world-invariant. Take a snapshot
 at the world \(w\) where the lemma is being proved: \(\Phi \,\psi \,\_ :\equiv P\,\psi \,w\). That collection ignores its world argument. At a
 successor \(v\), the conjunction it defines is \(G\) only if positivity at \(w\) and positivity at \(v\) agree. Ax2a and Ax2b
 give that agreement along an edge (<span class='ec-lmtt-10x-x-109'>pos_agree</span>): a positive property stays positive by Ax2b, and a
@@ -482,7 +521,7 @@ property positive at \(v\) cannot have a positive negation at \(w\), or Ax2b wou
 forward and break Ax2a at \(v\). So <span class='ec-lmtt-10x-x-109'>lemma_L_rigid </span>needs Ax2a and Ax2b. Literal <span class='ec-lmtt-10x-x-109'>lemma_L</span>
 needed neither. The box in R1 re-reads \(\Phi := P\) at the successor rather than freezing it at the
 source.
-</p><!-- l. 704 --><p class='indent'>   Symmetry is not a consequence of either reconstruction. The proof is the chain in Figure <a href='#x1-130012'>2<!-- tex4ht:ref: fig:chain  --></a>
+</p><!-- l. 765 --><p class='indent'>   Symmetry is not a consequence of either reconstruction. The proof is the chain in Figure <a href='#x1-130012'>2<!-- tex4ht:ref: fig:chain  --></a>
 and Theorem <a href='#x1-13003r12'>12<!-- tex4ht:ref: thm:r12  --></a>: the frame is not symmetric, and each reconstruction holds on it. The
 collection in Theorem <a href='#x1-6003r4'>4<!-- tex4ht:ref: thm:sym  --></a> does not witness a contradiction under either reconstruction. It is
 empty at the source, so source PosProps holds, but at a successor it marks every property
@@ -490,7 +529,7 @@ empty at that world, and in particular it marks \(\bot \). R1’s boxed PosProps
 does not apply, because the collection is not world-invariant. That is why the derivation of
 a back-edge has nothing left to instantiate. It is not itself the proof that symmetry can
 fail.
-</p><!-- l. 717 --><p class='noindent'>
+</p><!-- l. 778 --><p class='noindent'>
 </p>
    <h4 class='subsectionHead'><span class='titlemark'>5.2   </span> <a id='x1-130005.2'></a>The chain</h4>
    <figure class='figure'> 
@@ -500,7 +539,10 @@ fail.
 <a id='x1-130012'></a>
                                                                                       
                                                                                       
-<!-- l. 721 --><p class='noindent'><img alt="Two-world S4 chain: the source sees both worlds and the sink sees only itself. One individual exists at both worlds; a God-like being exists only at the sink." src="main1x.svg" />
+<!-- l. 782 --><p class='noindent'><img alt='  ssoiunrcke
+seseeess s onalnydtt
+stoGnGeh ifonailddlsivsidual, existing at both
+' src='main1x.svg' />
 </p>
 <figcaption class='caption'><span class='id'>Figure 2: </span><span class='content'>The S4 chain of <span class='ec-lmtt-10x-x-109'>R_chain</span>, drawn as source \(s = \mathsf {false}\) and sink \(t = \mathsf {true}\). Reflexive, transitive, and not
 symmetric. The domain has one element, and existence is true at both worlds. Under <span class='ec-lmtt-10x-x-109'>chainP</span>,
@@ -509,40 +551,40 @@ necessary. Literal Ax1Gen has no model on this frame. Both reconstructions do.</
                                                                                       
                                                                                       
    </figure>
-<!-- l. 752 --><p class='indent'>   Let the worlds be the two Booleans. The source \(\mathsf {false}\) sees both worlds. The sink \(\mathsf {true}\) sees only itself
+<!-- l. 813 --><p class='indent'>   Let the worlds be the two Booleans. The source \(\mathsf {false}\) sees both worlds. The sink \(\mathsf {true}\) sees only itself
 (Figure <a href='#x1-130012'>2<!-- tex4ht:ref: fig:chain  --></a>). The relation is reflexive and transitive. It is not symmetric: the sink does not see the
 source (<span class='ec-lmtt-10x-x-109'>R_chain_not_symmetric</span>). The domain has one element, and that individual exists at both
 worlds. Existence is the constant true predicate. The actualist restriction never excludes anyone, so
 this countermodel does not exercise the actualist machinery. Positivity ignores the world at which it is
 asked and reads the sink: \[ P\,\varphi \;\equiv \; \varphi \,()\,\mathsf {true}. \] A property is positive precisely when the individual has it at
 \(t\).
-</p><!-- l. 769 --><p class='indent'>   At the sink, God-likeness is a tautology. \(G\) says that every positive property holds of the individual
+</p><!-- l. 830 --><p class='indent'>   At the sink, God-likeness is a tautology. \(G\) says that every positive property holds of the individual
 there, and positivity means that the property holds of the individual there (<span class='ec-lmtt-10x-x-109'>chain_god_sink</span>; no
 kernel axioms). At the source it fails. The property “the world is the sink” holds at the sink, hence is
 positive, and the individual does not have it at the source (<span class='ec-lmtt-10x-x-109'>chain_not_god_source</span>; no kernel
 axioms).
 </p>
    <div class='newtheorem'>
-<!-- l. 778 --><p class='noindent'><span class='head'>
+<!-- l. 839 --><p class='noindent'><span class='head'>
 <a id='x1-13002r11'></a>
 <span class='ec-lmbx-10x-x-109'>Theorem 11 </span>(<span class='ec-lmtt-10x-x-109'>chain_th3_fails_at_source</span>)<span class='ec-lmbx-10x-x-109'>.</span>  </span> <span class='ec-lmri-10x-x-109'>At the source, </span>\(\Pos (\exE G)\) <span class='ec-lmri-10x-x-109'>holds and </span>\(\Nec (\exE G)\) <span class='ec-lmri-10x-x-109'>fails.</span>
 </p>
    </div>
-<!-- l. 781 --><p class='indent'>
+<!-- l. 842 --><p class='indent'>
 </p>
    <div class='proof'>
-<!-- l. 783 --><p class='indent'>   <span class='head'>
+<!-- l. 844 --><p class='indent'>   <span class='head'>
 <span class='ec-lmri-10x-x-109'>Sketch.</span> </span> The source sees the sink, where the individual exists and is God-like. The source also
 sees itself, where that same individual exists and is not God-like. The diamond is the first fact.
 The failure of the box is the second.                                                                           □
 </p>
    </div>
-<!-- l. 791 --><p class='indent'>   No kernel axiom is used. The packaged denial <span class='ec-lmtt-10x-x-109'>chain_not_Th3 </span>is the same fact pulled back along
+<!-- l. 852 --><p class='indent'>   No kernel axiom is used. The packaged denial <span class='ec-lmtt-10x-x-109'>chain_not_Th3 </span>is the same fact pulled back along
 the definition of Th3. <span class='ec-lmtt-10x-x-109'>chain_not_necessary_existence </span>is the failure of the box as a validity, equally
 axiom-free.
 </p>
    <div class='newtheorem'>
-<!-- l. 797 --><p class='noindent'><span class='head'>
+<!-- l. 858 --><p class='noindent'><span class='head'>
 <a id='x1-13003r12'></a>
 <span class='ec-lmbx-10x-x-109'>Theorem 12 </span>(<span class='ec-lmtt-10x-x-109'>r1_s4_countermodel</span>, <span class='ec-lmtt-10x-x-109'>r2_s4_countermodel</span>)<span class='ec-lmbx-10x-x-109'>.</span>  </span> <span class='ec-lmri-10x-x-109'>On this frame the relation is an
 S4 frame and not a symmetric one. Ax1, Ax2a, Ax2b, Ax3, Ax4, and both spellings of R1 hold,
@@ -550,10 +592,10 @@ and Th3 fails. The same frame, the same positivity, and the same existence predi
 R2, and Th3 fails.</span>
 </p>
    </div>
-<!-- l. 803 --><p class='indent'>
+<!-- l. 864 --><p class='indent'>
                                                                                       
                                                                                       
-</p><!-- l. 805 --><p class='indent'>   The axiom checks are direct, and most of them use no kernel axioms. Ax2a is the exclusive-or of “\(\varphi \)
+</p><!-- l. 866 --><p class='indent'>   The axiom checks are direct, and most of them use no kernel axioms. Ax2a is the exclusive-or of “\(\varphi \)
 holds at the sink” and “\(\varphi \) fails at the sink”, which is classical excluded middle (<span class='ec-lmtt-10x-x-109'>chain_ax2a</span>).
 Ax2b is immediate because \(P\) does not look at its world argument: positivity is already
 global. Ax4 follows because both worlds see the sink, so a necessary inclusion can be read
@@ -566,7 +608,7 @@ world-invariance lets a mark at the sink be copied back to the world where PosPr
 assumed.
 </p>
    <div class='newtheorem'>
-<!-- l. 822 --><p class='noindent'><span class='head'>
+<!-- l. 883 --><p class='noindent'><span class='head'>
 <a id='x1-13004r13'></a>
 <span class='ec-lmbx-10x-x-109'>Proposition 13 </span>(<span class='ec-lmtt-10x-x-109'>literal_to_R1</span>, <span class='ec-lmtt-10x-x-109'>literal_to_R2</span>, <span class='ec-lmtt-10x-x-109'>readings_coincide_on_unit</span>)<span class='ec-lmbx-10x-x-109'>.</span>
 </span> <span class='ec-lmri-10x-x-109'>Literal Ax1Gen implies R1 on every reflexive frame, and implies R2 on every frame. On a
@@ -574,8 +616,8 @@ one-world identity frame the three readings coincide. On the chain, this positiv
 reconstructions and does not satisfy literal Ax1Gen.</span>
 </p>
    </div>
-<!-- l. 830 --><p class='indent'>
-</p><!-- l. 832 --><p class='indent'>   One direction is <span class='ec-lmtt-10x-x-109'>literal_to_R1</span>. The other is <span class='ec-lmtt-10x-x-109'>literal_to_R2</span>. The one-world coincidence is
+<!-- l. 891 --><p class='indent'>
+</p><!-- l. 893 --><p class='indent'>   One direction is <span class='ec-lmtt-10x-x-109'>literal_to_R1</span>. The other is <span class='ec-lmtt-10x-x-109'>literal_to_R2</span>. The one-world coincidence is
 <span class='ec-lmtt-10x-x-109'>readings_coincide_on_unit</span>. Every collection on a one-world frame is world-invariant, and along the
 identity relation a box does not leave the world. If this positivity satisfied literal Ax1Gen,
 Theorem <a href='#x1-6003r4'>4<!-- tex4ht:ref: thm:sym  --></a> would make the chain symmetric. <span class='ec-lmtt-10x-x-109'>chain_not_literal_Ax1Gen </span>records that
@@ -587,7 +629,7 @@ none.
    <div class='table'>
                                                                                       
                                                                                       
-<!-- l. 846 --><p class='indent'>   <a id='x1-130051'></a></p><figure class='float'>
+<!-- l. 907 --><p class='indent'>   <a id='x1-130051'></a></p><figure class='float'>
                                                                                       
                                                                                       
 <div class='tabular'>
@@ -604,7 +646,7 @@ witness for both negative cells is Figure <a href='#x1-130012'>2<!-- tex4ht:ref
                                                                                       
    </figure>
    </div>
-<!-- l. 875 --><p class='indent'>   Table <a href='#x1-130051'>1<!-- tex4ht:ref: tab:readings  --></a> is the comparison among these three readings. The possibilist twin also leaves Th3 as
+<!-- l. 936 --><p class='indent'>   Table <a href='#x1-130051'>1<!-- tex4ht:ref: tab:readings  --></a> is the comparison among these three readings. The possibilist twin also leaves Th3 as
 <span class='ec-lmtt-10x-x-109'>oops</span>. It is not encoded. Its AFP name is <span class='ec-lmtt-10x-x-109'>GoedelVariantHOML2possInS4</span>. Domains were not varied:
 the outer type of individuals stays fixed, and the chain uses a one-element domain with
 existence always true. A constant domain with no existence predicate would be a different
@@ -612,10 +654,10 @@ theorem, and the Scott-style chain already studied in this repository is that di
 (Section <a href='#x1-140006'>6<!-- tex4ht:ref: sec:related  --></a>).
 </p>
    <h3 class='sectionHead'><span class='titlemark'>6   </span> <a id='x1-140006'></a>What was already known</h3>
-<!-- l. 888 --><p class='noindent'>Several nearby statements are in the same repository, and they were already theorems
+<!-- l. 949 --><p class='noindent'>Several nearby statements are in the same repository, and they were already theorems
 of other people. They are named here so that the results above are not asked to carry
 them.
-</p><!-- l. 892 --><p class='indent'>   Sobel showed that Scott-style premises yield \(\varphi \supset \Nec \varphi \) <span class='cite'>[<a href='#Xsobel1987'>15</a>, <a href='#Xsobel2004'>16</a>]</span>. Benzmüller and Fuenmayor encoded Scott’s,
+</p><!-- l. 953 --><p class='indent'>   Sobel showed that Scott-style premises yield \(\varphi \supset \Nec \varphi \) <span class='cite'>[<a href='#Xsobel1987'>15</a>, <a href='#Xsobel2004'>16</a>]</span>. Benzmüller and Fuenmayor encoded Scott’s,
 Anderson’s, and Fitting’s variants and checked that Scott’s intensional positivity collapses modality,
 while Anderson’s emendation and Fitting’s extensional positivity do not <span class='cite'>[<a href='#XbenzmuellerFuenmayor2020'>5</a>, <a href='#Xanderson1990'>1</a>, <a href='#XandersonGettings1996'>2</a>, <a href='#Xfitting2002'>10</a>]</span>. The
 repository’s collapse modules rediscover the Scott-side collapse, including the world-relative
@@ -623,29 +665,46 @@ variant in which collapse along \(R\) is separated from Sobel’s global bicondi
 universal. That rediscovery is not Theorem <a href='#x1-6005r6'>6<!-- tex4ht:ref: thm:MC  --></a>. Theorem <a href='#x1-6005r6'>6<!-- tex4ht:ref: thm:MC  --></a> is collapse for the literal Figure 7
 package, and the prior art for that schema is the AFP lemma <span class='ec-lmtt-10x-x-109'>MC</span>, which assumes symmetry
 <span class='cite'>[<a href='#XafpNotes2025'>8</a>]</span>.
-</p><!-- l. 906 --><p class='indent'>   Kanckos and Woltzenlogel Paleo showed that Scott’s argument goes through in KB: symmetry
+</p><!-- l. 967 --><p class='indent'>   Kanckos and Woltzenlogel Paleo showed that Scott’s argument goes through in KB: symmetry
 suffices, and S5 is more than the proof uses <span class='cite'>[<a href='#Xkanckos2017'>12</a>]</span>. Benzmüller and Scott make the same point for their
-Th3, which cites \(R_{\mathrm {symm}}\) and not reflexivity or transitivity <span class='cite'>[<a href='#XbenzmuellerScott2025'>7</a>, <a href='#XafpNotes2025'>8</a>]</span>. The repository’s Scott-style development
-rediscovers the positive half (local Th3 from symmetry alone, on that encoding) and pairs it with
-countermodels once symmetry is dropped. Those countermodels postulate positivity of being God-like.
-Figure 7 derives that sentence as lemma L. A countermodel that assumes the lemma does not answer
+Th3. In the proof they construct for the repaired-essence Figure 7, only symmetry of accessibility is
+used, the schema B, so KB already suffices and S5 is not required <span class='cite'>[<a href='#XbenzmuellerScott2025'>7</a>, <a href='#XafpNotes2025'>8</a>]</span>. They report no S4 proof and
+no S4 counterexample for that package, and they leave the same question open for Figure 8.
+Theorem <a href='#x1-6006r7'>7<!-- tex4ht:ref: thm:th3  --></a> does not answer that question. It is a theorem of the literal AFP abbreviation, on
+which the two halves of Ax1Gen may read \(\Phi \) at different worlds, and on which the axioms
+force the identity. The repository’s Scott-style development rediscovers the positive half
+(local Th3 from symmetry alone, on that encoding) and pairs it with countermodels once
+symmetry is dropped. Those countermodels postulate positivity of being God-like. Figure 7
+derives that sentence as lemma L. A countermodel that assumes the lemma does not answer
 a question whose point is what happens when the lemma is earned from Ax1Gen. The
 file <span class='ec-lmtt-10x-x-109'>S4Open.lean </span>in the repository is an explicit record of this mismatch. Theorem <a href='#x1-13003r12'>12<!-- tex4ht:ref: thm:r12  --></a>
 is not that countermodel. On the chain of Figure <a href='#x1-130012'>2<!-- tex4ht:ref: fig:chain  --></a> the literal axiom has no model at
 all.
-</p><!-- l. 923 --><p class='indent'>   Anderson’s emendation—only one direction of the exclusion axiom, and God-likeness as possession
+</p><!-- l. 991 --><p class='indent'>   Anderson’s emendation—only one direction of the exclusion axiom, and God-likeness as possession
 of exactly the positive properties, necessarily—is a known repair <span class='cite'>[<a href='#Xanderson1990'>1</a>, <a href='#XandersonGettings1996'>2</a>]</span>. A thin fragment of it is
 formalized elsewhere in the repository, and a two-world witness there keeps a contingent fact alive.
 That fragment is a rediscovery of Anderson’s repair. Fitting’s extensional block is not formalized <span class='cite'>[<a href='#Xfitting2002'>10</a>]</span>.
 Neither is part of Theorems <a href='#x1-6004r5'>5<!-- tex4ht:ref: thm:id  --></a> and <a href='#x1-13003r12'>12<!-- tex4ht:ref: thm:r12  --></a>.
-</p><!-- l. 932 --><p class='indent'>   The early mechanizations of the Scott-style argument <span class='cite'>[<a href='#XbenzmuellerPaleo2014'>6</a>]</span> are the same Scott package. Benzmüller’s
+</p><!-- l. 1000 --><p class='indent'>   The early mechanizations of the Scott-style argument <span class='cite'>[<a href='#XbenzmuellerPaleo2014'>6</a>]</span> are the same Scott package. Benzmüller’s
 note on ultrafilters <span class='cite'>[<a href='#Xbenzmueller2026'>4</a>]</span> derives \(\valid {\Nec (\exE x.\, G x)}\) already in K, from an ultrafilter axiom U1, a conjunction principle, an
 entailment axiom, and the definition of \(G\). The note is explicit that this is a simplified package, and that
 Scott’s own A3 postulated \(P(G)\) in place of the footnote’s conjunction. It is not Figure 7’s axiom list, and
-it does not use the AFP scoping of Ax1Gen. The Archive entry on simplified variants <span class='cite'>[<a href='#XafpSimplified2021'>3</a>]</span> studies
-arguments that avoid essence and necessary existence and that are valid in K or KT. Those are
-different axioms again.
-</p><!-- l. 946 --><p class='indent'>   What was checked, for the claim that the identity proof and the two reconstructions were not
+it does not use the AFP scoping of Ax1Gen. Two further statements in that comment are citations,
+not theorems of this repository. Binary Ax1 admits an infinite single-world countermodel in which
+positivity is a non-principal ultrafilter, the positive properties have empty intersection, and no
+individual is God-like, so the possibility theorem fails <span class='cite'>[<a href='#Xbenzmueller2026'>4</a>]</span>. The <span class='ec-lmri-10x-x-109'>Monatshefte </span>paper already records the
+                                                                                      
+                                                                                      
+matching positive fact: Th4 is not obtained from binary Ax1, Ax1Gen yields lemma L,
+and Th4 follows from L, Ax2a, and Ax4, while Scott’s A3 posts \(P(G)\) instead <span class='cite'>[<a href='#XbenzmuellerScott2025'>7</a>]</span>. The infinite
+countermodel itself is the 2026 comment’s. The comment also argues that modal collapse, in the
+variants it checks, is driven primarily by rigidity of positivity (Scott’s A4, Gödel’s Ax2b),
+together with essence and necessary existence, and not by the ultrafilter structure alone.
+Theorem <a href='#x1-6005r6'>6<!-- tex4ht:ref: thm:MC  --></a> is a different statement: collapse for the literal AFP reading of Ax1Gen, with no
+symmetry hypothesis. The Archive entry on simplified variants <span class='cite'>[<a href='#XafpSimplified2021'>3</a>]</span> studies arguments that avoid
+essence and necessary existence and that are valid in K or KT. Those are different axioms
+again.
+</p><!-- l. 1031 --><p class='indent'>   What was checked, for the claim that the identity proof and the two reconstructions were not
 found already, is the following AFP theories, together with the S4 and S5 embeddings they import:
 </p>
    <ul class='itemize1'>
@@ -654,7 +713,7 @@ found already, is the following AFP theories, together with the S4 and S5 embedd
    <li class='itemize'><span class='ec-lmtt-10x-x-109'>GoedelVariantHOML3 </span>and <span class='ec-lmtt-10x-x-109'>GoedelVariantHOML3inS4 </span>(Figure 8, S5 and S4);
    </li>
    <li class='itemize'><span class='ec-lmtt-10x-x-109'>GoedelVariantHOML2possInS4 </span>(the possibilist S4 twin, not encoded here).</li></ul>
-<!-- l. 954 --><p class='noindent'>The literature named in this section was checked as well, namely the items cited from the repository notes
+<!-- l. 1039 --><p class='noindent'>The literature named in this section was checked as well, namely the items cited from the repository notes
 that accompany the formalization: Sobel <span class='cite'>[<a href='#Xsobel1987'>15</a>, <a href='#Xsobel2004'>16</a>]</span>, Anderson <span class='cite'>[<a href='#Xanderson1990'>1</a>]</span>, Anderson and Gettings <span class='cite'>[<a href='#XandersonGettings1996'>2</a>]</span>,
 Fitting <span class='cite'>[<a href='#Xfitting2002'>10</a>]</span>, Kanckos and Woltzenlogel Paleo <span class='cite'>[<a href='#Xkanckos2017'>12</a>]</span>, Benzmüller and Woltzenlogel Paleo <span class='cite'>[<a href='#XbenzmuellerPaleo2014'>6</a>]</span>,
 Benzmüller and Fuenmayor <span class='cite'>[<a href='#XbenzmuellerFuenmayor2020'>5</a>]</span>, Benzmüller <span class='cite'>[<a href='#Xbenzmueller2026'>4</a>]</span>, and the simplified-argument AFP entry <span class='cite'>[<a href='#XafpSimplified2021'>3</a>]</span>. In
@@ -663,18 +722,24 @@ from symmetry. In the AFP S4 files, Th3 is the open <span class='ec-lmtt-10x-x-1
 ultrafilter package just described. No proof of the identity, or of collapse, for literal Figure 7
 without a symmetry hypothesis, and no countermodel of the two reconstructions, turned up
 in those sources. That is a statement about where the search went. It is not a priority
-claim.
-</p><!-- l. 974 --><p class='noindent'>
+claim. The manuscript distinction, the empty-essence inconsistency in K, the fact that
+their Th4 needs Ax1Gen, and the fact that their Th3 needs only symmetry, are results of
+Benzmüller and Scott <span class='cite'>[<a href='#XbenzmuellerScott2025'>7</a>, <a href='#XafpNotes2025'>8</a>]</span>. The non-principal countermodel for binary Ax1, and the rigidity
+diagnosis of collapse, are results of the 2026 comment <span class='cite'>[<a href='#Xbenzmueller2026'>4</a>]</span>. None of those is the identity
+theorem.
+</p><!-- l. 1065 --><p class='noindent'>
 </p>
    <h3 class='sectionHead'><span class='titlemark'>7   </span> <a id='x1-150007'></a>What the kernel accepts</h3>
-<!-- l. 977 --><p class='noindent'>The development builds with <span class='ec-lmtt-10x-x-109'>lake build </span>on Lean 4.34.0, toolchain <span class='ec-lmtt-10x-x-109'>leanprover/lean4:v4.34.0</span>, in
+<!-- l. 1068 --><p class='noindent'>The development builds with <span class='ec-lmtt-10x-x-109'>lake build </span>on Lean 4.34.0, toolchain <span class='ec-lmtt-10x-x-109'>leanprover/lean4:v4.34.0</span>, in
 37 jobs, with no Mathlib. A search of the Lean sources finds no <span class='ec-lmtt-10x-x-109'>sorry</span>, no <span class='ec-lmtt-10x-x-109'>native_decide</span>, and no
 <span class='ec-lmtt-10x-x-109'>axiom </span>command. The strings that look like those words sit in comments. Hypotheses of the ontological
 argument are parameters of type <span class='ec-lmss-10x-x-109'>Prop</span>.
-</p><!-- l. 984 --><p class='indent'>   Table <a href='#x1-150012'>2<!-- tex4ht:ref: tab:axioms  --></a> is the output of <span class='ec-lmtt-10x-x-109'>#print axioms </span>on the new lemmas and on the headline theorems, run in
+</p><!-- l. 1075 --><p class='indent'>   Table <a href='#x1-150012'>2<!-- tex4ht:ref: tab:axioms  --></a> is the output of <span class='ec-lmtt-10x-x-109'>#print axioms </span>on the new lemmas and on the headline theorems, run in
 that toolchain after the build. “None” means Lean reported that the constant does not depend on any
 axioms. The triple <span class='ec-lmtt-10x-x-109'>propext</span>, <span class='ec-lmtt-10x-x-109'>Classical.choice</span>, <span class='ec-lmtt-10x-x-109'>Quot.sound </span>is the standard classical package of the
 Lean kernel: propositional extensionality, choice, and the soundness of quotients that the classical
+                                                                                      
+                                                                                      
 development uses. <span class='ec-lmtt-10x-x-109'>Classical.choice </span>enters through <span class='ec-lmtt-10x-x-109'>Classical.byContradiction </span>in the
 symmetry argument, in reflexivity, in the B schema, in the identity, in collapse, and in both
 proofs of possible existence, and through <span class='ec-lmtt-10x-x-109'>Classical.em </span>in the one-world check of Ax2a
@@ -685,71 +750,71 @@ appears.
    <div class='table'>
                                                                                       
                                                                                       
-<!-- l. 998 --><p class='indent'>   <a id='x1-150012'></a></p><figure class='float'>
+<!-- l. 1089 --><p class='indent'>   <a id='x1-150012'></a></p><figure class='float'>
                                                                                       
                                                                                       
 <div class='tabular'>
- <table class='tabular' id='TBL-4'><colgroup id='TBL-4-1g'><col id='TBL-4-1' /><col id='TBL-4-2' /></colgroup><tr id='TBL-4-1-' style='vertical-align:baseline;'><td class='td01' id='TBL-4-1-1' style='white-space:normal; text-align:left;'><!-- l. 1003 --><p class='noindent'><span class='ec-lmr-9'>Theorem</span>                                                                         </p></td><td class='td10' id='TBL-4-1-2' style='white-space:normal; text-align:left;'> <!-- l. 1003 --><p class='noindent'><span class='ec-lmtt-9'>#print
+ <table class='tabular' id='TBL-4'><colgroup id='TBL-4-1g'><col id='TBL-4-1' /><col id='TBL-4-2' /></colgroup><tr id='TBL-4-1-' style='vertical-align:baseline;'><td class='td01' id='TBL-4-1-1' style='white-space:normal; text-align:left;'><!-- l. 1094 --><p class='noindent'><span class='ec-lmr-9'>Theorem</span>                                                                         </p></td><td class='td10' id='TBL-4-1-2' style='white-space:normal; text-align:left;'> <!-- l. 1094 --><p class='noindent'><span class='ec-lmtt-9'>#print
  axioms</span>                              </p></td>
 
-</tr><tr id='TBL-4-2-' style='vertical-align:baseline;'><td class='td01' id='TBL-4-2-1' style='white-space:normal; text-align:left;'><!-- l. 1005 --><p class='noindent'><span class='ec-lmtt-9'>pos_of_home</span><span class='ec-lmr-9'>,
+</tr><tr id='TBL-4-2-' style='vertical-align:baseline;'><td class='td01' id='TBL-4-2-1' style='white-space:normal; text-align:left;'><!-- l. 1096 --><p class='noindent'><span class='ec-lmtt-9'>pos_of_home</span><span class='ec-lmr-9'>,
 </span><span class='ec-lmtt-9'>refl_of_gen</span><span class='ec-lmr-9'>,
 </span><span class='ec-lmtt-9'>B_schema</span><span class='ec-lmr-9'>,
 </span><span class='ec-lmtt-9'>R_is_identity</span><span class='ec-lmr-9'>,
 </span><span class='ec-lmtt-9'>MC</span><span class='ec-lmr-9'>,
-</span><span class='ec-lmtt-9'>th4_fig8</span>                                                </p></td><td class='td10' id='TBL-4-2-2' style='white-space:normal; text-align:left;'> <!-- l. 1007 --><p class='noindent'><span class='ec-lmtt-9'>propext</span><span class='ec-lmr-9'>,
+</span><span class='ec-lmtt-9'>th4_fig8</span>                                                </p></td><td class='td10' id='TBL-4-2-2' style='white-space:normal; text-align:left;'> <!-- l. 1098 --><p class='noindent'><span class='ec-lmtt-9'>propext</span><span class='ec-lmr-9'>,
   </span><span class='ec-lmtt-9'>Classical.choice</span><span class='ec-lmr-9'>,
   </span><span class='ec-lmtt-9'>Quot.sound</span>                          </p></td>
-</tr><tr id='TBL-4-3-' style='vertical-align:baseline;'><td class='td01' id='TBL-4-3-1' style='white-space:normal; text-align:left;'><!-- l. 1008 --><p class='noindent'><span class='ec-lmtt-9'>literal_to_R1</span><span class='ec-lmr-9'>,
+</tr><tr id='TBL-4-3-' style='vertical-align:baseline;'><td class='td01' id='TBL-4-3-1' style='white-space:normal; text-align:left;'><!-- l. 1099 --><p class='noindent'><span class='ec-lmtt-9'>literal_to_R1</span><span class='ec-lmr-9'>,
 </span><span class='ec-lmtt-9'>literal_to_R2</span><span class='ec-lmr-9'>,
 </span><span class='ec-lmtt-9'>R1_to_literal_of_identity</span><span class='ec-lmr-9'>,
 </span><span class='ec-lmtt-9'>literal_iff_R1_of_identity</span><span class='ec-lmr-9'>,
 </span><span class='ec-lmtt-9'>R2_to_literal_of_one_world</span><span class='ec-lmr-9'>,
-</span><span class='ec-lmtt-9'>readings_coincide_on_unit</span>                               </p></td><td class='td10' id='TBL-4-3-2' style='white-space:normal; text-align:left;'> <!-- l. 1013 --><p class='noindent'><span class='ec-lmr-9'>none</span>                                                  </p></td>
-</tr><tr id='TBL-4-4-' style='vertical-align:baseline;'><td class='td01' id='TBL-4-4-1' style='white-space:normal; text-align:left;'><!-- l. 1014 --><p class='noindent'><span class='ec-lmtt-9'>literal_unsat_on_R_chain</span>                                </p></td><td class='td10' id='TBL-4-4-2' style='white-space:normal; text-align:left;'> <!-- l. 1015 --><p class='noindent'><span class='ec-lmtt-9'>propext</span><span class='ec-lmr-9'>,
+</span><span class='ec-lmtt-9'>readings_coincide_on_unit</span>                               </p></td><td class='td10' id='TBL-4-3-2' style='white-space:normal; text-align:left;'> <!-- l. 1104 --><p class='noindent'><span class='ec-lmr-9'>none</span>                                                  </p></td>
+</tr><tr id='TBL-4-4-' style='vertical-align:baseline;'><td class='td01' id='TBL-4-4-1' style='white-space:normal; text-align:left;'><!-- l. 1105 --><p class='noindent'><span class='ec-lmtt-9'>literal_unsat_on_R_chain</span>                                </p></td><td class='td10' id='TBL-4-4-2' style='white-space:normal; text-align:left;'> <!-- l. 1106 --><p class='noindent'><span class='ec-lmtt-9'>propext</span><span class='ec-lmr-9'>,
   </span><span class='ec-lmtt-9'>Classical.choice</span><span class='ec-lmr-9'>,
   </span><span class='ec-lmtt-9'>Quot.sound</span>                          </p></td>
-</tr><tr id='TBL-4-5-' style='vertical-align:baseline;'><td class='td01' id='TBL-4-5-1' style='white-space:normal; text-align:left;'><!-- l. 1016 --><p class='noindent'><span class='ec-lmtt-9'>chain_not_necessary_existence</span>                           </p></td><td class='td10' id='TBL-4-5-2' style='white-space:normal; text-align:left;'> <!-- l. 1017 --><p class='noindent'><span class='ec-lmr-9'>none</span>                                                  </p></td>
-</tr><tr id='TBL-4-6-' style='vertical-align:baseline;'><td class='td01' id='TBL-4-6-1' style='white-space:normal; text-align:left;'><!-- l. 1018 --><p class='noindent'><span class='ec-lmtt-9'>lemma_L</span><span class='ec-lmr-9'>,
+</tr><tr id='TBL-4-5-' style='vertical-align:baseline;'><td class='td01' id='TBL-4-5-1' style='white-space:normal; text-align:left;'><!-- l. 1107 --><p class='noindent'><span class='ec-lmtt-9'>chain_not_necessary_existence</span>                           </p></td><td class='td10' id='TBL-4-5-2' style='white-space:normal; text-align:left;'> <!-- l. 1108 --><p class='noindent'><span class='ec-lmr-9'>none</span>                                                  </p></td>
+</tr><tr id='TBL-4-6-' style='vertical-align:baseline;'><td class='td01' id='TBL-4-6-1' style='white-space:normal; text-align:left;'><!-- l. 1109 --><p class='noindent'><span class='ec-lmtt-9'>lemma_L</span><span class='ec-lmr-9'>,
 </span><span class='ec-lmtt-9'>ax2b’</span><span class='ec-lmr-9'>,
 </span><span class='ec-lmtt-9'>th1_fig7</span><span class='ec-lmr-9'>,
 </span><span class='ec-lmtt-9'>th2_fig7</span><span class='ec-lmr-9'>,
-</span><span class='ec-lmtt-9'>th3_of_symmetric</span>                                        </p></td><td class='td10' id='TBL-4-6-2' style='white-space:normal; text-align:left;'> <!-- l. 1020 --><p class='noindent'><span class='ec-lmr-9'>none</span>                                                  </p></td>
-</tr><tr id='TBL-4-7-' style='vertical-align:baseline;'><td class='td01' id='TBL-4-7-1' style='white-space:normal; text-align:left;'><!-- l. 1021 --><p class='noindent'><span class='ec-lmtt-9'>th1_fig8</span><span class='ec-lmr-9'>,
+</span><span class='ec-lmtt-9'>th3_of_symmetric</span>                                        </p></td><td class='td10' id='TBL-4-6-2' style='white-space:normal; text-align:left;'> <!-- l. 1111 --><p class='noindent'><span class='ec-lmr-9'>none</span>                                                  </p></td>
+</tr><tr id='TBL-4-7-' style='vertical-align:baseline;'><td class='td01' id='TBL-4-7-1' style='white-space:normal; text-align:left;'><!-- l. 1112 --><p class='noindent'><span class='ec-lmtt-9'>th1_fig8</span><span class='ec-lmr-9'>,
 </span><span class='ec-lmtt-9'>th2_fig8</span><span class='ec-lmr-9'>,
-</span><span class='ec-lmtt-9'>th3_fig8_of_symmetric</span>                                   </p></td><td class='td10' id='TBL-4-7-2' style='white-space:normal; text-align:left;'> <!-- l. 1022 --><p class='noindent'><span class='ec-lmr-9'>none</span>                                                  </p></td>
-</tr><tr id='TBL-4-8-' style='vertical-align:baseline;'><td class='td01' id='TBL-4-8-1' style='white-space:normal; text-align:left;'><!-- l. 1023 --><p class='noindent'><span class='ec-lmtt-9'>fig7_implies_symmetric</span><span class='ec-lmr-9'>,
+</span><span class='ec-lmtt-9'>th3_fig8_of_symmetric</span>                                   </p></td><td class='td10' id='TBL-4-7-2' style='white-space:normal; text-align:left;'> <!-- l. 1113 --><p class='noindent'><span class='ec-lmr-9'>none</span>                                                  </p></td>
+</tr><tr id='TBL-4-8-' style='vertical-align:baseline;'><td class='td01' id='TBL-4-8-1' style='white-space:normal; text-align:left;'><!-- l. 1114 --><p class='noindent'><span class='ec-lmtt-9'>fig7_implies_symmetric</span><span class='ec-lmr-9'>,
 </span><span class='ec-lmtt-9'>th3_fig7</span><span class='ec-lmr-9'>,
 </span><span class='ec-lmtt-9'>fig7_unsat_on_S4_chain</span><span class='ec-lmr-9'>,
 </span><span class='ec-lmtt-9'>th4_fig7</span><span class='ec-lmr-9'>,
-</span><span class='ec-lmtt-9'>th5_fig7</span>                                                </p></td><td class='td10' id='TBL-4-8-2' style='white-space:normal; text-align:left;'> <!-- l. 1025 --><p class='noindent'><span class='ec-lmtt-9'>propext</span><span class='ec-lmr-9'>,
+</span><span class='ec-lmtt-9'>th5_fig7</span>                                                </p></td><td class='td10' id='TBL-4-8-2' style='white-space:normal; text-align:left;'> <!-- l. 1116 --><p class='noindent'><span class='ec-lmtt-9'>propext</span><span class='ec-lmr-9'>,
   </span><span class='ec-lmtt-9'>Classical.choice</span><span class='ec-lmr-9'>,
   </span><span class='ec-lmtt-9'>Quot.sound</span>                          </p></td>
-</tr><tr id='TBL-4-9-' style='vertical-align:baseline;'><td class='td01' id='TBL-4-9-1' style='white-space:normal; text-align:left;'><!-- l. 1026 --><p class='noindent'><span class='ec-lmtt-9'>th3_fig8</span><span class='ec-lmr-9'>,
+</tr><tr id='TBL-4-9-' style='vertical-align:baseline;'><td class='td01' id='TBL-4-9-1' style='white-space:normal; text-align:left;'><!-- l. 1117 --><p class='noindent'><span class='ec-lmtt-9'>th3_fig8</span><span class='ec-lmr-9'>,
 </span><span class='ec-lmtt-9'>fig8_implies_symmetric</span><span class='ec-lmr-9'>,
-</span><span class='ec-lmtt-9'>fig8_unsat_on_S4_chain</span>                                  </p></td><td class='td10' id='TBL-4-9-2' style='white-space:normal; text-align:left;'> <!-- l. 1028 --><p class='noindent'><span class='ec-lmtt-9'>propext</span><span class='ec-lmr-9'>,
+</span><span class='ec-lmtt-9'>fig8_unsat_on_S4_chain</span>                                  </p></td><td class='td10' id='TBL-4-9-2' style='white-space:normal; text-align:left;'> <!-- l. 1119 --><p class='noindent'><span class='ec-lmtt-9'>propext</span><span class='ec-lmr-9'>,
   </span><span class='ec-lmtt-9'>Classical.choice</span><span class='ec-lmr-9'>,
   </span><span class='ec-lmtt-9'>Quot.sound</span>                          </p></td>
-</tr><tr id='TBL-4-10-' style='vertical-align:baseline;'><td class='td01' id='TBL-4-10-1' style='white-space:normal; text-align:left;'><!-- l. 1029 --><p class='noindent'><span class='ec-lmtt-9'>unit_fig7_th3</span>                                           </p></td><td class='td10' id='TBL-4-10-2' style='white-space:normal; text-align:left;'> <!-- l. 1030 --><p class='noindent'><span class='ec-lmtt-9'>propext</span><span class='ec-lmr-9'>,
+</tr><tr id='TBL-4-10-' style='vertical-align:baseline;'><td class='td01' id='TBL-4-10-1' style='white-space:normal; text-align:left;'><!-- l. 1120 --><p class='noindent'><span class='ec-lmtt-9'>unit_fig7_th3</span>                                           </p></td><td class='td10' id='TBL-4-10-2' style='white-space:normal; text-align:left;'> <!-- l. 1121 --><p class='noindent'><span class='ec-lmtt-9'>propext</span><span class='ec-lmr-9'>,
   </span><span class='ec-lmtt-9'>Classical.choice</span><span class='ec-lmr-9'>,
   </span><span class='ec-lmtt-9'>Quot.sound</span>                          </p></td>
-</tr><tr id='TBL-4-11-' style='vertical-align:baseline;'><td class='td01' id='TBL-4-11-1' style='white-space:normal; text-align:left;'><!-- l. 1031 --><p class='noindent'><span class='ec-lmtt-9'>ax1GenBox_iff_inBox</span><span class='ec-lmr-9'>,
+</tr><tr id='TBL-4-11-' style='vertical-align:baseline;'><td class='td01' id='TBL-4-11-1' style='white-space:normal; text-align:left;'><!-- l. 1122 --><p class='noindent'><span class='ec-lmtt-9'>ax1GenBox_iff_inBox</span><span class='ec-lmr-9'>,
 </span><span class='ec-lmtt-9'>lemma_L_box</span><span class='ec-lmr-9'>,
 </span><span class='ec-lmtt-9'>lemma_L_inBox</span><span class='ec-lmr-9'>,
 </span><span class='ec-lmtt-9'>lemma_L_rigid</span><span class='ec-lmr-9'>,
-</span><span class='ec-lmtt-9'>pos_agree</span>                                               </p></td><td class='td10' id='TBL-4-11-2' style='white-space:normal; text-align:left;'> <!-- l. 1033 --><p class='noindent'><span class='ec-lmr-9'>none</span>                                                  </p></td>
-</tr><tr id='TBL-4-12-' style='vertical-align:baseline;'><td class='td01' id='TBL-4-12-1' style='white-space:normal; text-align:left;'><!-- l. 1034 --><p class='noindent'><span class='ec-lmtt-9'>chain_th3_fails_at_source</span><span class='ec-lmr-9'>,
+</span><span class='ec-lmtt-9'>pos_agree</span>                                               </p></td><td class='td10' id='TBL-4-11-2' style='white-space:normal; text-align:left;'> <!-- l. 1124 --><p class='noindent'><span class='ec-lmr-9'>none</span>                                                  </p></td>
+</tr><tr id='TBL-4-12-' style='vertical-align:baseline;'><td class='td01' id='TBL-4-12-1' style='white-space:normal; text-align:left;'><!-- l. 1125 --><p class='noindent'><span class='ec-lmtt-9'>chain_th3_fails_at_source</span><span class='ec-lmr-9'>,
 </span><span class='ec-lmtt-9'>chain_not_Th3</span><span class='ec-lmr-9'>,
 </span><span class='ec-lmtt-9'>chain_god_sink</span><span class='ec-lmr-9'>,
 </span><span class='ec-lmtt-9'>chain_not_god_source</span><span class='ec-lmr-9'>,
-</span><span class='ec-lmtt-9'>chain_ax1GenRigid</span>                                       </p></td><td class='td10' id='TBL-4-12-2' style='white-space:normal; text-align:left;'> <!-- l. 1037 --><p class='noindent'><span class='ec-lmr-9'>none</span>                                                  </p></td>
-</tr><tr id='TBL-4-13-' style='vertical-align:baseline;'><td class='td01' id='TBL-4-13-1' style='white-space:normal; text-align:left;'><!-- l. 1038 --><p class='noindent'><span class='ec-lmtt-9'>R_chain_transitive</span><span class='ec-lmr-9'>,
-</span><span class='ec-lmtt-9'>R_chain_not_symmetric</span>                                   </p></td><td class='td10' id='TBL-4-13-2' style='white-space:normal; text-align:left;'> <!-- l. 1039 --><p class='noindent'><span class='ec-lmtt-9'>propext</span>                             </p></td>
-</tr><tr id='TBL-4-14-' style='vertical-align:baseline;'><td class='td01' id='TBL-4-14-1' style='white-space:normal; text-align:left;'><!-- l. 1040 --><p class='noindent'><span class='ec-lmtt-9'>chain_not_literal_Ax1Gen</span>                                </p></td><td class='td10' id='TBL-4-14-2' style='white-space:normal; text-align:left;'> <!-- l. 1041 --><p class='noindent'><span class='ec-lmtt-9'>propext</span><span class='ec-lmr-9'>,
+</span><span class='ec-lmtt-9'>chain_ax1GenRigid</span>                                       </p></td><td class='td10' id='TBL-4-12-2' style='white-space:normal; text-align:left;'> <!-- l. 1128 --><p class='noindent'><span class='ec-lmr-9'>none</span>                                                  </p></td>
+</tr><tr id='TBL-4-13-' style='vertical-align:baseline;'><td class='td01' id='TBL-4-13-1' style='white-space:normal; text-align:left;'><!-- l. 1129 --><p class='noindent'><span class='ec-lmtt-9'>R_chain_transitive</span><span class='ec-lmr-9'>,
+</span><span class='ec-lmtt-9'>R_chain_not_symmetric</span>                                   </p></td><td class='td10' id='TBL-4-13-2' style='white-space:normal; text-align:left;'> <!-- l. 1130 --><p class='noindent'><span class='ec-lmtt-9'>propext</span>                             </p></td>
+</tr><tr id='TBL-4-14-' style='vertical-align:baseline;'><td class='td01' id='TBL-4-14-1' style='white-space:normal; text-align:left;'><!-- l. 1131 --><p class='noindent'><span class='ec-lmtt-9'>chain_not_literal_Ax1Gen</span>                                </p></td><td class='td10' id='TBL-4-14-2' style='white-space:normal; text-align:left;'> <!-- l. 1132 --><p class='noindent'><span class='ec-lmtt-9'>propext</span><span class='ec-lmr-9'>,
   </span><span class='ec-lmtt-9'>Classical.choice</span><span class='ec-lmr-9'>,
   </span><span class='ec-lmtt-9'>Quot.sound</span>                          </p></td>
-</tr><tr id='TBL-4-15-' style='vertical-align:baseline;'><td class='td01' id='TBL-4-15-1' style='white-space:normal; text-align:left;'><!-- l. 1042 --><p class='noindent'><span class='ec-lmtt-9'>r1_s4_countermodel</span><span class='ec-lmr-9'>,
-</span><span class='ec-lmtt-9'>r2_s4_countermodel</span>                                      </p></td><td class='td10' id='TBL-4-15-2' style='white-space:normal; text-align:left;'> <!-- l. 1043 --><p class='noindent'><span class='ec-lmtt-9'>propext</span><span class='ec-lmr-9'>,
+</tr><tr id='TBL-4-15-' style='vertical-align:baseline;'><td class='td01' id='TBL-4-15-1' style='white-space:normal; text-align:left;'><!-- l. 1133 --><p class='noindent'><span class='ec-lmtt-9'>r1_s4_countermodel</span><span class='ec-lmr-9'>,
+</span><span class='ec-lmtt-9'>r2_s4_countermodel</span>                                      </p></td><td class='td10' id='TBL-4-15-2' style='white-space:normal; text-align:left;'> <!-- l. 1134 --><p class='noindent'><span class='ec-lmtt-9'>propext</span><span class='ec-lmr-9'>,
   </span><span class='ec-lmtt-9'>Classical.choice</span><span class='ec-lmr-9'>,
   </span><span class='ec-lmtt-9'>Quot.sound</span>                          </p></td>
 
@@ -762,20 +827,22 @@ from Ax2a. The failure of Th3 at the source, taken by itself, depends on none of
    </figure>
    </div>
    <h3 class='sectionHead'><span class='titlemark'>8   </span> <a id='x1-160008'></a>Conclusion</h3>
-<!-- l. 1056 --><p class='noindent'>Theorem <a href='#x1-6004r5'>5<!-- tex4ht:ref: thm:id  --></a> says that the literal Figure 7 axioms force \(R\) to be the identity, and Theorem <a href='#x1-6005r6'>6<!-- tex4ht:ref: thm:MC  --></a> says that
-modal collapse follows, with no symmetry hypothesis. The AFP lemma <span class='ec-lmtt-10x-x-109'>MC </span>is the same schema under \(R_{\mathrm {symm}}\).
-The mechanism is Lemma <a href='#x1-5002r1'>1<!-- tex4ht:ref: lem:home  --></a>: Ax1Gen, read so that the two halves consult \(\Phi \) at different worlds, makes
-positivity follow the existents at the source. The literal axioms force \(R\) to be the identity; their S4
-models are discrete, and Th3 holds there trivially. Theorem <a href='#x1-13003r12'>12<!-- tex4ht:ref: thm:r12  --></a> says that two reconstructions, on
-which both halves read \(\Phi \) at the same world, still yield lemma L and fail on a two-world S4 chain.
-Among the three readings examined, with full comprehension, the answer turns on whether both
+<!-- l. 1147 --><p class='noindent'>The essence used for these theorems is Scott’s repaired clause, with the conjunct \(\varphi \,x\), as in the AFP
+Figure 7. It is not the essence definition of the 1970 hand manuscript <span class='cite'>[<a href='#XbenzmuellerScott2025'>7</a>]</span>. Theorem <a href='#x1-6004r5'>5<!-- tex4ht:ref: thm:id  --></a> says that the
+literal Figure 7 axioms force \(R\) to be the identity, and Theorem <a href='#x1-6005r6'>6<!-- tex4ht:ref: thm:MC  --></a> says that modal collapse follows, with
+no symmetry hypothesis. The AFP lemma <span class='ec-lmtt-10x-x-109'>MC </span>is the same schema under \(R_{\mathrm {symm}}\). The mechanism is
+Lemma <a href='#x1-5002r1'>1<!-- tex4ht:ref: lem:home  --></a>: Ax1Gen, read so that the two halves consult \(\Phi \) at different worlds, makes positivity follow
+the existents at the source. The literal axioms force \(R\) to be the identity; their S4 models are discrete,
+and Th3 holds there trivially. Theorem <a href='#x1-13003r12'>12<!-- tex4ht:ref: thm:r12  --></a> says that two reconstructions, on which both halves
+read \(\Phi \) at the same world, still yield lemma L and fail on a two-world S4 chain. Among
+the three readings examined, with full comprehension, the answer turns on whether both
 halves of Ax1Gen read \(\Phi \) at the same world. Domains and Figure 8 were not varied. The
 chain that separates the reconstructions has a one-element domain and existence always
 true.
-</p><!-- l. 1074 --><p class='noindent'>
+</p><!-- l. 1169 --><p class='noindent'>
 </p>
    <h3 class='likesectionHead'><a id='x1-17000'></a>Acknowledgements</h3>
-<!-- l. 1076 --><p class='noindent'>The Lean 4 formalization and the drafting of this note were done with AI coding assistants. I thank
+<!-- l. 1171 --><p class='noindent'>The Lean 4 formalization and the drafting of this note were done with AI coding assistants. I thank
 the Russell and Wittgenstein likenesses (AI agents) for the criticism of the earlier draft and for the
 audit lemmas. They are not the historical persons. All results reported here are kernel-checked in the
 repository <a class='url' href='https://github.com/drewarrowood/godel-ontological'><span class='ec-lmtt-10x-x-109'>https://github.com/drewarrowood/godel-ontological</span></a>.
@@ -798,10 +865,10 @@ repository <a class='url' href='https://github.com/drewarrowood/godel-ontologica
     <p class='bibitem'><span class='biblabel'>
   [3]<span class='bibsp'>   </span></span><a id='XafpSimplified2021'></a>Christoph Benzmüller.  Exploring simplified variants of Gödel’s ontological argument
     in                                                                                                 Isabelle/HOL.
+                                                                                      
+                                                                                      
     Archive of Formal Proofs, November 2021.  Formal proof development, 8 November 2021.
     <a class='url' href='https://www.isa-afp.org/entries/SimplifiedOntologicalArgument.html'><span class='ec-lmtt-10x-x-109'>https://www.isa-afp.org/entries/SimplifiedOntologicalArgument.html</span></a>.
-                                                                                      
-                                                                                      
     </p>
     <p class='bibitem'><span class='biblabel'>
   [4]<span class='bibsp'>   </span></span><a id='Xbenzmueller2026'></a>Christoph  Benzmüller.   A  comment  on  modal  collapse  and  ultrafilters  in  Gödel’s
@@ -820,14 +887,14 @@ repository <a class='url' href='https://github.com/drewarrowood/godel-ontologica
     2014. <a class='url' href='https://doi.org/10.3233/978-1-61499-419-0-93'><span class='ec-lmtt-10x-x-109'>https://doi.org/10.3233/978-1-61499-419-0-93</span></a>.
     </p>
     <p class='bibitem'><span class='biblabel'>
-  [7]<span class='bibsp'>   </span></span><a id='XbenzmuellerScott2025'></a>Christoph  Benzmüller  and  Dana  Scott.    Notes  on  Gödel’s  and  Scott’s  variants
-    of  the  ontological  argument.     <span class='ec-lmri-10x-x-109'>Monatshefte  für  Mathematik</span>,  208(4):569–611,  2025.
-    <a class='url' href='https://doi.org/10.1007/s00605-025-02078-x'><span class='ec-lmtt-10x-x-109'>https://doi.org/10.1007/s00605-025-02078-x</span></a>.
+  [7]<span class='bibsp'>   </span></span><a id='XbenzmuellerScott2025'></a>Christoph Benzmüller and Dana Scott.  Notes on Gödel’s and Scott’s variants of the
+    ontological argument. <span class='ec-lmri-10x-x-109'>Monatshefte für Mathematik</span>, 208(4):569–611, 2025. Published online
+    21 April 2025. <a class='url' href='https://doi.org/10.1007/s00605-025-02078-x'><span class='ec-lmtt-10x-x-109'>https://doi.org/10.1007/s00605-025-02078-x</span></a>.
     </p>
     <p class='bibitem'><span class='biblabel'>
   [8]<span class='bibsp'>   </span></span><a id='XafpNotes2025'></a>Christoph Benzmüller and Dana Scott.  Notes on Gödel’s and Scott’s variants of the
     ontological argument. Archive of Formal Proofs, January 2025. Formal proof development,
-    7                                                  January                                                  2025.
+    7 January 2025.
     <a class='url' href='https://www.isa-afp.org/entries/Notes_On_Goedels_Ontological_Argument.html'><span class='ec-lmtt-10x-x-109'>https://www.isa-afp.org/entries/Notes_On_Goedels_Ontological_Argument.html</span></a>.
     </p>
     <p class='bibitem'><span class='biblabel'>

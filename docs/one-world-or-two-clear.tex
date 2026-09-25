@@ -58,12 +58,19 @@ The first axiom says that the conjunction of two positive properties is positive
 extends that claim from two summands to any number: the conjunction of a \emph{collection}
 of positive properties is itself positive.
 
-Dana Scott, working from a copy G\"odel allowed him to make, rearranged the
-package~\cite{Scott2004,Sobel1987,Sobel2004}. In Scott's notes the generalized conjunction
-is replaced by a direct postulate that being God-like is positive. Scott also inserts a
-conjunct into the definition of essence (the essential property must actually hold of the
-individual) and takes necessary existence to be positive. That last change keeps the notes
-off the inconsistent reading of the unrepaired manuscript.
+Three objects have to be kept apart, as Benzm\"uller and Scott set them
+out~\cite{BenzScott2025}. The first is G\"odel's own 1970 hand manuscript (their Figure~1;
+Kurt G\"odel Papers, Box~12, Folder~41, item accession 060565, printed there under the
+copyright of the Institute for Advanced Study). The second is the brief notes G\"odel showed
+Scott. The third is the slightly modified seminar version printed as Appendix~B of
+Sobel~\cite{Scott2004,Sobel2004}. In spring 1970 G\"odel asked Scott confidentially to
+preserve some notes in case of illness or death; Scott later mentioned a slightly modified
+version in a seminar without permission, and he records his embarrassment~\cite{BenzScott2025}.
+The hand definition of essence omits the conjunct \(\varphi x\). Benzm\"uller and Scott show
+that the empty-essence inconsistency is already derivable in modal logic~K, and that Scott's
+addition of \(\varphi x\) restores consistency. The AFP entry of 7~January 2025 and the Lean
+desk use that repaired essence, not the hand page. Scott's seminar notes also replace the
+footnote's generalized conjunction by a direct postulate that being God-like is positive.
 
 Sobel later showed that Scott's premises collapse modality: whatever is true is necessarily
 true~\cite{Sobel1987,Sobel2004}. That collapse has been machine-checked, and so have
@@ -76,15 +83,21 @@ are not mistaken for the theorems below.
 The question of this note comes from a return to the footnote. Benzm\"uller and
 Scott~\cite{BenzScottAFP2025,BenzScott2025} study G\"odel's generalized conjunction as an
 axiom they call \textbf{Ax1Gen}. Positivity of being God-like is not assumed; it is
-\textbf{Lemma~L}, derived from Ax1Gen. Essence keeps Scott's extra conjunct. Individual
+\textbf{Lemma~L}, derived from Ax1Gen. The essence there is Scott's repaired clause. Individual
 quantifiers are \textbf{actualist}: an existence predicate says who is present at a world.
 In their Figure~7, Theorem~\textbf{Th3} is
 \[
 \floor{\Diamond(\exists^E x.\, Gx) \supset \Box(\exists^E y.\, Gy)}.
 \]
 
-In the S5 embedding, the proof of Th3 uses symmetry of accessibility and nothing else from
-S5. The theory \texttt{GoedelVariantHOML2inS4} repeats the same non-logical axioms over an
+In the S5 embedding, the proof of Th3 uses symmetry of accessibility, the schema~B, and
+nothing else from S5, so KB already suffices~\cite{BenzScott2025}. Their S4 question for this
+repaired-essence package is left open. Binary Ax1 does not yield their possibility theorem
+Th4; Ax1Gen does, via Lemma~L, Ax2a, and Ax4. A 2026 comment supplies an infinite
+non-principal ultrafilter countermodel for binary Ax1, and locates collapse primarily in the
+rigidity of positivity (Scott's A4, G\"odel's Ax2b) rather than in the ultrafilter
+alone~\cite{Benz2026arxiv}. Neither fact is the identity theorem below. The theory
+\texttt{GoedelVariantHOML2inS4} repeats the same non-logical axioms over an
 S4 frame (reflexive and transitive; symmetry \emph{not} assumed) and leaves Th3 as
 \texttt{oops}, marked ``Open problem.'' Figure~8, which changes necessary inclusion instead
 of essence, has the same open \texttt{oops} in \texttt{GoedelVariantHOML3inS4}. Neither an
@@ -616,12 +629,13 @@ automated theorem provers.
 \bibitem{BenzScottAFP2025}
 Christoph Benzm\"uller and Dana Scott.
 \newblock Notes on G\"odel's and Scott's variants of the ontological argument.
-\newblock \emph{Archive of Formal Proofs}, January 2025.
+\newblock \emph{Archive of Formal Proofs}, 7 January 2025.
 
 \bibitem{BenzScott2025}
 Christoph Benzm\"uller and Dana Scott.
 \newblock Notes on G\"odel's and Scott's variants of the ontological argument.
 \newblock \emph{Monatshefte f\"ur Mathematik}, 208(4):569--611, 2025.
+Published online 21 April 2025. \url{https://doi.org/10.1007/s00605-025-02078-x}.
 
 \bibitem{Lean4}
 Leonardo de~Moura and Sebastian Ullrich.
