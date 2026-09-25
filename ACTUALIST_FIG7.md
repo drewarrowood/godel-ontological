@@ -303,6 +303,10 @@ unsatisfiable. Th3 holds only on discrete frames.
 For **readings R1 and R2**, Th3 is not a theorem of S4. The finite chain is a
 countermodel. That is a negative answer for those two reconstructions. It is
 not a rediscovery of an AFP or Monatshefte countermodel, and it is not a
-countermodel of literal Fig. 7. Not a priority claim. The Isabelle
-instantiation of the empty-at-home collection inside `GoedelVariantHOML2inS4`
-has not been run; Isabelle was not available.
+countermodel of literal Fig. 7. Not a priority claim. The probe
+`isabelle/Ax1Gen_EmptyAtHome.thy` (session `Ax1Gen_EmptyAtHome_Check`,
+Isabelle2025-2, AFP 2025-2) imports `GoedelVariantHOML2inS4` and proves
+`fig7_implies_symmetric` and `Th3_via_empty_at_home` from the empty-at-home
+instantiation, with no extra `Rsymm` axiom. The session finished. It does not
+prove that `R` is the identity. That remains `Audit.lean`. It is not a
+`#print axioms` report.

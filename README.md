@@ -9,6 +9,7 @@ that **from those axioms** one obtains
 > (`□ ∃ x, GodLike x`).
 
 Plain-words summary of the Fig. 7 note: [docs/eli5.html](docs/eli5.html).
+Isabelle probe of AFP `GoedelVariantHOML2inS4` (empty-at-home Ax1Gen; not an AFP port): [isabelle/README.md](isabelle/README.md).
 
 ## What this is — and is not
 

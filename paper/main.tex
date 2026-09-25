@@ -64,6 +64,10 @@ two-world S4 chain.
 Among the three readings examined, the answer turns on whether both halves
 read \(\Phi\) at the same world.
 Domains and Figure~8 were not varied.
+The same literal Th3 goal is proved in Isabelle2025-2, on AFP 2025-2, inside
+\lean{GoedelVariantHOML2inS4}, by deriving symmetry from the empty-at-home
+instantiation of Ax1Gen, with no extra \(R_{\mathrm{symm}}\) axiom.
+Identity and collapse are not part of that check.
 \end{abstract}
 
 \section{The open problem}
@@ -161,14 +165,43 @@ Figure~8, which repairs the argument by changing necessary inclusion instead
 of essence, has the same open \lean{oops} in
 \lean{GoedelVariantHOML3inS4}.
 The authors' formalization reports neither an S4 proof nor an S4 countermodel.
-That open question is theirs, and it is about the Figure~7 package whose
-essence already contains Scott's conjunct, and likewise about Figure~8.
-Their proof of Th3, in the S5 embedding, uses symmetry of accessibility and
-nothing else from S5: the schema B, so that KB already suffices
+The \lean{oops} in \lean{GoedelVariantHOML2inS4} is that theory's Ax1Gen, the
+literal abbreviation.
+It is not a different reading of the axiom.
+Their S5 proof of Th3 uses symmetry of accessibility and nothing else from
+S5: the schema B, so KB already suffices
 \cite{benzmuellerScott2025,afpNotes2025}.
-The Lean theorems below do not close the S4 question they left open.
-They concern a transcription of the AFP abbreviation Ax1Gen, whose two halves
-can read \(\Phi\) at different worlds.
+Figure~8 leaves the same \lean{oops}.
+The Figure~8 goal is not the Isabelle check recorded here.
+
+That check was run.
+Session \lean{Ax1Gen\_EmptyAtHome\_Check} finished on Isabelle2025-2 against
+the AFP 2025-2 entry \lean{Notes\_On\_Goedels\_Ontological\_Argument}, the
+entry dated 7~January 2025.
+The theory \lean{isabelle/Ax1Gen\_EmptyAtHome.thy} imports
+\lean{GoedelVariantHOML2inS4}.
+It instantiates Ax1Gen at the empty-at-home collection and the world-is-\(w\)
+property
+\[
+  \varphi \equiv (\lambda\_.\,\lambda u.\; u = w),
+  \qquad
+  \Phi \equiv
+    (\lambda\psi\,u.\; (u \neq w) \land (\forall x.\; \neg\,\psi\,x\,u)).
+\]
+Lemma \lean{fig7\_implies\_symmetric} is
+\(\forall w\,v.\; w\,r\,v \longrightarrow v\,r\,w\), by that instance together
+with Ax2b, \(\varphi \necImp {\sim}\varphi\), and Ax4, contradicting Ax2a.
+Theorem \lean{Th3\_via\_empty\_at\_home} is the AFP Th3 goal, proved from AFP
+Th2 and this derived symmetry.
+No extra \(R_{\mathrm{symm}}\) axiom is assumed.
+The session is desk craft in this repository.
+It does not prove that \(R\) is the identity, and the trail is the finished
+Isabelle session, not a Lean \lean{\#print axioms} list.
+Identity and collapse without a symmetry hypothesis remain the Lean theorems
+of Section~\ref{sec:literal}.
+On the reconstructions of Section~\ref{sec:recon}, both halves of Ax1Gen read
+\(\Phi\) at the same world, symmetry is not forced, and Th3 fails on the
+two-world chain.
 
 In the same paper, binary Ax1 does not yield their Theorem Th4, the
 possibility of a God-like being.
@@ -196,9 +229,8 @@ Among the three readings examined, with full comprehension, the answer turns
 on whether both halves of Ax1Gen read \(\Phi\) at the same world.
 The domains were not varied, and Figure~8 was not the variable in that
 comparison.
-An Isabelle check that would instantiate the collection of
-Section~\ref{sec:literal} inside \lean{GoedelVariantHOML2inS4} has not been
-run: Isabelle was not available.
+The Isabelle session named above is the instantiation of this collection
+inside \lean{GoedelVariantHOML2inS4}.
 
 \section{Figure 7, as formalized}
 \label{sec:fig7}
@@ -360,15 +392,18 @@ The symmetry argument is of that kind.
 The countermodel of Section~\ref{sec:recon} is not: failure of Th3 at the source
 is an explicit world, an explicit individual, and a computation.
 
-The check that could still fail is not another Lean proof.
-It is the Isabelle instantiation
+That instantiation is the one Section~\ref{sec:open} records as finished.
+Inside \lean{GoedelVariantHOML2inS4}, Ax1Gen applied to
 \[
-  \mathrm{Ax1Gen}[\mathsf{of}\;
-    \text{``}\lambda\psi\,u.\; u \neq w \land (\forall x.\; \neg\psi\,x\,u)\text{''}\;
-    \text{``}\lambda x\,u.\; u = w\text{''}]
+  \Phi \equiv (\lambda\psi\,u.\; u \neq w \land (\forall x.\; \neg\psi\,x\,u)),
+  \qquad
+  \varphi \equiv (\lambda x\,u.\; u = w)
 \]
-inside \lean{GoedelVariantHOML2inS4}.
-Isabelle was not available, so that check has not been run.
+yields symmetry, and the AFP Th3 goal follows, with no extra
+\(R_{\mathrm{symm}}\) axiom.
+The host is Isabelle2025-2.
+The trail is the finished session \lean{Ax1Gen\_EmptyAtHome\_Check}.
+It is not the Lean axiom table of Section~\ref{sec:kernel}.
 
 \section{The literal axiom forces the identity}
 \label{sec:literal}
@@ -970,12 +1005,15 @@ Benzm\"uller and Scott make the same point for their Th3.
 In the proof they construct for the repaired-essence Figure~7, only symmetry
 of accessibility is used, the schema B, so KB already suffices and S5 is not
 required \cite{benzmuellerScott2025,afpNotes2025}.
-They report no S4 proof and no S4 counterexample for that package, and they
-leave the same question open for Figure~8.
-Theorem~\ref{thm:th3} does not answer that question.
-It is a theorem of the literal AFP abbreviation, on which the two halves of
-Ax1Gen may read \(\Phi\) at different worlds, and on which the axioms force
-the identity.
+The published theories report no S4 proof and no S4 countermodel, and
+Figure~8 leaves the same \lean{oops}.
+The Figure~7 \lean{oops} is the literal abbreviation in
+\lean{GoedelVariantHOML2inS4}.
+The probe of Section~\ref{sec:open} proves that goal by deriving symmetry.
+Theorem~\ref{thm:th3} is the Lean theorem of the same abbreviation, and it
+also forces the identity.
+The reconstructions do not: Theorem~\ref{thm:r12} fails on the chain.
+Figure~8's \lean{oops} is not discharged by the probe.
 The repository's Scott-style development rediscovers the positive half
 (local Th3 from symmetry alone, on that encoding) and pairs it with
 countermodels once symmetry is dropped.
@@ -1048,6 +1086,9 @@ simplified-argument AFP entry \cite{afpSimplified2021}.
 In \lean{GoedelVariantHOML2}, lemma \lean{MC} is prior art for collapse under
 symmetry, and Th3 is proved from symmetry.
 In the AFP S4 files, Th3 is the open \lean{oops}.
+The published file still contains that \lean{oops}.
+The probe discharges the Figure~7 goal by derived symmetry.
+It does not discharge Figure~8, and it does not prove the identity.
 In \cite{benzmueller2026} the K-theorem is the ultrafilter package just
 described.
 No proof of the identity, or of collapse, for literal Figure~7 without a
@@ -1165,6 +1206,9 @@ on whether both halves of Ax1Gen read \(\Phi\) at the same world.
 Domains and Figure~8 were not varied.
 The chain that separates the reconstructions has a one-element domain and
 existence always true.
+The Isabelle session of Section~\ref{sec:open} proves symmetry, and then Th3,
+inside \lean{GoedelVariantHOML2inS4}, without assuming \(R_{\mathrm{symm}}\).
+It does not prove Theorem~\ref{thm:id} or Theorem~\ref{thm:MC}.
 
 \section*{Acknowledgements}
 

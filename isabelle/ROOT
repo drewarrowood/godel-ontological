@@ -1,0 +1,6 @@
+chapter Local
+
+session Ax1Gen_EmptyAtHome_Check = Notes_On_Goedels_Ontological_Argument +
+  options [document = false, timeout = 600]
+  theories
+    Ax1Gen_EmptyAtHome
