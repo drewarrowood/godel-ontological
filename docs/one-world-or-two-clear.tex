@@ -91,17 +91,18 @@ In their Figure~7, Theorem~\textbf{Th3} is
 \]
 
 In the S5 embedding, the proof of Th3 uses symmetry of accessibility, the schema~B, and
-nothing else from S5, so KB already suffices~\cite{BenzScott2025}. Their S4 question for this
-repaired-essence package is left open. Binary Ax1 does not yield their possibility theorem
+nothing else from S5, so KB already suffices~\cite{BenzScott2025}. The published theory
+\texttt{GoedelVariantHOML2inS4} leaves Th3 as \texttt{oops}. That goal is the literal Ax1Gen
+of the file. Session \texttt{Ax1Gen\_EmptyAtHome\_Check}, on Isabelle2025-2 and AFP 2025-2,
+proves symmetry from the empty-at-home instantiation and then that goal, with no extra
+\texttt{Rsymm} axiom. Identity and collapse are Lean theorems, not lemmas of that session.
+Under the same-world reconstructions, Th3 still fails on a two-world chain. Figure~8 still
+leaves Th3 as \texttt{oops}; that goal is not the probe. Binary Ax1 does not yield their possibility theorem
 Th4; Ax1Gen does, via Lemma~L, Ax2a, and Ax4. A 2026 comment supplies an infinite
 non-principal ultrafilter countermodel for binary Ax1, and locates collapse primarily in the
 rigidity of positivity (Scott's A4, G\"odel's Ax2b) rather than in the ultrafilter
-alone~\cite{Benz2026arxiv}. Neither fact is the identity theorem below. The theory
-\texttt{GoedelVariantHOML2inS4} repeats the same non-logical axioms over an
-S4 frame (reflexive and transitive; symmetry \emph{not} assumed) and leaves Th3 as
-\texttt{oops}, marked ``Open problem.'' Figure~8, which changes necessary inclusion instead
-of essence, has the same open \texttt{oops} in \texttt{GoedelVariantHOML3inS4}. Neither an
-S4 proof nor an S4 countermodel is reported there.
+alone~\cite{Benz2026arxiv}. Neither fact is the identity theorem below. The published
+S4 file still writes that \texttt{oops}. The probe is what discharges the Figure~7 goal.
 
 \paragraph{What this note shows.}
 For a Lean~4 transcription of that AFP text, with full comprehension:
