@@ -359,20 +359,22 @@ question. No published proof or countermodel of Fig. 7 Th3 in S4 was found.
 Encoding: world-relative `P`, existence predicate, actualist `∃^E`/`∀^E`.
 Not rigid Positive. Not the constant-domain Scott/WRP package.
 
-**Result.** Literal Ax1Gen, Ax2a, Ax2b, Ax3, and Ax4 force `R` to be the
-identity (`Audit.R_is_identity`) and modal collapse (`Audit.MC`), with no
-symmetry hypothesis. The AFP lemma `MC` in `GoedelVariantHOML2` is the same
-schema from `Rsymm`. The only S4 models are discrete, and `th3_fig7` holds
-there trivially. `fig7_implies_symmetric` is the B schema for “the world is
-`w`”. Reflexivity is `Audit.refl_of_gen`, from Ax1Gen and Ax2a. The two-world
+**Result.** Ax1Gen, Ax2a, Ax2b, and Ax4 derive symmetry. Adding Ax3 forces `R`
+to be the identity (`Audit.R_is_identity`) and modal collapse (`Audit.MC`).
+`Rsymm` is not an extra hypothesis. The AFP lemma `MC` in `GoedelVariantHOML2`
+is the same schema from an assumed `Rsymm`. The only S4 models are discrete,
+including the unit model, and `th3_fig7` holds there trivially. The live
+question sits with the repairs R1 and R2. `fig7_implies_symmetric` is that
+derived symmetry. Reflexivity is `Audit.refl_of_gen`, from Ax1Gen and Ax2a. The
+B schema is `Audit.B_schema`. The two-world
 S4 chain satisfies no such `P` (`fig7_unsat_on_S4_chain`), so it is not a
 countermodel. A one-world principal model (`unit_fig7_th3`) satisfies the
 axioms. Fig. 8 Th3 is `th3_fig8`. Fig. 8 Th4 is `Audit.th4_fig8` (Ax1Gen and
 Ax2a). Domains and Fig. 8 were not the variable in the comparison of readings.
 
 **Status:** `th3_of_symmetric`, L, Th1, Th2, Th4, Th5, and the AFP `MC` under
-symmetry are **rediscoveries**. The identity and the collapse without a
-symmetry hypothesis are the new literal facts. Departures and the Ax1Gen
+symmetry are **rediscoveries**. Identity and collapse use the symmetry those
+axioms derive. Departures and the Ax1Gen
 world-shift are listed in `ACTUALIST_FIG7.md`. Not a priority claim.
 `#print axioms`: see that note and `paper/main.tex`. 0 `sorry`.
 

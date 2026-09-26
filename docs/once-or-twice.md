@@ -88,15 +88,15 @@ The causal summary is the prefecture story without the costumes. The two-world r
 
 **Symmetry** follows from Ax1Gen, Ax2a, Ax2b, and Ax4. Reflexivity and transitivity are **not** hypotheses of that derivation. Ax3 is not used for symmetry. The same four hypotheses are unsatisfiable on every non-symmetric frame — in particular on a two-world S4 chain. That chain is **not** a countermodel to literal Figure 7, because no positivity and existence predicate satisfy the literal axioms there.
 
-**Identity** follows when Ax3 is added: \(R\,w\,v\) if and only if \(w = v\). One route: once symmetry is in hand and the usual necessary-existence chain for a God-like being is in hand, the AFP collapse lemma already forces the identity. What is new relative to that AFP lemma is not a magic “symmetry-free proof” in the sense of never *using* symmetry. It is that **no symmetry hypothesis need be assumed up front**: the axioms produce symmetry, and then produce the identity.
+**Identity** follows when Ax3 is added: \(R\,w\,v\) if and only if \(w = v\). One route: once symmetry is in hand and the usual necessary-existence chain for a God-like being is in hand, the AFP collapse lemma already forces the identity. The axioms derive that symmetry. \(R_{\mathrm{symm}}\) is not an extra hypothesis.
 
 **Modal collapse** follows: every world-proposition \(q\) satisfies \(\lfloor q \supset \Box q \rfloor\). The AFP lemma MC is the same schema *under* an assumed \(R\)-symmetry. Here the symmetry is earned from the packaging.
 
-**Th3, literal**, follows with **no** frame hypothesis. The only S4 models of the literal axioms are discrete. There is no non-discrete S4 model in which the antecedent of Th3 can hold while the consequent fails, because there is no non-discrete model of the axioms at all.
+**Th3, literal**, follows from that derived symmetry. The only S4 models of the literal axioms are discrete, including the unit model, and Th3 holds there trivially. The live question sits with the repairs.
 
 A **one-world control** — identity relation, one individual, principal positivity — satisfies the whole package and Th3. It is a consistency witness. It is not a claim that the axioms are true of anything outside the model. On that one-world frame the literal axiom and the reconstructions below coincide.
 
-An Isabelle2025-2 / AFP 2025-2 probe imports the S4 theory, proves symmetry by the empty-at-home / world-is-\(w\) instantiation, then discharges the AFP `oops` for Th3. Identity and collapse remain Lean-only in the desk development.
+An Isabelle2025-2 / AFP 2025-2 probe, theory `isabelle/Ax1Gen_EmptyAtHome.thy` in session `Ax1Gen_EmptyAtHome_Check`, proves `fig7_implies_symmetric` by the empty-at-home / world-is-\(w\) instantiation, then discharges the AFP `oops` as `Th3_via_empty_at_home`. That Isabelle theorem uses the derived symmetry. It does not use Lean’s `R_is_identity` or `MC`. Those two remain Lean-only, in `Audit.lean`.
 
 ### The literal wording and the gloss
 
@@ -144,7 +144,7 @@ Sobel’s collapse for Scott-style premises is prior art. So is the observation 
 
 Countermodels that *postulate* \(P(G)\) do not answer a question whose point is what happens when \(P(G)\) is *earned* from Ax1Gen. On the chain, the literal axiom has no model at all.
 
-In the AFP S5 theory, lemma MC is prior art for collapse *under* symmetry. In the AFP S4 files, Th3 is the open `oops`. No proof of the identity — or of collapse — for literal Figure 7 **without** a symmetry hypothesis assumed up front, and no countermodel of the two reconstructions, turned up in those sources in the desk search. That is a statement about where the search went. It is not a priority claim about the wider literature, and it is not a brand stamped “undecidable” or “incomplete.” The open `oops` was a gap in a proof file. The desk closed one reading by collapse and the other by an explicit chain.
+In the AFP S5 theory, lemma MC is prior art for collapse *under* symmetry. In the AFP S4 files, Th3 is the open `oops`. No proof that the literal Figure 7 axioms derive symmetry, and with Ax3 the identity and collapse, and no countermodel of the two reconstructions, turned up in those sources in the desk search. That is a statement about where the search went. It is not a priority claim about the wider literature, and it is not a brand stamped “undecidable” or “incomplete.” The open `oops` was a gap in a proof file. The desk closed one reading by collapse and the other by an explicit chain.
 
 ---
 
@@ -162,7 +162,7 @@ That is not a sermon. It is the same drafting question this note isolates for Ax
 
 ## Conclusion
 
-The literal Figure 7 axioms force accessibility to be the identity, and modal collapse follows with **no symmetry hypothesis assumed up front**. The AFP lemma MC is the same schema under symmetry. The mechanism is the two-world reading of Ax1Gen: Membership consults \(\Phi\) at the source; Meaning re-reads \(\Phi\) at successors. Full comprehension turns that split into a force toward discrete frames. Their S4 models are discrete, and Th3 holds there trivially.
+The literal Figure 7 axioms force accessibility to be the identity, and modal collapse follows, from the symmetry that Ax1Gen, Ax2a, Ax2b, and Ax4 have already derived. \(R_{\mathrm{symm}}\) is not an extra hypothesis. The AFP lemma MC is the same schema from an assumed symmetry. The mechanism is the two-world reading of Ax1Gen: Membership consults \(\Phi\) at the source; Meaning re-reads \(\Phi\) at successors. Full comprehension, unrestricted quantification over properties, turns that split into a force toward discrete frames. Their S4 models are discrete, including the unit model, and Th3 holds there trivially. The live question sits with the repairs.
 
 Two same-world reconstructions still yield Lemma L and fail on a two-world S4 chain. Among the three readings examined, with full comprehension, the answer turns on whether both halves of Ax1Gen read \(\Phi\) at the same world. Domains and Figure 8 were not varied.
 

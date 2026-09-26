@@ -21,7 +21,7 @@ Then Ax2b, `φ ⊃N ~φ`, and Ax4 contradict Ax2a. The sketch matches the Lean l
 
 `Th3_via_empty_at_home`: the same goal as Th3 in `GoedelVariantHOML2inS4`, the goal that file leaves as `oops` (“Open problem”). The proof uses AFP Th2 and the symmetry just derived. It assumes no extra `Rsymm` axiom.
 
-Identity of the accessibility relation, and modal collapse without a symmetry hypothesis, are Lean theorems in `GodelOntological/Audit.lean`. They are not lemmas of this session. `#print axioms` is a Lean report and does not apply here.
+`R_is_identity` and `MC` are Lean theorems in `GodelOntological/Audit.lean`, from the symmetry those axioms derive. They are not lemmas of this session. `Th3_via_empty_at_home` uses `fig7_implies_symmetric`, not that Lean path. `#print axioms` is a Lean report and does not apply here.
 
 ## Recorded run
 
