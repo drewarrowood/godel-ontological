@@ -9,6 +9,7 @@ that **from those axioms** one obtains
 > (`□ ∃ x, GodLike x`).
 
 Plain-words summary of the Fig. 7 note: [docs/eli5.html](docs/eli5.html).
+Voltaire-style rewrite, Once or Twice: HTML [docs/once-or-twice.html](docs/once-or-twice.html) and PDF [docs/once-or-twice.pdf](docs/once-or-twice.pdf).
 Isabelle probe of AFP `GoedelVariantHOML2inS4` (empty-at-home Ax1Gen; not an AFP port): [isabelle/README.md](isabelle/README.md).
 
 ## What this is — and is not
