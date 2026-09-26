@@ -3,12 +3,13 @@ import GodelOntological.Actualist_Repaired
 /-
 # Audit of literal Fig. 7
 
-The literal AFP Ax1Gen, with Ax2a, Ax2b, Ax4, and full comprehension, forces
+The literal AFP Ax1Gen, with Ax2a, Ax2b, and Ax4, derives symmetry, and also
 reflexivity and the B schema. Adding Ax3 forces `R` to be the identity, and
-modal collapse follows with no symmetry hypothesis.
+modal collapse follows from that derived symmetry. `Rsymm` is not a hypothesis.
+Full comprehension here is unrestricted quantification over properties.
 
-`GoedelVariantHOML2` already proves `lemma MC` from Ax2a, Ax2b, Th5, and
-`Rsymm`. These lemmas do not assume `Rsymm`.
+`GoedelVariantHOML2` already proves `lemma MC` from Ax2a, Ax2b, Th5, and an
+assumed `Rsymm`. These lemmas do not assume `Rsymm`.
 
 The two repairs in `Actualist_Repaired.lean` are not restated here.
 `literal_to_R1` and `literal_to_R2` record the one direction that was proved:
