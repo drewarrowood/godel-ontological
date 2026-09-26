@@ -10,6 +10,7 @@ that **from those axioms** one obtains
 
 Plain-words summary of the Fig. 7 note: [docs/eli5.html](docs/eli5.html).
 Voltaire-style rewrite, Once or Twice: HTML [docs/once-or-twice.html](docs/once-or-twice.html) and PDF [docs/once-or-twice.pdf](docs/once-or-twice.pdf).
+Encyclopedia-length Once or Twice: HTML [docs/once-or-twice-encyclopedia.html](docs/once-or-twice-encyclopedia.html) and PDF [docs/once-or-twice-encyclopedia.pdf](docs/once-or-twice-encyclopedia.pdf) (Markdown [docs/once-or-twice-encyclopedia.md](docs/once-or-twice-encyclopedia.md)).
 Isabelle probe of AFP `GoedelVariantHOML2inS4` (empty-at-home Ax1Gen; not an AFP port): [isabelle/README.md](isabelle/README.md).
 
 ## What this is — and is not
