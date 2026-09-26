@@ -34,7 +34,7 @@
 \newtheorem{remark}[theorem]{Remark}
 
 \title{One World or Two:\\
-Where Ax1Gen Reads $\Phi$, and G\"odel's Th3 in S4}
+Where AFP Figure~7 Reads $\Phi$}
 \author{Drew Arrowood}
 \date{September 2026}
 
@@ -44,30 +44,33 @@ Where Ax1Gen Reads $\Phi$, and G\"odel's Th3 in S4}
 \begin{abstract}
 Benzm\"uller and Scott leave open whether Theorem Th3 of their actualist
 Figure~7---possible existence of a God-like being implies necessary
-existence, with \(P(G)\) derived from the generalized conjunction axiom
-Ax1Gen---is provable in S4.
-For a Lean~4 transcription of the Archive of Formal Proofs text, with full
-comprehension, the literal axiom does more than force symmetry.
-With Ax2a, Ax2b, and Ax4 it forces reflexivity and the B schema
+existence, with \(P(G)\) derived from Ax1Gen, the AFP abbreviation of the
+footnote's generalization---is provable in S4.
+For a Lean~4 transcription of that AFP text, property quantifiers are
+unrestricted.
+That is full comprehension.
+The literal abbreviation derives symmetry: Ax1Gen, Ax2a, Ax2b, and Ax4 yield
+symmetry of \(R\), and also reflexivity and the B schema
 \(q \supset \Nec\Pos q\).
-Adding Ax3 forces the accessibility relation to be the identity, and modal
-collapse follows, with no symmetry hypothesis.
-Their S5 theory already proves a collapse lemma from symmetry.
-What is new is the collapse without that hypothesis.
-The only S4 models of the literal axioms are discrete frames, and Th3 holds
-there trivially.
+Adding Ax3 yields Th3.
+In Lean the same list yields \(R\) equal to the identity, and modal collapse,
+in \lean{Audit.lean}.
+\(R_{\mathrm{symm}}\) is not an extra hypothesis.
+On that literal package the only S4 models are discrete frames, including
+the one-world unit model, and Th3 holds there trivially.
+The live question sits with the repairs.
 Two reconstructions, not dictated by the footnote, make both halves of
 Ax1Gen read \(\Phi\) at the same world: positivity inside the box, or a
 world-invariant \(\Phi\).
-Both still yield \(P(G)\), neither forces symmetry, and both fail on a
+Both still yield \(P(G)\), neither derives symmetry, and both fail on a
 two-world S4 chain.
 Among the three readings examined, the answer turns on whether both halves
 read \(\Phi\) at the same world.
 Domains and Figure~8 were not varied.
-The same literal Th3 goal is proved in Isabelle2025-2, on AFP 2025-2, inside
-\lean{GoedelVariantHOML2inS4}, by deriving symmetry from the empty-at-home
-instantiation of Ax1Gen, with no extra \(R_{\mathrm{symm}}\) axiom.
-Identity and collapse are not part of that check.
+The Isabelle theorem \lean{Th3\_via\_empty\_at\_home}, in session
+\lean{Ax1Gen\_EmptyAtHome\_Check}, uses the derived symmetry
+\lean{fig7\_implies\_symmetric}.
+It does not use Lean's \lean{R\_is\_identity} or \lean{MC}.
 \end{abstract}
 
 \section{The open problem}
@@ -145,7 +148,7 @@ The question comes from a return to the footnote.
 Christoph Benzm\"uller and Dana Scott, in the \emph{Monatshefte f\"ur
 Mathematik} \cite{benzmuellerScott2025}, and in the matching Archive of Formal
 Proofs entry \cite{afpNotes2025}, study the footnote's generalized conjunction
-as an axiom they call Ax1Gen.
+as Ax1Gen, the AFP abbreviation of that footnote.
 Positivity of being God-like is not assumed.
 It is lemma~L, derived from Ax1Gen.
 The essence in that Figure~7 is Scott's, with the conjunct \(\varphi\,x\).
@@ -191,16 +194,22 @@ property
 Lemma \lean{fig7\_implies\_symmetric} is
 \(\forall w\,v.\; w\,r\,v \longrightarrow v\,r\,w\), by that instance together
 with Ax2b, \(\varphi \necImp {\sim}\varphi\), and Ax4, contradicting Ax2a.
+The dependency is this.
+Ax1Gen, Ax2a, Ax2b, and Ax4 derive symmetry.
+Adding Ax3 yields Th3, and, in Lean, \(R\) equal to the identity and modal
+collapse.
+\(R_{\mathrm{symm}}\) is not assumed as a hypothesis.
 Theorem \lean{Th3\_via\_empty\_at\_home} is the AFP Th3 goal, proved from AFP
-Th2 and this derived symmetry.
-No extra \(R_{\mathrm{symm}}\) axiom is assumed.
-The session is desk craft in this repository.
-It does not prove that \(R\) is the identity, and the trail is the finished
-Isabelle session, not a Lean \lean{\#print axioms} list.
-Identity and collapse without a symmetry hypothesis remain the Lean theorems
-of Section~\ref{sec:literal}.
+Th2 and \lean{fig7\_implies\_symmetric}.
+That is derived symmetry.
+It is not the Lean path through \lean{R\_is\_identity} and \lean{MC}.
+Those two remain Lean-only, in \lean{Audit.lean}.
+The trail is the finished session
+\lean{Ax1Gen\_EmptyAtHome\_Check}, theory
+\lean{isabelle/Ax1Gen\_EmptyAtHome.thy}, not a Lean \lean{\#print axioms}
+list.
 On the reconstructions of Section~\ref{sec:recon}, both halves of Ax1Gen read
-\(\Phi\) at the same world, symmetry is not forced, and Th3 fails on the
+\(\Phi\) at the same world, symmetry is not derived, and Th3 fails on the
 two-world chain.
 
 In the same paper, binary Ax1 does not yield their Theorem Th4, the
@@ -358,7 +367,8 @@ Isabelle/HOL \textsf{bool} &
   represents varying domains. \\
 Property quantifiers are HOL \(\forall\) over functions \(e \Rightarrow \sigma\) &
   Lean \(\forall\) over functions \(\mathit{Ind} \to W \to \mathsf{Prop}\).
-  Comprehension is full, as in their impredicative Ax1Gen. \\
+  Comprehension is full: unrestricted quantification over properties,
+  as in their impredicative Ax1Gen. \\
 Figure~8 writes \(\varphi \neq (\lambda x.\, \bot)\), which is extensional
 inequality of HOL functions &
   \lean{neBot}: \(\neg \forall x\,w.\, \varphi\,x\,w \leftrightarrow \mathsf{False}\).
@@ -699,8 +709,9 @@ A Figure~8 Th5 is not claimed.
 \subsection{The literal axiom is not the footnote}
 \label{sec:gloss}
 
-Theorem~\ref{thm:th3} is a theorem of the literal AFP axiom.
-By G\"odel's own gloss, that axiom is not his.
+Theorem~\ref{thm:th3} is a theorem of the literal AFP abbreviation Ax1Gen.
+The 1970 hand manuscript states binary Ax1 and a footnote.
+It does not state that abbreviation.
 
 The footnote says that a conjunction of positive properties is positive
 \cite{goedel1995,benzmueller2026}.
@@ -720,8 +731,9 @@ while \(\Phi\) still depends on the world.
 It is the text of \lean{GoedelVariantHOML2}, faithfully transcribed.
 It is not a misprint, and it is not a reading of the footnote.
 The footnote does not mention worlds.
-Theorem~\ref{thm:th3} is a genuine theorem about an axiom that, by that gloss,
-is not G\"odel's.
+The hand page is not the AFP text.
+Theorem~\ref{thm:th3} is a theorem of the abbreviation, read so that the two
+halves of Ax1Gen consult \(\Phi\) at different worlds.
 
 \section{Two reconstructions}
 \label{sec:recon}
@@ -732,8 +744,6 @@ Neither is dictated by the footnote.
 Both are reconstructions.
 What both remove is \(\Phi\) being read at two different worlds by the two
 halves of the axiom.
-An earlier draft called the first the closer repair.
-That ranking is dropped.
 One may prefer the second because ``any number of summands'' is a single
 collection, and a single collection does not change with the world.
 The footnote still does not say so.
@@ -1060,7 +1070,8 @@ driven primarily by rigidity of positivity (Scott's A4, G\"odel's Ax2b),
 together with essence and necessary existence, and not by the ultrafilter
 structure alone.
 Theorem~\ref{thm:MC} is a different statement: collapse for the literal AFP
-reading of Ax1Gen, with no symmetry hypothesis.
+reading of Ax1Gen, using symmetry that those axioms derive, not an assumed
+\(R_{\mathrm{symm}}\).
 The Archive entry on simplified variants \cite{afpSimplified2021} studies
 arguments that avoid essence and necessary existence and that are valid in K
 or KT.
@@ -1091,8 +1102,8 @@ The probe discharges the Figure~7 goal by derived symmetry.
 It does not discharge Figure~8, and it does not prove the identity.
 In \cite{benzmueller2026} the K-theorem is the ultrafilter package just
 described.
-No proof of the identity, or of collapse, for literal Figure~7 without a
-symmetry hypothesis, and no countermodel of the two reconstructions, turned
+No proof that the literal Figure~7 axioms derive symmetry, and with Ax3 the
+identity and collapse, and no countermodel of the two reconstructions, turned
 up in those sources.
 That is a statement about where the search went.
 It is not a priority claim.
@@ -1190,14 +1201,16 @@ conjunct \(\varphi\,x\), as in the AFP Figure~7.
 It is not the essence definition of the 1970 hand manuscript
 \cite{benzmuellerScott2025}.
 Theorem~\ref{thm:id} says that the literal Figure~7 axioms force \(R\) to be
-the identity, and Theorem~\ref{thm:MC} says that modal collapse follows, with
-no symmetry hypothesis.
-The AFP lemma \lean{MC} is the same schema under \(R_{\mathrm{symm}}\).
+the identity, and Theorem~\ref{thm:MC} says that modal collapse follows.
+Both use the symmetry that Ax1Gen, Ax2a, Ax2b, and Ax4 have already derived.
+\(R_{\mathrm{symm}}\) is not an extra hypothesis.
+The AFP lemma \lean{MC} is the same schema from an assumed \(R_{\mathrm{symm}}\).
 The mechanism is Lemma~\ref{lem:home}: Ax1Gen, read so that the two halves
 consult \(\Phi\) at different worlds, makes positivity follow the existents
 at the source.
-The literal axioms force \(R\) to be the identity; their S4 models are
-discrete, and Th3 holds there trivially.
+On the literal package the S4 models are discrete, including the unit model,
+and Th3 holds there trivially.
+The live question sits with the repairs.
 Theorem~\ref{thm:r12} says that two reconstructions, on which both halves read
 \(\Phi\) at the same world, still yield lemma~L and fail on a two-world S4
 chain.
@@ -1206,9 +1219,11 @@ on whether both halves of Ax1Gen read \(\Phi\) at the same world.
 Domains and Figure~8 were not varied.
 The chain that separates the reconstructions has a one-element domain and
 existence always true.
-The Isabelle session of Section~\ref{sec:open} proves symmetry, and then Th3,
-inside \lean{GoedelVariantHOML2inS4}, without assuming \(R_{\mathrm{symm}}\).
-It does not prove Theorem~\ref{thm:id} or Theorem~\ref{thm:MC}.
+Theorem \lean{Th3\_via\_empty\_at\_home} in
+\lean{isabelle/Ax1Gen\_EmptyAtHome.thy} proves the AFP Th3 goal from
+\lean{fig7\_implies\_symmetric}.
+It does not prove \lean{R\_is\_identity} or \lean{MC}.
+Those remain Lean-only, in \lean{Audit.lean}.
 
 \section*{Acknowledgements}
 

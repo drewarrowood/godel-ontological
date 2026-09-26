@@ -1,15 +1,16 @@
 # One World or Two:
-# Where the Conjunction Axiom Reads Its Roster, and Why Th3 Holds in S4 Only After Collapse
+# Where AFP Figure 7 Reads Φ
 
 **Drew Arrowood**  
-September 2026  
-*(rewritten exposition: clearer names, spelled-out reasoning)*
+September 2026
+
+The canonical note is [`paper/main.tex`](../paper/main.tex), with HTML at [index.html](index.html) and PDF at [main.pdf](main.pdf). This file is not a second HTML build.
 
 ---
 
 ## Abstract
 
-Benzmüller and Scott leave open whether Theorem Th3 of their actualist Figure 7 — possible existence of a God-like being implies necessary existence, with positivity of God-likeness derived from the generalized conjunction axiom Ax1Gen — is provable in S4. For a Lean 4 transcription of the Archive of Formal Proofs text, with full comprehension, the **literal** axiom does more than force symmetry. With Ax2a, Ax2b, and Ax4 it forces reflexivity and the B schema \(q \supset \Box\Diamond q\). Adding Ax3 forces the accessibility relation to be the **identity**, and modal collapse follows, with **no** symmetry hypothesis assumed up front. Their S5 theory already proves a collapse lemma *from* symmetry. What is new is collapse **without** that hypothesis. The only S4 models of the literal axioms are discrete frames, and Th3 holds there for a trivial reason: along the identity, “possible” and “necessary” are the same quantifier.
+Benzmüller and Scott leave open whether Theorem Th3 of their actualist Figure 7 — possible existence of a God-like being implies necessary existence, with positivity of God-likeness derived from Ax1Gen, the AFP abbreviation of the footnote’s generalization — is provable in S4. For a Lean 4 transcription of that AFP text, property quantifiers are unrestricted. That is full comprehension. The literal abbreviation derives symmetry: Ax1Gen, Ax2a, Ax2b, and Ax4 yield symmetry of \(R\), and also reflexivity and the B schema \(q \supset \Box\Diamond q\). Adding Ax3 yields Th3. In Lean the same list yields \(R\) equal to the identity, and modal collapse. \(R_{\mathrm{symm}}\) is not an extra hypothesis. On that literal package the only S4 models are discrete frames, including the unit model, and Th3 holds there trivially. The live question sits with the repairs.
 
 Two **reconstructions** — not dictated by Gödel’s footnote — make both halves of Ax1Gen read the collection \(\Phi\) at the **same** world: (R1) positivity judged inside the box, or (R2) a world-invariant collection. Both still yield \(P(G)\). Neither forces symmetry. Both fail on a two-world S4 chain. Among the three readings examined, the answer turns on a single drafting question: does the conjunction axiom consult its roster of positive properties at one world, or at two?
 
@@ -137,7 +138,7 @@ One consequence of Lean’s `Prop` is worth saying before the proofs. A proof of
 
 Ax1Gen invites you to define a property by saying which collection it conjoins. The abbreviation does **not** require the collection to be the same at every world. Membership is judged at the source. Meaning re-reads the roster under the box.
 
-That is enough room for a drafting accident that behaves like a prank. At the current world \(w\), let \(\Phi\) mark **nothing**. Membership is then vacuously true, and the axiom will still conclude that the defined property \(\varphi\) is positive at \(w\). At a successor \(u \neq w\), let \(\Phi\) mark the empty property \(\bot\), and define \(\varphi\) to be “this world is \(w\)” (the source). The boxed biconditional is happy in both places:
+At the current world \(w\), let \(\Phi\) mark **nothing**. Membership is then vacuously true, and the axiom will still conclude that the defined property \(\varphi\) is positive at \(w\). At a successor \(u \neq w\), let \(\Phi\) mark the empty property \(\bot\), and define \(\varphi\) to be “this world is \(w\)” (the source). The boxed biconditional holds in both places:
 
 - at home, an empty collection conjoins to a tautology on the world-coordinate;
 - next door, a collection that contains a contradiction conjoins to a contradiction, and “this is home” is false next door.
@@ -173,7 +174,7 @@ Ax3 is not used for symmetry. The same four hypotheses are therefore unsatisfiab
 R\,w\,v \iff w = v.
 \]
 
-*Sketch.* Reflexivity (Theorem 2) gives the right-to-left direction. For the other direction: with Ax3 one obtains necessary existence of a God-like being (the AFP Th5 route, via Lemma L and the usual essence/NE chain). Applied to the world-proposition “the world is \(w\)”, collapse confines every accessible world to \(w\). Equivalently: once symmetry is in hand (Theorem 4) and Th5 is in hand, the AFP collapse lemma MC already forces the identity; what is new is that symmetry need not be assumed — the axioms produce it, and then the identity.
+*Sketch.* Reflexivity (Theorem 2) gives the right-to-left direction. For the other direction: with Ax3 one obtains necessary existence of a God-like being (the AFP Th5 route, via Lemma L and the usual essence/NE chain). Applied to the world-proposition “the world is \(w\)”, collapse confines every accessible world to \(w\). Equivalently: once symmetry is in hand (Theorem 4) and Th5 is in hand, the AFP collapse lemma MC already forces the identity. The axioms derive that symmetry, and then the identity.
 
 **Theorem 6** (*modal collapse*). From the same five axioms, every world-proposition \(q\) satisfies \(\lfloor q \supset \Box q \rfloor\).
 
@@ -199,9 +200,9 @@ Figure 8 changes necessary inclusion (adds a non-bottom side condition) and drop
 
 ### 4.4 The literal axiom is not the footnote
 
-Theorem 7 is a theorem of the literal AFP axiom. By Gödel’s own gloss, that axiom is not his.
+Theorem 7 is a theorem of the literal AFP abbreviation Ax1Gen. The 1970 hand manuscript states binary Ax1 and a footnote. It does not state that abbreviation.
 
-The footnote says that a conjunction of positive properties is positive [11, 4]. The gloss printed with the proof says that positive means positive in the moral-aesthetic sense, **independently of the accidental structure of the world** [11]. The AFP abbreviation does something else. Its type lets \(\Phi\) vary by world. Membership is judged at the source; Meaning re-reads \(\Phi\) at successors. The collection in the symmetry argument is empty at home and full of contradictions next door. Nothing in the footnote asks a collection to change its mind on the way out of the world.
+The footnote says that a conjunction of positive properties is positive [11, 4]. The gloss printed with the proof says that positive means positive in the moral-aesthetic sense, **independently of the accidental structure of the world** [11]. The AFP abbreviation does something else. Its type lets \(\Phi\) vary by world. Membership is judged at the source; Meaning re-reads \(\Phi\) at successors. The collection in the symmetry argument is empty at home and full of contradictions next door. The footnote does not mention worlds. The hand page is not the AFP text.
 
 The split is what a shallow embedding does if Membership is left outside a box while \(\Phi\) still depends on the world. It is the text of `GoedelVariantHOML2`, faithfully transcribed. It is not a misprint, and it is not a reading of the footnote. The theorems about the literal wording are real. They are theorems about **packaging**, not a revelation.
 
@@ -229,7 +230,7 @@ Call this **Ax1GenInBox**. In K, a box of a conjunction is a conjunction of boxe
 
 ### R2 — World-invariant roster
 
-Restrict Ax1Gen to collections that do not depend on the world: \(\Phi\,\psi\,w \leftrightarrow \Phi\,\psi\,v\) for every property and every pair of worlds. Membership and Meaning stay literal. Call this **Ax1GenRigid**. R2 moves no box; it freezes \(\Phi\). The prank collection of Section 4 is not rigid, so R2 never sees it.
+Restrict Ax1Gen to collections that do not depend on the world: \(\Phi\,\psi\,w \leftrightarrow \Phi\,\psi\,v\) for every property and every pair of worlds. Membership and Meaning stay literal. Call this **Ax1GenRigid**. R2 moves no box; it freezes \(\Phi\). The empty-at-home collection of Section 4 is not world-invariant, so R2 never sees it.
 
 ### 5.1 Lemma L still derives
 
@@ -277,7 +278,7 @@ Kanckos and Woltzenlogel Paleo showed that Scott’s argument goes through in KB
 
 Anderson’s and Fitting’s emendations are known repairs of a different kind. Ultrafilter simplifications that already yield \(\Box\exists^E G\) in K are different axiom lists again [4, 3]. They do not use the AFP scoping of Ax1Gen.
 
-What was checked, for the claim that the identity proof and the two reconstructions were not found already in the AFP S4 theories named above, is recorded in the repository notes. In the AFP S5 theory, lemma MC is prior art for collapse *under* symmetry. In the AFP S4 files, Th3 is the open `oops`. No proof of the identity — or of collapse — for literal Figure 7 **without** a symmetry hypothesis, and no countermodel of the two reconstructions, turned up in those sources. That is a statement about where the search went. It is not a priority claim about the wider literature.
+What was checked, for the claim that the identity proof and the two reconstructions were not found already in the AFP S4 theories named above, is recorded in the repository notes. In the AFP S5 theory, lemma MC is prior art for collapse *under* symmetry. In the AFP S4 files, Th3 is the open `oops`. No proof that the literal Figure 7 axioms derive symmetry, and with Ax3 the identity and collapse, and no countermodel of the two reconstructions, turned up in those sources. That is a statement about where the search went. It is not a priority claim about the wider literature.
 
 ---
 
@@ -303,7 +304,7 @@ The development builds with `lake build` on Lean 4.34.0, with no Mathlib. A sear
 
 ## 9. Conclusion
 
-The literal Figure 7 axioms force accessibility to be the identity (Theorem 5), and modal collapse follows with no symmetry hypothesis assumed up front (Theorem 6). The AFP lemma MC is the same schema *under* symmetry. The mechanism is the two-world reading of Ax1Gen: Membership consults \(\Phi\) at the source; Meaning re-reads \(\Phi\) at successors. Full comprehension turns that split into a force toward discrete frames. Their S4 models are discrete, and Th3 holds there trivially (Theorem 7).
+The literal Figure 7 axioms force accessibility to be the identity (Theorem 5), and modal collapse follows (Theorem 6), from the symmetry that Ax1Gen, Ax2a, Ax2b, and Ax4 have already derived. \(R_{\mathrm{symm}}\) is not an extra hypothesis. The AFP lemma MC is the same schema from an assumed symmetry. The mechanism is the two-world reading of Ax1Gen: Membership consults \(\Phi\) at the source; Meaning re-reads \(\Phi\) at successors. Full comprehension, unrestricted quantification over properties, turns that split into a force toward discrete frames. Their S4 models are discrete, including the unit model, and Th3 holds there trivially (Theorem 7). The live question sits with the repairs.
 
 Two same-world reconstructions still yield Lemma L and fail on a two-world S4 chain (Theorem 12). Among the three readings examined, with full comprehension, the answer turns on whether both halves of Ax1Gen read \(\Phi\) at the same world. Domains and Figure 8 were not varied.
 

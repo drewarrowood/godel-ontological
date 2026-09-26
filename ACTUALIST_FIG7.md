@@ -1,6 +1,8 @@
-# Actualist Fig. 7 — Th3 in S4
+# Actualist Fig. 7
 
 Desk note for `GodelOntological/Actualist.lean`. Not a priority claim.
+On the literal package Th3 holds only on discrete frames, including the unit model.
+The live question sits with the repairs R1 and R2.
 
 Date: 2026-09-24 (America/New_York). Toolchain: Lean 4.34.0. No Mathlib.
 No `sorry`. No `native_decide`. No Lean `axiom` declarations (hypotheses are `Prop`s).
@@ -108,13 +110,14 @@ what was proved.
 
 ## What was proved
 
-Literal Ax1Gen with Ax2a, Ax2b, and Ax4 forces reflexivity (`Audit.refl_of_gen`)
-and the B schema (`Audit.B_schema`). Adding Ax3 forces `R w v ↔ v = w`
-(`Audit.R_is_identity`) and modal collapse (`Audit.MC`), with no symmetry
-hypothesis. The AFP lemma `MC` in `GoedelVariantHOML2` is the same schema,
-proved there from Ax2a, Ax2b, Th5, the definition of `G`, and `Rsymm`. What is
-new is the collapse without `Rsymm`. The only S4 models of the literal axioms
-are discrete, and Th3 holds there trivially.
+Literal Ax1Gen with Ax2a, Ax2b, and Ax4 derives symmetry
+(`fig7_implies_symmetric`), and also reflexivity (`Audit.refl_of_gen`) and the
+B schema (`Audit.B_schema`). Adding Ax3 forces `R w v ↔ v = w`
+(`Audit.R_is_identity`) and modal collapse (`Audit.MC`). `Rsymm` is not an
+extra hypothesis. The AFP lemma `MC` in `GoedelVariantHOML2` is the same schema
+from an assumed `Rsymm`. The only S4 models of the literal axioms are discrete,
+including the unit model, and Th3 holds there trivially. The live question sits
+with the repairs.
 
 | Theorem | Content | Class |
 | --- | --- | --- |
@@ -128,8 +131,8 @@ are discrete, and Th3 holds there trivially.
 | `Audit.pos_of_home` | Ax1Gen alone: a property true of all existents at `w` is positive at `w` | audit |
 | `Audit.refl_of_gen` | Ax1Gen + Ax2a ⇒ `Reflexive R` | audit |
 | `Audit.B_schema` | `q → □◇q` for every world-proposition | audit |
-| **`Audit.R_is_identity`** | **literal Fig. 7 ⇒ `R` is the identity. No symmetry hypothesis** | **headline** |
-| **`Audit.MC`** | **collapse `q → □q`. No symmetry hypothesis** | **headline** |
+| **`Audit.R_is_identity`** | **literal Fig. 7 ⇒ `R` is the identity, from derived symmetry** | **headline** |
+| **`Audit.MC`** | **collapse `q → □q`, from that same derived symmetry** | **headline** |
 | `th4_fig7` | `⌊◇∃^E G⌋` | rediscovery |
 | `th5_fig7` | `⌊□∃^E G⌋` | rediscovery |
 | `fig7_unsat_on_S4_chain` | those axioms are unsatisfiable on the two-world S4 chain | not a countermodel |
@@ -224,8 +227,7 @@ answer is for the literal axiom only.
 
 Neither replacement is dictated by the footnote. Both are reconstructions.
 What both remove is `Φ` being read at two different worlds. The Lean name
-`Rigid` means world-invariant `Φ`, not Ax2b. An earlier note called R1 the
-closer repair. That ranking is dropped.
+`Rigid` means world-invariant `Φ`, not Ax2b.
 
 Gödel’s 1970 footnote extends axiom 1 to any number of summands: the
 conjunction of a collection of **positive** properties is positive. In the AFP

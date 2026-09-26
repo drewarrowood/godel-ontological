@@ -89,9 +89,10 @@ The mismatch above stands: `S4Open.lean` does not answer Fig. 7.
 
 The separate actualist package answers a different question.
 `GodelOntological/Actualist.lean`, `GodelOntological/Audit.lean`, and
-`ACTUALIST_FIG7.md` encode Fig. 7. Literal Ax1Gen with Ax2a, Ax2b, Ax3, and
-Ax4 forces `R` to be the identity, with no symmetry hypothesis, so the only
-S4 models are discrete and Th3 holds there trivially. The S4 chain is
+`ACTUALIST_FIG7.md` encode Fig. 7. Ax1Gen, Ax2a, Ax2b, and Ax4 derive
+symmetry. Adding Ax3 forces `R` to be the identity, so the only
+S4 models are discrete, including the unit model, and Th3 holds there
+trivially. The live question sits with the repairs. The S4 chain is
 unsatisfiable for those axioms, so it is not a countermodel. Two
 reconstructions of Ax1Gen do have countermodels on that chain. See that note
 for the axiom list, departures, and `#print axioms`.
