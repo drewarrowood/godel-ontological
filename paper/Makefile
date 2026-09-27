@@ -14,5 +14,7 @@ html:
 	python3 fix-html.py .html-build/main.html
 	cp .html-build/main.html ../docs/index.html
 	cp .html-build/main.css ../docs/main.css
+	cp .html-build/main.pdf ../docs/main.pdf
+	cp .html-build/main.pdf main.pdf
 	cp .html-build/main*.svg ../docs/
 	rm -rf .html-build
