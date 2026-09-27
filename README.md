@@ -13,6 +13,21 @@ Voltaire-style rewrite, Once or Twice: HTML [docs/once-or-twice.html](docs/once-
 Encyclopedia-length Once or Twice: HTML [docs/once-or-twice-encyclopedia.html](docs/once-or-twice-encyclopedia.html) and PDF [docs/once-or-twice-encyclopedia.pdf](docs/once-or-twice-encyclopedia.pdf) (Markdown [docs/once-or-twice-encyclopedia.md](docs/once-or-twice-encyclopedia.md)).
 Isabelle probe of AFP `GoedelVariantHOML2inS4` (empty-at-home Ax1Gen; not an AFP port): [isabelle/README.md](isabelle/README.md).
 
+## AFM / citation
+
+Code in this repository is under the MIT License ([`LICENSE`](LICENSE)): the Lean sources under `GodelOntological/`, the package files `lakefile.toml` and `lean-toolchain`, and the Isabelle probe under `isabelle/`. The paper text is intended for the Annals of Formalized Mathematics CC-BY 4.0 overlay (compatible intent). The Isabelle directory does not vendor Archive of Formal Proofs sources.
+
+Submission snapshot of the formalization and paper: [`dd7b9f0`](https://github.com/drewarrowood/godel-ontological/commit/dd7b9f0a5c82649828880573497f0d8a406a9654).
+
+Reading copies:
+
+- PDF: <https://cdn.jsdelivr.net/gh/drewarrowood/godel-ontological@master/docs/main.pdf>
+- HTML: <https://htmlpreview.github.io/?https://raw.githubusercontent.com/drewarrowood/godel-ontological/master/docs/index.html>
+
+arXiv: TODO-ARXIV
+
+Rebuild from the instructions already in the repository: Lean under [Build](#build); the Isabelle probe under [isabelle/README.md](isabelle/README.md).
+
 ## What this is — and is not
 
 | This project **does** | This project **does not** |
