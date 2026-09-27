@@ -80,7 +80,7 @@ Benzm\"uller reports that the port leaves Th3 open, as an anonymous sorry,
 in the repaired S4 restrictions \lean{GoedelVariantHOML2inS4},
 \lean{GoedelVariantHOML2possInS4}, \lean{GoedelVariantHOML3inS4}, and
 \lean{GoedelVariantHOML3possInS4}.
-The port proves Th3 of \lean{GoedelVariantHOML1inS4} from Ax3 and reflexivity.
+The port proves Th3 of \lean{GoedelVariantHOML1inS4} from Ax3 and \lean{Rrefl}.
 Those open statements are not this repository's Lean Th3, and they are not
 \lean{R\_is\_identity} or \lean{MC}.
 \end{abstract}
@@ -192,8 +192,8 @@ The authors' formalization reports neither an S4 proof nor an S4 countermodel.
 The \lean{oops} in \lean{GoedelVariantHOML2inS4} is that theory's Ax1Gen, the
 literal abbreviation.
 It is not a different reading of the axiom.
-Their S5 proof of Th3 uses symmetry of accessibility and nothing else from
-S5, the schema B
+Their S5 proof of Th3 uses symmetry of accessibility, only the B schema; S5
+is not required
 \cite{benzmuellerScott2025,afpNotes2025}.
 Figure~8 leaves the same \lean{oops}.
 The Figure~8 goal is not the Isabelle check recorded here.
@@ -255,8 +255,9 @@ For a Lean~4 transcription of that AFP text, the literal reading proves Th3,
 and the mechanism is collapse: the axioms force \(R\) to be the identity, so
 the only S4 models are discrete and Th3 holds there trivially.
 Two reconstructions of Ax1Gen refute Th3 on a two-world S4 chain.
-Among the three readings examined, with full comprehension, the answer turns
-on whether both halves of Ax1Gen read \(\Phi\) at the same world.
+Among the three readings examined, with full comprehension---unrestricted
+property quantification---the answer turns on whether both halves of Ax1Gen
+read \(\Phi\) at the same world.
 The domains were not varied, and Figure~8 was not the variable in that
 comparison.
 The Isabelle session named above is the instantiation of this collection
@@ -461,7 +462,8 @@ He reports that the port leaves Th3 open, as an anonymous sorry, in the
 repaired S4 restrictions \lean{GoedelVariantHOML2inS4},
 \lean{GoedelVariantHOML2possInS4}, \lean{GoedelVariantHOML3inS4}, and
 \lean{GoedelVariantHOML3possInS4}.
-The port proves Th3 of \lean{GoedelVariantHOML1inS4} from Ax3 and reflexivity.
+
+The port proves Th3 of \lean{GoedelVariantHOML1inS4} from Ax3 and \lean{Rrefl}.
 It does not contain the derived-symmetry argument of this note, and it does
 not treat the 1970 hand page as Scott's repaired Figure~7.
 
@@ -1065,11 +1067,11 @@ Theorem~\ref{thm:MC} is collapse for the literal Figure~7 package, and the
 prior art for that schema is the AFP lemma \lean{MC}, which assumes symmetry
 \cite{afpNotes2025}.
 
-Kanckos and Woltzenlogel Paleo gave a proof of Scott's argument from symmetry
-of accessibility; S5 is more than that proof uses \cite{kanckos2017}.
+Kanckos and Woltzenlogel Paleo gave a proof of Scott's argument in KB
+\cite{kanckos2017}.
 Benzm\"uller and Scott make the same point for their Th3.
 In the proof they construct for the repaired-essence Figure~7, only symmetry
-of accessibility is used, the schema B
+of accessibility is used: only the B schema; S5 is not required
 \cite{benzmuellerScott2025,afpNotes2025}.
 The published theories report no S4 proof and no S4 countermodel, and
 Figure~8 leaves the same \lean{oops}.
@@ -1082,7 +1084,8 @@ Benzm\"uller reports that the port leaves Th3 open, as an anonymous sorry,
 in the repaired S4 restrictions \lean{GoedelVariantHOML2inS4},
 \lean{GoedelVariantHOML2possInS4}, \lean{GoedelVariantHOML3inS4}, and
 \lean{GoedelVariantHOML3possInS4} \cite{benzmuellerLean2026}.
-The port proves Th3 of \lean{GoedelVariantHOML1inS4} from Ax3 and reflexivity.
+The port proves Th3 of \lean{GoedelVariantHOML1inS4} from Ax3 and \lean{Rrefl}.
+
 Its Table~4, from \lean{\#print axioms} on Lean~4.33.1, reports that the S5
 proofs of Th5 and \lean{MC} in \lean{GoedelVariantHOML2} consume an assumed
 \(R_{\mathrm{symm}}\), and that Scott's T3 and \lean{MC} consume only
@@ -1151,7 +1154,8 @@ together with the S4 and S5 embeddings they import:
 \begin{itemize}[leftmargin=1.5em]
 \item \lean{GoedelVariantHOML2} and \lean{GoedelVariantHOML2inS4} (Figure~7, S5 and S4);
 \item \lean{GoedelVariantHOML3} and \lean{GoedelVariantHOML3inS4} (Figure~8, S5 and S4);
-\item \lean{GoedelVariantHOML2possInS4} (the possibilist S4 twin, not encoded here).
+\item \lean{GoedelVariantHOML2possInS4} (the possibilist Figure~7 S4 twin, not encoded here);
+\item \lean{GoedelVariantHOML3possInS4} (the possibilist Figure~8 S4 twin, not encoded here).
 \end{itemize}
 The literature named in this section was checked as well, namely the items
 cited from the repository notes that accompany the formalization:
@@ -1164,8 +1168,11 @@ Woltzenlogel Paleo \cite{kanckos2017}, Benzm\"uller and Woltzenlogel Paleo
 simplified-argument AFP entry \cite{afpSimplified2021}.
 In \lean{GoedelVariantHOML2}, lemma \lean{MC} is prior art for collapse under
 symmetry, and Th3 is proved from symmetry.
-In the AFP S4 files, Th3 is the open \lean{oops}.
-The published file still contains that \lean{oops}.
+In \lean{GoedelVariantHOML2inS4}, \lean{GoedelVariantHOML2possInS4},
+\lean{GoedelVariantHOML3inS4}, and \lean{GoedelVariantHOML3possInS4}, Th3 is
+the open \lean{oops}.
+The port proves Th3 of \lean{GoedelVariantHOML1inS4} from Ax3 and \lean{Rrefl}.
+The published files still contain that \lean{oops}.
 The probe discharges the Figure~7 goal by derived symmetry.
 It does not discharge Figure~8, and it does not prove the identity.
 In \cite{benzmueller2026} the K-theorem is the ultrafilter package just
@@ -1287,8 +1294,9 @@ The live question sits with the repairs.
 Theorem~\ref{thm:r12} says that two reconstructions, on which both halves read
 \(\Phi\) at the same world, still yield lemma~L and fail on a two-world S4
 chain.
-Among the three readings examined, with full comprehension, the answer turns
-on whether both halves of Ax1Gen read \(\Phi\) at the same world.
+Among the three readings examined, with full comprehension---unrestricted
+property quantification---the answer turns on whether both halves of Ax1Gen
+read \(\Phi\) at the same world.
 Domains and Figure~8 were not varied.
 The chain that separates the reconstructions has a one-element domain and
 existence always true.
@@ -1301,7 +1309,8 @@ Benzm\"uller reports that the port leaves Th3 open, as an anonymous sorry,
 in the repaired S4 restrictions \lean{GoedelVariantHOML2inS4},
 \lean{GoedelVariantHOML2possInS4}, \lean{GoedelVariantHOML3inS4}, and
 \lean{GoedelVariantHOML3possInS4}.
-The port proves Th3 of \lean{GoedelVariantHOML1inS4} from Ax3 and reflexivity.
+
+The port proves Th3 of \lean{GoedelVariantHOML1inS4} from Ax3 and \lean{Rrefl}.
 In the port's S5 embedding, the proofs of Figure~7 Th5 and MC consume an
 assumed \(R_{\mathrm{symm}}\).
 That assumed symmetry is not the derived lemma
