@@ -40,39 +40,40 @@ Where AFP Figure 7 Reads <span class='mathjax-inline'>\(\Phi \)</span></h2>
      existence of a God-like being implies necessary existence, with </span><span class='mathjax-inline'>\(P(G)\) </span><span class='ec-lmr-10'>derived from Ax1Gen, the
      AFP abbreviation of the footnote’s generalization—is provable in S4, and they leave two
      related questions open </span><span class='cite'><span class='ec-lmr-10'>[</span><a href='#XbenzmuellerScott2025'><span class='ec-lmr-10'>9</span></a><span class='ec-lmr-10'>]</span></span><span class='ec-lmr-10'>. Benzmüller has since settled all three </span><span class='cite'><span class='ec-lmr-10'>[</span><a href='#XbenzmuellerPWN2026'><span class='ec-lmr-10'>6</span></a><span class='ec-lmr-10'>]</span></span><span class='ec-lmr-10'>. Under Ax1Gen, Th3
-     holds already in K, by a hybrid-free proof that turns on the empty conjunction. Under
-     his emendation Ax1GenTwo, which requires at least two different conjuncts, the questions
-     are settled again, hybrid-free under stated side conditions, and for Figure 8 only after a
-     further emendation. The answer this note gave first is superseded by that paper, and it is
-     weaker in two ways. The Ax1Gen instance it checked, in session </span><span class='ec-lmtt-10'>Ax1Gen_EmptyAtHome_Check
-     </span><span class='ec-lmr-10'>on  Isabelle2025-2,  is  empty  at  the  world  of  evaluation,  so  it  is  one  of  the  degenerate
-     instances  that  Ax1GenTwo  excludes.  Its  witnesses  are  a  nominal  and  a  world-indexed
-     collection, and Benzmüller’s Lean detector flags both as </span><span class='ec-lmtt-10'>NOMINAL RIGID</span><span class='ec-lmr-10'>. The symmetry,
-     identity,  and  collapse  theorems  below  are  therefore  theorems  of  the  shallow  embedding
-     with full comprehension, not of the modal object language. What remains of this note is
-     a comparison of where Ax1Gen reads </span><span class='mathjax-inline'>\(\Phi \)</span><span class='ec-lmr-10'>. Two reconstructions make both halves of Ax1Gen
-     read  </span><span class='mathjax-inline'>\(\Phi \)  </span><span class='ec-lmr-10'>at  the  same  world:  positivity  inside  the  box,  or  a  world-invariant  </span><span class='mathjax-inline'>\(\Phi \)</span><span class='ec-lmr-10'>.  Both  yield  </span><span class='mathjax-inline'>\(P(G)\)
-     </span><span class='ec-lmr-10'>and fail on a two-world S4 chain. For the world-invariant reading, Benzmüller’s ancillary
-     session B lists the derivability of </span><span class='mathjax-inline'>\(P(G)\) </span><span class='ec-lmr-10'>as open. Our </span><span class='ec-lmtt-10'>lemma_L_rigid </span><span class='ec-lmr-10'>builds on Benzmüller’s AFP
-     entry </span><span class='ec-lmtt-10'>GoedelVariantHOML2inS4</span><span class='ec-lmr-10'> </span><span class='cite'><span class='ec-lmr-10'>[</span><a href='#XafpNotes2025'><span class='ec-lmr-10'>10</span></a><span class='ec-lmr-10'>]</span></span><span class='ec-lmr-10'>, and its snapshot-and-agreement step uses the same
-     move as </span><span class='ec-lmtt-10'>Th4_finite </span><span class='ec-lmr-10'>in arXiv:2608.07578 </span><span class='cite'><span class='ec-lmr-10'>[</span><a href='#Xbenzmueller2026'><span class='ec-lmr-10'>4</span></a><span class='ec-lmr-10'>]</span></span><span class='ec-lmr-10'>; our commit </span><span class='ec-lmtt-10'>b23cc28 </span><span class='ec-lmr-10'>cited arXiv:2608.07578,
-     for a different result, 31 minutes before </span><span class='ec-lmtt-10'>27524f7</span><span class='ec-lmr-10'>, and our records do not show whether
-     </span><span class='ec-lmtt-10'>Th4_finite </span><span class='ec-lmr-10'>was  read.  It  proves  L  for  the  rigid-</span><span class='mathjax-inline'>\(\Phi \)  </span><span class='ec-lmr-10'>variant  he  later  lists  as  Candidate B
-     (Ax1GenR),  in  commit  </span><span class='ec-lmtt-10'>27524f7</span><span class='ec-lmr-10'>,  merged  24 September  2026  (20:51 UTC),  four  days
-     before arXiv:2609.36279 v1 (28 September) </span><span class='cite'><span class='ec-lmr-10'>[</span><a href='#XbenzmuellerPWN2026'><span class='ec-lmr-10'>6</span></a><span class='ec-lmr-10'>]</span></span><span class='ec-lmr-10'>. We checked arXiv:2609.26806 v1 </span><span class='cite'><span class='ec-lmr-10'>[</span><a href='#XbenzmuellerLean2026'><span class='ec-lmr-10'>5</span></a><span class='ec-lmr-10'>]</span></span><span class='ec-lmr-10'>, the
-     Monatshefte paper </span><span class='cite'><span class='ec-lmr-10'>[</span><a href='#XbenzmuellerScott2025'><span class='ec-lmr-10'>9</span></a><span class='ec-lmr-10'>]</span></span><span class='ec-lmr-10'>, the AFP entries, and his public repositories as of that date and found
-     no statement of Candidate B or of L as open under it. Section </span><a href='#after-proofs-without-nominals-what-is-left'><span class='ec-lmr-10'>6</span><!-- tex4ht:ref: sec:pwn-new  --></a> <span class='ec-lmr-10'>replays it in his Isabelle and
-     Lean encodings. Combining the world-invariant restriction with his two-conjunct restriction
-     gives a reading, Ax1GenTwoR, that meets his requirements (i) and (ii) and still has genuine
-     Nitpick countermodels to the actual existence of a God-like being at every world and to
-     collapse in K, and to Th3 on S4 frames. His equivalence of Ax1GenTwo with Ax1Gen in
-     the presence of nominals runs through a world-dependent collection, which the rigid reading
-     excludes, and a genuine Nitpick countermodel confirms that Ax1GenTwoR does not give
-     Ax1Gen back. The reading is small, and its Figure 8 and Scott forms are unchecked. The
+     holds already in K, by a hybrid-free proof that turns on the empty conjunction. Under his
+     emendation Ax1GenTwo, which requires at least two different conjuncts, the questions are
+     settled again, hybrid-free under stated side conditions, and for Figure 8 only after a further
+     emendation. The answer this note gave first is superseded by that paper, and it is weaker
+     in two ways. The Ax1Gen instance it checked, in session </span><span class='ec-lmtt-10'>Ax1Gen_EmptyAtHome_Check </span><span class='ec-lmr-10'>on
+     Isabelle2025-2, is empty at the world of evaluation, so it is one of the degenerate instances
+     that  Ax1GenTwo  excludes.  Its  witnesses  are  a  nominal  and  a  world-indexed  collection,
+     and  Benzmüller’s  Lean  detector  flags  both  as  </span><span class='ec-lmtt-10'>NOMINAL RIGID</span><span class='ec-lmr-10'>.  The  symmetry,  identity,
+     and collapse theorems below are therefore theorems of the shallow embedding with full
+     comprehension, not of the modal object language. What remains of this note is a comparison
+     of where Ax1Gen reads </span><span class='mathjax-inline'>\(\Phi \)</span><span class='ec-lmr-10'>. Two reconstructions make both halves of Ax1Gen read </span><span class='mathjax-inline'>\(\Phi \) </span><span class='ec-lmr-10'>at the same
+     world: positivity inside the box, or a world-invariant </span><span class='mathjax-inline'>\(\Phi \)</span><span class='ec-lmr-10'>. Both yield </span><span class='mathjax-inline'>\(P(G)\) </span><span class='ec-lmr-10'>and fail on a two-world S4
+     chain. For the world-invariant reading, Benzmüller’s ancillary session B lists the derivability
+     of  </span><span class='mathjax-inline'>\(P(G)\)  </span><span class='ec-lmr-10'>as  open.  Our  </span><span class='ec-lmtt-10'>lemma_L_rigid </span><span class='ec-lmr-10'>builds  on  the  theory  </span><span class='ec-lmtt-10'>GoedelVariantHOML2inS4 </span><span class='ec-lmr-10'>in
+     Benzmüller and Scott’s AFP entry </span><span class='ec-lmtt-10'>Notes_On_Goedels_Ontological_Argument</span><span class='ec-lmr-10'> </span><span class='cite'><span class='ec-lmr-10'>[</span><a href='#XafpNotes2025'><span class='ec-lmr-10'>10</span></a><span class='ec-lmr-10'>]</span></span><span class='ec-lmr-10'>, and
+     its snapshot-and-agreement step uses the same move as </span><span class='ec-lmtt-10'>Th4_finite</span><span class='ec-lmr-10'>in arXiv:2608.07578 </span><span class='cite'><span class='ec-lmr-10'>[</span><a href='#Xbenzmueller2026'><span class='ec-lmr-10'>4</span></a><span class='ec-lmr-10'>]</span></span><span class='ec-lmr-10'>;
+     our  commit  </span><span class='ec-lmtt-10'>b23cc28 </span><span class='ec-lmr-10'>cited  arXiv:2608.07578,  for  a  different  result,  31 minutes  before
+     </span><span class='ec-lmtt-10'>27524f7</span><span class='ec-lmr-10'>,  and  our  records  do  not  show  whether  </span><span class='ec-lmtt-10'>Th4_finite </span><span class='ec-lmr-10'>was  read.  It  proves  L  for
+     the rigid-</span><span class='mathjax-inline'>\(\Phi \) </span><span class='ec-lmr-10'>variant he later lists as Candidate B (Ax1GenR), in commit </span><span class='ec-lmtt-10'>27524f7</span><span class='ec-lmr-10'>, merged
+     24 September 2026 (20:51 UTC), four days before arXiv:2609.36279 v1 (28 September) </span><span class='cite'><span class='ec-lmr-10'>[</span><a href='#XbenzmuellerPWN2026'><span class='ec-lmr-10'>6</span></a><span class='ec-lmr-10'>]</span></span><span class='ec-lmr-10'>.
+     We checked arXiv:2609.26806 v1 </span><span class='cite'><span class='ec-lmr-10'>[</span><a href='#XbenzmuellerLean2026'><span class='ec-lmr-10'>5</span></a><span class='ec-lmr-10'>]</span></span><span class='ec-lmr-10'>, the Monatshefte paper </span><span class='cite'><span class='ec-lmr-10'>[</span><a href='#XbenzmuellerScott2025'><span class='ec-lmr-10'>9</span></a><span class='ec-lmr-10'>]</span></span><span class='ec-lmr-10'>, the AFP entries, and his
+     public  repositories  as  of  that  date  and  found  no  statement  of  Candidate B  or  of  L  as
+     open  under  it.  Section </span><a href='#after-proofs-without-nominals-what-is-left'><span class='ec-lmr-10'>6</span><!-- tex4ht:ref: sec:pwn-new  --></a>  <span class='ec-lmr-10'>replays  it  in  his  Isabelle  and  Lean  encodings.  Combining  the
+     world-invariant restriction with his two-conjunct restriction gives a reading, Ax1GenTwoR,
+     that meets his requirements (i) and (ii) and still has genuine Nitpick countermodels to
+     the actual existence of a God-like being at every world and to collapse in K, and to Th3
+     on S4 frames. His equivalence of Ax1GenTwo with Ax1Gen in the presence of nominals
+     runs through a world-dependent collection, which the rigid reading excludes, and a genuine
+     Nitpick countermodel confirms that Ax1GenTwoR does not give Ax1Gen back. The reading
                                                                                       
                                                                                       
-     Lean development of this repository is Lean 4.34.0. Benzmüller’s port of the AFP dataset
-     </span><span class='cite'><span class='ec-lmr-10'>[</span><a href='#XbenzmuellerLean2026'><span class='ec-lmr-10'>5</span></a><span class='ec-lmr-10'>]</span></span> <span class='ec-lmr-10'>and the package of </span><span class='cite'><span class='ec-lmr-10'>[</span><a href='#XbenzmuellerPWN2026'><span class='ec-lmr-10'>6</span></a><span class='ec-lmr-10'>]</span></span> <span class='ec-lmr-10'>are separate trails on Lean 4.33.1.</span>
+     is small, and its Figure 8 and Scott forms are unchecked. The Lean development of this
+     repository is Lean 4.34.0. Benzmüller’s port of the AFP dataset </span><span class='cite'><span class='ec-lmr-10'>[</span><a href='#XbenzmuellerLean2026'><span class='ec-lmr-10'>5</span></a><span class='ec-lmr-10'>]</span></span> <span class='ec-lmr-10'>and the package of </span><span class='cite'><span class='ec-lmr-10'>[</span><a href='#XbenzmuellerPWN2026'><span class='ec-lmr-10'>6</span></a><span class='ec-lmr-10'>]</span></span>
+     <span class='ec-lmr-10'>are separate trails on Lean 4.33.1.</span>
 </p>
 </section>
    
@@ -118,9 +119,9 @@ Those repairs avoid collapse by weakening the axioms, and going on the summary o
 Benzmüller <span class='cite'>[<a href='#XmuehlenbeckBenzmueller2026'>16</a>]</span> the price is the ultrafilter maximality of the positive properties, so they are not
 Gödel’s maximum unchanged. Separately, the passage from “possibly God-like” to “necessarily
 God-like” on the Scott side needs symmetry of accessibility, the modal axiom B, and does not
+                                                                                      
+                                                                                      
 need the rest of S5 <span class='cite'>[<a href='#Xkanckos2017'>14</a>]</span>. Those facts are recorded again in Section <a href='#what-was-already-known'>7<!-- tex4ht:ref: sec:related  --></a> so that they are not
-                                                                                      
-                                                                                      
 mistaken for the theorems below. For Figure 7, collapse is the question. The S5 theory
 <span class='ec-lmtt-10x-x-109'>GoedelVariantHOML2 </span>already proves </p><div class='mathjax-block'>\[ \mathrm {MC}:\qquad \valid {\varphi \supset \Nec \varphi }, \]</div><p> from Ax2a, Ax2b, Th5, the definition of God-likeness, and
 symmetry of <span class='mathjax-inline'>\(R\) </span><span class='cite'>[<a href='#XafpNotes2025'>10</a>]</span>. Applied to the world-proposition “the world is <span class='mathjax-inline'>\(w\)</span>”, that lemma already
@@ -170,9 +171,9 @@ term of <span class='mathjax-inline'>\(\mathcal {L}\)</span>” <span class='ci
 it overlaps, his answers stand and this note’s are superseded; Section <a href='#after-proofs-without-nominals-what-is-left'>6<!-- tex4ht:ref: sec:pwn-new  --></a> records what is
 left.
 </p><!-- l. 253 --><p class='indent'>   That check was run. Session <span class='ec-lmtt-10x-x-109'>Ax1Gen_EmptyAtHome_Check </span>finished on Isabelle2025-2 against the
+                                                                                      
+                                                                                      
 AFP 2025-2 entry <span class='ec-lmtt-10x-x-109'>Notes_On_Goedels_Ontological_Argument</span>, the entry dated 7 January 2025. It
-                                                                                      
-                                                                                      
 was re-run on 2 October 2026 against an AFP checkout of 24 September 2026 and again
 finished (<span class='ec-lmtt-10x-x-109'>pwn36279/reports/</span>). The check is sound, but the instance is degenerate, and it is
 not evidence for the footnote. The theory <span class='ec-lmtt-10x-x-109'>isabelle/Ax1Gen_EmptyAtHome.thy </span>imports
@@ -221,9 +222,9 @@ comparison. The Isabelle session named above is the instantiation of this collec
 map <span class='mathjax-inline'>\(W \to \mathsf {Prop}\)</span>. A property is a map <span class='mathjax-inline'>\(\mathit {Ind} \to W \to \mathsf {Prop}\)</span>, individual first and world second, matching the AFP type <span class='mathjax-inline'>\(e \Rightarrow i \Rightarrow \mathsf {bool}\)</span>. Positivity <span class='mathjax-inline'>\(P\)</span> is
 a world-relative predicate on properties. Necessity and possibility are the usual quantifications along <span class='mathjax-inline'>\(R\)</span>: </p><div class='mathjax-block'>\[ (\Nec \varphi )\,w \;\equiv \; \forall v.\; R\,w\,v \to \varphi \,v, \qquad (\Pos \varphi )\,w \;\equiv \; \exists v.\; R\,w\,v \land \varphi \,v. \]</div><p>
 Validity <span class='mathjax-inline'>\(\valid {\varphi }\)</span> means <span class='mathjax-inline'>\(\varphi \)</span> holds at every world.
+                                                                                      
+                                                                                      
 <!-- l. 354 --></p><p class='indent'>   An existence predicate <span class='mathjax-inline'>\(\mathit {ex} : \mathit {Ind} \to W \to \mathsf {Prop}\)</span> plays the role of the AFP constant <span class='mathjax-inline'>\(\mathit {existsAt}\)</span>. The outer type of individuals is fixed.
-                                                                                      
-                                                                                      
 Who exists may vary. Actualist quantifiers are the restrictions </p><div class='mathjax-block'>\[ (\allE y.\, \varphi \,y)\,w \;\equiv \; \forall y.\; \mathit {ex}\,y\,w \to \varphi \,y\,w, \qquad (\exE y.\, \varphi \,y)\,w \;\equiv \; \exists y.\; \mathit {ex}\,y\,w \land \varphi \,y\,w. \]</div><p> Quantifiers over properties stay
 possibilist: they range over every map <span class='mathjax-inline'>\(\mathit {Ind} \to W \to \mathsf {Prop}\)</span>.
 <!-- l. 369 --></p><p class='indent'>   God-likeness, necessary inclusion, essence, and necessary existence are the Figure 7
@@ -640,17 +641,18 @@ of <span class='mathjax-inline'>\(G\)</span>.
 at the world <span class='mathjax-inline'>\(w\)</span> where the lemma is being proved: <span class='mathjax-inline'>\(\Phi \,\psi \,\_ :\equiv P\,\psi \,w\)</span>. That collection ignores its world argument. At a
 successor <span class='mathjax-inline'>\(v\)</span>, the conjunction it defines is <span class='mathjax-inline'>\(G\)</span> only if positivity at <span class='mathjax-inline'>\(w\)</span> and positivity at <span class='mathjax-inline'>\(v\)</span> agree. Ax2a and Ax2b
 give that agreement along an edge (<span class='ec-lmtt-10x-x-109'>pos_agree</span>): a positive property stays positive by Ax2b, and a
-property positive at <span class='mathjax-inline'>\(v\)</span> cannot have a positive negation at <span class='mathjax-inline'>\(w\)</span>, or Ax2b would carry the negation forward
-and break Ax2a at <span class='mathjax-inline'>\(v\)</span>. So <span class='ec-lmtt-10x-x-109'>lemma_L_rigid </span>needs Ax2a and Ax2b. Literal <span class='ec-lmtt-10x-x-109'>lemma_L </span>needed neither.
-Benzmüller’s ancillary session B states the same restriction, Ax1GenR, and records “L: derivability
-open”, since the derivation with <span class='mathjax-inline'>\(\Phi := P\)</span> is unavailable when <span class='mathjax-inline'>\(P\)</span> is not rigid; its Lean module leaves the lemma
-as an <span class='ec-lmtt-10x-x-109'>openproblem</span>, that is, a <span class='ec-lmtt-10x-x-109'>sorry </span><span class='cite'>[<a href='#XbenzmuellerPWN2026'>6</a>]</span>. Our <span class='ec-lmtt-10x-x-109'>lemma_L_rigid </span>builds on Benzmüller’s AFP entry
-<span class='ec-lmtt-10x-x-109'>GoedelVariantHOML2inS4</span> <span class='cite'>[<a href='#XafpNotes2025'>10</a>]</span>, and its snapshot-and-agreement step uses the same move as
-<span class='ec-lmtt-10x-x-109'>Th4_finite </span>in arXiv:2608.07578 <span class='cite'>[<a href='#Xbenzmueller2026'>4</a>]</span>; our commit <span class='ec-lmtt-10x-x-109'>b23cc28 </span>cited arXiv:2608.07578, for a different
-result, 31 minutes before <span class='ec-lmtt-10x-x-109'>27524f7</span>, and our records do not show whether <span class='ec-lmtt-10x-x-109'>Th4_finite </span>was read. It
-proves L for the rigid-<span class='mathjax-inline'>\(\Phi \)</span> variant he later lists as Candidate B (Ax1GenR), in commit <span class='ec-lmtt-10x-x-109'>27524f7</span>, merged
-24 September 2026 (20:51 UTC), four days before arXiv:2609.36279 v1 (28 September) <span class='cite'>[<a href='#XbenzmuellerPWN2026'>6</a>]</span>. We
-checked arXiv:2609.26806 v1 <span class='cite'>[<a href='#XbenzmuellerLean2026'>5</a>]</span>, the Monatshefte paper <span class='cite'>[<a href='#XbenzmuellerScott2025'>9</a>]</span>, the AFP entries, and his public
+property positive at <span class='mathjax-inline'>\(v\)</span> cannot have a positive negation at <span class='mathjax-inline'>\(w\)</span>, or Ax2b would carry the negation
+forward and break Ax2a at <span class='mathjax-inline'>\(v\)</span>. So <span class='ec-lmtt-10x-x-109'>lemma_L_rigid </span>needs Ax2a and Ax2b. Literal <span class='ec-lmtt-10x-x-109'>lemma_L</span>
+needed neither. Benzmüller’s ancillary session B states the same restriction, Ax1GenR,
+and records “L: derivability open”, since the derivation with <span class='mathjax-inline'>\(\Phi := P\)</span> is unavailable when <span class='mathjax-inline'>\(P\)</span> is not
+rigid; its Lean module leaves the lemma as an <span class='ec-lmtt-10x-x-109'>openproblem</span>, that is, a <span class='ec-lmtt-10x-x-109'>sorry </span><span class='cite'>[<a href='#XbenzmuellerPWN2026'>6</a>]</span>. Our
+<span class='ec-lmtt-10x-x-109'>lemma_L_rigid </span>builds on the theory <span class='ec-lmtt-10x-x-109'>GoedelVariantHOML2inS4 </span>in Benzmüller and Scott’s AFP entry
+<span class='ec-lmtt-10x-x-109'>Notes_On_Goedels_Ontological_Argument</span> <span class='cite'>[<a href='#XafpNotes2025'>10</a>]</span>, and its snapshot-and-agreement step uses the same
+move as <span class='ec-lmtt-10x-x-109'>Th4_finite </span>in arXiv:2608.07578 <span class='cite'>[<a href='#Xbenzmueller2026'>4</a>]</span>; our commit <span class='ec-lmtt-10x-x-109'>b23cc28 </span>cited arXiv:2608.07578, for a
+different result, 31 minutes before <span class='ec-lmtt-10x-x-109'>27524f7</span>, and our records do not show whether <span class='ec-lmtt-10x-x-109'>Th4_finite </span>was
+read. It proves L for the rigid-<span class='mathjax-inline'>\(\Phi \)</span> variant he later lists as Candidate B (Ax1GenR), in commit <span class='ec-lmtt-10x-x-109'>27524f7</span>,
+merged 24 September 2026 (20:51 UTC), four days before arXiv:2609.36279 v1 (28 September) <span class='cite'>[<a href='#XbenzmuellerPWN2026'>6</a>]</span>.
+We checked arXiv:2609.26806 v1 <span class='cite'>[<a href='#XbenzmuellerLean2026'>5</a>]</span>, the Monatshefte paper <span class='cite'>[<a href='#XbenzmuellerScott2025'>9</a>]</span>, the AFP entries, and his public
 repositories as of that date and found no statement of Candidate B or of L as open under it.
 Section <a href='#after-proofs-without-nominals-what-is-left'>6<!-- tex4ht:ref: sec:pwn-new  --></a> replays it. The box in R1 re-reads <span class='mathjax-inline'>\(\Phi := P\)</span> at the successor rather than freezing it at the
 source.
@@ -803,15 +805,15 @@ derivation, <span class='mathjax-inline'>\(\Phi := P\)</span>, is unavailable si
 Candidate A, Ax1GenBox, keeps a world-dependent <span class='mathjax-inline'>\(\Phi \)</span> and adds <span class='mathjax-inline'>\(\Nec \mathrm {PosProps}\,\Phi \)</span> to <span class='mathjax-inline'>\(\mathrm {PosProps}\,\Phi \)</span>; under it L does hold, and the
 Lean theorem <span class='ec-lmtt-10x-x-109'>Th4_rigid </span>of his <span class='ec-lmtt-10x-x-109'>Ax1GenBoxVariant2.lean </span>is named for its rigid witness sets <span class='mathjax-inline'>\(\{G\}\)</span> and <span class='mathjax-inline'>\(\emptyset \)</span>,
 not for a rigid reading of the axiom. Our <span class='ec-lmtt-10x-x-109'>lemma_L_rigid </span>concerns his Candidate B, Ax1GenR, with
-rigid <span class='mathjax-inline'>\(\Phi \)</span>, <span class='mathjax-inline'>\(\mathrm {PosPropsR}\,\Phi \equiv \lambda w.\,\forall \psi .\, \Phi \,\psi \longrightarrow P\,\psi \,w\)</span>, and <span class='mathjax-inline'>\(\mathrm {ConjR}\)</span>, not Ax1GenBox. Our <span class='ec-lmtt-10x-x-109'>lemma_L_rigid </span>builds on Benzmüller’s AFP entry
-<span class='ec-lmtt-10x-x-109'>GoedelVariantHOML2inS4</span> <span class='cite'>[<a href='#XafpNotes2025'>10</a>]</span>, and its snapshot-and-agreement step uses the same move as
-<span class='ec-lmtt-10x-x-109'>Th4_finite </span>in arXiv:2608.07578 <span class='cite'>[<a href='#Xbenzmueller2026'>4</a>]</span>; our commit <span class='ec-lmtt-10x-x-109'>b23cc28 </span>cited arXiv:2608.07578, for a different
-result, 31 minutes before <span class='ec-lmtt-10x-x-109'>27524f7</span>, and our records do not show whether <span class='ec-lmtt-10x-x-109'>Th4_finite </span>was read. It
-proves L for the rigid-<span class='mathjax-inline'>\(\Phi \)</span> variant he later lists as Candidate B (Ax1GenR), in commit <span class='ec-lmtt-10x-x-109'>27524f7</span>, merged
-24 September 2026 (20:51 UTC), four days before arXiv:2609.36279 v1 (28 September) <span class='cite'>[<a href='#XbenzmuellerPWN2026'>6</a>]</span>. We
-checked arXiv:2609.26806 v1 <span class='cite'>[<a href='#XbenzmuellerLean2026'>5</a>]</span>, the Monatshefte paper <span class='cite'>[<a href='#XbenzmuellerScott2025'>9</a>]</span>, the AFP entries, and his public
-repositories as of that date and found no statement of Candidate B or of L as open under
-it.
+rigid <span class='mathjax-inline'>\(\Phi \)</span>, <span class='mathjax-inline'>\(\mathrm {PosPropsR}\,\Phi \equiv \lambda w.\,\forall \psi .\, \Phi \,\psi \longrightarrow P\,\psi \,w\)</span>, and <span class='mathjax-inline'>\(\mathrm {ConjR}\)</span>, not Ax1GenBox. Our <span class='ec-lmtt-10x-x-109'>lemma_L_rigid </span>builds on the theory <span class='ec-lmtt-10x-x-109'>GoedelVariantHOML2inS4 </span>in
+Benzmüller and Scott’s AFP entry <span class='ec-lmtt-10x-x-109'>Notes_On_Goedels_Ontological_Argument</span> <span class='cite'>[<a href='#XafpNotes2025'>10</a>]</span>, and its
+snapshot-and-agreement step uses the same move as <span class='ec-lmtt-10x-x-109'>Th4_finite </span>in arXiv:2608.07578 <span class='cite'>[<a href='#Xbenzmueller2026'>4</a>]</span>; our commit
+<span class='ec-lmtt-10x-x-109'>b23cc28 </span>cited arXiv:2608.07578, for a different result, 31 minutes before <span class='ec-lmtt-10x-x-109'>27524f7</span>, and our records do
+not show whether <span class='ec-lmtt-10x-x-109'>Th4_finite </span>was read. It proves L for the rigid-<span class='mathjax-inline'>\(\Phi \)</span> variant he later lists as
+Candidate B (Ax1GenR), in commit <span class='ec-lmtt-10x-x-109'>27524f7</span>, merged 24 September 2026 (20:51 UTC), four days
+before arXiv:2609.36279 v1 (28 September) <span class='cite'>[<a href='#XbenzmuellerPWN2026'>6</a>]</span>. We checked arXiv:2609.26806 v1 <span class='cite'>[<a href='#XbenzmuellerLean2026'>5</a>]</span>, the Monatshefte
+paper <span class='cite'>[<a href='#XbenzmuellerScott2025'>9</a>]</span>, the AFP entries, and his public repositories as of that date and found no statement of
+Candidate B or of L as open under it.
    </p><div class='newtheorem'>
 <!-- l. 1211 --><p class='noindent'><span class='head'>
 <a id='x1-17001r14'></a>
