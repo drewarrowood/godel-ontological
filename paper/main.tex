@@ -70,9 +70,10 @@ world: positivity inside the box, or a world-invariant \(\Phi\).
 Both yield \(P(G)\) and fail on a two-world S4 chain.
 For the world-invariant reading, Benzm\"uller's ancillary session~B lists the
 derivability of \(P(G)\) as open.
-The derivation \lean{lemma\_L\_rigid}, obtained independently in this
-repository, closes it, and Section~\ref{sec:pwn-new} replays it in his
-Isabelle and Lean encodings.
+Our \lean{lemma\_L\_rigid} builds on Benzm\"uller's AFP entry \lean{GoedelVariantHOML2inS4}~\cite{afpNotes2025}, and its snapshot-and-agreement step uses the same move as \lean{Th4\_finite} in arXiv:2608.07578~\cite{benzmueller2026}; our commit \lean{b23cc28} cited arXiv:2608.07578, for a different result, 31~minutes before \lean{27524f7}, and our records do not show whether \lean{Th4\_finite} was read.
+It proves L for the rigid-\(\Phi\) variant he later lists as Candidate~B (Ax1GenR), in commit \lean{27524f7}, merged 24~September 2026 (20:51~UTC), four days before arXiv:2609.36279 v1 (28~September)~\cite{benzmuellerPWN2026}.
+We checked arXiv:2609.26806 v1~\cite{benzmuellerLean2026}, the Monatshefte paper~\cite{benzmuellerScott2025}, the AFP entries, and his public repositories as of that date and found no statement of Candidate~B or of L as open under it.
+Section~\ref{sec:pwn-new} replays it in his Isabelle and Lean encodings.
 Combining the world-invariant restriction with his two-conjunct restriction
 gives a reading, Ax1GenTwoR, that meets his requirements (i) and (ii) and
 still has genuine Nitpick countermodels to the actual existence of a
@@ -973,8 +974,10 @@ Benzm\"uller's ancillary session~B states the same restriction, Ax1GenR, and
 records ``L: derivability open'', since the derivation with \(\Phi := P\) is
 unavailable when \(P\) is not rigid; its Lean module leaves the lemma as an
 \lean{openproblem}, that is, a \lean{sorry} \cite{benzmuellerPWN2026}.
-\lean{lemma\_L\_rigid}, obtained independently, closes it
-(Section~\ref{sec:pwn-new}).
+Our \lean{lemma\_L\_rigid} builds on Benzm\"uller's AFP entry \lean{GoedelVariantHOML2inS4}~\cite{afpNotes2025}, and its snapshot-and-agreement step uses the same move as \lean{Th4\_finite} in arXiv:2608.07578~\cite{benzmueller2026}; our commit \lean{b23cc28} cited arXiv:2608.07578, for a different result, 31~minutes before \lean{27524f7}, and our records do not show whether \lean{Th4\_finite} was read.
+It proves L for the rigid-\(\Phi\) variant he later lists as Candidate~B (Ax1GenR), in commit \lean{27524f7}, merged 24~September 2026 (20:51~UTC), four days before arXiv:2609.36279 v1 (28~September)~\cite{benzmuellerPWN2026}.
+We checked arXiv:2609.26806 v1~\cite{benzmuellerLean2026}, the Monatshefte paper~\cite{benzmuellerScott2025}, the AFP entries, and his public repositories as of that date and found no statement of Candidate~B or of L as open under it.
+Section~\ref{sec:pwn-new} replays it.
 The box in R1 re-reads \(\Phi := P\) at the successor rather than freezing it
 at the source.
 
@@ -1200,10 +1203,10 @@ and \(\emptyset\), not for a rigid reading of the axiom.
 Our \lean{lemma\_L\_rigid} concerns his Candidate~B, Ax1GenR, with rigid
 \(\Phi\), \(\mathrm{PosPropsR}\,\Phi \equiv \lambda w.\,\forall\psi.\,
 \Phi\,\psi \longrightarrow P\,\psi\,w\), and \(\mathrm{ConjR}\), not
-Ax1GenBox, and it was obtained independently: it is in commit
-\lean{27524f7} (commit time 24~September 2026, 20:47~UTC), which reached
-\lean{master} when GitHub merged pull request~\#1 at 20:51:39~UTC that day,
-four days before his v1 (28~September 2026, 21:09:57~UTC).
+Ax1GenBox.
+Our \lean{lemma\_L\_rigid} builds on Benzm\"uller's AFP entry \lean{GoedelVariantHOML2inS4}~\cite{afpNotes2025}, and its snapshot-and-agreement step uses the same move as \lean{Th4\_finite} in arXiv:2608.07578~\cite{benzmueller2026}; our commit \lean{b23cc28} cited arXiv:2608.07578, for a different result, 31~minutes before \lean{27524f7}, and our records do not show whether \lean{Th4\_finite} was read.
+It proves L for the rigid-\(\Phi\) variant he later lists as Candidate~B (Ax1GenR), in commit \lean{27524f7}, merged 24~September 2026 (20:51~UTC), four days before arXiv:2609.36279 v1 (28~September)~\cite{benzmuellerPWN2026}.
+We checked arXiv:2609.26806 v1~\cite{benzmuellerLean2026}, the Monatshefte paper~\cite{benzmuellerScott2025}, the AFP entries, and his public repositories as of that date and found no statement of Candidate~B or of L as open under it.
 
 \begin{proposition}[\lean{L\_R\_derived}]
 \label{prop:LR}
