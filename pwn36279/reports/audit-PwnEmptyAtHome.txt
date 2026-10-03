@@ -1,0 +1,6 @@
+== OpenQuestions.PwnEmptyAtHome: 50 theorems, 2 with flagged witnesses, 2 hybrid, 0 inheriting, 0 connectives at the world type
+OneWorld:
+    [NOMINAL RIGID] fun u => u = _fvar.23127
+fig7_implies_symmetric_EAH:
+    [NOMINAL RIGID] fun x u => u = _fvar.24190
+    [NOMINAL RIGID] fun ψ u => u ≠ _fvar.24190 ∧ ∀ (x : e), ¬ψ x u

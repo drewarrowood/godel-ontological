@@ -1,0 +1,27 @@
+session PwnCheckTwo in checkTwo = Ax1GenAlternativesTwo +
+  options [timeout = 1800, document = false]
+  theories PwnCheckTwo
+
+session PwnCheckRigid in checkRigid = Ax1GenAlternativesB +
+  options [timeout = 3600, document = false]
+  theories PwnCheckRigid PwnCheckRigidNitpick
+
+session PwnCheckReqII in checkII = Th4FromConjunction +
+  options [timeout = 1800, document = false]
+  theories PwnCheckReqII
+
+session PwnCheckReqIIR in checkIIR = Th4FromConjunction +
+  options [timeout = 1800, document = false]
+  theories PwnCheckReqIIR
+
+session PwnSanity in sanity = Th4FromConjunction +
+  options [timeout = 600, document = false]
+  theories PwnSanity
+
+session PwnCheckReqIIbA in checkIIbA = Th4FromConjunction +
+  options [timeout = 1800, document = false]
+  theories PwnCheckReqIIbA
+
+session PwnCheckReqIIbB in checkIIbB = Th4FromConjunction +
+  options [timeout = 1800, document = false]
+  theories PwnCheckReqIIbB
