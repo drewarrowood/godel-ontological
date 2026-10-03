@@ -1,6 +1,5 @@
-Fri Oct  2 22:49:20 EDT 2026
-Isabelle2025-2
-Started at Fri Oct 2 22:49:22 GMT-4 2026 (polyml-5.9.2_x86_64_32-linux on grok-bot-vm-52234006)
+Fri Oct  2 23:24:53 EDT 2026
+Started at Fri Oct 2 23:24:55 GMT-4 2026 (polyml-5.9.2_x86_64_32-linux on grok-bot-vm-52234006)
 ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
 ISABELLE_BUILD_OPTIONS=""
 
@@ -28,32 +27,32 @@ Cleaned PwnCheckReqII
 Running PwnCheckRigid ...
 PwnCheckRigid: theory PwnCheckRigid.PwnCheckRigid
 PwnCheckRigid: theory PwnCheckRigid.PwnCheckRigidNitpick
-PwnCheckRigid: theory PwnCheckRigid.PwnCheckRigidNitpick 100% (6.861s cumulated time)
-PwnCheckRigid: theory PwnCheckRigid.PwnCheckRigid 100% (2.909s cumulated time)
-Timing PwnCheckRigid (8 threads, 2.718s elapsed time, 5.145s cpu time, 1.188s GC time, factor 1.89)
-Finished PwnCheckRigid (0:00:04 elapsed time, 0:00:06 cpu time, factor 1.48)
+PwnCheckRigid: theory PwnCheckRigid.PwnCheckRigid 100% (3.459s cumulated time)
+PwnCheckRigid: theory PwnCheckRigid.PwnCheckRigidNitpick 100% (11.339s cumulated time)
+Timing PwnCheckRigid (8 threads, 3.236s elapsed time, 5.734s cpu time, 1.254s GC time, factor 1.77)
+Finished PwnCheckRigid (0:00:04 elapsed time, 0:00:06 cpu time, factor 1.47)
 Running PwnCheckReqII ...
 PwnCheckReqII: theory PwnCheckReqII.PwnCheckReqII
-PwnCheckReqII: theory PwnCheckReqII.PwnCheckReqII 100% (1.231s cumulated time)
-Timing PwnCheckReqII (8 threads, 0.751s elapsed time, 0.677s cpu time, 0.042s GC time, factor 0.90)
-Finished PwnCheckReqII (0:00:01 elapsed time)
+PwnCheckReqII: theory PwnCheckReqII.PwnCheckReqII 100% (1.422s cumulated time)
+Timing PwnCheckReqII (8 threads, 0.820s elapsed time, 0.787s cpu time, 0.049s GC time, factor 0.96)
+Finished PwnCheckReqII (0:00:02 elapsed time)
 Running PwnCheckReqIIR ...
 PwnCheckReqIIR: theory PwnCheckReqIIR.PwnCheckReqIIR
-PwnCheckReqIIR: theory PwnCheckReqIIR.PwnCheckReqIIR 100% (0.701s cumulated time)
-Timing PwnCheckReqIIR (8 threads, 0.727s elapsed time, 0.446s cpu time, 0.020s GC time, factor 0.61)
+PwnCheckReqIIR: theory PwnCheckReqIIR.PwnCheckReqIIR 100% (0.782s cumulated time)
+Timing PwnCheckReqIIR (8 threads, 0.808s elapsed time, 0.518s cpu time, 0.020s GC time, factor 0.64)
 Finished PwnCheckReqIIR (0:00:01 elapsed time)
 Running PwnCheckReqIIbB ...
 PwnCheckReqIIbB: theory PwnCheckReqIIbB.PwnCheckReqIIbB
-PwnCheckReqIIbB: theory PwnCheckReqIIbB.PwnCheckReqIIbB 100% (0.730s cumulated time)
-Timing PwnCheckReqIIbB (8 threads, 0.755s elapsed time, 0.507s cpu time, 0.040s GC time, factor 0.67)
+PwnCheckReqIIbB: theory PwnCheckReqIIbB.PwnCheckReqIIbB 100% (0.740s cumulated time)
+Timing PwnCheckReqIIbB (8 threads, 0.767s elapsed time, 0.505s cpu time, 0.032s GC time, factor 0.66)
 Finished PwnCheckReqIIbB (0:00:01 elapsed time)
 Running PwnCheckTwo ...
 PwnCheckTwo: theory PwnCheckTwo.PwnCheckTwo
-PwnCheckTwo: theory PwnCheckTwo.PwnCheckTwo 100% (0.262s cumulated time)
-Timing PwnCheckTwo (8 threads, 0.297s elapsed time, 0.493s cpu time, 0.000s GC time, factor 1.66)
+PwnCheckTwo: theory PwnCheckTwo.PwnCheckTwo 100% (0.293s cumulated time)
+Timing PwnCheckTwo (8 threads, 0.310s elapsed time, 0.425s cpu time, 0.000s GC time, factor 1.37)
 Finished PwnCheckTwo (0:00:01 elapsed time)
 
-Finished at Fri Oct 2 22:49:40 GMT-4 2026
-0:00:17 elapsed time, 0:00:11 cpu time, factor 0.68
+Finished at Fri Oct 2 23:25:12 GMT-4 2026
+0:00:16 elapsed time, 0:00:12 cpu time, factor 0.75
 exit=0
-Fri Oct  2 22:49:40 EDT 2026
+Fri Oct  2 23:25:12 EDT 2026

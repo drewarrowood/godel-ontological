@@ -70,16 +70,18 @@ world: positivity inside the box, or a world-invariant \(\Phi\).
 Both yield \(P(G)\) and fail on a two-world S4 chain.
 For the world-invariant reading, Benzm\"uller's ancillary session~B lists the
 derivability of \(P(G)\) as open.
-The derivation \lean{lemma\_L\_rigid}, in this repository since 24~September
-2026, closes it, and Section~\ref{sec:pwn-new} replays it in his Isabelle
-and Lean encodings.
+The derivation \lean{lemma\_L\_rigid}, obtained independently in this
+repository, closes it, and Section~\ref{sec:pwn-new} replays it in his
+Isabelle and Lean encodings.
 Combining the world-invariant restriction with his two-conjunct restriction
 gives a reading, Ax1GenTwoR, that meets his requirements (i) and (ii) and
 still has genuine Nitpick countermodels to the actual existence of a
 God-like being at every world and to collapse in K, and to Th3 on S4
 frames.
-Those countermodels are standard models of the embedding, so they do not
-depend on excluding nominals.
+His equivalence of Ax1GenTwo with Ax1Gen in the presence of nominals runs
+through a world-dependent collection, which the rigid reading excludes, and a
+genuine Nitpick countermodel confirms that Ax1GenTwoR does not give Ax1Gen
+back.
 The reading is small, and its Figure~8 and Scott forms are unchecked.
 The Lean development of this repository is Lean~4.34.0.
 Benzm\"uller's port of the AFP dataset \cite{benzmuellerLean2026} and the
@@ -553,8 +555,9 @@ They are not offered as theorems of the modal object language, nor as
 evidence about G\"odel's footnote.
 As answers to the \emph{Monatshefte} questions they are superseded: Th3 and
 collapse hold already in K by hybrid-free proofs (his Theorems~2 and~4), and
-the identity of \(R\) is his one-world theorem, which uses a nominal (his
-Theorem~6).
+the identity of \(R\) is his \lean{OneWorld}, Theorem~4(c), which uses the
+nominal \(\lambda u.\, u = w\) and which he states ``for what it says about
+the models''; for Figure~8 the one-world result is his Theorem~6(b).
 Isabelle's \lean{HybridAudit.ML} was not run on this repository's
 theories; the classification above comes from his Lean detector on a
 Lean~4.33.1 replay of Theorem~\ref{thm:sym}.
@@ -970,9 +973,8 @@ Benzm\"uller's ancillary session~B states the same restriction, Ax1GenR, and
 records ``L: derivability open'', since the derivation with \(\Phi := P\) is
 unavailable when \(P\) is not rigid; its Lean module leaves the lemma as an
 \lean{openproblem}, that is, a \lean{sorry} \cite{benzmuellerPWN2026}.
-The snapshot closes it (Section~\ref{sec:pwn-new}).
-\lean{lemma\_L\_rigid} has been in this repository since commit
-\lean{27524f7}, 24~September 2026, four days before his v1.
+\lean{lemma\_L\_rigid}, obtained independently, closes it
+(Section~\ref{sec:pwn-new}).
 The box in R1 re-reads \(\Phi := P\) at the successor rather than freezing it
 at the source.
 
@@ -1183,9 +1185,25 @@ with \(\mathrm{PosPropsR}\,\Phi\,w \equiv \forall\psi.\,\Phi\,\psi
 \longrightarrow P\,\psi\,w\) and \(\mathrm{ConjR}\,\varphi\,\Phi \equiv
 \Nec(\allE z.\, \varphi\,z \leftrightarrow
 (\lambda w.\,\forall\psi.\,\Phi\,\psi \longrightarrow \psi\,z\,w))\).
-There a Nitpick search finds no countermodel to L, a Sledgehammer call is
-recorded, and the session's README records ``L: derivability open''; the
-Lean module says that neither a countermodel nor a proof was found.
+There a Nitpick search finds no countermodel to L for at most two worlds and
+one individual, and the session's README (\lean{alternatives/README.md},
+line~87) records ``derivability \textbf{open} (the article's derivation,
+\(\Phi := P\), is unavailable since \(P\) is not rigid)''; line~150 of his
+\lean{Ax1GenRigidVariant2.lean} is
+\lean{example (\_ : Ax1GenR) : \(\lfloor\)P G\(\rfloor\) := by openproblem}.
+This is his Candidate~B, not his Candidate~A.
+Candidate~A, Ax1GenBox, keeps a world-dependent \(\Phi\) and adds
+\(\Nec\mathrm{PosProps}\,\Phi\) to \(\mathrm{PosProps}\,\Phi\); under it L
+does hold, and the Lean theorem \lean{Th4\_rigid} of his
+\lean{Ax1GenBoxVariant2.lean} is named for its rigid witness sets \(\{G\}\)
+and \(\emptyset\), not for a rigid reading of the axiom.
+Our \lean{lemma\_L\_rigid} concerns his Candidate~B, Ax1GenR, with rigid
+\(\Phi\), \(\mathrm{PosPropsR}\,\Phi \equiv \lambda w.\,\forall\psi.\,
+\Phi\,\psi \longrightarrow P\,\psi\,w\), and \(\mathrm{ConjR}\), not
+Ax1GenBox, and it was obtained independently: it is in commit
+\lean{27524f7} (commit time 24~September 2026, 20:47~UTC), which reached
+\lean{master} when GitHub merged pull request~\#1 at 20:51:39~UTC that day,
+four days before his v1 (28~September 2026, 21:09:57~UTC).
 
 \begin{proposition}[\lean{L\_R\_derived}]
 \label{prop:LR}
@@ -1259,10 +1277,18 @@ In variant~2:
 \end{proposition}
 
 The countermodels are certified by \lean{expect = genuine} annotations, which
-make the build fail otherwise; a control session (\lean{PwnSanity}) confirms
-that the annotation is enforced.
-The cardinalities searched are small: at most two worlds, and one individual
-for (c), at most two for (b).
+make the build fail otherwise; a control session (\lean{PwnSanity}), in which
+a valid formula carries the same annotation, fails with ``Unexpected outcome:
+none'', which confirms that the annotation is enforced.
+A countermodel certified genuine refutes its statement whatever the size of
+the model, so the small cardinalities searched (at most two worlds, and one
+or two individuals) limit only the searches that came back ``none'' or
+``unknown''.
+Requirement~(ii) in particular is certified, not merely unrefuted: in
+\lean{PwnCheckReqII}, inside his session \lean{Th4FromConjunction} whose only
+axiom is Ax2a, \lean{Th4\_TwoR\_alone} and \lean{PTop\_TwoR\_alone} carry
+\lean{expect = genuine}, and so does the version with Ax2b added in
+\lean{PwnCheckReqIIbB}.
 
 Two things make this worth recording.
 First, his assessment \cite[Sect.~6.4]{benzmuellerPWN2026} says of his four
@@ -1270,13 +1296,20 @@ readings that ``the world-dependence of \(\Phi\) is what produces the
 collapse, and only Ax1GenBox removes that. The price is (ii).''
 Among those four readings that is right.
 Ax1GenTwoR removes the world-dependence and keeps~(ii).
-Second, Nitpick's models are standard models of the embedding, in which every
-higher-order term, nominals included, denotes.
-The countermodels of Proposition~\ref{prop:TwoR}(c) therefore refute the
-statements in the embedding itself, with full comprehension.
-That contrasts with Ax1GenTwo, whose restriction ``has no force'' once
-nominals are admitted \cite[Sect.~6.2]{benzmuellerPWN2026}: the block here is
-not confined to the object language.
+Second, his equivalence of Ax1GenTwo with Ax1Gen once nominals are admitted
+(\cite[Sect.~6.2, Theorem~16(d)]{benzmuellerPWN2026}, Isabelle
+\lean{Two\_equivalent} in his session~E, which he says goes through
+unchanged in variant~2) does not transfer.
+In his session~E that equivalence is \lean{Ax1Gen\_of\_Two}, which uses
+\lean{R\_Id}, which uses collapse at the nominal \(\lambda u.\, u = w\) and
+so the existence of a God-like being at every world; that in turn comes
+from his Theorem~11, whose collection \(\Phi\) depends on whether a God-like
+being exists at the world where it is read.
+A rigid \(\Phi\) cannot do that, and this is the reason the argument does
+not apply to Ax1GenTwoR.
+The non-equivalence itself is checked separately: with all axioms of
+variant~2, Nitpick finds a genuine countermodel to ``Ax1GenTwoR implies
+Ax1Gen'' (\lean{Ax1Gen\_of\_TwoR} in \lean{PwnCheckRigidNitpick}).
 
 The limits are as plain.
 His requirement~(iii) is that an emendation \emph{need not} block collapse,
@@ -1452,8 +1485,9 @@ up in those sources, nor in the Lean~4 port of the dataset
 That is a statement about where the search went.
 It is not a priority claim.
 Since then \cite{benzmuellerPWN2026} has appeared.
-It proves Th3 and collapse for the literal package in K, hybrid-free; it
-proves the identity of \(R\) as a one-world theorem with a nominal; and its
+It proves Th3 and collapse for the literal package in K, hybrid-free
+(Theorem~4(a),(b)); it proves the identity of \(R\) as a one-world theorem
+with a nominal (Theorem~4(c)); and its
 Ax1GenBox countermodels cover R1.
 Those results supersede Theorems~\ref{thm:sym}--\ref{thm:th3} as answers,
 and they are stronger, being hybrid-free where the proofs here are not.
@@ -1597,7 +1631,9 @@ Combining that reading with his two-conjunct restriction gives Ax1GenTwoR,
 which meets his requirements (i) and (ii) and, in variant~2, has genuine
 countermodels to the existence of a God-like being at every world and to
 collapse in K, and to Th3 in S4 (Proposition~\ref{prop:TwoR}).
-Those countermodels do not depend on excluding nominals.
+Unlike Ax1GenTwo, it does not collapse back to Ax1Gen when nominals are
+admitted: his route to that equivalence needs a world-dependent collection,
+and Nitpick certifies a model of Ax1GenTwoR in which Ax1Gen fails.
 Whether the snapshot is hybrid-free, whether Ax1GenR yields Th4 once Ax2b is
 present, and how Ax1GenTwoR behaves in KB, in Figure~8, and in Scott's
 variant, are not settled here.
