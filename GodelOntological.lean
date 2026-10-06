@@ -14,4 +14,5 @@ import GodelOntological.Actualist
 import GodelOntological.Actualist_Repaired
 import GodelOntological.Actualist_Two
 import GodelOntological.Dagger
+import GodelOntological.S5Gap
 import GodelOntological.Audit
