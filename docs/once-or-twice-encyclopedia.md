@@ -211,3 +211,16 @@ When the conjunction axiom decides what is positive across many worlds, does it 
 ## Acknowledgements
 
 The Lean 4 formalization and drafting of the underlying note were done with AI coding assistants. Results reported for the formal theorems are kernel-checked in the repository accompanying the formalization. Fiction in this essay is illustration only; it does not replace the machine-checked theorems. Historical remarks on the hand manuscript, the notes shown to Scott, and Scott’s seminar follow Benzmüller and Scott’s own framing of those three objects.
+
+
+---
+
+## A third cut: two conjuncts, roster still read twice
+
+On 1 October 2026 Christoph Benzmüller posted a separate settlement of the three open marks in the *Notes* (arXiv:2609.36279v2, “Proofs Without Nominals”). It agrees that the empty roster makes the literal axiom too quick: in K, with no frame hypothesis, that instance yields an actual God-like being at every world, and with it Th3 and modal collapse. He treats that as the wrong reason.
+
+**Ax1GenTwo** keeps Membership and Meaning literal and refuses rosters with fewer than two distinct members at the source. The guard is not under the box. Meaning still re-reads \(\Phi\) at successors. This is not R1 and not R2. The same paper isolates the same-world reading (R1) as Ax1GenBox.
+
+His Theorem 11 still uses a world-dependent roster: two members at home, the empty property next door. The cardinality guard blocks the empty prank and leaves the two-member prank standing. With a nominal, the leftover empty-domain world is excluded and the frame is again forced toward one room.
+
+The chain of this note is the test. The positivity predicate that satisfies R1 and R2, and kills Th3, does **not** satisfy Ax1GenTwo. `GodelOntological/Actualist_Two.lean` checks the separation (`r1_not_two_on_chain`). The napkin countermodel of the same-world repairs is not a countermodel of the October restriction. Lemma 10 and Theorem 11 of that paper are not re-checked here.

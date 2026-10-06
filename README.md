@@ -107,6 +107,7 @@ GodelOntological/Anderson.lean     — Anderson 1990 fragment; ContingentR survi
 GodelOntological/S4Open.lean       — Scott-style S4 failure; not Fig. 7
 GodelOntological/Actualist.lean    — actualist Fig. 7 / Fig. 8
 GodelOntological/Actualist_Repaired.lean — two reconstructions of Ax1Gen; S4 countermodels
+GodelOntological/Actualist_Two.lean    — Ax1GenTwo; R1 chain is not a model of the October restriction
 GodelOntological/Audit.lean        — literal Fig. 7 forces the identity, without symmetry
 COUNTERMODEL_A.md                  — rigid vs WRP desk note
 COLLAPSE_WRP.md                    — WRP collapse / ContingentR
