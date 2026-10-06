@@ -38,6 +38,14 @@ def Ax1GenTwo {W Ind : Type} (R : Access W) (ex : Ind → W → Prop)
     valid (fun w =>
       atLeastTwo Φ w → posProps P Φ w → conjOfPropsFrom R ex φ Φ w → P φ w)
 
+/-- **Ax1GenOne.** Empty rosters refused; singletons still allowed.
+Weaker guard than Ax1GenTwo, so a two-member counterinstance refutes it too. -/
+def Ax1GenOne {W Ind : Type} (R : Access W) (ex : Ind → W → Prop)
+    (P : MPred W Ind) : Prop :=
+  ∀ (Φ : MPred W Ind) (φ : MProp W Ind),
+    valid (fun w =>
+      (∃ ψ, Φ ψ w) → posProps P Φ w → conjOfPropsFrom R ex φ Φ w → P φ w)
+
 theorem ax1Gen_implies_two {W Ind : Type} (R : Access W) (ex : Ind → W → Prop)
     (P : MPred W Ind) (hGen : Ax1Gen R ex P) : Ax1GenTwo R ex P :=
   fun Φ φ w _hTwo hPos hConj => hGen Φ φ w hPos hConj
@@ -114,6 +122,20 @@ theorem chain_not_Ax1GenTwo : ¬ Ax1GenTwo R_chain chainEx chainP := by
   intro h
   exact chain_not_P_chi
     (h chainΦ chainχ false chainΦ_two_at_source chain_pos_at_source chain_conj)
+
+theorem chain_not_Ax1GenOne : ¬ Ax1GenOne R_chain chainEx chainP := by
+  intro h
+  exact chain_not_P_chi (h chainΦ chainχ false
+    ⟨topP, by
+      left
+      exact ⟨chain_no_god_source, Or.inl rfl⟩⟩
+    chain_pos_at_source chain_conj)
+
+/-- Refusing only the empty roster already kills this chain predicate.
+The singleton is not what saved it. -/
+theorem one_not_enough_on_chain :
+    ¬ Ax1GenOne R_chain chainEx chainP ∧ ¬ Ax1GenTwo R_chain chainEx chainP :=
+  ⟨chain_not_Ax1GenOne, chain_not_Ax1GenTwo⟩
 
 /-- R1 holds on this frame and Ax1GenTwo does not. The cardinality guard is
 not a same-world repair: the chain that kills Th3 for R1 is not a model of
