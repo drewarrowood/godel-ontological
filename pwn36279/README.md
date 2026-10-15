@@ -4,6 +4,10 @@ Run on 2 Oct 2026 (ET) on Isabelle2025-2 and Lean 4.33.1 (elan), against the arX
 ancillary files of 2609.36279 v2 (anc/OpenQuestions). His files are not vendored here;
 the ROOT below imports his sessions by name.
 
+Added 15 Oct 2026: v3 of 2609.36279 (13 Oct 2026) was read but these checks were not re-run
+against its ancillary files. v3's session B now proves `L_R` (L under Ax1GenR, with the snapshot
+`{ψ. P ψ w}`), the same witness as `L_R_derived` here; see the paper, §1 and §6.
+
 ## Isabelle2025-2
 
     isabelle build -d <anc>/OpenQuestions/alternatives -d pwn36279/isabelle <session>

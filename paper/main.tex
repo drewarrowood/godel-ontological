@@ -36,7 +36,7 @@
 \title{One World or Two:\\
 Where AFP Figure~7 Reads $\Phi$}
 \author{Drew Arrowood}
-\date{September 2026; revised October 2026 after arXiv:2609.36279}
+\date{September 2026; revised October 2026 after arXiv:2609.36279; v3 noted 15~October 2026}
 
 \begin{document}
 \maketitle
@@ -52,7 +52,8 @@ Under Ax1Gen, Th3 holds already in K, by a hybrid-free proof that turns on
 the empty conjunction.
 Under his emendation Ax1GenTwo, which requires at least two different
 conjuncts, the questions are settled again, hybrid-free under stated side
-conditions, and for Figure~8 only after a further emendation.
+conditions (in his v3 of 13~October 2026, with none for Figure~7 and Scott's
+variant), and for Figure~8 only after a further emendation.
 The answer this note gave first is superseded by that paper, and it is weaker
 in two ways.
 The Ax1Gen instance it checked, in session
@@ -68,11 +69,12 @@ What remains of this note is a comparison of where Ax1Gen reads \(\Phi\).
 Two reconstructions make both halves of Ax1Gen read \(\Phi\) at the same
 world: positivity inside the box, or a world-invariant \(\Phi\).
 Both yield \(P(G)\) and fail on a two-world S4 chain.
-For the world-invariant reading, Benzm\"uller's ancillary session~B lists the
-derivability of \(P(G)\) as open.
+For the world-invariant reading, Benzm\"uller's ancillary session~B listed the
+derivability of \(P(G)\) as open in v1 and v2 of arXiv:2609.36279.
 Our \lean{lemma\_L\_rigid} builds on the theory \lean{GoedelVariantHOML2inS4} in Benzm\"uller and Scott's AFP entry \lean{Notes\_On\_Goedels\_Ontological\_Argument}~\cite{afpNotes2025}, and its snapshot-and-agreement step uses the same move as \lean{Th4\_finite} in arXiv:2608.07578~\cite{benzmueller2026}; our commit \lean{b23cc28} cited arXiv:2608.07578, for a different result, 31~minutes before \lean{27524f7}, and our records do not show whether \lean{Th4\_finite} was read.
 It proves L for the rigid-\(\Phi\) variant he later lists as Candidate~B (Ax1GenR), in commit \lean{27524f7}, merged 24~September 2026 (20:51~UTC), four days before arXiv:2609.36279 v1 (28~September)~\cite{benzmuellerPWN2026}.
 We checked arXiv:2609.26806 v1~\cite{benzmuellerLean2026}, the Monatshefte paper~\cite{benzmuellerScott2025}, the AFP entries, and his public repositories as of that date and found no statement of Candidate~B or of L as open under it.
+His v3 of 13~October 2026 states L under Ax1GenR as derived, in K from Ax2a and Ax2b, with the same snapshot of positivity, \(\{\psi \mid P\,\psi\,w\}\), which it reads as the satisfaction operator \(@_w P\) (\lean{L\_R}, \cite[v3, Sect.~6.4.3]{benzmuellerPWN2026}); its footnote~6 reads ``This reading, and L\_R, were pointed out in a pre-submission review of this article,'' and names no reviewer.
 Section~\ref{sec:pwn-new} replays it in his Isabelle and Lean encodings.
 Combining the world-invariant restriction with his two-conjunct restriction
 gives a reading, Ax1GenTwoR, that meets his requirements (i) and (ii) and
@@ -152,6 +154,16 @@ and restores consistency of the package in their Figure~7
 \cite{benzmuellerScott2025}.
 The essence clause in Section~\ref{sec:fig7} is that repaired definition.
 It is Scott's repair, not the hand manuscript's.
+Added 15~October 2026: v3 of \cite{benzmuellerPWN2026} adds that the
+conjunct ``was not new with him: G\"odel had it already in the essence of one
+of his own earlier versions, the one Kanckos and Lethen conjecture to be the
+latest of them'' (v3 Section~2.1, citing Kanckos and Lethen, p.~1017, which
+this note has not read), and its Lemma~1 shows that, from the definitions
+alone, Figure~7's essence implies Figure~8's but not conversely, while in the
+theories of the argument the two coincide (\lean{Ess\_of\_Ess2},
+\lean{EssenceComparison}, \lean{Ess\_iff\_Ess2}).
+So the conjunct is not idle in the definition, which is what this section
+says; the 1970 hand page still lacks it.
 
 Jordan Howard Sobel later showed that Scott's premises collapse modality:
 whatever is true is necessarily true \cite{sobel1987,sobel2004}.
@@ -215,7 +227,9 @@ The Figure~8 goal is not the Isabelle check recorded here.
 \paragraph{The questions are settled.}
 Benzm\"uller's \emph{Proofs Without Nominals} \cite{benzmuellerPWN2026}
 (arXiv v1 of 28~September 2026, v2 of 1~October 2026, read in full for this
-revision, with its ancillary files) answers the three questions the
+revision, with its ancillary files; v3 of 13~October 2026 is described in the
+paragraph added below, and theorem and section numbers in this note are v2's
+unless marked v3) answers the three questions the
 \emph{Monatshefte} notes leave open: Th3 of Figure~7 in S4; Th3 of Figure~8,
 with the unique-essence lemmas; and T3 of Scott's variant with Ax1Gen in
 place of A3.
@@ -233,7 +247,8 @@ conjuncts at the world of evaluation \cite[Sect.~6]{benzmuellerPWN2026}.
 Under Ax1GenTwo, Figure~7's Th3 holds hybrid-free and with no frame
 condition when necessary existence is not the universal property or every
 world has an actual individual, and unconditionally only with a nominal (his
-Lemma~10, Theorem~11, Corollary~12).
+Lemma~10, Theorem~11, Corollary~12; in v3, Lemma~12, Theorem~13,
+Corollary~14, and the nominal is no longer needed: see below).
 In Figure~8, Th4 is no longer derivable (his Proposition~13); the results
 return with Th4 postulated under a side condition (Theorem~15), or
 hybrid-free in a variant with Figure~8's clause confined to the essence
@@ -249,6 +264,60 @@ of~\(\mathcal{L}\)'' \cite[Sect.~3]{benzmuellerPWN2026}.
 What follows in this note was written before that paper.
 Where it overlaps, his answers stand and this note's are superseded;
 Section~\ref{sec:pwn-new} records what is left.
+
+\paragraph{Added 15 October 2026: version 3.}
+Version~3 of \cite{benzmuellerPWN2026}, posted 13~October 2026 (17:47~UTC),
+renumbers the results cited in this note and adds three things that touch it.
+The numbers here are v2's; in v3, v2 Theorems~2--6 are Theorems~4--8, v2
+Lemmas~7 and~8 are Lemmas~9 and~10, v2 Theorem~9 is Theorem~11, v2
+Lemma~10, Theorem~11 and Corollary~12 are Lemma~12, Theorem~13 and
+Corollary~14, v2 Proposition~13 is Proposition~15, v2 Theorems~14--16 are
+Theorems~16--18, v2 Section~6.3 (Ax1GenOne, Ax1GenBox) is Sections~6.4.1
+and~6.4.2, and v2 Section~6.4 (the assessment) is Section~6.5.
+The quotations above are from v2.
+In v3, Definition~1 reads ``A proof is hybrid-free if every term it
+substitutes for a variable of one of the types below stays within the object
+language'', and the types include sets of properties simpliciter,
+\((e \to \sigma) \to o\) \cite[v3, Sect.~3]{benzmuellerPWN2026}.
+First, under Ax1GenTwo the nominal in the Figure~7 argument is gone: ``under
+Ax1GenTwo, every world has an actual individual (ae\_Two), and the corollary
+holds with no condition (G\_ex\_Two\_unconditional); so do Th3, Th5 and MC''
+\cite[v3, Sect.~6.1, after Corollary~14]{benzmuellerPWN2026}, by a
+hybrid-free argument from Ax2a and Th4; Scott's T3 likewise (v3
+Theorem~16(c)).
+Second, v3 weighs two further readings beside Ax1GenTwo: Ax1GenR, ``rigid
+sets'' (v3 Section~6.4.3), and Ax1GenBoxTwo, Ax1GenTwo and Ax1GenBox at once
+(v3 Section~6.4.4).
+Under Ax1GenR it states that L ``does follow, in K, from Ax2a and Ax2b, with
+\(\mathcal{P}\) rigidified at the world of evaluation,
+\(\{\psi \mid \mathcal{P}\,\psi\,w\}\)---the satisfaction operator
+\(@_w\mathcal{P}\) (L\_R)'', with footnote~6, ``This reading, and L\_R, were
+pointed out in a pre-submission review of this article.''
+It adds \lean{L\_R\_rigidpos}: L with the object-language witness
+\(\{\psi \mid \mathsf{A}(\mathcal{P}\,\psi)\}\), provided positivity is the
+same at every world, a proviso that holds wherever the frame is weakly
+connected and does not follow from the axioms; and it leaves open ``whether L
+follows under this reading with no condition on positivity at all'' (v3
+Sections~6.4.3 and~8.8).
+Ax1GenBoxTwo, it says, meets its three requirements; its footnote~7 reads
+``The combination was pointed out in a pre-submission review of this
+article.''
+The only combined reading v3 defines is Ax1GenBoxTwo; it does not state the
+rigid two-conjunct reading Ax1GenTwoR of Section~\ref{sec:pwn-new}, and it
+does not cite this note or its repository.
+Third, v3 compares the two essences.
+Its Lemma~1 (Section~2.2) reads: ``Variant 2's essence implies variant 3's
+from the definitions alone (Ess\_of\_Ess2). The converse fails: with no axiom
+of the argument assumed, Nitpick finds a \(\varphi\) that is an essence of
+\(x\) in the sense of [11, Fig.~8] and is not had by \(x\)
+(EssenceComparison). In the theories of the argument the two coincide,
+\(\varphi x\) being a theorem there (Ess\_iff\_Ess2, and Ess\_iff\_Ess2\_K
+with no frame condition and hybrid-free).''
+His [11] is \cite{benzmuellerScott2025}.
+Here variant~2 is Figure~7, with Scott's conjunct \(\varphi\,x\), and
+variant~3 is Figure~8, with G\"odel's 1970 form of essence and the
+non-emptiness clause in the inclusion.
+Its bearing on the essence discussion is noted with that discussion above.
 
 That check was run.
 Session \lean{Ax1Gen\_EmptyAtHome\_Check} finished on Isabelle2025-2 against
@@ -556,9 +625,9 @@ They are not offered as theorems of the modal object language, nor as
 evidence about G\"odel's footnote.
 As answers to the \emph{Monatshefte} questions they are superseded: Th3 and
 collapse hold already in K by hybrid-free proofs (his Theorems~2 and~4), and
-the identity of \(R\) is his \lean{OneWorld}, Theorem~4(c), which uses the
+the identity of \(R\) is his \lean{OneWorld}, Theorem~4(c) (v3 Theorem~6(c)), which uses the
 nominal \(\lambda u.\, u = w\) and which he states ``for what it says about
-the models''; for Figure~8 the one-world result is his Theorem~6(b).
+the models''; for Figure~8 the one-world result is his Theorem~6(b) (v3 Theorem~8(b)).
 Isabelle's \lean{HybridAudit.ML} was not run on this repository's
 theories; the classification above comes from his Lean detector on a
 Lean~4.33.1 replay of Theorem~\ref{thm:sym}.
@@ -805,6 +874,11 @@ Necessary inclusion gains a side condition, and essence loses the conjunct
 \]
 with essence the universal closure of that inclusion under properties the
 individual has.
+Added 15~October 2026: by Lemma~1 of v3 of \cite{benzmuellerPWN2026}, this
+essence does not, from the definitions alone, give the conjunct
+\(\varphi\,x\) (\lean{EssenceComparison}); Figure~7's essence implies it
+(\lean{Ess\_of\_Ess2}), and in the theories of the argument the two coincide
+(\lean{Ess\_iff\_Ess2}).
 In the Lean file the inequality is \lean{neBot}, the extensional disagreement
 of Section~\ref{sec:encoding}.
 The S4 theory again leaves Th3 as \lean{oops}, comment ``Open problem''.
@@ -928,7 +1002,7 @@ ConjOfPropsFrom is already a box, so the displayed form is equivalent to
 which is \lean{Ax1GenBox}.
 The equivalence \lean{ax1GenBox\_iff\_inBox} depends on no kernel axioms.
 One countermodel covers both spellings.
-Benzm\"uller's Ax1GenBox \cite[Sect.~6.3]{benzmuellerPWN2026} adds
+Benzm\"uller's Ax1GenBox \cite[Sect.~6.3; v3 Sect.~6.4.2]{benzmuellerPWN2026} adds
 \(\Nec\mathrm{PosProps}\,\Phi\) to the literal antecedent; on reflexive frames
 it is this reading.
 He finds two-world countermodels to the actual existence of a God-like
@@ -971,12 +1045,14 @@ would carry the negation forward and break Ax2a at \(v\).
 So \lean{lemma\_L\_rigid} needs Ax2a and Ax2b.
 Literal \lean{lemma\_L} needed neither.
 Benzm\"uller's ancillary session~B states the same restriction, Ax1GenR, and
-records ``L: derivability open'', since the derivation with \(\Phi := P\) is
-unavailable when \(P\) is not rigid; its Lean module leaves the lemma as an
-\lean{openproblem}, that is, a \lean{sorry} \cite{benzmuellerPWN2026}.
+in v1 and v2 recorded ``L: derivability open'', since the derivation with
+\(\Phi := P\) is unavailable when \(P\) is not rigid; its Lean module left the
+lemma as an \lean{openproblem}, that is, a \lean{sorry}
+\cite{benzmuellerPWN2026}.
 Our \lean{lemma\_L\_rigid} builds on the theory \lean{GoedelVariantHOML2inS4} in Benzm\"uller and Scott's AFP entry \lean{Notes\_On\_Goedels\_Ontological\_Argument}~\cite{afpNotes2025}, and its snapshot-and-agreement step uses the same move as \lean{Th4\_finite} in arXiv:2608.07578~\cite{benzmueller2026}; our commit \lean{b23cc28} cited arXiv:2608.07578, for a different result, 31~minutes before \lean{27524f7}, and our records do not show whether \lean{Th4\_finite} was read.
 It proves L for the rigid-\(\Phi\) variant he later lists as Candidate~B (Ax1GenR), in commit \lean{27524f7}, merged 24~September 2026 (20:51~UTC), four days before arXiv:2609.36279 v1 (28~September)~\cite{benzmuellerPWN2026}.
 We checked arXiv:2609.26806 v1~\cite{benzmuellerLean2026}, the Monatshefte paper~\cite{benzmuellerScott2025}, the AFP entries, and his public repositories as of that date and found no statement of Candidate~B or of L as open under it.
+His v3 of 13~October 2026 states L under Ax1GenR as derived, in K from Ax2a and Ax2b, with the same snapshot of positivity, \(\{\psi \mid P\,\psi\,w\}\), which it reads as the satisfaction operator \(@_w P\) (\lean{L\_R}, \cite[v3, Sect.~6.4.3]{benzmuellerPWN2026}); its footnote~6 reads ``This reading, and L\_R, were pointed out in a pre-submission review of this article,'' and names no reviewer.
 Section~\ref{sec:pwn-new} replays it.
 The box in R1 re-reads \(\Phi := P\) at the successor rather than freezing it
 at the source.
@@ -1189,11 +1265,14 @@ with \(\mathrm{PosPropsR}\,\Phi\,w \equiv \forall\psi.\,\Phi\,\psi
 \Nec(\allE z.\, \varphi\,z \leftrightarrow
 (\lambda w.\,\forall\psi.\,\Phi\,\psi \longrightarrow \psi\,z\,w))\).
 There a Nitpick search finds no countermodel to L for at most two worlds and
-one individual, and the session's README (\lean{alternatives/README.md},
+one individual, and in v2 the session's README (\lean{alternatives/README.md},
 line~87) records ``derivability \textbf{open} (the article's derivation,
 \(\Phi := P\), is unavailable since \(P\) is not rigid)''; line~150 of his
 \lean{Ax1GenRigidVariant2.lean} is
 \lean{example (\_ : Ax1GenR) : \(\lfloor\)P G\(\rfloor\) := by openproblem}.
+In v3 that README row reads ``\textbf{derivable in K} (\lean{L\_R}); the
+proof given is not hybrid-free, and whether a hybrid-free one exists is
+open'', and the Lean module proves \lean{L\_R} there.
 This is his Candidate~B, not his Candidate~A.
 Candidate~A, Ax1GenBox, keeps a world-dependent \(\Phi\) and adds
 \(\Nec\mathrm{PosProps}\,\Phi\) to \(\mathrm{PosProps}\,\Phi\); under it L
@@ -1207,6 +1286,7 @@ Ax1GenBox.
 Our \lean{lemma\_L\_rigid} builds on the theory \lean{GoedelVariantHOML2inS4} in Benzm\"uller and Scott's AFP entry \lean{Notes\_On\_Goedels\_Ontological\_Argument}~\cite{afpNotes2025}, and its snapshot-and-agreement step uses the same move as \lean{Th4\_finite} in arXiv:2608.07578~\cite{benzmueller2026}; our commit \lean{b23cc28} cited arXiv:2608.07578, for a different result, 31~minutes before \lean{27524f7}, and our records do not show whether \lean{Th4\_finite} was read.
 It proves L for the rigid-\(\Phi\) variant he later lists as Candidate~B (Ax1GenR), in commit \lean{27524f7}, merged 24~September 2026 (20:51~UTC), four days before arXiv:2609.36279 v1 (28~September)~\cite{benzmuellerPWN2026}.
 We checked arXiv:2609.26806 v1~\cite{benzmuellerLean2026}, the Monatshefte paper~\cite{benzmuellerScott2025}, the AFP entries, and his public repositories as of that date and found no statement of Candidate~B or of L as open under it.
+His v3 of 13~October 2026 states L under Ax1GenR as derived, in K from Ax2a and Ax2b, with the same snapshot of positivity, \(\{\psi \mid P\,\psi\,w\}\), which it reads as the satisfaction operator \(@_w P\) (\lean{L\_R}, \cite[v3, Sect.~6.4.3]{benzmuellerPWN2026}); its footnote~6 reads ``This reading, and L\_R, were pointed out in a pre-submission review of this article,'' and names no reviewer.
 
 \begin{proposition}[\lean{L\_R\_derived}]
 \label{prop:LR}
@@ -1236,7 +1316,18 @@ That is weaker than it sounds: the snapshot has type
 \((e \to \sigma) \to \mathsf{Prop}\), which is not a property or proposition
 variable and so lies outside the detector's definition, and a snapshot of
 positivity at a named world behaves like a satisfaction operator.
-Whether this proof is hybrid-free is not settled here.
+Whether this proof is hybrid-free was not settled here.
+Added 15~October 2026: v3 settles it for his \lean{L\_R}, which uses the
+same snapshot.
+Its Definition~1 now covers sets of properties simpliciter, and it says of
+\lean{L\_R}: ``So the reading does not escape the hybrid question; it
+relocates it, and the detector flags that witness as it flags any other''
+\cite[v3, Sect.~6.4.3]{benzmuellerPWN2026}.
+The comments in his v3 ancillary \lean{Ax1GenRigidVariant2.lean} and
+session-B theory still say that the detector does not reach the witness; we
+have not run his v3 detector on \lean{L\_R\_derived}.
+On v3's definition, then, this proof is not hybrid-free, and whether L has a
+hybrid-free proof under Ax1GenR is open there.
 One consequence does not depend on that question.
 His session~B refutes the actual existence of a God-like being at every
 world, collapse in K, and Th3 in S4 under Ax1GenR with L as an added
@@ -1294,13 +1385,18 @@ axiom is Ax2a, \lean{Th4\_TwoR\_alone} and \lean{PTop\_TwoR\_alone} carry
 \lean{PwnCheckReqIIbB}.
 
 Two things make this worth recording.
-First, his assessment \cite[Sect.~6.4]{benzmuellerPWN2026} says of his four
+First, his v2 assessment \cite[Sect.~6.4]{benzmuellerPWN2026} says of his four
 readings that ``the world-dependence of \(\Phi\) is what produces the
 collapse, and only Ax1GenBox removes that. The price is (ii).''
 Among those four readings that is right.
 Ax1GenTwoR removes the world-dependence and keeps~(ii).
+In v3 (Section~6.5) the sentence reads instead ``the readings that remove it
+are the three that attack it rather than the cardinality: Ax1GenBox, Ax1GenR
+and their combination with the two-conjunct restriction'', and v3's
+Ax1GenBoxTwo (Section~6.4.4) also keeps~(ii); it keeps a world-dependent
+\(\Phi\) under \(\Nec\mathrm{PosProps}\), so it is not Ax1GenTwoR.
 Second, his equivalence of Ax1GenTwo with Ax1Gen once nominals are admitted
-(\cite[Sect.~6.2, Theorem~16(d)]{benzmuellerPWN2026}, Isabelle
+(\cite[Sect.~6.2, Theorem~16(d); in v3 the text after Theorem~18]{benzmuellerPWN2026}, Isabelle
 \lean{Two\_equivalent} in his session~E, which he says goes through
 unchanged in variant~2) does not transfer.
 In his session~E that equivalence is \lean{Ax1Gen\_of\_Two}, which uses
@@ -1489,8 +1585,8 @@ That is a statement about where the search went.
 It is not a priority claim.
 Since then \cite{benzmuellerPWN2026} has appeared.
 It proves Th3 and collapse for the literal package in K, hybrid-free
-(Theorem~4(a),(b)); it proves the identity of \(R\) as a one-world theorem
-with a nominal (Theorem~4(c)); and its
+(Theorem~4(a),(b); v3 Theorem~6(a),(b)); it proves the identity of \(R\) as a one-world theorem
+with a nominal (Theorem~4(c); v3 Theorem~6(c)); and its
 Ax1GenBox countermodels cover R1.
 Those results supersede Theorems~\ref{thm:sym}--\ref{thm:th3} as answers,
 and they are stronger, being hybrid-free where the proofs here are not.
@@ -1498,6 +1594,11 @@ It does not cite this note.
 What it leaves, and what Section~\ref{sec:pwn-new} takes up, is L for the
 world-invariant reading, which it records as open, and the combination of
 the world-invariant and two-conjunct restrictions, which it does not state.
+Added 15~October 2026: v3 does not cite this note either; it states L for the
+world-invariant reading as derived (\lean{L\_R}, v3 Section~6.4.3, with a
+satisfaction-operator witness), and the only combined reading it defines is
+Ax1GenBoxTwo (v3 Section~6.4.4), not the world-invariant two-conjunct
+one.
 A search on 2~October 2026 of arXiv, the Archive of Formal Proofs, and the
 web (Google Scholar was not reachable directly, so only through general
 search) found no source that derives L from a world-invariant conjunction
@@ -1611,8 +1712,9 @@ The failure of Th3 at the source, taken by itself, depends on none of them.}
 
 The three questions this note set out from are settled, by
 \cite{benzmuellerPWN2026}, under Ax1Gen in K by hybrid-free proofs, and
-again under his two-conjunct emendation Ax1GenTwo, with side conditions and,
-for Figure~8, a further emendation.
+again under his two-conjunct emendation Ax1GenTwo, with side conditions (in
+his v3, none for Figure~7 and Scott's variant) and, for Figure~8, a further
+emendation.
 This note's own answer, Th3 in S4 through derived symmetry and the identity
 of \(R\), is superseded.
 It was obtained from an instance of Ax1Gen that is empty at the world of
@@ -1627,7 +1729,7 @@ is not the only ontological draft in the Nachlass \cite{lethen2025}.
 
 What remains is small.
 For the world-invariant reading of the footnote, which Benzm\"uller's session~B
-leaves open, lemma~L follows from Ax2a and Ax2b by a snapshot of
+left open in v1 and v2 and which his v3 states as derived (\lean{L\_R}), lemma~L follows from Ax2a and Ax2b by a snapshot of
 positivity (Proposition~\ref{prop:LR}), so his countermodels with L added
 are countermodels of that reading alone.
 Combining that reading with his two-conjunct restriction gives Ax1GenTwoR,
@@ -1637,11 +1739,12 @@ collapse in K, and to Th3 in S4 (Proposition~\ref{prop:TwoR}).
 Unlike Ax1GenTwo, it does not collapse back to Ax1Gen when nominals are
 admitted: his route to that equivalence needs a world-dependent collection,
 and Nitpick certifies a model of Ax1GenTwoR in which Ax1Gen fails.
-Whether the snapshot is hybrid-free, whether Ax1GenR yields Th4 once Ax2b is
+Whether L has a hybrid-free proof under Ax1GenR (his v3 counts the snapshot
+as a satisfaction operator and leaves that open), whether Ax1GenR yields Th4 once Ax2b is
 present, and how Ax1GenTwoR behaves in KB, in Figure~8, and in Scott's
 variant, are not settled here.
 The comparison of Section~\ref{sec:recon} stands as a comparison: where
-Ax1Gen reads \(\Phi\) matters, and \cite[Sect.~6.4]{benzmuellerPWN2026}
+Ax1Gen reads \(\Phi\) matters, and \cite[Sect.~6.4; v3 Sect.~6.5]{benzmuellerPWN2026}
 reaches the same diagnosis, that the world-dependence of \(\Phi\) produces
 the collapse.
 
