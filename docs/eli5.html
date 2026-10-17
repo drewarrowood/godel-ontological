@@ -39,11 +39,14 @@
     }
     .links ul { padding-left: 1.2rem; margin: 0.5rem 0 0; }
     .links li { margin: 0.35rem 0; }
+    .sup { display: block; font-size: 0.9rem; color: #8a4b00; margin-top: 0.3rem; }
+    del { color: #777; }
     @media (prefers-color-scheme: dark) {
       body { background: #141414; color: #eee; }
       .sub { color: #aaa; }
       a { color: #8ab4f8; }
       .links { border-top-color: #333; }
+      .sup { color: #f6b26b; }
     }
   </style>
 </head>
@@ -58,15 +61,17 @@
 
     <p>Someone copied one rule from an old notebook into that rulebook. The copy looks fine. The paper asks: if you play by that copied rule exactly as written, what happens?</p>
 
-    <p>The rulebook on the computer is Scott’s repaired copy, not Gödel’s own handwritten page. Gödel’s page left out a piece, and Scott put that piece back. The note is about where that copied rule looks when you read it exactly as written.</p>
+    <p>The rulebook on the computer is Scott’s repaired copy, not Gödel’s own handwritten page. Gödel’s page left out a piece, and Scott put that piece back. <span class="sup">Added 15 Oct 2026: Benzmüller’s arXiv:2609.36279 v3 §2.1 notes that Gödel had that piece in one of his own earlier drafts, and its Lemma 1 (§2.2, <code>EssenceComparison</code>) shows that, by the definitions alone, the version with the piece and the version without it are not the same rule; once the other axioms are in, they agree.</span> The note is about where that copied rule looks when you read it exactly as written.</p>
 
-    <p>What we found is this. With that copied rule, every place in the game can only “see” itself. Nothing connects to anything else. Then the big claim people cared about (“if God is possible, God is necessary”) becomes true for a boring reason: in a world that only sees itself, whatever is true is already “necessary.”</p>
+    <p><del>What we found is this. With that copied rule, every place in the game can only “see” itself. Nothing connects to anything else. Then the big claim people cared about (“if God is possible, God is necessary”) becomes true for a boring reason: in a world that only sees itself, whatever is true is already “necessary.”</del> <span class="sup">Superseded 2 Oct 2026: see Benzmüller arXiv:2609.36279 v2 §4, Theorem 4(a) (Th3, in K, with no frame condition and no nominal), Theorem 4(b) (collapse) and Theorem 4(c) (OneWorld, by a nominal); in v3 (13 Oct 2026) these are Theorem 6(a)–(c). Our proof also used a degenerate, empty case of the copied rule; see the paper, §1 and §4.</span></p>
 
-    <p>Other people had already shown that boring ending by assuming you can always look both ways. On this copied rule the axioms themselves produce that both-ways link, and then each place can see only itself. The claim holds for that dull reason. The live question sits with the repaired rules.</p>
+    <p>Other people had already shown that boring ending by assuming you can always look both ways. <del>On this copied rule the axioms themselves produce that both-ways link, and then each place can see only itself. The claim holds for that dull reason.</del> <span class="sup">Superseded 2 Oct 2026: see Benzmüller arXiv:2609.36279 v2 §4, Theorem 4(c) (OneWorld) and Theorem 4(a)–(b); v3 §4, Theorem 6</span> The live question sits with the repaired rules.</p>
 
-    <p>Two repairs make both halves of the copied rule look at the roster in the same place. On those repairs the boring ending goes away. On a simple two-step chain of worlds, the big claim can fail. On the literal copy the claim holds only because each place already sees only itself, including the one-place model. The live question sits with the repaired rules.</p>
+    <p>Two repairs make both halves of the copied rule look at the roster in the same place. On those repairs the boring ending goes away. On a simple two-step chain of worlds, the big claim can fail. (For the boxed repair, Benzmüller reports the same thing: arXiv:2609.36279 v2 §6.3, “Ax1GenBox”; v3 §6.4.2.) <del>On the literal copy the claim holds only because each place already sees only itself, including the one-place model.</del> <span class="sup">Superseded 2 Oct 2026: see Benzmüller arXiv:2609.36279 v2 §4, Theorem 4(a); v3 Theorem 6(a)</span> The live question sits with the repaired rules.</p>
 
-    <p>The paper does not claim to be the first to notice collapse in this family of proofs. On the literal copy, the claim holds only because each place already sees only itself. The repairs are where that ending can fail.</p>
+    <p>The paper does not claim to be the first to notice collapse in this family of proofs. <del>On the literal copy, the claim holds only because each place already sees only itself.</del> <span class="sup">Superseded 2 Oct 2026: see Benzmüller arXiv:2609.36279 v2 §4, Theorem 4(a)–(c); v3 Theorem 6(a)–(c)</span> The repairs are where that ending can fail.</p>
+
+    <p><strong>What is still ours (2 Oct 2026).</strong> For the repair that keeps the roster the same everywhere, the key lemma (“being God-like is a good property”) still follows. <del>Benzmüller’s files list that as open.</del> <span class="sup">Updated 15 Oct 2026: his files listed that as open in v1 and v2.</span> Our <code>lemma_L_rigid</code> builds on the theory <code>GoedelVariantHOML2inS4</code> in Benzmüller and Scott’s AFP entry <code>Notes_On_Goedels_Ontological_Argument</code>, and its snapshot-and-agreement step uses the same move as <code>Th4_finite</code> in arXiv:2608.07578; our commit <code>b23cc28</code> cited arXiv:2608.07578, for a different result, 31 minutes before <code>27524f7</code>, and our records do not show whether <code>Th4_finite</code> was read. It proves L for the rigid-Φ variant he later lists as Candidate B (Ax1GenR), in commit <code>27524f7</code>, merged 24 Sep 2026 (20:51 UTC), four days before arXiv:2609.36279 v1 (28 Sep). We checked arXiv:2609.26806 v1, the Monatshefte paper, the AFP entries, and his public repositories as of that date and found no statement of Candidate B or of L as open under it. <span class="sup">Added 15 Oct 2026:</span> His v3 of 13 Oct 2026 (§6.4.3) now states L under Ax1GenR as proved in K from Ax2a and Ax2b, with the same snapshot of the good properties at the starting world, which he reads as a “satisfaction operator” (<code>L_R</code>); his footnote 6 says “This reading, and L_R, were pointed out in a pre-submission review of this article,” and names no reviewer. He counts that proof as not hybrid-free, and leaves open whether L follows without a condition on positivity. We also checked a new version of the rule that combines that repair with his “at least two conjuncts” rule. His v3 combines “at least two conjuncts” with the boxed repair instead (Ax1GenBoxTwo, §6.4.4), not with this one, and it does not cite this note. The details and their limits are in §6 of the paper.</p>
 
     <div class="links">
       <strong>The paper</strong>

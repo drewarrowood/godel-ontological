@@ -1,0 +1,3 @@
+== OpenQuestions.PwnRigidL: 32 theorems, 1 with flagged witnesses, 1 hybrid, 0 inheriting, 0 connectives at the world type
+ConjR.eq_1:
+    [FOREIGN] ConjR _fvar.21837 _fvar.21846
