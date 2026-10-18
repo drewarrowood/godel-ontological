@@ -22,6 +22,13 @@ against its ancillary files. v3's session B now proves `L_R` (L under Ax1GenR, w
 | PwnCheckReqIIbB | I | Th4 refuted from Ax1GenTwoR + Ax2a + Ax2b | builds |
 | PwnCheckReqIIbA | I | Th4 from Ax1GenR + Ax2a + Ax2b: Nitpick "unknown" | FAILS by design (likely a theorem; not proved) |
 | PwnSanity | I | a valid formula under `expect = genuine` | FAILS by design (shows `expect` is enforced) |
+| PwnCheckEvil | Ax1GenAlternativesV3Two (F, v4 ancillary) | Added 18 Oct 2026: AFP ThereIsNoEvil2's `NecNoEvil` from Ax2a and Ax4 alone (no conjunction axiom), given two individuals | builds |
+
+Added 18 Oct 2026: `PwnCheckEvil` was written against session F of the v4 ancillary files
+(`alternatives/F` in v4's ancillary files) and builds on Isabelle2025-2 against it (18 Oct 2026;
+`isabelle build -d <anc-v4>/OpenQuestions/alternatives -d pwn36279/isabelle PwnCheckEvil`). With
+one individual, Nitpick under Ax1GenTwo returned `none` for (i,e) = (1,1) and (2,1); that
+case is not proved.
 
 Our original session `Ax1Gen_EmptyAtHome_Check` (isabelle/) was re-run the same evening
 against the AFP checkout of 2026-09-24 and still finishes; see reports/.

@@ -36,7 +36,7 @@
 \title{One World or Two:\\
 Where AFP Figure~7 Reads $\Phi$}
 \author{Drew Arrowood}
-\date{September 2026; revised October 2026 after arXiv:2609.36279; v3 noted 15~October 2026}
+\date{September 2026; revised October 2026 after arXiv:2609.36279; v3 noted 15~October 2026; v4 and the Berlin conference noted 18~October 2026}
 
 \begin{document}
 \maketitle
@@ -76,6 +76,8 @@ It proves L for the rigid-\(\Phi\) variant he later lists as Candidate~B (Ax1Gen
 We checked arXiv:2609.26806 v1~\cite{benzmuellerLean2026}, the Monatshefte paper~\cite{benzmuellerScott2025}, the AFP entries, and his public repositories as of that date and found no statement of Candidate~B or of L as open under it.
 His v3 of 13~October 2026 states L under Ax1GenR as derived, in K from Ax2a and Ax2b, with the same snapshot of positivity, \(\{\psi \mid P\,\psi\,w\}\), which it reads as the satisfaction operator \(@_w P\) (\lean{L\_R}, \cite[v3, Sect.~6.4.3]{benzmuellerPWN2026}); its footnote~6 reads ``This reading, and L\_R, were pointed out in a pre-submission review of this article,'' and names no reviewer.
 Section~\ref{sec:pwn-new} replays it in his Isabelle and Lean encodings.
+His v4 of 14~October 2026 leaves that section, its footnote, session~B and the Lean module of the rigid reading unchanged.
+Nothing in this note bears on what G\"odel meant by `God'; Section~\ref{sec:bbaw} records, going on a newspaper report of the Berlin conference of July 2026, why the 1970 God-like being does not settle it.
 Combining the world-invariant restriction with his two-conjunct restriction
 gives a reading, Ax1GenTwoR, that meets his requirements (i) and (ii) and
 still has genuine Nitpick countermodels to the actual existence of a
@@ -244,6 +246,15 @@ Read to include the empty set and the singletons, the footnote's ``any number
 of summands'' gives Ax1Gen, ``and the two offending instances are exactly
 those degenerate ones''; his Ax1GenTwo requires at least two different
 conjuncts at the world of evaluation \cite[Sect.~6]{benzmuellerPWN2026}.
+(Added 18~October 2026.)
+Only the empty instance stays out.
+His v4 abstract reads ``In effect only the empty conjunction is excluded;
+the singleton comes back with the other axioms'', since ``a singleton padded
+with the universal property has two members and the same conjunction''
+\cite[v4, abstract and Sect.~1]{benzmuellerPWN2026}.
+The degenerate instance on which this note's own S4 argument rests
+(Section~\ref{sec:open}) is the empty one; nothing here depends on the
+singleton being unavailable under Ax1GenTwo.
 Under Ax1GenTwo, Figure~7's Th3 holds hybrid-free and with no frame
 condition when necessary existence is not the universal property or every
 world has an actual individual, and unconditionally only with a nominal (his
@@ -318,6 +329,45 @@ Here variant~2 is Figure~7, with Scott's conjunct \(\varphi\,x\), and
 variant~3 is Figure~8, with G\"odel's 1970 form of essence and the
 non-emptiness clause in the inclusion.
 Its bearing on the essence discussion is noted with that discussion above.
+
+\paragraph{Added 18 October 2026: version 4.}
+Version~4 of \cite{benzmuellerPWN2026}, posted 14~October 2026 (18:48~UTC),
+keeps v3's numbering of every result cited above, so the v3 numbers given in
+this note hold for v4.
+Its comments line reads: ``New in v4: a soundness theorem for the criterion
+over general models closed under the object language, and a sentence of that
+language the embedding proves but no certified proof does, both formalised in
+Isabelle/HOL and Lean~4.''
+In the text, Proposition~20 (soundness over \(\mathcal{L}\)-general models)
+now covers any set of sentences of \(\mathcal{L}\) and carries a full
+proof, where v3 had a sketch; its hypothesis, a whole-term condition, is
+checked by the Lean detector's whole-term mode \cite[v4,
+Sect.~8.3]{benzmuellerPWN2026}.
+We found no statement that the proof of Proposition~20 is itself mechanised.
+The new Example~21 takes the sentence ``every world lies in an atom'', which
+the embedding proves with the nominal \(\lambda u.\,u=w\), and shows it
+false at every world of an \(\mathcal{L}\)-general Fraenkel--Mostowski
+model over the infinite 0-1-sequences: ``the certificate excludes a sentence
+the embedding proves''; ``No model with finitely many worlds separates'';
+``M is not a model of the axioms of variant 2''; and ``Nothing in Sections
+4--6.4 is touched'' \cite[v4, Sect.~8.3]{benzmuellerPWN2026}.
+Its propositional part is in the new ancillary files
+\lean{separation/Separation.thy} and \lean{lean/Separation.lean}.
+A new paragraph notes that the set \(\Phi\) of his Lemma~3 is a
+third-order comprehension instance that the provers did not find.
+For this note, Example~21 supports the distinction it draws between the
+shallow embedding and the modal object language, and refutes nothing here:
+its model is not a model of variant~2, and what this note calls a theorem of
+the embedding it does not call a theorem of the object language.
+Sections~6.4.3 and~6.4.4 of v4 have the same text as in v3, footnotes~6
+and~7 are unchanged, and the ancillary files of session~B
+(\lean{Ax1GenAlternativesB.thy}), the Lean module
+\lean{Ax1GenRigidVariant2.lean} and the alternatives README are
+byte-identical to v3's.
+So v4 changes nothing said above about \lean{L\_R}, Ax1GenR, footnote~6
+or Ax1GenBoxTwo, and it still does not state Ax1GenTwoR or cite this note.
+Its footnote~2, unchanged from v3, places the origin of his question at the
+Berlin conference of July 2026; see Section~\ref{sec:bbaw}.
 
 That check was run.
 Session \lean{Ax1Gen\_EmptyAtHome\_Check} finished on Isabelle2025-2 against
@@ -1439,12 +1489,141 @@ That is a sketch; Nitpick returns ``unknown'' (\lean{PwnCheckReqIIbA}), and
 no proof was checked.
 If it holds, Ax1GenR fails requirement~(ii) in spirit once Ax2b is present,
 and the two-member clause of Ax1GenTwoR is what restores it.
+(Requirement~(ii) is about instances of the axiom, and under Ax1GenTwo, v4
+notes, the singleton comes back by padding once the other axioms are present
+\cite[v4, abstract]{benzmuellerPWN2026}; whether the same padding is
+available under Ax1GenTwoR was not checked.)
 Second, the hybrid-free status of the snapshot witness, above.
 Third, the repository's Scott-side Countermodel~A, two isolated S5 points
 with rigid positivity, postulates A3 as one global hypothesis.
 Whether it survives replacing A3 by Ax1GenTwo is open here.
 His Theorem~14 (Scott's T3 under Ax1GenTwo, for world-relative positivity)
 suggests not, but the encodings differ and nothing was checked.
+
+\section{Added 18 October 2026: the Berlin conference, and what this note does not claim}
+\label{sec:bbaw}
+
+The Kurt-G\"odel-Forschungsstelle of the Berlin-Brandenburg Academy of
+Sciences and Humanities held the conference ``Kurt G\"odel,
+\guilsinglright Gott\guilsinglleft{} und \guilsinglright Teufel\guilsinglleft'' in Berlin on 29--31~July 2026,
+organised by Eva-Maria Engelen and Alexander Englert \cite{bbaw2026}.
+The programme lists talks by Thorben Alles, Christoph Benzm\"uller, Merlin
+Carl, Clara Carus, Klaus Corcilius (title to be named), Gregor Damschen,
+Engelen, Englert, Andr\'e Fuhrmann, Benedikt G\"ocke, Leon Horsten, Tim
+Lethen and Niko Strobach.
+We found no slides, recordings or written versions of the talks.
+The one report we found is Ulf von Rauchhaupt's in the FAZ
+\cite{vonRauchhaupt2026}; what is said below about a talk goes on the
+programme's title or on that report, and is marked so.
+
+\paragraph{The origin of Benzm\"uller's question.}
+His talk was on 30~July, ``On the Logical Necessity of God and the
+Impossibility of the Devil in G\"odel's Modal Ontological Argument: Insights
+gained in Experiments in Computational Metaphysics'' (programme).
+Footnote~2 of \cite[v3 and v4]{benzmuellerPWN2026} reads: ``The question of
+this article arose in the discussion after a talk by the author on the Notes
+and the questions they leave open, at the conference of the
+Kurt-G\"odel-Forschungsstelle of the Berlin-Brandenburg Academy of Sciences
+and Humanities in Berlin in July 2026; the talk had suggested that current AI
+systems might help to settle them. Proofs of the S4 questions followed within
+a day, but were not circulated, because nominals appeared to be doing work in
+them---and that is the question taken up here.''
+On that account his proofs of the S4 questions are some eight weeks older
+than this repository's commit \lean{b23cc28} (24~September 2026), though
+they were not public.
+This note claims no priority for any result he states.
+The dated provenance in the abstract records what was public on a date; it
+is not a claim of novelty, and where his work and this note agree, this
+note's results are rediscoveries.
+
+\paragraph{The Devil.}
+His title names the impossibility of the Devil, which the AFP entry states
+in two theories \cite{afpNotes2025}, with \(\mathit{Evil}\,x\) iff \(x\) has every
+property that is not positive.
+In \lean{ThereIsNoEvil1} (variant~2), \lean{NecNoEvil},
+\(\valid{\Nec\neg\exE x.\,\mathit{Evil}\,x}\), is proved ``using Ax2a Ax4 by
+blast'', with no conjunction axiom, so the readings of Ax1Gen weighed in this
+note do not touch it.
+In \lean{ThereIsNoEvil2} (variant~3) the AFP leaves the lemma unproved
+(\lean{oops}, with the comment that sledgehammer found a proof from Ax1Gen,
+Ax2a and the definition), and v4's Table~2 lists it among the results whose proofs hand
+the empty set to Ax1Gen \cite[v4]{benzmuellerPWN2026}.
+A check of ours, run on 18~October 2026 on Isabelle2025-2: with the axioms of
+his session~F (variant~3, from the v4 ancillary files), the same
+\lean{NecNoEvil} follows from Ax2a and Ax4 alone, without Ax1, Ax1Gen or
+Ax1GenTwo, provided there are two individuals.
+If \(x\) is evil at a world, \(\lambda y.\,y=x\) is not positive there, since
+\(x\) would then have its complement; so \(\lambda y.\,y\neq x\) is positive
+by Ax2a; it is necessarily non-empty, so Ax4 makes \(\lambda y.\top\)
+positive; and then \(x\) has \(\lambda y.\bot\).
+The theory is \lean{pwn36279/isabelle/checkEvil/PwnCheckEvil.thy}.
+With a single individual, Nitpick finds no countermodel under Ax1GenTwo with
+one or two worlds; that case is not proved.
+So, in that setting, the Devil theorem of variant~3 does not need the empty
+instance once there is a second individual.
+What Benzm\"uller's talk said about the Devil we do not know.
+
+\paragraph{What `God' means.}
+This note is about one predicate, the God-like being of the 1970
+manuscript in the AFP's Figure~7 encoding: \(G\,x\) iff \(x\) has every
+positive property.
+Going on the FAZ report, Merlin Carl's talk on G\"odel's concept of God argued
+that G\"odel ``offenbar erst nach der Abfassung in den Notizb\"uchern'' made
+that formal definition, and that the God of the ontological argument shows
+itself most nearly in a notebook remark that everything in this world is
+arranged ``nach einem wohlerwogenen Plan und in h\"ochster Regelm\"a\ss{}igkeit
+und Zweckm\"a\ss{}igkeit''.
+The report has him say that the notebooks ascribe no emotions to God, that
+some passages suggest God is identified with reason, that G\"odel saw
+prayer positively, and that ``G\"odels Theologie l\"asst sich nicht in
+s\"akulare Philosophie aufl\"osen''; and it quotes, in German, the remark
+Hao Wang reports: ``Der Gott Spinozas ist weniger als eine Person [\ldots]
+meiner ist mehr als eine Person, weil Gott die Rolle einer Person spielen
+kann'' \cite{vonRauchhaupt2026}.
+We have not checked Wang's English or Carl's own text.
+In the discussion, still going on the report, Engelen asked: ``K\"onnte er
+unter Gott nicht das vollkommene rationale Begriffssystem verstanden haben,
+von dem er sicher war, dass es existiert?''
+G\"ocke proposed a ``panentheistische Tiefenstruktur'', which the report
+sets against G\"odel's remarks that God is ``au\ss{}erhalb der Zeit'' and his
+calling his own belief ``theistisch''.
+The report also recalls that Oskar Morgenstern noted in his 1970 diary that
+G\"odel meant the proof only as a logical experiment and would not publish
+it lest people think he believed in God; that is Morgenstern's report, not
+G\"odel's words.
+None of these questions is settled by the formal argument, and this note
+takes no side in them.
+Its results are about \(G\) in an embedding, under readings of one axiom;
+they say nothing about whether that predicate is what G\"odel meant by
+`God', and they are not evidence about the notebooks.
+One observation is ours, not the conference's.
+`After the notebooks' cannot mean after all of G\"odel's work on positivity:
+his notes of 1952/53, as Kanckos and Lethen transcribe them and as
+\cite[v4, Sect.~2.1]{benzmuellerPWN2026} cites them, already have a
+conjunction axiom and the positivity of being God-like as a theorem
+\cite{kanckosLethen2021}, and the notebooks run to 1955.
+We read the report as dating the formal definition after the notebooks'
+passages on God, but we have not read Carl's text.
+
+\paragraph{Truth and positivity.}
+Lethen's talk is known to us by its title only, ``Truth and Positivity in
+G\"odel's Ontological Proof''.
+His dissertation \cite{lethen2026diss} quotes a gloss of G\"odel's,
+``Es braucht nicht angenommen zu werden, dass immer \(\varphi\) oder
+\(\neg\varphi\) pos.'' (pp.~77--78).
+This note keeps Ax2a in both directions, as the AFP states it; its results
+are about the AFP's axioms, not about that weaker option, which it does not
+examine.
+
+\paragraph{Sobel predicates.}
+Strobach's talk is known to us by its title, ``Sobel Predicates as
+Expressions of World-Inhabitance---What is Really Interesting About G\"odel's
+Ontological Argument'', and by one line of the report, that he showed what is
+interesting in the proof even for those sceptical of its premises.
+We make no claim about its content.
+Whether properties of the form `being such that \(q\)' bear on the nominal
+property \(\lambda x\,\lambda u.\,u=w\) of this note is a question we
+have not examined.
 
 \section{What was already known}
 \label{sec:related}
@@ -1747,6 +1926,8 @@ The comparison of Section~\ref{sec:recon} stands as a comparison: where
 Ax1Gen reads \(\Phi\) matters, and \cite[Sect.~6.4; v3 Sect.~6.5]{benzmuellerPWN2026}
 reaches the same diagnosis, that the world-dependence of \(\Phi\) produces
 the collapse.
+Nothing in this note bears on what G\"odel meant by `God'
+(Section~\ref{sec:bbaw}).
 
 \section*{Acknowledgements}
 
