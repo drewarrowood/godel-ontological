@@ -20,7 +20,9 @@ against its ancillary files. v3's session B now proves `L_R` (L under Ax1GenR, w
 | PwnCheckReqII | Th4FromConjunction (I) | requirement (ii) for Ax1GenTwoR: Th4, P(λx.⊤) refuted from Ax1GenTwoR + Ax2a | builds |
 | PwnCheckReqIIR | I | Th4 refuted from Ax1GenR + Ax2a | builds |
 | PwnCheckReqIIbB | I | Th4 refuted from Ax1GenTwoR + Ax2a + Ax2b | builds |
-| PwnCheckReqIIbA | I | Th4 from Ax1GenR + Ax2a + Ax2b: Nitpick "unknown" | FAILS by design (likely a theorem; not proved) |
+| PwnCheckReqIIbA | I | Th4 from Ax1GenR + Ax2a + Ax2b: Nitpick "unknown" | FAILS by design; superseded by PwnTh4R (kept as a record of the search) |
+| PwnTh4R | I | Added 22 Oct 2026: `Th4_R`: Ax1GenR + Ax2b (hypothesis) ⊢ ⌊◇∃ᴱx. G x⌋, via `L_R` (snapshot) and the rigid sets ∅, {G}. Embedding theorem; hybrid-free only if L_R is | builds |
+| PwnUF | B | Added 22 Oct 2026: `UF_base`: ⌊UFilter P⌋ (Notes' Filter/UFilter, oneFile l.206–207) from session B's axioms alone; the three Ax1GenTwoR countermodels re-found with UFilter P assumed (expect = genuine) | builds |
 | PwnSanity | I | a valid formula under `expect = genuine` | FAILS by design (shows `expect` is enforced) |
 | PwnCheckEvil | Ax1GenAlternativesV3Two (F, v4 ancillary) | Added 18 Oct 2026: AFP ThereIsNoEvil2's `NecNoEvil` from Ax2a and Ax4 alone (no conjunction axiom), given two individuals | builds |
 
@@ -34,6 +36,10 @@ Our original session `Ax1Gen_EmptyAtHome_Check` (isabelle/) was re-run the same 
 against the AFP checkout of 2026-09-24 and still finishes; see reports/.
 
 A countermodel certified `expect = genuine` refutes its statement whatever the card size; the small cards (i ≤ 2, e ≤ 2) limit only the searches that returned `none`/`unknown`.
+
+Added 22 Oct 2026: `PwnTh4R` and `PwnUF` built on Isabelle2025-2 against the same `alternatives/` sessions I and B
+(`isabelle build -d <anc>/OpenQuestions/alternatives -d pwn36279/isabelle PwnTh4R PwnUF`, exit 0). The
+Mühlenbeck–Benzmüller (LLP 2026) definition of ultrafilter was not read; UF_base uses the Notes' definition.
 
 ## Lean 4.33.1
 

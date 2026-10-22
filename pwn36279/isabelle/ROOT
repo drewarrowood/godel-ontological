@@ -29,3 +29,11 @@ session PwnCheckReqIIbB in checkIIbB = Th4FromConjunction +
 session PwnCheckEvil in checkEvil = Ax1GenAlternativesV3Two +
   options [timeout = 1800, document = false]
   theories PwnCheckEvil
+
+session PwnTh4R in th4R = Th4FromConjunction +
+  options [timeout = 1800, document = false]
+  theories PwnTh4R
+
+session PwnUF in uf = Ax1GenAlternativesB +
+  options [timeout = 3600, document = false]
+  theories PwnUF
