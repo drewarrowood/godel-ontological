@@ -1465,9 +1465,22 @@ His requirement~(iii) is that an emendation \emph{need not} block collapse,
 which comes with the maximality of the positive properties; blocking it is
 not a merit by his criteria, and it is not claimed as one here.
 Ax2a, kept in both directions, is the maximality half of an ultrafilter, and
-binary Ax1 holds; whether the models of Proposition~\ref{prop:TwoR}(c) keep
-ultrafilter maximality in the sense of M\"uhlenbeck and Benzm\"uller is going
-on their summary \cite{muehlenbeckBenzmueller2026}, not checked.
+binary Ax1 is an axiom of his session~B, not a consequence of Ax1GenTwoR.
+Added 22~October 2026: in those models positivity is an ultrafilter.
+With \lean{Filter} and \lean{UFilter} as the Notes define them (the
+ancillary \lean{GoedelVariantHOML3inS4oneFile.thy} of
+arXiv:2609.36279, lines 206--207), read with session~B's
+\(\necImp\), the theorem \lean{UF\_base}, \(\valid{\mathrm{UFilter}\,P}\),
+is proved from session~B's axioms alone (Ax1, Ax2a, Ax2b, Ax3, Ax4), with no
+reading of the conjunction axiom (session \lean{PwnUF}); so it holds in
+every model of Proposition~\ref{prop:TwoR}(c), and Nitpick finds the three
+countermodels again with \(\valid{\mathrm{UFilter}\,P}\) added as a
+hypothesis.
+The check says little for that reason: blocking collapse under Ax1GenTwoR
+does not come from giving up maximality.
+The definition of M\"uhlenbeck and Benzm\"uller
+\cite{muehlenbeckBenzmueller2026} was not read, and the check is against the
+Notes' definition only.
 Collapse in KB or S5 under Ax1GenTwoR was not checked.
 The Notes' S5 derivation of collapse uses the conjunction axiom only through
 L, so it is expected to return there, as it does for Ax1GenBox.
@@ -1479,16 +1492,45 @@ The proofs are elementary.
 
 \subsection{What stays open}
 
-Three items are left by this revision.
-Whether Ax1GenR with Ax2a and Ax2b yields Th4: the snapshot gives L, the
-world-invariant empty collection then gives \(P(\lambda x.\top)\), and the
-world-invariant collection \(\{G\}\) gives positivity of every property
-necessarily coextensive with \(G\), hence of \(\lambda x.\bot\) if no
-God-like being is possible, against Ax2a.
-That is a sketch; Nitpick returns ``unknown'' (\lean{PwnCheckReqIIbA}), and
-no proof was checked.
-If it holds, Ax1GenR fails requirement~(ii) in spirit once Ax2b is present,
-and the two-member clause of Ax1GenTwoR is what restores it.
+Three items were left by the 18~October revision; the first is now settled.
+Added 22~October 2026: Ax1GenR with Ax2a and Ax2b yields Th4.
+\begin{proposition}[\lean{Th4\_R}]
+\label{prop:Th4R}
+In variant~2, over K, in his session~\lean{Th4FromConjunction}, whose only
+axiom is Ax2a: if Ax1GenR and \(\forall\varphi.\,\valid{P\,\varphi \supset
+\Nec P\,\varphi}\) (Ax2b) hold, then \(\valid{\Pos(\exE x.\,G\,x)}\).
+\end{proposition}
+\begin{proof}[Sketch]
+L by the snapshot \(\{\psi \mid P\,\psi\,w\}\) (\lean{L\_R}, as in
+Proposition~\ref{prop:LR}).
+The world-invariant empty collection gives \(P(\lambda x.\top)\).
+If no God-like being is possible at \(w\), the world-invariant collection
+\(\{G\}\), positive by L, has the empty property as its conjunction at
+\(w\), so \(P(\lambda x.\bot)\) at \(w\), against Ax2a.
+\end{proof}
+Trail: Isabelle2025-2 session \lean{PwnTh4R}, importing his session
+\lean{Th4FromConjunction}; it builds, with no \lean{sorry} or \lean{oops} in
+the proof.
+Every collection used is world-invariant as a function; none is
+world-dependent.
+The route through \(\emptyset\) and \(\{G\}\) is his: it is how
+\cite[v4, Sect.~6.4]{benzmuellerPWN2026} derives Th4 from Ax1Gen and Ax2a
+alone, and \lean{L\_R} is his v3 lemma.
+His v4 states \lean{L\_R} under Ax1GenR but, as far as we have read it
+(Sections~6.4.3--6.4.4 and session~B's README), not Th4 under that reading;
+the combination is recorded here without a claim of priority.
+Under R12 of our working notes it is a theorem of the embedding: Ax2b enters
+only through L, and L's witness names the world of evaluation, which his v3
+counts as a satisfaction operator, so Th4 here is hybrid-free only if L
+under Ax1GenR gets a hybrid-free proof (open, below).
+Without Ax2b it fails: Th4 is refuted from Ax1GenR and Ax2a
+alone (\lean{PwnCheckReqIIR}).
+So Ax1GenR fails requirement~(ii) in spirit once Ax2b is present, and the
+two-member clause of Ax1GenTwoR is what restores it
+(\lean{PwnCheckReqIIbB}).
+The session \lean{PwnCheckReqIIbA}, whose Nitpick search for a countermodel
+returned ``unknown'', is superseded by \lean{PwnTh4R} and kept only as a record
+of that search.
 (Requirement~(ii) is about instances of the axiom, and under Ax1GenTwo, v4
 notes, the singleton comes back by padding once the other axioms are present
 \cite[v4, abstract]{benzmuellerPWN2026}; whether the same padding is
@@ -1919,8 +1961,8 @@ Unlike Ax1GenTwo, it does not collapse back to Ax1Gen when nominals are
 admitted: his route to that equivalence needs a world-dependent collection,
 and Nitpick certifies a model of Ax1GenTwoR in which Ax1Gen fails.
 Whether L has a hybrid-free proof under Ax1GenR (his v3 counts the snapshot
-as a satisfaction operator and leaves that open), whether Ax1GenR yields Th4 once Ax2b is
-present, and how Ax1GenTwoR behaves in KB, in Figure~8, and in Scott's
+as a satisfaction operator and leaves that open; Th4 under Ax1GenR and Ax2b, now derived
+(Proposition~\ref{prop:Th4R}), is hybrid-free only if L is), and how Ax1GenTwoR behaves in KB, in Figure~8, and in Scott's
 variant, are not settled here.
 The comparison of Section~\ref{sec:recon} stands as a comparison: where
 Ax1Gen reads \(\Phi\) matters, and \cite[Sect.~6.4; v3 Sect.~6.5]{benzmuellerPWN2026}
