@@ -37,3 +37,11 @@ session PwnTh4R in th4R = Th4FromConjunction +
 session PwnUF in uf = Ax1GenAlternativesB +
   options [timeout = 3600, document = false]
   theories PwnUF
+
+session PwnTh4RP in th4RP = Th4FromConjunction +
+  options [timeout = 600, document = false]
+  theories PwnTh4RP
+
+session PwnTh4RPNitpick in th4RPnit = PwnTh4RP +
+  options [timeout = 1800, document = false]
+  theories PwnTh4RPNitpick
