@@ -1536,6 +1536,32 @@ notes, the singleton comes back by padding once the other axioms are present
 \cite[v4, abstract]{benzmuellerPWN2026}; whether the same padding is
 available under Ax1GenTwoR was not checked.)
 Second, the hybrid-free status of the snapshot witness, above.
+Added 24~October 2026: that status can be avoided at one price.
+Under Ax1GenR and world-invariant positivity,
+\(\mathrm{RigidPos} \equiv \forall\psi\,u\,v.\; P\,\psi\,u \longrightarrow P\,\psi\,v\),
+Th4 has a proof whose witnesses are the globally positive properties
+\(\mathrm{PosGlobal} \equiv \{\psi \mid \forall v.\, P\,\psi\,v\}\), the empty
+set, and \(\{G\}\), with no snapshot and no term that names a world
+(\lean{Th4\_RP}, session \lean{PwnTh4RP}).
+Its lemma \lean{L\_RP} is Benzm\"uller's \lean{L\_R\_rigidpos}
+\cite[v4, Sect.~6.4.3]{benzmuellerPWN2026}, restated, and the route through
+\(\emptyset\) and \(\{G\}\) is his \cite[v4, Sect.~6.4]{benzmuellerPWN2026};
+nothing here is claimed as new.
+Once RigidPos is assumed, Ax2b is not needed.
+RigidPos does not follow from Ax2a and Ax2b: with Ax1GenR assumed, Nitpick
+finds genuine countermodels in K, in S4, and in S5 read as an equivalence
+relation (two isolated reflexive worlds; session \lean{PwnTh4RPNitpick}); on
+frames whose relation is universal it follows from Ax2b alone
+(\lean{RP\_univ}).
+This agrees with \cite[v4, Sect.~6.4.3]{benzmuellerPWN2026}, which records that
+the condition holds on weakly connected frames and does not follow from the
+axioms.
+Under R12 of our working notes \lean{Th4\_RP} remains a theorem of the
+embedding: the witnesses are definable in the object language, but RigidPos
+in its natural reading uses the universal modality, and his
+\lean{\#hybrid\_audit} was not run on these proofs.
+What stays open is therefore his question: whether L follows under Ax1GenR
+with no condition on positivity.
 Third, the repository's Scott-side Countermodel~A, two isolated S5 points
 with rigid positivity, postulates A3 as one global hypothesis.
 Whether it survives replacing A3 by Ax1GenTwo is open here.
@@ -1962,7 +1988,7 @@ admitted: his route to that equivalence needs a world-dependent collection,
 and Nitpick certifies a model of Ax1GenTwoR in which Ax1Gen fails.
 Whether L has a hybrid-free proof under Ax1GenR (his v3 counts the snapshot
 as a satisfaction operator and leaves that open; Th4 under Ax1GenR and Ax2b, now derived
-(Proposition~\ref{prop:Th4R}), is hybrid-free only if L is), and how Ax1GenTwoR behaves in KB, in Figure~8, and in Scott's
+(Proposition~\ref{prop:Th4R}), is hybrid-free only if L is; with world-invariant positivity assumed, Benzm\"uller's \lean{L\_R\_rigidpos} and his route through \(\emptyset\) and \(\{G\}\) give it with object-language-definable witnesses, \lean{Th4\_RP}, still an embedding theorem, since that assumption uses the universal modality and does not follow from Ax2a and Ax2b in K, S4 or S5), and how Ax1GenTwoR behaves in KB, in Figure~8, and in Scott's
 variant, are not settled here.
 The comparison of Section~\ref{sec:recon} stands as a comparison: where
 Ax1Gen reads \(\Phi\) matters, and \cite[Sect.~6.4; v3 Sect.~6.5]{benzmuellerPWN2026}

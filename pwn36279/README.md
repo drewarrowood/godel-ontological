@@ -23,6 +23,8 @@ against its ancillary files. v3's session B now proves `L_R` (L under Ax1GenR, w
 | PwnCheckReqIIbA | I | Th4 from Ax1GenR + Ax2a + Ax2b: Nitpick "unknown" | FAILS by design; superseded by PwnTh4R (kept as a record of the search) |
 | PwnTh4R | I | Added 22 Oct 2026: `Th4_R`: Ax1GenR + Ax2b (hypothesis) ⊢ ⌊◇∃ᴱx. G x⌋, via `L_R` (snapshot) and the rigid sets ∅, {G}. Embedding theorem; hybrid-free only if L_R is | builds |
 | PwnUF | B | Added 22 Oct 2026: `UF_base`: ⌊UFilter P⌋ (Notes' Filter/UFilter, oneFile l.206–207) from session B's axioms alone; the three Ax1GenTwoR countermodels re-found with UFilter P assumed (expect = genuine) | builds |
+| PwnTh4RP | I | Added 24 Oct 2026: `L_RP` (Benzmüller's `L_R_rigidpos`, v4 §6.4.3, restated), `Th4_RP`: RigidPos + Ax1GenR ⊢ ⌊◇∃ᴱx. G x⌋ with witnesses PosGlobal, ∅, {G} (no snapshot; Ax2b not used); `RP_univ`: Ax2b + universal R ⊢ RigidPos. Embedding theorem (RigidPos uses the universal modality); `#hybrid_audit` not run | builds |
+| PwnTh4RPNitpick | PwnTh4RP | Added 24 Oct 2026: RigidPos refuted from Ax2b + Ax1GenR in K, S4, S5 (equivalence relation): genuine countermodels, 2 worlds, 1 individual | builds (expect = genuine) |
 | PwnSanity | I | a valid formula under `expect = genuine` | FAILS by design (shows `expect` is enforced) |
 | PwnCheckEvil | Ax1GenAlternativesV3Two (F, v4 ancillary) | Added 18 Oct 2026: AFP ThereIsNoEvil2's `NecNoEvil` from Ax2a and Ax4 alone (no conjunction axiom), given two individuals | builds |
 
@@ -38,7 +40,7 @@ against the AFP checkout of 2026-09-24 and still finishes; see reports/.
 A countermodel certified `expect = genuine` refutes its statement whatever the card size; the small cards (i ≤ 2, e ≤ 2) limit only the searches that returned `none`/`unknown`.
 
 Added 22 Oct 2026: `PwnTh4R` and `PwnUF` built on Isabelle2025-2 against the same `alternatives/` sessions I and B
-(`isabelle build -d <anc>/OpenQuestions/alternatives -d pwn36279/isabelle PwnTh4R PwnUF`, exit 0). The
+(`isabelle build -d <anc>/OpenQuestions/alternatives -d pwn36279/isabelle PwnTh4R PwnUF`, exit 0; on 24 Oct 2026 also `PwnTh4RP PwnTh4RPNitpick`, exit 0). The
 Mühlenbeck–Benzmüller (LLP 2026) definition of ultrafilter was not read; UF_base uses the Notes' definition.
 
 ## Lean 4.33.1
